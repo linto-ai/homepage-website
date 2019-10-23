@@ -1,1 +1,401 @@
-<h1>LinTO</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LinTO, Open Source end-to-end platform for voice-operated solutions</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Linagora" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en-GB" />
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/ScrollMagic.js"></script>
+    <script type="text/javascript" src="assets/js/velocity.js"></script>
+    <script type="text/javascript" src="assets/js/slick.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
+  </head>
+  <body>
+    <div id="main">
+      <!-- HEADER -->
+      <header id="header">
+        <div class="wrapper flex-row">
+          <div class="logo-container flex1">
+            <a href="./index.html">
+              <img src="assets/img/logo-linto-ai.png" alt="LinTO.ai" class="header-logo">
+            </a>
+          </div>
+          <div class="nav-container flex1">
+            <nav id="header-nav">
+              <ul>
+                <li><a href="#" class="header-link active">Homepage</a></li>
+                <li><a href="./enterprises.html" class="header-link">Enterprise solutions</a></li>
+                <li><a href="https://doc.linto.ai/"  target="_blank" class="header-link">Developer resources</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- END HEADER -->
+      <div id="page-content">
+        <section class="home-linto flex-col" id="home-top">
+          <div class="wrapper flex-row">
+            <div class="flex1 home-linto-title flex-col">
+              <h1><span class="highlight">LinTO</span> Open Source<br/> end-to-end platform<br/> for voice-operated solutions</h1>
+            </div>
+            <div class="flex1 home-linto-img" >
+            </div>
+            <a class="next-section blue" href="#characteristics" ></a>
+          </div>
+        </section>
+        <section class="characteristics blue-bg" id="characteristics">
+          <!-- Decoration angles -->
+          <svg width="100%" height="60px" viewBox="0 0 100 100"
+          preserveAspectRatio="none" class="section-decoration top">
+            <filter id="shadow-top">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"/>
+                <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+                <feFlood flood-color="#333333" flood-opacity="0.3" result="offsetColor"/>
+                <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>
+            </filter>
+            <polygon points="0,0 100,0 100,100" style="filter:url(#shadow-top);"></polygon>
+            <polygon points="0,0 100,0 100,100"></polygon>
+          </svg>
+          <svg width="100%" height="60px" viewBox="0 0 100 100"
+          preserveAspectRatio="none" class="section-decoration bottom">
+            <filter id="shadow-bottom">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"/>
+                <feOffset in="blur" dx="0" dy="-2" x="0" y="0" result="offsetBlur"/>
+                <feFlood flood-color="#333333" flood-opacity="0.3" result="offsetColor"/>
+                <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>
+            </filter>
+            <polygon points="0,100 100,100 100,0" style="filter:url(#shadow-bottom);"></polygon>
+            <polygon points="0,100 100,100 100,0"></polygon>
+          </svg>
+          <!-- END Decoration angles -->
+          <div class="wrapper">
+            <div class="section-title-container">
+                <h2 class="section-title white">Batteries included!</h2>
+            </div>
+            <div class="flex-row characteristics-items-container">
+                <div class="characteristics-item flex-row">
+                  <span class="icon"></span>
+                  <div class="flex1 voice">
+                    <h3>Voice control</h3>
+                    <span class="content">Add value on your end-customer applications</span>
+                  </div>
+                </div>
+                <div class="characteristics-item flex-row">
+                  <span class="icon productivity"></span>
+                  <div class="flex1">
+                    <h3>Increase productivity</h3>
+                    <span class="content">Boost employee productivity with hands-free natural user interfaces</span>
+                  </div>
+                </div>
+                <div class="characteristics-item flex-row">
+                  <span class="icon vocabulary"></span>
+                  <div class="flex1">
+                    <h3>Large vocabulary</h3>
+                    <span class="content">Live re-training of AI models with business-wise dictionaries</span>
+                  </div>
+                </div>
+                <div class="characteristics-item flex-row">
+                  <span class="icon deploy"></span>
+                  <div class="flex1">
+                    <h3>Automated skills deployments</h3>
+                    <span class="content">Graphically define or reuse contextes, simply drag and drop the skills you want</span>
+                  </div>
+                </div>
+                <div class="characteristics-item flex-row">
+                  <span class="icon workflow"></span>
+                  <div class="flex1">
+                    <h3>Easy to operate</h3>
+                    <span class="content">Integrates seamlessly in your workflows</span>
+                  </div>
+                </div>
+                <div class="characteristics-item flex-row">
+                  <span class="icon opensource"></span>
+                  <div class="flex1">
+                    <h3>Open source design</h3>
+                    <span class="content">Free, on premise. GDPR compliant and no GAFAM aboard!</span>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <section id="hdiw">
+          <div class="wrapper flex1 flex-col" id="hdiw-wrapper">
+            <div class="section-title-container">
+              <h2 class="section-title blue">How does it work ?</h2>
+            </div>
+            <div id="working-process" class="flex1 flex-row" data-index="1">
+              <div id="working-state">
+                <div class="working-state-bg">
+                  <span class="working-state-index selected" data-index="1">1</span>
+                  <span class="working-state-index" data-index="2">2</span>
+                  <span class="working-state-index" data-index="3">3</span>
+                  <span class="working-state-index" data-index="4">4</span>
+                  
+                </div>
+
+              </div>
+              <div class="working-process-item flex-row flex1 selected" data-index="1">
+                <div class="content flex2">
+                  <span class="label">1/ Voice enabled client </span>
+                  <ul class="description">
+                    <li>Wake up LinTO client with custom HotWords</li>
+                    <li>Meeting mode with spontaneous multi-speaker speech</li>
+                    <li>Simple voice commands or larger vocabulary</li>
+                  </ul>
+                </div>
+                <div class="animation flex1">
+                  <img src="assets/img/working_step01.png" />
+                </div>
+              </div>
+              <div class="working-process-item flex-row flex1" data-index="2">
+                <div class="content flex2">
+                  <span class="label">2/ On premise or SaaS Speech to text API</span>
+                  <ul class="description">
+                    <li>Flexible and scalable API to handle amounts of streams & audio files</li>
+                    <li>AI based transcription that uses your specific vocabulary</li>
+                    <li>State of the art WER </li>
+                  </ul>
+                </div>
+                <div class="animation flex1">
+                    <img src="assets/img/working_step02.png" />
+                </div>
+              </div>
+              <div class="working-process-item flex-row flex1" data-index="3">
+                <div class="content flex2">
+                  <span class="label">3/ Evaluation</span>
+                  <ul class="description">
+                    <li>AI based Natural Language Understanding engine</li>
+                    <li>Textual definition of suitable intentions and easily map the corresponding skills</li>
+                    <li>Automated data augmentation for lexicals (dictionaries and scenarios)</li>
+                  </ul>
+                </div>
+                <div class="animation flex1">
+                    <img src="assets/img/working_step03.png" />
+                </div>
+              </div>
+              <div class="working-process-item flex-row flex1" data-index="4">
+                <div class="content flex2">
+                  <span class="label">4/ Trigger anything with LinTO</span>
+                  <ul class="description">
+                    <li>Modular skills to access any devices, APIs, productivity platforms etc.</li>
+                    <li>Integrates securely into Complex workflows</li>
+                    <li>Graphically describe and parametrize your use-cases</li>
+                  </ul>
+                </div>
+                <div class="animation flex1">
+                    <img src="assets/img/working_step04.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="use-cases" class="blue-bg">
+          <!-- Decoration angles -->
+          <svg width="100%" height="60px" viewBox="0 0 100 100"
+          preserveAspectRatio="none" class="section-decoration top">
+            <filter id="shadow-top">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"/>
+                <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+                <feFlood flood-color="#333333" flood-opacity="0.3" result="offsetColor"/>
+                <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>
+            </filter>
+            <polygon points="0,0 100,0 100,100" style="filter:url(#shadow-top);"></polygon>
+            <polygon points="0,0 100,0 100,100"></polygon>
+          </svg>
+          <svg width="100%" height="60px" viewBox="0 0 100 100"
+          preserveAspectRatio="none" class="section-decoration bottom">
+            <filter id="shadow-bottom">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"/>
+                <feOffset in="blur" dx="0" dy="-2" x="0" y="0" result="offsetBlur"/>
+                <feFlood flood-color="#333333" flood-opacity="0.3" result="offsetColor"/>
+                <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>
+            </filter>
+            <polygon points="0,100 100,100 100,0" style="filter:url(#shadow-bottom);"></polygon>
+            <polygon points="0,100 100,100 100,0"></polygon>
+          </svg>
+          <!-- END Decoration angles -->
+          <div class="wrapper">
+            <div class="section-title-container">
+              <h2 class="section-title white">Use cases</h2>
+            </div>
+            <div id="usecases-slider">
+              <!-- slider item -->
+              <div class="use-case-item">
+                <div class="flex-row content">
+                    <div class="flex1 img"><img src="assets/img/illustrations/illustration_01.png" alt="meeting room interactions"></div>
+                  <div class="flex1 text">
+                    <h3>At the heart of your meeting room</h3>
+                    <ul class="use-case-desc">
+                      <li>Topology evaluation using cameras and audio beamforming (spatial filtering)</li>
+                      <li>Large vocabulary speech to text for multiple speakers spontaneous speech</li>
+                      <li>Display live contextual recommendations</li>
+                      <li>Helps you deal with meeting minutes with AI driven summarizations</li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+              <!-- end slider item -->
+              <!-- slider item -->
+              <div class="use-case-item">
+                <div class="flex-row content">
+                  <div class="flex1 img"><img src="assets/img/illustrations/illustration_02.png"></div>
+                  <div class="flex1 text">
+                    <h3>Hands-free processes for better productivity</h3>
+                    <ul class="use-case-desc">
+                      <li>Voice access to your technical datasheets, databases, anything !</li>
+                      <li>Vocal or visual feedback on any display</li>
+                      <li>Expand capabilities with technical and specific vocabulary</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- end slider item -->
+              <!-- slider item -->
+              <div class="use-case-item">
+                <div class="flex-row content">
+                  <div class="flex1 img"><img src="assets/img/illustrations/illustration_03.png"></div>
+                  <div class="flex1 text">
+                    <h3>Vocal control anywhere in your office</h3>
+                    <ul class="use-case-desc">
+                      <li>Smoothly operate a fleet of voice access end-points</li>
+                      <li>Vocal access to Chatbots, smart-building, facility management and more</li>
+                      <li>Quickly mockup, develop and deploy specific skills for custom workflows</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- end slider item -->
+              <!-- slider item -->
+              <div class="use-case-item">
+                <div class="flex-row content">
+                  <div class="flex1 img"><img src="assets/img/illustrations/illustration_04.png"></div>
+                  <div class="flex1 text">
+                    <h3>Voice access for end-user applications</h3>
+                    <ul class="use-case-desc">
+                      <li>Add voice control to your B2C software</li>
+                      <li>Consume Speech To Text API  in your existing Mobile or Web application</li>
+                      <li>Data stays private for HealthCare, banking or any super-secure use-cases</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- end slider item -->
+              <!-- slider item -->
+              <div class="use-case-item">
+                <div class="flex-row content">
+                  <div class="flex1 img"><img src="assets/img/illustrations/illustration_05.png"></div>
+                  <div class="flex1 text">
+                    <h3>The Open Source framework that propels Business-aware, private by design, Smart-Assistants</h3>
+                    <ul class="use-case-desc">
+                      <li>Use the LinTO stack in your own Smart-Speaker / Smart-Assistant hardware design</li>
+                      <li>Build a custom smart-assistant without any external reference to Alexa or Google Home</li>
+                      <li>Monitor and operates a fleet of LinTO clients deployed anywhere</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- end slider item -->
+            </div>
+          </div>
+        </section>
+        <section id="ent-dev">
+          <div class="wrapper flex-row">
+            <div class="flex1 ent solution">
+              <span class="icon"></span>
+              <h3 class="blue">Enterprise, what is your voice-case ?</h3>
+              <p class="content">Companies are well aware that natural voice interfaces can increase employee productivity and external commercial value.</p>
+              <p>LinTO is a free and open source end-to-end solution that will enable you to deploy voice control while maximizing the technological and human return on investment.</p>
+              <p>Let’s take a deep dive in platform features for your business</p>
+
+              <a href="#" class="ent-dev-link ent">Enterpise solutions</a>
+            </div>
+            <div class="flex1 dev solution">
+                <span class="icon"></span>
+                <h3 class="blue">LinTO developer</h3>
+                <p class="content">LinTO platform documentation and technical resources : <a href="#" class="dev-link">Developer resources</a></p>
+                <p class="content">Try the only 100% Open Source  100% private DIY smart assistant : <a href="#" class="dev-link">Raspberry Pi LinTO Client for makers and R&D</a></p>
+                <p class="content">Browse existing skills and imagine yours : <a href="#" class="dev-link">SKILLS</a></p>
+
+                <a href="https://doc.linto.ai/" target="_blank" class="ent-dev-link dev">Developer resources</a>
+              </div>
+          </div>
+        </section>
+        <section id="use-cases" class="blue-bg">
+          <!-- Decoration angles -->
+          <svg width="100%" height="60px" viewBox="0 0 100 100"
+          preserveAspectRatio="none" class="section-decoration top">
+            <filter id="shadow-top">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"/>
+                <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+                <feFlood flood-color="#333333" flood-opacity="0.3" result="offsetColor"/>
+                <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>
+            </filter>
+            <polygon points="0,0 100,0 100,100" style="filter:url(#shadow-top);"></polygon>
+            <polygon points="0,0 100,0 100,100"></polygon>
+          </svg>
+          <div class="wrapper">
+            <div class="section-title-container">
+              <h2 class="section-title white">Research project partners</h2>
+            </div>
+            <div class="flex-row partner-logo-container">
+              <a href="https://linagora.com/" target="_blank">
+                <img src="assets/img/logo-linagora.png" alt="Linagora" class="partner-logo" />
+              </a>
+              <a href="https://www.irit.fr/" target="_blank">
+                <img src="assets/img/logo-irit.png" alt="Irit" class="partner-logo" />
+              </a>
+              <a href="https://www.zelros.com/" target="_blank">
+                <img src="assets/img/logo-zelros.png" alt="Zelros" class="partner-logo" />
+              </a>
+              <a href="https://www.laas.fr/public/" target="_blank">
+                <img src="assets/img/logo-laas-cnrs.png" alt="LAAS CNRS" class="partner-logo" />
+              </a>
+              <a href="https://www.polytechnique.edu/fr" target="_blank">
+                <img src="assets/img/logo-x-polytechnique.png" alt="l'X polytechnique" class="partner-logo" />
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <div class="wrapper flex-row">
+          <div class="flex1 footer-item">
+            <span class="label">LinTO.ai</span>
+            <ul class="footer-list">
+              <li><a href="#">Homepage</a></li>
+              <li><a href="./enterprises.html">Enterprise solutions</a></li>
+              <li><a href="#">Developer resources</a></li>
+            </ul>
+          </div>
+          <div class="flex1 footer-item">
+            <span class="label">Join us</span>
+            <ul class="footer-list">
+              <li><a href="https://github.com/linto-ai" target="_blank">github</a></li>
+              <li><a href="https://hub.docker.com/u/lintoai" target="_blank">Docker</a></li>
+              <li><a href="#">...</a></li>
+            </ul>
+          </div>
+          <div class="flex1 flex-col footer-item">
+            <a href="https://linagora.com/" target="_blank">
+              <img src="assets/img/logo-linagora.png" alt="Linagora" class="footer-logo" />
+            </a>
+            <a href="https://wakemeup.linto.ai/" target="_blank">
+              <img src="assets/img/wakemeup-logo.png" alt="Wake me up" class="footer-logo" />
+            </a>
+          </div>
+        </div>
+        <div class="legals">
+          Copyright Linagora 2019
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
