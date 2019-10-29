@@ -2,11 +2,20 @@ const Component = require(`../component.js`)
 const path = require("path")
 const debug = require('debug')(`app:webserver`)
 const express = require('express')
-const Session = require('express-session')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const serveIndex = require('serve-index')
-
+const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',')
+const cors = require('cors')
+var corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+}
 
 class WebServer extends Component {
     constructor(app) {
@@ -21,21 +30,12 @@ class WebServer extends Component {
             extended: false
         }))
         this.express.use(cookieParser())
-        let sessionConfig = {
-            resave: false,
-            saveUninitialized: true,
-            secret: 'supersecret',
-            cookie: {
-                secure: false,
-                maxAge: 604800 // 7 days
-            }
-        }
-        this.session = Session(sessionConfig)
-        this.express.use(this.session)
         this.httpServer = this.express.listen(process.env.WEBSERVER_HTTP_PORT, "0.0.0.0", (err) => {
             debug(` WebServer listening on : ${process.env.WEBSERVER_HTTP_PORT}`)
             if (err) throw (err)
         })
+        this.express.use(cors(corsOptions))
+        // Routes
         this.express.use('/downloads', express.static(process.env.PUBLIC_DOWNLOAD_FOLDER), serveIndex(process.env.PUBLIC_DOWNLOAD_FOLDER, { 'icons': true }))
         require('./routes/router.js')(this) // Loads all defined routes
         this.express.use((req, res, next) => {
@@ -44,9 +44,8 @@ class WebServer extends Component {
         })
 
         this.express.use((err, req, res, next) => {
-            console.error(err)
             res.status(500)
-            res.end()
+            res.end(err.message)
         })
 
         return this.init()
