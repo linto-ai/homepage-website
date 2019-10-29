@@ -1,0 +1,23 @@
+{
+  "name": "linto-homepage-runtime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "eventemitter3": "^4.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "nodemailer": "^6.3.1",
+    "ora": "^4.0.2",
+    "serve-index": "^1.9.1"
+  }
+}
