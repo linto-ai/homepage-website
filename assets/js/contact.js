@@ -145,7 +145,7 @@ $(document).ready(function(){
     console.log('send payload:', payload)
     fetch('https://gamma.linto.ai/mail/send', {
         method: 'post',
-        body:JSON.stringify(payload)
+        body:JSON.stringify({payload})
     }).then((res) => res.json())
     .then(function (data) {
       console.log(data)
