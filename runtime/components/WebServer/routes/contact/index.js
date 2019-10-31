@@ -8,14 +8,16 @@ module.exports = (webServer) => {
     controller: async (req, res, next) => {
       try {
         let payload = req.body.payload
-        const sendMail = await mailer.sendContactMail(payload)
+        console.log('body :', req.body)
+        /*const sendMail = await mailer.sendContactMail(payload)
         if (sendMail === 'mailSend') {
           res.json({
             status: 'success'
           })
         } else {
           throw `Error on sending email (${sendMail}).`
-        }
+        }*/
+        res.json({test:'test'})
       } catch (err) {
         console.error(err)
         res.json({

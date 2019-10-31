@@ -2,8 +2,6 @@ const nodemailer = require("nodemailer");
 
 async function sendContactMail(payload) {
   try {
-
-
     const htmlTemplate = require('./html-contact-template.js')
     const plainTextTemplate = require('./plain-text-contact-template.js')
     let transporter = nodemailer.createTransport({
@@ -17,7 +15,6 @@ async function sendContactMail(payload) {
       }
     })
 
-
     transporter.verify(function (error, success) {
       if (error) {
         console.error(error);
@@ -30,8 +27,6 @@ async function sendContactMail(payload) {
       ...payload,
       message: htmlMsg
     }
-
-    console.log(htmlPayload)
     const htmlMail = htmlTemplate.renderHtmlTemplate(htmlPayload)
     const plainTextMail = plainTextTemplate.renderPlainTextTemplate(payload)
 

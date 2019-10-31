@@ -132,7 +132,6 @@ $(document).ready(function(){
     }
   }
 
-
   function sendForm () {
     const payload = {
       subject: 'Contact depuis linto.ai',
@@ -142,15 +141,16 @@ $(document).ready(function(){
       society: $('#contact-society').val(),
       message: $('#contact-msg').val()
     }
-    console.log('send payload:', payload)
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     fetch('https://gamma.linto.ai/mail/send', {
         method: 'post',
-        body:JSON.stringify({payload})
-    }).then((res) => res.json())
+        headers: myHeaders,
+        body: payload
+    })
+    .then((res) => res.json())
     .then(function (data) {
-      console.log(data)
       if (data === 'mailSend') {
-        console.log('mail: success')
         $('#contact-msg').innerHTML = ''
       } else {
         throw 'Une erreur est survenue.'
