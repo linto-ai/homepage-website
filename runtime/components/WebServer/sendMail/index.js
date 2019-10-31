@@ -25,11 +25,13 @@ async function sendContactMail(payload) {
       }
     })
     const to = process.env.CONTACT_EMAIL
-
+    const htmlMsg = payload.message.replace(/\n/g, "<br/>")
     const htmlPayload = {
       ...payload,
-      message: payload.message.replace(/\n/g, "<br/>")
+      message: htmlMsg
     }
+
+    console.log(htmlPayload)
     const htmlMail = htmlTemplate.renderHtmlTemplate(htmlPayload)
     const plainTextMail = plainTextTemplate.renderPlainTextTemplate(payload)
 
