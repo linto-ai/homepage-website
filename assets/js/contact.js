@@ -141,15 +141,18 @@ $(document).ready(function(){
       society: $('#contact-society').val(),
       message: $('#contact-msg').val()
     }
+    console.log(payload, typeof(payload))
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     fetch('https://gamma.linto.ai/mail/send', {
         method: 'post',
         headers: myHeaders,
+        mode: 'no-cors',
         body: payload
     })
     .then((res) => res.json())
     .then(function (data) {
+      console.log('response: ', data)
       if (data === 'mailSend') {
         $('#contact-msg').innerHTML = ''
       } else {
