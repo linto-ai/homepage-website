@@ -133,6 +133,7 @@ $(document).ready(function(){
   }
 
   function sendForm () {
+    $('.submit-btn').innerHTML = 'Envoi...'
     const payload = {
       subject: 'Contact depuis linto.ai',
       username: $('#contact-name').val(),
@@ -141,27 +142,32 @@ $(document).ready(function(){
       society: $('#contact-society').val(),
       message: $('#contact-msg').val()
     }
-    console.log(payload, typeof(payload))
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    fetch('https://gamma.linto.ai/mail/send', {
-        method: 'post',
-        headers: myHeaders,
-        mode: 'no-cors',
-        body: JSON.stringify(payload)
+    axios.post('http://localhost:9000/mail/send', {
+      method: 'post',
+      data: payload
     })
-    .then((res) => res.json())
-    .then(function (data) {
-      console.log('response: ', data)
-      if (data === 'mailSend') {
-        $('#contact-msg').innerHTML = ''
+    .then(function (response) {
+      $('.submit-btn').innerHTML = 'Envoyer'
+      $('.send-notif').removeClass('hidden').addClass('visible').addClass(response.data.status)
+      $('.notif-msg').html(response.data.msg)
+      setTimeout(function () {
+        $('.send-notif').removeClass('visible').addClass('hidden')
+      }, 3000)
+      if(response.data.status === 'success') {
+        // Success
+        $('#contact-msg').val('')
       } else {
-        throw 'Une erreur est survenue.'
+        throw response.data
       }
     })
-    .catch(function (err) {
-      console.log(err)
-    })
+    .catch(function (error) {
+      // Error
+      $('.send-notif').removeClass('hidden').addClass('visible').addClass(error.status)
+      $('.notif-msg').html(error.msg)
+      setTimeout(function () {
+        $('.send-notif').removeClass('visible').addClass('hidden')
+      }, 3000)
+    });
   }
 
   document.getElementById('contact-name').onblur = function () {
