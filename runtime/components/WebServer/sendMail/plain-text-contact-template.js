@@ -6,10 +6,10 @@ Contact depuis linto.ai
 
 ==================
 
-Nom/Prénom: ${payload.userName}
-Société: ${payload.society}
+Nom/Prénom: ${payload.username}
 Email: ${payload.email}
-Objet: ${payload.subject}
+Téléphone: ${payload.phone.length > 0 ? payload.phone : 'non renseigné'}
+Société: ${payload.society.length > 0 ? payload.society : 'non renseigné'}
 
 ==================
 
@@ -19,8 +19,7 @@ ${payload.message}
 ==================
 
 COPYRIGHT LINAGORA 2019
-Siège social: LINAGORA SAS, Tour Franklin, 100 Terrasse Boieldieu, 92800 Puteaux, France
-Téléphone: +33 810 251 251`
+`
 
   return plainTextTemplate
 }

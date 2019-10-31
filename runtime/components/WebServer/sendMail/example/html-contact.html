@@ -1,6 +1,4 @@
-function renderHtmlTemplate(payload) {
-  const htmlTemplate = `
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
   <head>
     <meta charset="utf-8">
@@ -137,7 +135,7 @@ function renderHtmlTemplate(payload) {
               Nom / prénom :
             </td>
             <td class="mail-content">
-              ${payload.username}
+              ${payload.userName}
             </td>
           </tr>
           <tr>
@@ -153,7 +151,7 @@ function renderHtmlTemplate(payload) {
               Société :
             </td>
             <td class="mail-content">
-              ${payload.society.length > 0 ? payload.society : 'Non renseigné'}
+              ${payload.society}
             </td>
           </tr>
 
@@ -162,9 +160,10 @@ function renderHtmlTemplate(payload) {
               Phone :
             </td>
             <td class="mail-content">
-              ${payload.phone.length > 0 ? payload.phone : 'Non renseigné'}
+              ${payload.phone}
             </td>
           </tr>
+
           <tr>
             <td class="mail-contact-label">
               Message :
@@ -187,10 +186,4 @@ function renderHtmlTemplate(payload) {
       </table>
     </div>
   </body>
-  </html>`
-  return htmlTemplate
-}
-
-module.exports = {
-  renderHtmlTemplate
-}
+  </html>
