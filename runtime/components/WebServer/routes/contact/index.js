@@ -7,17 +7,16 @@ module.exports = (webServer) => {
     method: 'post',
     controller: async (req, res, next) => {
       try {
-        let payload = req.body.payload
-        console.log('body :', req.body)
-        /*const sendMail = await mailer.sendContactMail(payload)
+        let payload = req.body.data
+        const sendMail = await mailer.sendContactMail(payload)
         if (sendMail === 'mailSend') {
           res.json({
-            status: 'success'
+            status: 'success',
+            msg: 'Votre message à bien été envoyé. Il sera traité dans les plus brefs délais.'
           })
         } else {
           throw `Error on sending email (${sendMail}).`
-        }*/
-        res.json({test:'test'})
+        }
       } catch (err) {
         console.error(err)
         res.json({

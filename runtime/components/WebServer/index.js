@@ -34,7 +34,7 @@ class WebServer extends Component {
             debug(` WebServer listening on : ${process.env.WEBSERVER_HTTP_PORT}`)
             if (err) throw (err)
         })
-        this.express.use(cors(corsOptions))
+        this.express.use(cors())
         // Routes
         this.express.use('/downloads', express.static(process.env.PUBLIC_DOWNLOAD_FOLDER), serveIndex(process.env.PUBLIC_DOWNLOAD_FOLDER, { 'icons': true }))
         require('./routes/router.js')(this) // Loads all defined routes
