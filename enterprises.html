@@ -7,613 +7,666 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en-GB" />
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript" src="assets/js/ScrollMagic.js"></script>
-    <script type="text/javascript" src="assets/js/velocity.js"></script>
-    <script type="text/javascript" src="assets/js/slick.js"></script> -->
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/ScrollMagic.js"></script> 
+    <script type="text/javascript" src="assets/js/enterprises.js"></script>
+    <script type="text/javascript" src="assets/js/contact.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
   </head>
   <body>
-    <div id="main">
+    <div id="main" class="enterprises">
       <!-- HEADER -->
       <header id="header">
-        <div class="wrapper flex-row">
-          <div class="logo-container flex1">
-            <a href="./index.html">
-              <img src="assets/img/logo-linto-ai.png" alt="LinTO.ai" class="header-logo">
-            </a>
+        <div class="wrapper flex row">
+          <div class="flex1 logo-container">
+            <img src="assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai"/>
           </div>
-          <div class="nav-container flex1">
-            <nav id="header-nav">
-              <ul class="content-list">
-                <li><a href="./index.html" class="header-link">Homepage</a></li>
-                <li><a href="#" class="header-link active">Enterprise solutions</a></li>
-                <li><a href="#" class="header-link">Developer resources</a></li>
-              </ul>
-            </nav>
-          </div>
+          <nav class="flex2 navigation flex row">
+            <a href="/index" class="nav-link">Homepage</a>
+            <a href="/enterprises" class="nav-link active">Enterprise solutions</a>
+            <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
+            <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research project</a>
+          </nav>
         </div>
       </header>
       <!-- END HEADER -->
+      <!-- Vertical Navigation -->
       <div id="page-content">
-        <!-- SECTION PRESENTATION -->
-        <section class="content-section enterprise">
-          <div class="wrapper flex-col">
-            <div class="section-title-container">
-              <h2 class="section-title blue">LinTO, Un projet développé et maintenu par LINAGORA</h2>
-            </div>
-            <p>La plateforme LinTO est une boîte à outils Open-Source permettant le développement et l'intégration de processus d’interactions vocales répondant aux besoins des professionnels et de l’industrie.</p>
-            <p>Le projet LinTO est un projet de recherche subventionné par le PIA (Programme d'Investissement d'Avenir) de l'état français dans le cadre des Grands Défis du numérique. Il allie des entreprises technologique telles que LINAGORA et ZELROS et des laboratoires de recherche comme l'IRIT, le LaaS, le CNRS et le laboratoire de recherche en informatique de l'école polytechnique.</p>
+        <div id="content-nav" class="hidden">
+          <ul>
+            <li class="parent"><a href="#positionnement-technologique" class="content-nav-link">Positionnement technologique</a>
+              <ul>
+                <li class="child"><a href="#deploy-infra" class="content-nav-link">LinTO sur vos infrastructures</a></li>
+                <li class="child"><a href="#ready-for-futur" class="content-nav-link">Industrie du futur ?</a></li>
+                <li class="child"><a href="#amazing-functionnalities" class="content-nav-link">Fonctionnalités à venir</a></li>
+              </ul>
+            </li>
+            <li class="parent"><a href="#linto-in-enterprise" class="content-nav-link">LinTO dans votre entreprise</a>
+              <ul>
+                <li class="child"><a href="#architecture" class="content-nav-link">Architecture client-serveur</a></li>
+                <li class="child"><a href="#linto-server" class="content-nav-link">LinTO - Server</a></li>
+                <li class="child"><a href="#linto-linstt" class="content-nav-link">LinTO - LinSTT</a></li>
+                <li class="child"><a href="#linto-nlu" class="content-nav-link">LinTO - NLU</a></li>
+                <li class="child"><a href="#linto-skills" class="content-nav-link">LINTO - Skill Server</a></li>
+                <li class="child"><a href="#linto-admin" class="content-nav-link">LINTO - Admin</a></li>
+                <li class="child"><a href="#deploy-on-premise" class="content-nav-link">LinTO on premise</a></li>
+              </ul>
+            </li>
+            <li class="parent"><a href="#linto-in-solutions" class="content-nav-link">LinTO dans vos solutions</a>
+              <ul>
+                <li class="child"><a href="#linto-raspberry-arm" class="content-nav-link">Raspberry Pi & systèmes ARM</a></li>
+                <li class="child"><a href="#linto-multiplateforme" class="content-nav-link">Multiplateforme</a></li>
+                <li class="child"><a href="#without-android" class="content-nav-link">Assistant vocal Android SANS Google</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      <!-- END Vertical Navigation -->
+
+        <section class="gradient" id="enterprises-solutions-top">
+          <div class="wrapper flex col">
             
-            <h3 class="content-title">Le modèle économique de LINAGORA</h3>
-            <p>LinTO est intégralement rendu disponible en Open-Source sous licence GNU Affero, sans coût caché, sans frais de licence, sans modèle freemium.</p>
-            <p>Nous proposons nos services pour déployer, spécialiser et maintenir la solution chez vous ou pour vous (SaaS). Nous proposons également d’appuyer vos travaux de recherche & développement en proposant des formations à haute valeur ajoutée (par exemple sur la génération de modèles d’IA) ou encore en développant des compétences métier spécifiques à votre usage.</p>
+            <div class="flex row">
+              <div class="flex2 flex col enterprise-top-content">
+                <h3 class="content-title">Un projet développé et maintenu par LINAGORA</h1>
+                <p>La plateforme LinTO est une boîte à outils Open-Source permettant le développement et l'intégration de processus d’interactions vocales répondant aux besoins des professionnels et de l’industrie.</p>
+                <p>Le projet de recherche est subventionné par le PIA (Programme d'Investissement d'Avenir) de l'état Français dans le cadre des Grands Défis du numérique. Il allie des entreprises technologique telles que LINAGORA et ZELROS et des laboratoires de recherche comme l'IRIT, le LaaS, le CNRS et le laboratoire de recherche en informatique de l'école polytechnique.</p>
+                
+                
+                <h3 class="content-title">Notre modèle économique</h3>
+                <p>Le système est intégralement rendu disponible en Open-Source sous <a href="https://doc.linto.ai/#/?id=gnu-affero-general-public-licence" target="_blank" class="content-link">licence GNU Affero</a>, sans coût caché, sans frais de licence, sans modèle freemium.
+                </p>
+                <p>Nous proposons nos services pour déployer, spécialiser et maintenir la solution chez vous ou pour vous (SaaS). Nous proposons également d’appuyer vos travaux de recherche & développement en proposant des formations à haute valeur ajoutée (par exemple sur la génération de modèles d’IA) ou encore en développant des compétences métier spécifiques à votre usage.</p>
+              </div>
+              <div class="flex1 flex col enterpise-top-img">
+                <img src="assets/img/linto.svg" alt="LinTO" class="linto-ent">
+                <a href="https://linagora.com/" target="_blank"><img src="assets/img/by-linagora.svg" alt="By Linagora" class="by-linagora"></a>
+              </div>
+            </div>
+            
           </div>
         </section>
+        
         <!-- END SECTION PRESENTATION -->
         <!-- SECTION POSITIONNEMENT TECHNOLOGIQUES -->
-        <section class="content-section enterprise">
-          <div class="wrapper flex-col">
-            <div class="section-title-container">
-              <h2 class="section-title blue">Positionnement technologique</h2>
-            </div>
-            
-            <h3 class="content-title">Déployer LinTO sur vos infrastructures</h3>
-            <div class="flex-row">
-              <div class="flex2 content">
-                <p>La conduite d’un système d’information exigeant exclut de facto d'intriquer les données produites (voix, contenus...) avec les API des GAFAM qui collectent vos données.</p>
-                <p>Nous adressons ce besoin pour tous les acteurs de l’industrie, du médical, des banques... Plus généralement, nous proposons un système compatible avec la vie privée et la réglementation RGPD.</p>
-                <p>Les différents composants la plateforme sont  conçus pour être déployés sur les infrastructures propres des entreprises, en toute indépendance, selon une architecture client-serveur modulaire</p>
-              </div>
-              <div class="flex1 centered content-img">
-                <img class="gafam-free" alt="GAFAM free" src="assets/img/gafam-free.png" />
-              </div>
-            </div>
+        <div id="section-content-wrapper" class="flex row">
+          <div class="section-content-container flex1 flex col">
+            <section class="content-section enterprise section-anchor" id="positionnement-technologique">
+              <div class="wrapper flex col">
+                <div class="section-title-container">
+                  <h2 class="section-title">Positionnement technologique</h2>
+                </div>
+                <h3 class="content-title title-anchor" id="deploy-infra">Déployer LinTO sur vos infrastructures</h3>
+                <div class="flex row">
+                  <div class="flex2 content">
+                    <p>Nous adressons le besoin de souveraineté des données pour tous les acteurs de l’industrie, du médical, des banques… Plus généralement, nous proposons un système compatible avec la vie privée et la réglementation RGPD.</p>
+                    <p>Les composants la plateforme sont  conçus pour être déployés sur vos infrastructures propres, en toute indépendance, selon une architecture client-serveur entièrement modulaire</p>
+                  </div>
+                  <div class="flex1 flex centered">
+                    <img class="gafam-free content-img" alt="GAFAM free" src="assets/img/gafam-free.png" />
+                  </div>
+                </div>
+    
+                <h3 class="content-title title-anchor" id="ready-for-futur">Êtes-vous prêts pour l’industrie du futur ?</h3>
 
-            <h3 class="content-title">Êtes-vous prêts pour l’industrie du futur ?</h3>
-            <p>Pour répondre aux besoins du respect des données et de la vie privée, d’autres acteurs du marché proposent des logiciels conçus pour embarquer tout le traitement vocal directement sur les objets physiques.
-            </p>
-            <p>Notre confrères <a href="https://snips.ai/" class="content-link" target="_blank">Snips</a> , par exemple, apporte ici une réponse tout à fait satisfaisante pour certains cas d’usages simples de télécommande à la voix.</p>
-            <p>Nous  considérons pourtant que ce fonctionnement en mode "télécommande" trouve rapidement ses limites pour les exploitants :</p>
-            <ul class="content-list">
-              <li>Adaptation et mise à jour centralisée de vocabulaire métier (ajout des références, de noms propres...)</li>
-              <li>Transcriptions audio en temps réel de contenus de courte ou longue durée avec un ou plusieurs locuteurs</li>
-              <li>Inter-opérabilité avec votre système d’information et APIs</li>
-              <li>Exploitation et maintenance centralisés de "flottes" de points d’accès vocaux.</li>
-              <li>Usage dans vos produits en B2C</li>
-              <li>Portabilité du client vocal</li>
-            </ul>
-            <div class="sub-part flex-col">
-                <h4 class="content-sub-title">Une solution vraiment complète, prêt à déployer et à utiliser</h4>
-
-                <p>En choisissant une des nombreuses solutions payantes de reconnaissance vocale du marché (nuance, vocapia...) il reste à développer tous les logiciels de traitement de la transcription (evaluation des intentions, utilisation des résultats...)</p>
-
-                <p>LinTO rationalise cette expérience en proposant la seule plateforme qui intègre une chaîne d’outils complète pour ajouter de la reconnaissance automatique de la parole à des flux de travail dans l’entreprise.</p>
-            </div>
-
-
-            <div class="flex-row">
-              <div class="compare-solutions-options flex1 flex-col">
-                <span class="blank"></span>
-                <span class="option flex-col">Open source</span>
-                <span class="option flex-col">Speech to text</span>
-                <span class="option flex-col">Large vocabulaire</span>
-                <span class="option flex-col">Adaptation au vocabulaire métier </span>
-                <span class="option flex-col">Fournit des APIs</span>
-                <span class="option flex-col">Données privées</span>
-                <span class="option flex-col">Usage B2C</span>
-                <span class="option flex-col">interopérabilité avec vos APIs et sources de données</span>
-                <span class="option flex-col">Exploitation, monitoring de flottes</span>
-                <span class="option flex-col">Client mutli-plateforme</span>
-                <span class="option flex-col">Usage professionnel</span>
-              </div>
-              <!-- LINTO -->
-              <div class="compare-solutions-options item flex1 flex-col linto">
-                <div class="flex1 solution-values title flex-col linto">
-                  <span class="solution-label">LinTO</span>
-                </div>
-                <div class="flex1 solution-values flex-col" >
-                  <!-- Open source  -->
-                  <span class="icon yes"></span>
-                  <span class="label green">Complet, gratuit</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Speech to text -->
-                  <span class="label green">On premise*</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Large vocabulaire -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Adaptation au vocabulaire métier  -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Fournit des APIs  -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Données privées  -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage B2C -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Intéropérabilité avec vos APIs et sources de données  -->
-                  <span class="icon yes"></span>
-                  <span class="label green">Parfaite</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Exploitation, monitoring de flottes -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Client mutli-plateforme -->
-                  <span class="icon yes"></span>
-                  <span class="label green">Raspberry Pi, Système Android et Web à venir. </span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage professionnel -->
-                  <span class="icon yes"></span>
-                </div>
-              </div>
-              <!-- GAFAM -->
-              <div class="compare-solutions-options item flex1 flex-col">
-                <div class="flex1 solution-values title flex-col">
-                  <span class="solution-label">GAFAM</span>
-                </div>
-                <div class="flex1 solution-values flex-col" >
-                  <!-- Open source  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Speech to text -->
-                  <span class="label green">Cloud</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Large vocabulaire -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Adaptation au vocabulaire métier  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Fournit des APIs  -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Payant</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Données privées  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage B2C -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Intéropérabilité avec vos APIs et sources de données  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Exploitation, monitoring de flottes -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Client mutli-plateforme -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage professionnel -->
-                  <span class="icon yes"></span>
-                </div>
-              </div>
-
-              <!-- Snips -->
-              <div class="compare-solutions-options item flex1 flex-col">
-                <div class="flex1 solution-values title flex-col">
-                  <span class="solution-label">Snips</span>
-                </div>
-                <div class="flex1 solution-values flex-col" >
-                  <!-- Open source  -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Certaines parties</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Speech to text -->
-                  <span class="label green">Embarqué uniquement</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Large vocabulaire -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Adaptation au vocabulaire métier  -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Partiel</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Fournit des APIs  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Données privées  -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage B2C -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Pour de simples télécommandes</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Intéropérabilité avec vos APIs et sources de données  -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Restraintes</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Exploitation, monitoring de flottes -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Partiel</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Client mutli-plateforme -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage professionnel -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Non recommandé</span>
-                </div>
-              </div>
-
-              <!-- SimSoft -->
-              <div class="compare-solutions-options item flex1 flex-col">
-                <div class="flex1 solution-values title flex-col">
-                  <span class="solution-label">SimSoft Industry</span>
-                </div>
-                <div class="flex1 solution-values flex-col" >
-                  <!-- Open source  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Speech to text -->
-                  <span class="label green">Cloud</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Large vocabulaire -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Adaptation au vocabulaire métier  -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Fournit des APIs  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Données privées  -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage B2C -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Intéropérabilité avec vos APIs et sources de données  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Exploitation, monitoring de flottes -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Client mutli-plateforme -->
-                  <span class="icon yes"></span>
-                  <span class="label green">Matériel dédié</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage professionnel -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Uniquement dans un contexte métier particulier</span>
-                </div>
-              </div>
-             
-              <!-- MyCroft -->
-              <div class="compare-solutions-options item flex1 flex-col linto">
-                <div class="flex1 solution-values title flex-col">
-                  <span class="solution-label">MyCroft</span>
-                </div>
-                <div class="flex1 solution-values flex-col" >
-                  <!-- Open source  -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Certaines parties</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Speech to text -->
-                  <span class="label green">Cloud (GAFAM)</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Large vocabulaire -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Partiel</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Adaptation au vocabulaire métier  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Fournit des APIs  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Données privées  -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage B2C -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Intéropérabilité avec vos APIs et sources de données  -->
-                  <span class="icon yes"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Exploitation, monitoring de flottes -->
-                  <span class="icon no"></span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Client mutli-plateforme -->
-                  <span class="icon yes"></span>
-                  <span class="label green">Raspberry Pi, Matériel dédié, Android</span>
-                </div>
-                <div class="flex1 solution-values flex-col">
-                  <!-- Usage professionnel -->
-                  <span class="icon yes but"></span>
-                  <span class="label orange">Non recommandé</span>
-                </div>
-              </div>
-              </span>
-            </div>
-            <span class="star-desc"><strong>On premise*</strong>: Dans certains cas (simple mode commande) Le service Speech To Text de linTO peut être embarqué dans un client matériel. Nous vous invitons à nous contacter pour ce cas d’usage particulier. LinTO propose par ailleurs une fonctionnalité de Mot Reveil (Wake Word) qui est embarqué dans le client vocal.</span>
-                
-            <h3 class="content-title">Des fonctionnalités époustouflantes à venir</h3>
-            <p>Issu d’un projet de recherche ambitieux, LinTO articule sa roadmap technologique autour des fonctionnalités large vocabulaire, multimodales et multi-locuteurs.</p>
-            <p>Nous proposerons à terme des outils inédits pour aider à la rédaction des comptes-rendu des réunions (transcription complète multi-locuteur, identification visuelle des participants grâce à des caméras) et un moteur de résumé basé sur l’IA et le machine-learning. </p>
-          </div>
-        </section>
-        <section class="content-section enterprise">
-          <div class="wrapper flex-col">
-            <div class="section-title-container">
-              <h2 class="section-title blue">LinTO dans votre entreprise</h2>
-            </div>
-            <h3 class="content-title">Architecture client-serveur et services modulaires</h3>
-            <div class="flex-row">
-              <div class="flex1 centered">
-                <img src="/assets/img/schema-services.png" class="schema-services">
-              </div>
-              <div class="flex3 content">
-                <p>La plateforme est constituée de services indépendants et utilisables à la carte selon une logique client / serveur </p>
-                <ul class="content-list" style="margin-top: 20px;">
-                  <li><strong>LinTO - Server</strong> : Ce composant est le point d’entrée sécurisé pour les systèmes clients de votre plateforme.</li>
-                  <li><strong>LinTO - LinSTT</strong> : Speech To Text API. Ce composant réalise la transcription des audios au format texte, via une API.</li>
-                  <li><strong>LinTO - NLU</strong> : Natural Language Understanding. Ce composant réalise l’évaluation et la compréhension du langage naturel fourni à son API au format texte.</li>
-                  <li><strong>LinTO - Skills Server</strong> : Basé sur le moteur "Node Red" d’IBM, Il permet la mise en service de compétences pour un ou plusieurs clients LinTO dans leurs contextes métier.</li>
+                <h4 class="content-sub-title">Aller au delà d’un simple système de télécommande vocale</h4>
+                <ul class="content-list">
+                  <li>Adaptation et mise à jour centralisée de vocabulaire métier (ajout des références, de noms propres...)</li>
+                  <li>Transcriptions audio en temps réel de contenus de courte ou longue durée avec un ou plusieurs locuteurs</li>
+                  <li>Inter-opérabilité pensée pour votre système d’information et le monde des APIs</li>
+                  <li>Exploitation et maintenance centralisés de “flottes” de points d’accès vocaux</li>
+                  <li>Usage dans vos produits en B2C</li>
+                  <li>Portabilité du client vocal</li>
                 </ul>
-              </div>
-            </div>
 
-            <h3 class="content-title">Service de connexion des clients LinTO : LinTO - Server</h3>
-            <div class="flex-row">
-              <div class="flex1 content">
-                  <p>Ce composant est le point d’entrée sécurisé pour les systèmes clients de votre plateforme.</p>
-                  <p>Utilise le standard IoT MQTT pour assurer une exploitation temps réel avec une qualité de service parfaite.</p>
-                  <p>N’importe quel logiciel disposant d’une connectivité MQTT ou WebSocket peut établir la connexion vers votre plateforme.</p>
-                </ul>
-              </div>
-                <div class="flex1 centered">
-                  <img src="/assets/img/schema-linto-server.png" class="schema-server">
-                </div>
-            </div>
-              
-            <h3 class="content-title">Service de transcription de la parole : LinTO - LinSTT</h3>
-            
-            <p>Pierre angulaire de notre plateforme, ce composant réalise la transcription des audios fournis via une API</p>
-            <ul class="content-list">
-              <li>Utilisable en streaming / fichier audio</li>
-              <li>Disponible pour d’autres flux de travail à l’intérieur de l’entreprise, par exemple pour ajouter un accès vocal à des applications métier existantes ou des chatbots. </li>
-              <li>Répond parfaitement aux enjeux industriels de déploiement et de qualité de service avec une solide implantation scalable sur clusters et une API de management</li>
-              <li>Transmet les résultats au format texte pour des contenus audio de courtes ou longues durées</li>
-              <li>Permet l’utilisation de plusieurs modèles IA dédiés à des cas d’utilisation spécifiques</li>
-              <li>Transcrit efficacement les noms propres, les termes métiers et propose une mise en forme spécifique au contexte (dates, nombres, acronymes...)</li>
-              <li>Apprend automatiquement selon vos usages lors de l’ajout ou de la suppression de compétences (Skills) à votre plateforme</li>
-            </ul>
-            <div class="sub-part flex-col">
-              <h4 class="content-sub-title">Des performances de premier plan</h4>
-              <div class="flex-row">
-                <div class="flex1">
-                  <table class="content-table">
-                    <thead>
-                      <tr>
-                        <th class="blank"></th>
-                        <th>Word Error Rate</th>
-                        <th>Sentence Error Rate</th>
-                        <th>Temps</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="label">Système large vocabulaire</td>
-                        <td>25.75%</td>
-                        <td>70.67%</td>
-                        <td>237s</td>
-                      </tr>
-                      <tr>
-                        <td class="label">Système commande: Modèle 1</td>
-                        <td>4.28%</td>
-                        <td>20.67%</td>
-                        <td>195s</td>
-                      </tr>
-                      <tr>
-                        <td class="label">Système commande: Modèle 2</td>
-                        <td>4.62%</td>
-                        <td>22.12%</td>
-                        <td>199s</td>
-                      </tr>
-                      <tr>
-                        <td class="label">Système commande: Modèle 3</td>
-                        <td>5.23%</td>
-                        <td>25.00%</td>
-                        <td>204s</td>
-                      </tr>
-                      <tr>
-                        <td class="label">Système commande: Modèle 4</td>
-                        <td>5.37%</td>
-                        <td>25.48%</td>
-                        <td>216s</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="flex1">
-                  <ul class="content-list">
-                    <li>
-                      <strong>Modèle 1</strong> : utilisant seulement les 13 commandes d’évaluation</li>
-                    <li>
-                      <strong>Modèle 2</strong> : utilisant 76 commandes représentant les 7 compétences
-                      
-                    </li>
-                    <li>
-                      <strong>Modèle 3 </strong>: utilisant 171 commandes représentant 14 compétences
-                    </li>
-                    <li>
-                        <strong>Modèle 4 </strong>: utilisant 237 commandes représentant 22 compétences
-                    </li>
+                <h4 class="content-sub-title">Une solution vraiment complète, prête à déployer et à utiliser</h4>
+                <p>LinTO se concentre sur votre retour sur investissement en assurant un déploiement rapide et efficace des fonctionnalités grâce à une intégration complète de tous les outils nécessaire à la reconnaissance automatique de la parole dans les flux de travail de l’entreprise.</p>
+
+                <table id="compare-table">
+                  <thead>
+                    <tr>
+                      <th class="blank"></th>
+                      <th class="linto">LinTO</th>
+                      <th>GAFAM / IBM / Nuance</th>
+                      <th>Snips</th>
+                      <th>MyCroft</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Open source -->
+                    <tr>
+                      <td class="option">Open Source</td>
+                      <td>
+                        <span class="icon linto"></span>
+                        <span class="label linto">Complete, free-free</span>
+                      </td>
+                      <td>
+                          <span class="icon no"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Certaines parties</span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Certaines parties</span>
+                      </td>
+                    </tr>
+                    <!-- Speech To Text -->
+                    <tr>
+                      <td class="option">Speech To Text</td>
+                      <td>
+                        <span class="label linto">*On premise</span>
+                      </td>
+                      <td>
+                        <span class="label yes">Cloud</span>
+                      </td>
+                      <td>
+                        <span class="label yes">Embarqué uniquement</span>
+                      </td>
+                      <td>
+                        <span class="label yes">Cloud (GAFAM / IBM)</span>
+                      </td>
+                    </tr>
+                    <!-- Large vocabulaire -->
+                    <tr>
+                      <td class="option">Large vocabulaire</td>
+                      <td>
+                        <span class="icon linto"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Partiel</span>
+                      </td>
+                    </tr>
+                    <!-- Adaptation au vocabulaire -->
+                    <tr>
+                      <td class="option">Adaptation au vocabulaire</td>
+                      <td>
+                        <span class="icon linto"></span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Partiel</span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                    </tr>
+                    <!-- Fournit des APIs -->
+                    <tr>
+                      <td class="option">Fournit des APIs</td>
+                      <td>
+                        <span class="icon linto"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Payant</span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                    </tr>
+                    <!-- Données privées -->
+                    <tr>
+                      <td class="option">Données privées</td>
+                      <td>
+                        <span class="icon linto"></span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                    </tr>
+                    <!-- Usage B2C -->
+                    <tr>
+                      <td class="option">Usage B2C</td>
+                      <td>
+                        <span class="icon linto"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Payant</span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Pour de simples télécommandes</span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                    </tr>
+                    <!-- Intéropérabilité avec vos APIs et sources de données -->
+                    <tr>
+                      <td class="option">Intéropérabilité avec vos APIs et sources de données</td>
+                      <td>
+                        <span class="icon linto"></span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Restreinte</span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                      </td>
+                    </tr>
+                    <!-- Exploitation, monitoring de flottes -->
+                    <tr>
+                      <td class="option">Exploitation, monitoring de flottes</td>
+                      <td>
+                        <span class="icon linto"></span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Partiel</span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                    </tr>
+                    <!-- Client Multiplateforme -->
+                    <tr>
+                      <td class="option">Client Multiplateforme</td>
+                      <td>
+                        <span class="icon linto"></span>
+                        <span class="label linto">Raspberry Pi, Système Android et Web à venir.</span>
+                      </td>
+                      <td>
+                        <span class="icon no"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Système embarqué, Raspberry Pi</span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Système embarqué, Raspberry Pi</span>
+                      </td>
+                    </tr>
+                    <!-- Usage professionel -->
+                    <tr>
+                      <td class="option">Usage professionel</td>
+                      <td>
+                        <span class="icon linto"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Non recommandé</span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                      </td>
+                      <td>
+                        <span class="icon yes"></span>
+                        <span class="label yes">Non recommandé</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="compare-infos">
+                    <strong>*On premise</strong>: Dans certains cas (simple mode commande) Le service Speech To Text de linTO peut être embarqué dans un client matériel. Nous vous invitons à nous contacter pour ce cas d’usage particulier. LinTO propose par ailleurs une fonctionnalité de Mot Reveil (Wake Word) qui est embarqué dans le client vocal.
+                </p>
+
+                <h3 class="content-title title-anchor" id="amazing-functionnalities">Des fonctionnalités époustouflantes à venir</h3>
+                <p>Issu d’un projet de recherche ambitieux, la roadmap produit s’articule autour des fonctionnalités large vocabulaire, multimodales et multi-locuteurs.</p>
+                <p>Nous proposerons bientôt des outils inédits pour aider à la rédaction des comptes-rendu des réunions (transcription complète multi-locuteur, identification visuelle des participants grâce à des caméras) et un moteur de résumé basé sur l’IA et le machine-learning.</p>
+
+                <div class="sub-part">
+                  <h4 class="content-sub-title">Nos publications sur ces thématiques :</h4>
+                  
+                  <ul class="publication-list">
+                    <li><a href="https://www.aclweb.org/anthology/P19-1061.pdf" target="_blank" class="content-link">Apprentissage faiblement supervisé de la structure discursive</a></li> 
+                    <li class="conf"><i>Conférence</i> : <a href="http://www.acl2019.org/EN/index.xhtml" target="_blank" class="content-link">ACL 2019</a></li>
+
+                    <li><a href="https://www.irit.fr/pfia2019/wp-content/uploads/2019/07/actes_TALN-RECITAL-courts_CH_PFIA2019-2.pdf#%5B%7B%22num%22%3A102%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C56.693%2C771.024%2Cnull%5D" target="_blank" class="content-link">Data Programming for Learning Discourse Structure</a></li> 
+                    <li class="conf"><i>Conférence</i> : <a href="https://www.irit.fr/pfia2019/taln-recital/" target="_blank" class="content-link">TALN-RECITAL 2019</a></li>
+
+                    <li><a href="http://www.dialog-21.ru/media/4584/badenesplusetal-112.pdf" target="_blank" class="content-link">Learning multi-party discourse structure using weak supervision</a></li> 
+                    <li class="conf"><i>Conférence</i> : <a href="http://www.dialog-21.ru/en/" target="_blank" class="content-link">Computational Linguistics and Intellectual Technologies: Proceedings of the International Conference "Dialogue 2019"</a></li>
+
+                    <li><a href="https://www.aclweb.org/anthology/P18-1062/" target="_blank" class="content-link">Learning multi-party discourse structure using weak supervision</a></li> 
+                    <li class="conf"><i>Conférence</i> : <a href="http://www.acl2019.org/EN/index.xhtml" target="_blank" class="content-link">ACL 2019</a></li>
+
+                    <li><a href="https://arxiv.org/abs/1904.09491" target="_blank" class="content-link">Energy-based Self-attentive Learning of Abstractive Communities for Spoken Language Understanding </a></li> 
+                    
                   </ul>
-                  <p class="example"><strong>Exemple de compétences</strong>: weather, news, mail, note, meeting-control (enregistrement, mode réunion), traffic, control-Linto, control-equipment, time, meeting-time, chrono, meeting-report, meeting-participant, videoconf, ...</p>
+                  
                 </div>
               </div>
-            </div>
-            
-            <h3 class="content-title">Service de Natural Language Understanding : LinTO - NLU</h3>
-            <p>Ce composant réalise l’évaluation et la compréhension du langage naturel fourni à son API au format texte. Il détecte les intentions, valorise les entités et produit une réponse JSON qui peut ensuite être utilisée par le service d’exécution des compétences.</p>
-            <ul class="content-list">
-              <li>Basé sur le projet <a href="https://github.com/theopenconversationkit/tock" target="_blank" class="content-link">Tock de Voyages SNCF</a> (The Open Conversation Kit)</li>
-              <li>Supporte d’autres moteurs comme <a href="https://rasa.com/" target="_blank" class="content-link">Rasa</a> ou <a href="https://nlp.stanford.edu/" target="_blank" class="content-link">Stanford NLP</a></li>
-              <li>Supporte l’utilisation de plusieurs modèles IA dédiés à des cas d’utilisation spécifiques</li>
-              <li>Apprend automatiquement selon vos usages lors de l’ajout ou de la suppression de compétences (Skills) à votre plateforme</li>
-            </ul>
-
-            <h3 class="content-title">Service d'exécution de compétences (Skills) : LinTO - Skill Server</h3>
-            <p>Basé sur le moteur <a href="https://nodered.org" target="_blank" class="content-link">Node Red</a> d’IBM, il permet la mise en service de compétences pour un ou plusieurs clients LinTO dans leurs contextes métier (Une salle de réunion, un couloir ou encore dans le cadre du pilotage d’une application à la voix).</p>
-            <ul class="content-list">
-              <li>Compatible avec toute la base existante de compétences Node Red (plus de 2000 !)</li>
-              <li>Paramétrage centralisé des bus de données, des informations d’authentification etc.</li>
-              <li>Développement simple de compétences métiers dédiées avec de nombreux exemples fournis - <a href="https://doc.linto.ai/" target="_blank" class="content-link">voir documentation</a></li>
-              <li>Re-entraînement automatique des modèles d’IA lors du déploiement ou de la suppression de compétences et de dictionnaires</li>
-              <li>Interopérabilité simplifiée des compétences avec toutes vos APIs ou objets connectés grâce à une programmation visuelle en flux</li>
-            </ul>
-            
-            <h3 class="content-title">Interface d’administration LinTO - Admin</h3>
-            <p>Application web permettant de réaliser toutes les opérations de paramétrage et de maintenance de la plateforme.</p>
-            <ul class="content-list">
-                <li>Management de multiples contextes définissant autants de flux de travail spécifiques via des templates (Salle de réunion, Application, etc.)</li>
-                <li>Édition visuelle du flux de travail (ajout / suppression de compétences)</li>
-                <li>Pilotage des mises à jour, exploitation de flottes de client</li>
-                <li>Monitoring temps réél des clients LinTO connectés</li>
-                <li>Provisionning et déploiement de clients LinTO avec un mécanisme d'enrolement par numéros de série</li>
-                <li>Paramétrage distant du niveau sonore, de la connectivité réseau, des langues, etc.</li>
-            </ul>
-
-            <h3 class="content-title">Exemple de déploiement de LinTO on premise</h3>
-            <img class="schema-deploy-linto" src="/assets/img/schema-linto-deploy.png">
+            </section>
+            <section class="content-section enterprise section-anchor" id="linto-in-enterprise">
+              <div class="wrapper flex col">
+                <div class="section-title-container">
+                  <h2 class="section-title">LinTO dans votre entreprise</h2>
+                </div>
+                <h3 class="content-title title-anchor" id="architecture">Architecture client-serveur et services modulaires</h3>
+                <div class="flex row">
+                  <div class="flex1 centered">
+                    <img src="/assets/img/schema-services.png" class="schema-services">
+                  </div>
+                  <div class="flex3 content">
+                    <p>La plateforme est constituée de services indépendants et utilisables à la carte selon une logique client / serveur </p>
+                    <ul class="content-list" style="margin-top: 20px;">
+                      <li><strong>LinTO - Server</strong> : Ce composant est le point d’entrée sécurisé pour les systèmes clients de votre plateforme.</li>
+                      <li><strong>LinTO - LinSTT</strong> : Speech To Text API. Ce composant réalise la transcription des audios au format texte, via une API.</li>
+                      <li><strong>LinTO - NLU</strong> : Natural Language Understanding. Ce composant réalise l’évaluation et la compréhension du langage naturel fourni à son API au format texte.</li>
+                      <li><strong>LinTO - Skills Server</strong> : Basé sur le moteur "Node Red" d’IBM, Il permet la mise en service de compétences pour un ou plusieurs clients LinTO dans leurs contextes métier.</li>
+                    </ul>
+                  </div>
+                </div>
+    
+                <h3 class="content-title title-anchor" id="linto-server">Service de connexion des clients LinTO : LinTO - Server</h3>
+                <div class="flex row">
+                  <div class="flex1 content">
+                      <p>Ce composant est le point d’entrée sécurisé pour les systèmes clients de votre plateforme.</p>
+                      <p>Utilise le standard IoT MQTT pour assurer une exploitation temps réel avec une qualité de service parfaite.</p>
+                      <p>N’importe quel logiciel disposant d’une connectivité MQTT ou WebSocket peut établir la connexion vers votre plateforme.</p>
+                    </ul>
+                  </div>
+                    <div class="flex1 centered">
+                      <img src="/assets/img/schema-linto-server.png" class="schema-server">
+                    </div>
+                  </div>
+                  
+                <h3 class="content-title title-anchor" id="linto-linstt">Service de transcription de la parole : LinTO - LinSTT</h3>
+                
+                <p>Pierre angulaire de notre plateforme, ce composant réalise la transcription des audios fournis via une API</p>
+                <ul class="content-list">
+                  <li>Utilisable en streaming / fichier audio</li>
+                  <li>Disponible pour d’autres flux de travail à l’intérieur de l’entreprise, par exemple pour ajouter un accès vocal à des applications métier existantes ou des chatbots. </li>
+                  <li>Répond parfaitement aux enjeux industriels de déploiement et de qualité de service avec une solide implantation scalable sur clusters et une API de management</li>
+                  <li>Transmet les résultats au format texte pour des contenus audio de courtes ou longues durées</li>
+                  <li>Permet l’utilisation de plusieurs modèles IA dédiés à des cas d’utilisation spécifiques</li>
+                  <li>Transcrit efficacement les noms propres, les termes métiers et propose une mise en forme spécifique au contexte (dates, nombres, acronymes...)</li>
+                  <li>Apprend automatiquement selon vos usages lors de l’ajout ou de la suppression de compétences (Skills) à votre plateforme</li>
+                </ul>
+                <div class="sub-part flex col">
+                  <h4 class="content-sub-title">Des performances de premier plan</h4>
+                  <span class="table-label">Exprimé en taux d'erreur (Word Error Rate)</span>
+                  <div class="flex row">
+                    <div class="flex1">
+                      <table class="content-table">
+                        <thead>
+                          <tr>
+                            <th class="blank" colspan="2"></th>
+                            
+                            <th class="title parole-lue">Parole lue</th>
+                            <th class="title parole-spontanee">Parole spontanée</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="brand-logo">
+                              <img src="/assets/img/brands/logo-google.png" alt="google">
+                            </td>
+                            <td class="brand-text">Google</td>
+                            <td class="val">15.37%</td>
+                            <td class="val">22.80%</td>
+                          </tr>
+                          <tr>
+                            <td class="brand-logo">
+                              <img src="/assets/img/brands/logo-wit.png" alt="Wit.ai">
+                            </td>
+                            <td class="brand-text">Wit.ai</td>
+                            <td class="val">17.69%</td>
+                            <td class="val">24.18%</td>
+                          </tr>
+                          <tr>
+                            <td class="brand-logo">
+                              <img src="/assets/img/brands/logo-bing.png" alt="Bing">
+                            </td>
+                            <td class="brand-text">Bing</td>
+                            <td class="val">27.09%</td>
+                            <td class="val">29.78%</td>
+                          </tr>
+                          <tr>
+                            <td class="brand-logo">
+                              <img src="/assets/img/brands/logo-lia.png" alt="LIA">
+                            </td>
+                            <td class="brand-text">LIA</td>
+                            <td class="val">18.14%</td>
+                            <td class="val">17.23%</td>
+                          </tr>
+                          <tr>
+                            <td class="brand-logo">
+                              <img src="/assets/img/brands/logo-speechmatics.png" alt="speechmatics">
+                            </td>
+                            <td class="brand-text">Speechmatics</td>
+                            <td class="val">14.42%</td>
+                            <td class="val">17.62%</td>
+                          </tr>
+                          <tr>
+                            <td class="brand-logo">
+                              <img src="/assets/img/brands/logo-nuance.png" alt="nuance">
+                            </td>
+                            <td class="brand-text">Nuance</td>
+                            <td class="val">17.96%</td>
+                            <td class="val">16.81%</td>
+                          </tr>
+                          <tr>
+                            <td class="brand-logo">
+                              <img src="/assets/img/brands/logo-ibm.png" alt="IBM">
+                            </td>
+                            <td class="brand-text">IBM</td>
+                            <td class="val">25.14%</td>
+                            <td class="val">36.93%</td>
+                          </tr>
+                          <tr class="linagora">
+                            <td class="brand-logo">
+                              <img src="/assets/img/brands/logo-linagora.png" alt="linagora">
+                            </td>
+                            <td class="brand-text">Lin XtraLarge</td>
+                            <td class="val">10.07%</td>
+                            <td class="val">10.49%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <details>
+                          <summary style="outline:none; cursor:pointer;">Protocole dévaluation</summary>
+                          
+                          <ul class="content-list">
+  
+                            <li>Sélection de corpus
+                              <ul>
+                                <li>30 minutes d'extrait audio avec leur transcription "verbatim" ont été sélectionnées pour les deux ensembles de parole lue et spontanée.</li>
+                                <li>Les corpus ont été enregistré dans un environnement propre ("SNR ~=  20")</li>
+                                <li>Le corpus parole lue a été enregistré par 8 locuteurs (4 hommes et 4 femmes) sur un journal français d'actualité</li>
+                              </ul>
+                            </li>
+                            <li>Calcul des performances et normalisation
+                              <ul>
+                                <li>Le calcul des performances a été évalué sur la transcription verbatim sans ponctuation, une normalisation des chiffres, dates, pourcentage.. etc a été effectué</li>
+                                <li>Le taux d'erreur mot WER qui est reporté sur le tableau évalue le taux d'insertion, de suppression, ou de substitution de mot prédit par rapport à la vérité terrain. Plus la valeur est basse, plus le système est performant</li>
+                              </ul>
+                            </li>
+                          </ul>
+                      </details>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+                <h3 class="content-title title-anchor" id="linto-nlu">Service de Natural Language Understanding : LinTO - NLU</h3>
+                <p>Ce composant réalise l’évaluation et la compréhension du langage naturel fourni à son API au format texte. Il détecte les intentions, valorise les entités et produit une réponse JSON qui peut ensuite être utilisée par le service d’exécution des compétences.</p>
+                <ul class="content-list">
+                  <li>Basé sur le projet <a href="https://github.com/theopenconversationkit/tock" target="_blank" class="content-link">Tock de Voyages SNCF</a> (The Open Conversation Kit)</li>
+                  <li>Supporte d’autres moteurs comme <a href="https://rasa.com/" target="_blank" class="content-link">Rasa</a> ou <a href="https://nlp.stanford.edu/" target="_blank" class="content-link">Stanford NLP</a></li>
+                  <li>Supporte l’utilisation de plusieurs modèles IA dédiés à des cas d’utilisation spécifiques</li>
+                  <li>Apprend automatiquement selon vos usages lors de l’ajout ou de la suppression de compétences (Skills) à votre plateforme</li>
+                </ul>
+    
+                <h3 class="content-title title-anchor" id="linto-skills">Service d'exécution de compétences (Skills) : LinTO - Skill Server</h3>
+                <p>Basé sur le moteur <a href="https://nodered.org" target="_blank" class="content-link">Node Red</a> d’IBM, il permet la mise en service de compétences pour un ou plusieurs clients LinTO dans leurs contextes métier (Une salle de réunion, un couloir ou encore dans le cadre du pilotage d’une application à la voix).</p>
+                <ul class="content-list">
+                  <li>Compatible avec toute la base existante de compétences Node Red (plus de 2000 !)</li>
+                  <li>Paramétrage centralisé des bus de données, des informations d’authentification etc.</li>
+                  <li>Développement simple de compétences métiers dédiées avec de nombreux exemples fournis - <a href="https://doc.linto.ai/" target="_blank" class="content-link">voir documentation</a></li>
+                  <li>Re-entraînement automatique des modèles d’IA lors du déploiement ou de la suppression de compétences et de dictionnaires</li>
+                  <li>Interopérabilité simplifiée des compétences avec toutes vos APIs ou objets connectés grâce à une programmation visuelle en flux</li>
+                </ul>
+                
+                <h3 class="content-title title-anchor" id="linto-admin">Interface d’administration LinTO - Admin</h3>
+                <p>Application web permettant de réaliser toutes les opérations de paramétrage et de maintenance de la plateforme.</p>
+                <ul class="content-list">
+                    <li>Management de multiples contextes définissant autants de flux de travail spécifiques via des templates (Salle de réunion, Application, etc.)</li>
+                    <li>Édition visuelle du flux de travail (ajout / suppression de compétences)</li>
+                    <li>Pilotage des mises à jour, exploitation de flottes de client</li>
+                    <li>Monitoring temps réél des clients LinTO connectés</li>
+                    <li>Provisionning et déploiement de clients LinTO avec un mécanisme d'enrolement par numéros de série</li>
+                    <li>Paramétrage distant du niveau sonore, de la connectivité réseau, des langues, etc.</li>
+                </ul>
+    
+                <h3 class="content-title title-anchor" id="deploy-on-premise">Exemple de déploiement de LinTO on premise</h3>
+                <div class="flex row centered">
+                  <img class="schema-deploy-linto" src="/assets/img/schema-linto-deploy.png">
+                </div>
+                
+              </div>
+            </section>
+            <section class="content-section enterprise section-anchor" id="linto-in-solutions">
+              <div class="wrapper flex col">
+                <div class="section-title-container">
+                  <h2 class="section-title">LinTO dans vos solutions</h2>
+                </div>
+    
+                <h3 class="content-title title-anchor" id="linto-raspberry-arm">LinTO pour Raspberry Pi & systèmes ARM</h3>
+                <p>Nous proposons actuellement un client LinTO de référence basé sur le Raspberry Pi (ou autres smart board ARM). Cette solution est un démonstrateur idéal pour vos travaux de R&D sur l’assistance vocale en entreprises.</p>
+                <p>Cette solution peut-être mise en oeuvre très simplement car nous la proposons clef en main (kit Raspberry, guides et liens de téléchargement) depuis notre <a href="https://doc.linto.ai/" target="_blank" class="content-link">espace dédié aux développeurs</a>.</p>
+                <p>Pour les makers, les hobbyistes et les équipes de R&D qui veulent s’affranchir de toute connexion extérieure aux systèmes des GAFAM, nous proposons ici le système le plus abouti dans l’état de l’art des projets open-source d’assistants vocaux.</p>
+                <ul class="content-list">
+                  <li>Modèles de Wake word(s) embarqués customizables</li>
+                  <li>Toute la chaîne de traitement vocal maîtrisée sur infrastructures propres</li>
+                  <li>Suite complète d’outils de création d’images système ARM basé sur l’émulateur Qemu</li>
+                  <li>Interface graphique riche et facilement adaptable</li>
+                </ul>
+                <p>LINAGORA propose une assistance à maîtrise d’ouvrage complète pour passer du prototype à la fabrication industrielle d’une flotte d’équipement qui répondent à vos critères.</p>
+    
+                <h3 class="content-title title-anchor" id="create-smart-assistant">Vous souhaitez concevoir un smart-assistant ?</h3>
+                <div class="flex row">
+                  <div class="flex1">
+                    <p>Sur ce marché qui reste émergent, de nombreux acteurs, comme MyCroft, Archos ou Sonos produisent des solutions construites autour de Google Home ou Alexa.</p>
+                    <p>Ce choix est réalisé par défaut car les caractéristiques de ces systèmes (Données non privées et pas d’adaptation au vocabulaire métier) les cantonnent à un marché B2C peu concerné (encore) par les problématiques de sécurité et de criticité des données.</p>
+                    <p>La plateforme LinTO embrasse de bout en bout ces enjeux pour devenir le moteur qui propulse votre produit professionnel.</p>
+                  </div>
+                </div>
+    
+    
+                <h3 class="content-title title-anchor" id="linto-multiplateforme">LinTO multiplateforme</h3>
+                <p>La connexion d’un système client à la plateforme est simplifiée grâce à l’utilisation du composant LinTO - Server qui supporte le protocole standard de l’IoT, le  MQTT. Cette connexion se met facilement en oeuvre dans un développement logiciel dédié à votre projet.</p>
+                <p>Le développement d’un client Android et Web, rationalisant l’expérience du client LinTO, constitue l’approche que nous privilégions dans notre roadmap produit.</p>
+                <p>Le client multiplateforme est actuellement en cours de développement et vise à répondre aux attentes de l’industrie quant au déploiement de la solution sans développements spécifiques. (Objectif de première version publique Q2 2020)</p>
+                
+    
+                <h3 class="content-title title-anchor" id="without-android">Assistant vocal Android SANS Google</h3>
+                <p>De nombreuses initiatives existent pour "dé-googliser" les téléphones Android. (<a href="https://lineageos.org/" target="_blank" class="content-link">Lineage OS</a> ou le projet <a href="https://e.foundation/?lang=fr" target="_blank" class="content-link">/e/</a>)</p>
+                <p>Ces initiatives s’appuient sur diverses API oogle (<a href="http://www.nicola-spanti.info/fr/documents/tutorials/computing/os/android/without-google-as-a-user.html" target="_blank" class="content-link">exemple</a>).</p>
+                <p>Les notifications push, les cartes géographiques, le moteur de recherche... des alternatives existent, mais pas pour remplacer le fameux "Ok Google".</p>
+                <p>Beaucoup d’entreprises distribuent ainsi des produits Android professionnalisés grâce à ce type de distribution AOSP (<a href="https://source.android.com/" target="_blank" class="content-link">Android Open Source Project</a>) mais doivent faire l’impasse sur le pilotage vocal.</p>
+                <p>La plateforme LinTO vise à permettre enfin de mettre en oeuvre l’interactivité vocale dans un périphérique Android entièrement respectueux des données des utilisateurs.</p>
+                <p>Si vous vous reconnaissez dans ce cas de figure contactez-nous pour avoir en priorité un aperçu des capacités de notre système.</p>
+              </div>
+            </section>
           </div>
-        </section>
-        <section class="content-section enterprise">
-          <div class="wrapper flex-col">
+        </div>
+        <section id="contact">
+          <div class="wrapper flex col">
             <div class="section-title-container">
-              <h2 class="section-title blue">LinTO dans vos solutions</h2>
+              <h2 class="section-title white">Nous contacter</h2>
             </div>
-
-            <h3 class="content-title">LinTO pour Raspberry Pi & systèmes ARM</h3>
-            <p>Nous proposons actuellement un client LinTO de référence basé sur le Raspberry Pi (ou autres smart board ARM). Cette solution est un démonstrateur idéal pour vos travaux de R&D sur l’assistance vocale en entreprises.</p>
-            <p>Cette solution peut-être mise en oeuvre très simplement car nous la proposons clef en main (kit Raspberry, guides et liens de téléchargement) depuis notre <a href="https://doc.linto.ai/" target="_blank" class="content-link">espace dédié aux développeurs</a>.</p>
-            <p>Pour les makers, les hobbyistes et les équipes de R&D qui veulent s’affranchir de toute connexion extérieure aux systèmes des GAFAM, nous proposons ici le système le plus abouti dans l’état de l’art des projets open-source d’assistants vocaux.</p>
-            <ul class="content-list">
-              <li>Modèles de Wake word(s) embarqués customizables</li>
-              <li>Toute la chaîne de traitement vocal maîtrisée sur infrastructures propres</li>
-              <li>Suite complète d’outils de création d’images système ARM basé sur l’émulateur Qemu</li>
-              <li>Interface graphique riche et facilement adaptable</li>
-            </ul>
-            <p>LINAGORA propose une assistance à maîtrise d’ouvrage complète pour passer du prototype à la fabrication industrielle d’une flotte d’équipement qui répondent à vos critères.</p>
-
-            <h3 class="content-title">Vous souhaitez concevoir un smart-assistant ?</h3>
-            <div class="flex-row">
-              <div class="flex1">
-                <p>Sur ce marché qui reste émergent, de nombreux acteurs, comme MyCroft, Archos ou Sonos produisent des solutions construites autour de Google Home ou Alexa.</p>
-                <p>Ce choix est réalisé par défaut car les caractéristiques de ces systèmes (Données non privées et pas d’adaptation au vocabulaire métier) les cantonnent à un marché B2C peu concerné (encore) par les problématiques de sécurité et de criticité des données.</p>
-                <p>La plateforme LinTO embrasse de bout en bout ces enjeux pour devenir le moteur qui propulse votre produit professionnel.</p>
+            <div class="contact-wrapper flex row">
+              <div class="flex1 flex col">
+                <div class="field-container flex1">
+                  <span class="label">Nom Prénom<i class="required">*</i> :</span>
+                  <input type="text" id="contact-name" class="contact-input" />
+                  <span class="error-field username">
+                </div>
+                <div class="field-container flex1">
+                  <span class="label">Email<i class="required">*</i> :</span>
+                  <input type="text" id="contact-email" class="contact-input" />
+                  <span class="error-field email"></span>
+                </div>
+                <div class="field-container flex1">
+                  <span class="label">Téléphone :</span>
+                  <input type="text" id="contact-phone" class="contact-input" />
+                  <span class="error-field phone"></span>
+                </div>
+                <div class="field-container flex1">
+                  <span class="label">Société :</span>
+                  <input type="text" id="contact-society" class="contact-input" />
+                  <span class="error-field society"></span>
+                </div>
+              </div>
+              <div class="flex1 flex col">
+              <div class="field-container flex1">
+                <span class="label">Message<i class="required">*</i> :</span>
+                <textarea id="contact-msg" class="contact-textarea"></textarea>
+                <span class="error-field msg"></span>
+              </div>
+              <div class="field-container submit">
+                <button class="submit-btn">Envoyer</button>
               </div>
             </div>
-
-
-            <h3 class="content-title">LinTO multiplateforme</h3>
-            <p>La connexion d’un système client à la plateforme est simplifiée grâce à l’utilisation du composant LinTO - Server qui supporte le protocole standard de l’IoT, le  MQTT. Cette connexion se met facilement en oeuvre dans un développement logiciel dédié à votre projet.</p>
-            <p>Le développement d’un client Android et Web, rationalisant l’expérience du client LinTO, constitue l’approche que nous privilégions dans notre roadmap produit.</p>
-            <p>Le client multiplateforme est actuellement en cours de développement et vise à répondre aux attentes de l’industrie quant au déploiement de la solution sans développements spécifiques. (Objectif de première version publique Q2 2020)</p>
-            
-
-            <h3 class="content-title">Assistant vocal Android SANS Google</h3>
-            <p>De nombreuses initiatives existent pour "dé-googliser" les téléphones Android. (<a href="https://lineageos.org/" target="_blank" class="content-link">Lineage OS</a> ou le projet <a href="https://e.foundation/?lang=fr" target="_blank" class="content-link">/e/</a>)</p>
-            <p>Ces initiatives s’appuient sur diverses API de remplacement pour les produits Google (<a href="http://www.nicola-spanti.info/fr/documents/tutorials/computing/os/android/without-google-as-a-user.html" target="_blank" class="content-link">exemple</a>).</p>
-            <p>Les notifications push, les cartes géographiques, le moteur de recherche... des alternatives existent, mais pas pour remplacer le fameux "Ok Google".</p>
-            <p>Beaucoup d’entreprises distribuent ainsi des produits Android professionnalisés grâce à ce type de distribution AOSP (<a href="https://source.android.com/" target="_blank" class="content-link">Android Open Source Project</a>) mais doivent faire l’impasse sur le pilotage vocal.</p>
-            <p>La plateforme LinTO vise à permettre enfin de mettre en oeuvre l’interactivité vocale dans un périphérique Android entièrement respectueux des données des utilisateurs.</p>
-            <p>Si vous vous reconnaissez dans ce cas de figure contactez-nous pour avoir en priorité un aperçu des capacités de notre système.</p>
           </div>
         </section>
-
-
-        <!-- END SECTION BESOINS COUVERTS -->
-      </div>
-      <footer>
-        <div class="wrapper flex-row">
-          <div class="flex1 footer-item">
-            <span class="label">LinTO.ai</span>
-            <ul class="footer-list">
-              <li><a href="/">Homepage</a></li>
-              <li><a href="#">Enterprise solutions</a></li>
-              <li><a href="#">Developer resources</a></li>
-            </ul>
+        <footer>
+          <div class="flex row pre-footer" id="pre-footer">
+            <div class="wrapper flex row">
+              <div class="flex1">
+                <span class="footer-label">LinTO.ai</span>
+                <ul class="flex col">
+                  <li>
+                    <a class="footer-link" href="#">Homepage</a>
+                  </li>
+                  <li>
+                    <a class="footer-link" href="#">Enterprise solutions</a>
+                  </li>
+                  <li>
+                    <a class="footer-link" href="#">Developer resources</a>
+                  </li>
+                  <li>
+                    <a class="footer-link" href="#">Research project</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex1">2</div>
+              <div class="flex1">3</div>
+            </div>
           </div>
-          <div class="flex1 footer-item">
-            <span class="label">Join us</span>
-            <ul class="footer-list">
-              <li><a href="https://github.com/linto-ai" target="_blank">github</a></li>
-              <li><a href="https://hub.docker.com/u/lintoai" target="_blank">Docker</a></li>
-              <li><a href="#">...</a></li>
-            </ul>
-          </div>
-          <div class="flex1 flex-col footer-item">
-            <a href="https://linagora.com/" target="_blank">
-              <img src="assets/img/logo-linagora.png" alt="Linagora" class="footer-logo" />
-            </a>
-            <a href="https://wakemeup.linto.ai/" target="_blank">
-              <img src="assets/img/wakemeup-logo.png" alt="Wake me up" class="footer-logo" />
-            </a>
+          <div class="copyright">
+            <div class="wrapper">
+              Copyright Linagora 2019
+            </div>
           </div>
         </div>
-        <div class="legals">
-          Copyright Linagora 2019
-        </div>
-      </footer>
+      </footer> 
     </div>
   </body>
 </html>
