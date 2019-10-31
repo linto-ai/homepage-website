@@ -148,7 +148,7 @@ $(document).ready(function(){
         method: 'post',
         headers: myHeaders,
         mode: 'no-cors',
-        body: payload
+        body: JSON.stringify(payload)
     })
     .then((res) => res.json())
     .then(function (data) {
