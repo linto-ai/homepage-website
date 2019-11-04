@@ -614,12 +614,15 @@ img.schema-server{
 #section-content-wrapper section{
   border-top: 1px solid #ccc;
   z-index: 9;
+  max-width: 100%;
 }
 #section-content-wrapper section:first-child {
   border: none;
 }
 .section-content-container{
   align-items: flex-end;
+  max-width: 100%;
+
 }
 
 #main.enterprises #page-content a{
@@ -707,6 +710,8 @@ img.gafam-free{
   border-collapse: separate;
   border-spacing: 20px 0;
   margin: 40px 0 10px 0;
+  max-width: 100%;
+  overflow: auto;
 }
 .compare-infos{
   font-size: 14px;

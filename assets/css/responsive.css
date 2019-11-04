@@ -12,7 +12,8 @@
   }
 }
 @media screen and (max-width: 1280px){
-  .wrapper {
+  .wrapper,
+  .content-section .wrapper {
     max-width: 980px;
   }
   .content-wrapper {
@@ -31,6 +32,7 @@
   .content-section .wrapper {
     max-width: 90%;
   }
+  
   .content-wrapper {
     max-width: 920px;
   } 
@@ -186,7 +188,7 @@
     width: auto;
   }
   img.schema-server{
-    width: 70%; 
+    width: 80%; 
     height: auto;
   }
   img.schema-services{
@@ -208,11 +210,25 @@
     border-radius: 0px;
     border: 1px solid #ccc;
   }
+  #compare-table tbody tr td{
+    padding: 5px;
+  }
+
   #compare-table tbody tr td.option {
-    font-size: 14px;
+    font-size: 12px;
   }
   #compare-table tbody tr td .label{
     font-size: 12px;
+  }
+
+  table.content-table thead tr th.title.parole-lue,
+  table.content-table thead tr th.title.parole-spontanee,
+  table.content-table tbody tr td {
+    font-size: 14px;
+  }
+  .sub-part h4.content-sub-title,
+  .table-label{
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 840px){
@@ -222,6 +238,12 @@
   }
   .field-container .contact-input{
     max-width: 100%;
+  }
+  table.content-table tbody tr td {
+    padding: 5px;
+  }
+  #compare-table tbody tr td .label {
+    display: none;
   }
 
 }
