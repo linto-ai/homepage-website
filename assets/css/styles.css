@@ -78,9 +78,15 @@ body {
 }
 .flex1 {
   flex: 1;
+  max-width: 100%;
 }
 .flex2 {
   flex: 2;
+  max-width: 100%;
+}
+.flex3 {
+  flex: 3;
+  max-width: 100%;
 }
 .centered {
   align-items: center;

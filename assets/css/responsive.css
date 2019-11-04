@@ -187,8 +187,9 @@
     height: 120px;
     width: auto;
   }
+  img.schema-deploy-linto, 
   img.schema-server{
-    width: 80%; 
+    width: 90%; 
     height: auto;
   }
   img.schema-services{
