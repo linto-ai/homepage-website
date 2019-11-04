@@ -118,7 +118,7 @@ section.gradient {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d5e7f2', GradientType=1 );
 }
 .wrapper{
-  max-width: 1440px;
+  max-width: 1380px;
   width: 100%;
   margin: 0 auto;
 }
@@ -255,7 +255,16 @@ p{
   -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
   -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+
 }
+#burger-nav{
+  display: none;
+}
+
 .navigation {
   align-items: flex-end;
   justify-content: flex-end;
@@ -319,6 +328,11 @@ h1.home-title{
 
 #linto-animated{
   max-height: 500px;
+}
+
+#linto-animated svg.linto-animation-home {
+  max-height: 500px !important;
+  max-width: 500px !important;
 }
 /*===== END HOME TOP =====*/
 
@@ -485,7 +499,7 @@ h1.home-title{
 }
 .use-case-item .slider-img{
   display: inline-block;
-  width: 90%;
+  width: 85%;
   height: auto;
 }
 
@@ -1133,9 +1147,10 @@ img.schema-deploy-linto{
   display: inline-block;
   color: #fff;
   text-decoration: none;
+  font-size: 14px;
 }
-#main #page-content footer ul li a.footer-link:hover::after {
-  background-color: #fff;
+#main #page-content footer ul li a.footer-link:hover {
+  text-decoration: underline;
 }
 
 #main #page-content footer .footer-label {
