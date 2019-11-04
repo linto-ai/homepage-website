@@ -11,6 +11,7 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script type="text/javascript" src="assets/js/lottie.min.js"></script>
       <script type="text/javascript" src="assets/js/home.js"></script>
+      <script type="text/javascript" src="assets/js/contact.js"></script>
       <script type="text/javascript" src="assets/js/slick.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
@@ -263,6 +264,49 @@
               <a href="https://www.polytechnique.edu/fr" target="_blank">
                 <img src="assets/img/logo-x-polytechnique.png" alt="l'X polytechnique" class="partner-logo" />
               </a>
+            </div>
+          </div>
+        </section>
+        <section id="contact">
+          <div class="wrapper flex col">
+            <div class="section-title-container">
+              <h2 class="section-title white">Nous contacter</h2>
+            </div>
+            <div class="contact-wrapper flex row">
+              <div class="flex1 flex col">
+                <div class="field-container flex1">
+                  <span class="label">Nom Prénom<i class="required">*</i> :</span>
+                  <input type="text" id="contact-name" class="contact-input" />
+                  <span class="error-field username">
+                </div>
+                <div class="field-container flex1">
+                  <span class="label">Email<i class="required">*</i> :</span>
+                  <input type="text" id="contact-email" class="contact-input" />
+                  <span class="error-field email"></span>
+                </div>
+                <div class="field-container flex1">
+                  <span class="label">Téléphone :</span>
+                  <input type="text" id="contact-phone" class="contact-input" />
+                  <span class="error-field phone"></span>
+                </div>
+                <div class="field-container flex1">
+                  <span class="label">Société :</span>
+                  <input type="text" id="contact-society" class="contact-input" />
+                  <span class="error-field society"></span>
+                </div>
+              </div>
+              <div class="flex1 flex col">
+              <div class="field-container flex1">
+                <span class="label">Message<i class="required">*</i> :</span>
+                <textarea id="contact-msg" class="contact-textarea"></textarea>
+                <span class="error-field msg"></span>
+              </div>
+              <div class="field-container submit">
+                <button class="submit-btn">Envoyer</button>
+                <div class="send-notif hidden">
+                  <span class="notif-msg"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>

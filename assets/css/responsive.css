@@ -4,7 +4,6 @@
   --blueDark : #364954;
   --greenChart: #65eeb1;
   --error: #ffb13b;
-
 }
 
 @media screen and (max-width: 1440px){
@@ -21,7 +20,15 @@
   }
 }
 @media screen and (max-width: 1024px){
-  .wrapper {
+  section {
+    padding: 20px 0;
+  }
+  #enterprises-solutions-top {
+    padding: 20px 0;
+  }
+
+  .wrapper,
+  .content-section .wrapper {
     max-width: 90%;
   }
   .content-wrapper {
@@ -61,7 +68,6 @@
   h1 {
     font-size: 32px;
   }
-  
   h2,
   h2.section-title {
     font-size: 26px;
@@ -72,8 +78,12 @@
   .cta-link {
     font-size: 16px;
   }
-  /* HEADER */
   
+  /* HEADER */
+  .linto-ai-logo {
+    height: 30px;
+    margin: 5px;
+  }
   #burger-nav{
     display: flex;
   }
@@ -130,7 +140,9 @@
   .nav-link.active::after, .nav-link.active:hover::after {
     top: 60px;
   }
-
+  /* END HEADER */
+  
+  /* HOME */
   #linto-animated svg.linto-animation-home{
     max-width: 350px !important;
     max-height: 350px !important;
@@ -157,10 +169,62 @@
     width: auto;
     margin: 10px auto;
   }
+  /* END HOME */
 
-  /* Batteries included */
+  /* ENTERPRISES SOLUTIONS */
+  .enterprise-top-container {
+    flex-direction: column-reverse !important;
+  }
+  .enterpise-top-img img.linto-ent{
+    width: 240px;
+  }
+  .flex-content.row {
+    flex-direction: column !important;
+  }
+  img.gafam-free{
+    height: 120px;
+    width: auto;
+  }
+  img.schema-server{
+    width: 70%; 
+    height: auto;
+  }
+  img.schema-services{
+    width: 200px;
+    height: auto;
+  }
+  .content-section.enterprise h2.section-title{
+    padding: 0;
+  }
+  #compare-table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 20px 0 10px 0;
+  }
+  #compare-table thead tr th {
+    font-size: 14px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+  }
+  #compare-table tbody tr td.option {
+    font-size: 14px;
+  }
+  #compare-table tbody tr td .label{
+    font-size: 12px;
+  }
 }
-@media screen and (max-width: 840px){}
+@media screen and (max-width: 840px){
+  .contact-wrapper{
+    flex-direction: column !important;
+    max-width: 300px;
+  }
+  .field-container .contact-input{
+    max-width: 100%;
+  }
+
+}
 @media screen and (max-width: 720px){}
 @media screen and (max-width: 600px){}
 @media screen and (max-width: 480px){}

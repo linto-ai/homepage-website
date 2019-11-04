@@ -18,23 +18,40 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
   </head>
   <body>
     <div id="main" class="enterprises">
-      <!-- HEADER -->
-      <header id="header">
-        <div class="wrapper flex row">
-          <div class="flex1 logo-container">
-            <img src="assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai"/>
-          </div>
-          <nav class="flex2 navigation flex row">
-            <a href="index" class="nav-link">Homepage</a>
-            <a href="enterprises" class="nav-link active">Enterprise solutions</a>
-            <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
-            <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research project</a>
-          </nav>
+     <!-- HEADER -->
+     <header id="header">
+      <div class="wrapper flex row" id="desktop-nav">
+        <div class="flex1 logo-container">
+          <a href="index"><img src="assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai"/></a>
         </div>
-      </header>
+        <nav class="flex3 navigation flex column">
+          <a href="index" class="nav-link">Homepage</a>
+          <a href="enterprises" class="nav-link active">Enterprise solutions</a>
+          <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
+          <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research project</a>
+        </nav>
+      </div>
+      <div class="wrapper flex row" id="burger-nav">
+        <div class="flex1 logo-container">
+          <a href="index"><img src="assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai"/></a>
+        </div>
+        <div class="flex1 burger-menu-container flex row">
+          <button id="burger-menu" class="closed"></button>
+          <div id="burger-menu-nav" class="hidden">
+            <nav class="flex3 navigation flex col">
+              <a href="index" class="nav-link">Homepage</a>
+              <a href="enterprises" class="nav-link active">Enterprise solutions</a>
+              <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
+              <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research project</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
       <!-- END HEADER -->
       <!-- Vertical Navigation -->
       <div id="page-content">
@@ -71,8 +88,7 @@
 
         <section class="gradient" id="enterprises-solutions-top">
           <div class="wrapper flex col">
-
-            <div class="flex row">
+            <div class="flex row enterprise-top-container">
               <div class="flex2 flex col enterprise-top-content">
                 <h3 class="content-title">Un projet développé et maintenu par LINAGORA</h1>
                 <p>La plateforme LinTO est une boîte à outils Open-Source permettant le développement et l'intégration de processus d’interactions vocales répondant aux besoins des professionnels et de l’industrie.</p>
@@ -103,13 +119,13 @@
                   <h2 class="section-title">Positionnement technologique</h2>
                 </div>
                 <h3 class="content-title title-anchor" id="deploy-infra">Déployer LinTO sur vos infrastructures</h3>
-                <div class="flex row">
+                <div class="flex row flex-content">
                   <div class="flex2 content">
                     <p>Nous adressons le besoin de souveraineté des données pour tous les acteurs de l’industrie, du médical, des banques… Plus généralement, nous proposons un système compatible avec la vie privée et la réglementation RGPD.</p>
                     <p>Les composants la plateforme sont  conçus pour être déployés sur vos infrastructures propres, en toute indépendance, selon une architecture client-serveur entièrement modulaire</p>
                   </div>
                   <div class="flex1 flex centered">
-                    <img class="gafam-free content-img" alt="GAFAM free" src="assets/img/gafam-free.png" />
+                    <img class="gafam-free" alt="GAFAM free" src="assets/img/gafam-free.png" />
                   </div>
                 </div>
 
@@ -369,8 +385,8 @@
                   <h2 class="section-title">LinTO dans votre entreprise</h2>
                 </div>
                 <h3 class="content-title title-anchor" id="architecture">Architecture client-serveur et services modulaires</h3>
-                <div class="flex row">
-                  <div class="flex1 centered">
+                <div class="flex row flex-content">
+                  <div class="flex1 flex centered">
                     <img src="assets/img/schema-services.png" class="schema-services">
                   </div>
                   <div class="flex3 content">
@@ -385,14 +401,14 @@
                 </div>
 
                 <h3 class="content-title title-anchor" id="linto-server">Service de connexion des clients LinTO : LinTO - Server</h3>
-                <div class="flex row">
+                <div class="flex row flex-content">
                   <div class="flex1 content">
                       <p>Ce composant est le point d’entrée sécurisé pour les systèmes clients de votre plateforme.</p>
                       <p>Utilise le standard IoT MQTT pour assurer une exploitation temps réel avec une qualité de service parfaite.</p>
                       <p>N’importe quel logiciel disposant d’une connectivité MQTT ou WebSocket peut établir la connexion vers votre plateforme.</p>
                     </ul>
                   </div>
-                    <div class="flex1 centered">
+                    <div class="flex1 flex centered">
                       <img src="assets/img/schema-linto-server.png" class="schema-server">
                     </div>
                   </div>
@@ -546,7 +562,7 @@
                 </ul>
 
                 <h3 class="content-title title-anchor" id="deploy-on-premise">Exemple de déploiement de LinTO on premise</h3>
-                <div class="flex row centered">
+                <div class="flex row flex centered">
                   <img class="schema-deploy-linto" src="assets/img/schema-linto-deploy.png">
                 </div>
 

@@ -1,26 +1,27 @@
 
 window.onload = function (e) {
-  //setSectionTopHeight()
+  
   setContentSection()
-  $(document).on('resize', function() {
-    //setSectionTopHeight()
+  $(window).on('resize', function() {
     setContentSection()
+    
   })
 
   function setContentSection () {
-    window['winWidth'] = $(window).width()
-    const overflow = 300
-    const calcWidth = parseInt(window['winWidth'] - overflow );
-    $('.content-section.enterprise').each(function () {
-      $(this).attr('style', 'width:' +calcWidth + 'px;')
-    })
+    const burgerMenuDisplay = $('#burger-nav').css('display')
+    if(burgerMenuDisplay === 'none') {
+      window['winWidth'] = $(window).width()
+      const overflow = 300
+      const calcWidth = parseInt(window['winWidth'] - overflow );
+      $('.content-section.enterprise').each(function () {
+        $(this).attr('style', 'width:' +calcWidth + 'px;')
+      })
+    } else {
+      $('#content-nav').removeClass('visible').addClass('hidden');
+      $('.content-section.enterprise').attr('style', '')
+
+    }
   }
-  function setSectionTopHeight () {
-    window['winHeight'] = $(window).height()
-    const sectionTop = $('#enterprises-solutions-top')
-    sectionTop.attr('style', 'height:' + window['winHeight']+ 'px;')
-  }
-  
   const controller = new ScrollMagic.Controller();
   const contentScene = new ScrollMagic.Scene({
     triggerElement: "#section-content-wrapper",
@@ -29,10 +30,22 @@ window.onload = function (e) {
   })
   .addTo(controller)
   .on("enter", function (e) {
-    $('#content-nav').removeClass('hidden').addClass('visible')
+    const burgerMenuDisplay = $('#burger-nav').css('display')
+    if(burgerMenuDisplay === 'none') {
+      $('#content-nav').removeClass('hidden').addClass('visible')
+    }
+    else{
+      $('#content-nav').removeClass('visible').addClass('hidden')
+    }
   })
   .on("leave", function (e) {
-    $('#content-nav').removeClass('visible').addClass('hidden')
+    const burgerMenuDisplay = $('#burger-nav').css('display')
+    if(burgerMenuDisplay === 'none') {
+      $('#content-nav').removeClass('hidden').addClass('visible')
+    }
+    else{
+      $('#content-nav').removeClass('visible').addClass('hidden')
+    }
   })
 
   $('.title-anchor, .section-anchor').each(function () {
@@ -44,10 +57,10 @@ window.onload = function (e) {
     })
     .addTo(controller)
     .on("enter", function (e) {
+      
       $('.content-nav-link.active').removeClass('active')
       const navLink = $('.content-nav-link[href="'+elem+'"]')
       navLink.addClass('active')
-
     }).on("leave", function (e) {
       $('.content-nav-link.active').removeClass('active')
       const navLink = $('.content-nav-link[href="'+elem+'"]')
@@ -55,6 +68,17 @@ window.onload = function (e) {
     })
   })
 
-
+  // BURGER NAV
+  $('#burger-menu').on('click', function () {
+    if($(this).hasClass('closed')){
+      $(this).removeClass('closed').addClass('opened')
+      $('#burger-menu-nav').removeClass('hidden')
+      $('header').css('height','100%')
+    } else {
+      $(this).removeClass('opened').addClass('closed')
+      $('#burger-menu-nav').addClass('hidden')
+      $('header').css('height','40px')
+    }
+  })
 }
 

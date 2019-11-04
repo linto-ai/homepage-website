@@ -70,6 +70,5 @@ $(document).ready(function () {
       $('#burger-menu-nav').addClass('hidden')
       $('header').css('height','40px')
     }
-      
   })
 })

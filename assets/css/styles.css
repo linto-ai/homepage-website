@@ -124,7 +124,8 @@ section.gradient {
 }
 #page-content{
   flex: 1;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   z-index: 9;
   scroll-behavior: smooth;
 }
@@ -601,7 +602,7 @@ img.schema-server{
 
 /*=== ENTERPRISES SOLUTIONS ===*/
 #enterprises-solutions-top {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 #section-content-wrapper {
   position: relative;
@@ -674,17 +675,17 @@ h4.content-sub-title{
   padding: 40px 0 20px 0;
 }
 
-.content-img {
+img.gafam-free{
   display: inline-block;
-}
-
-.content-img.gafam-free{
   height: 200px;
   width: auto;
 }
 
 .enterprise-top-content{
   justify-content: center;
+}
+.enterprise-top-content h3.content-title{
+  padding: 20px 0;
 }
 .enterpise-top-img{
   align-items: center;
@@ -907,7 +908,7 @@ summary {
 }
 #content-nav.visible{
   display: block;
-  width: 260px;
+  width: 220px;
   height: 100%;
   position: fixed;
   background: #fff;
@@ -1021,6 +1022,7 @@ img.schema-deploy-linto{
   -moz-box-shadow: 0 2px 2px 0px rgba(0,0,0,0.2);
   -webkit-box-shadow: 0 2px 2px 0px rgba(0,0,0,0.2);
   box-shadow: 0 2px 2px 0px rgba(0,0,0,0.2);
+  min-height: 80px;
 }
 .field-container .contact-input.error,
 .field-container .contact-textarea.error{
