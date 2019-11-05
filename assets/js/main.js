@@ -1,10 +1,5 @@
 $(document).ready(function () { 
 
-  var userLang = navigator.language || navigator.userLanguage
-  if (userLang !== 'fr-FR') {
-    document.location.href= "/en"
-  }
-
   // BURGER NAV
   $('#burger-menu').on('click', function () {
     if($(this).hasClass('closed')){
