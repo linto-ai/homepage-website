@@ -317,6 +317,105 @@ p{
   height: 40px;
   width: auto;
 }
+
+#lang-container{
+  width: 160px;
+  height: 20px;
+  padding: 5px 0;
+  position: absolute;
+  top: 5px;
+  left: 100%;
+  margin-left: -160px;
+}
+.lang-btn-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+}
+#lang-container .title{
+  display: inline-block;
+  padding: 0 5px;
+  line-height: 20px;
+  font-size: 14px;
+  color: var(--blueDark);
+  vertical-align: top;
+}
+.lang-selector{
+  display: inline-block;
+  height: 20px;
+  border: 1px solid #ccc;
+  vertical-align: top;
+  padding: 0 ;
+  margin: 0;
+  border: none;
+  padding: 0 15px 0 5px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#lang-btn{
+  background-image: url('../img/select-arrow@2x.png');
+  background-size: 15px 80px;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+}
+.lang-selector .label,
+.lang-selector .icon{
+  display: inline-block;
+  vertical-align: top;
+  height: 20px;
+  line-height: 20px;
+}
+.lang-selector .label{
+  font-size: 14px;
+  
+}
+.lang-selector .icon{
+  width: 30px;
+  background-size: 30px 20px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.lang-selector .icon.fr{
+  background-image: url('../img/fr-fr.png');
+}
+.lang-selector .icon.en{
+  background-image: url('../img/en-gb.png');
+}
+.lang-list.visible{
+  width: 100%;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 0 ;
+  margin: 0;
+}
+.lang-list.visible .lang-selector {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+.lang-list.visible .lang-selector .icon{
+  margin-left: 5px
+}
+
+.lang-selector:hover .label {
+  color: var(--blueChart);
+}
+#lang-btn.closed:hover {
+  background-position: 100% -20px;
+}
+#lang-btn.opened {
+  background-position: 100% -40px;
+}
+#lang-btn.opened:hover {
+  background-position: 100% -60px;
+}
+
 /*===== END HEADER =====*/
 
 /*===== HOME TOP =====*/

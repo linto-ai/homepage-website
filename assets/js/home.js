@@ -46,6 +46,14 @@ $(document).ready(function () {
     autoplay: false,
     dots: true
   })
+  
+  const url = document.location.href
+  const urlSplit = url.split('/')
+  let jsonPath = 'assets/json/data.json'
+
+  if(urlSplit[urlSplit.length - 2] === 'en') {
+    jsonPath = '../assets/json/data.json'
+  }
 
   const animationContainer = document.getElementById('linto-animated')
   lottie.loadAnimation({
@@ -53,7 +61,7 @@ $(document).ready(function () {
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: 'assets/json/data.json', // the path to the animation json
+    path: jsonPath, // the path to the animation json
     rendererSettings: {
       className: 'linto-animation-home'
     }
