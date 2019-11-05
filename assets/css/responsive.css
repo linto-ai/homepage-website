@@ -19,8 +19,75 @@
   .content-wrapper {
     max-width: 980px;
   }
+  .nav-link {
+    font-size: 14px;
+    margin: 0px 10px;
+  }
+  .linto-ai-logo {
+    height: 30px;
+    margin: 5px;
+  }
 }
 @media screen and (max-width: 1024px){
+  /* HEADER */
+  
+  #burger-nav{
+    display: flex;
+  }
+  #desktop-nav{
+    display: none;
+  }
+  #burger-menu-nav.hidden{
+    display: none;
+  }
+  .burger-menu-container{
+    justify-content: flex-end;
+  }
+  button#burger-menu{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/burger-menu@2x.png');
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  button#burger-menu.closed {
+    background-position: 0 0;
+  }
+  button#burger-menu.closed:hover {
+    background-position: -40px 0;
+  }
+  button#burger-menu.opened {
+    background-position: 0 -40px;
+  }
+  button#burger-menu.opened:hover {
+    background-position: -40px -40px;
+  }
+  #burger-menu-nav{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #burger-menu-nav nav{
+    align-items: center;
+  }
+  #burger-menu-nav nav a {
+    font-size: 30px;
+    padding: 20px 0;
+    line-height: 30px;
+    flex:1;
+  }
+  .nav-link.active::after, .nav-link.active:hover::after {
+    top: 60px;
+  }
+  /* END HEADER */
   section {
     padding: 20px 0;
   }
@@ -81,68 +148,7 @@
     font-size: 16px;
   }
   
-  /* HEADER */
-  .linto-ai-logo {
-    height: 30px;
-    margin: 5px;
-  }
-  #burger-nav{
-    display: flex;
-  }
-  #desktop-nav{
-    display: none;
-  }
-  #burger-menu-nav.hidden{
-    display: none;
-  }
-  .burger-menu-container{
-    justify-content: flex-end;
-  }
-  button#burger-menu{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-image: url('../img/burger-menu@2x.png');
-    background-size: 80px 80px;
-    background-repeat: no-repeat;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-  button#burger-menu.closed {
-    background-position: 0 0;
-  }
-  button#burger-menu.closed:hover {
-    background-position: -40px 0;
-  }
-  button#burger-menu.opened {
-    background-position: 0 -40px;
-  }
-  button#burger-menu.opened:hover {
-    background-position: -40px -40px;
-  }
-  #burger-menu-nav{
-    position: absolute;
-    top: 100px;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  #burger-menu-nav nav{
-    align-items: center;
-  }
-  #burger-menu-nav nav a {
-    font-size: 30px;
-    padding: 20px 0;
-    line-height: 30px;
-    flex:1;
-  }
-  .nav-link.active::after, .nav-link.active:hover::after {
-    top: 60px;
-  }
-  /* END HEADER */
+  
   
   /* HOME */
   #linto-animated svg.linto-animation-home{
@@ -244,6 +250,14 @@
     padding: 5px;
   }
   #compare-table tbody tr td .label {
+    display: none;
+  }
+  table.content-table tbody tr td.brand-logo{
+    border: none;
+    padding: 0;
+    width: 0px;
+  }
+  table.content-table tbody tr td.brand-logo img{
     display: none;
   }
 

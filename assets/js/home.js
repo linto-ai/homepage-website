@@ -58,17 +58,4 @@ $(document).ready(function () {
       className: 'linto-animation-home'
     }
   })
-
-  // BURGER NAV
-  $('#burger-menu').on('click', function () {
-    if($(this).hasClass('closed')){
-      $(this).removeClass('closed').addClass('opened')
-      $('#burger-menu-nav').removeClass('hidden')
-      $('header').css('height','100%')
-    } else {
-      $(this).removeClass('opened').addClass('closed')
-      $('#burger-menu-nav').addClass('hidden')
-      $('header').css('height','40px')
-    }
-  })
 })

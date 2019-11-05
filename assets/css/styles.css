@@ -88,6 +88,10 @@ body {
   flex: 3;
   max-width: 100%;
 }
+.flex4 {
+  flex: 4;
+  max-width: 100%;
+}
 .centered {
   align-items: center;
   justify-content: center;
@@ -581,8 +585,8 @@ h3.raspberry-title {
 }
 img.raspberry-schema {
   display: inline-block;
-  height: 300px;
-  width: auto;
+  width: 75%;
+  height: auto;
   margin-bottom: 20px;
 }
 img.schema-server{

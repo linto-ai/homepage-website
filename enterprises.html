@@ -11,8 +11,10 @@
       src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
       crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js" type="text/
+    javascript"></script>
     <script type="text/javascript" src="assets/js/ScrollMagic.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/enterprises.js"></script>
     <script type="text/javascript" src="assets/js/contact.js"></script>
 
@@ -24,34 +26,36 @@
     <div id="main" class="enterprises">
      <!-- HEADER -->
      <header id="header">
-      <div class="wrapper flex row" id="desktop-nav">
-        <div class="flex1 logo-container">
-          <a href="index"><img src="assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai"/></a>
+        <div class="wrapper flex row" id="desktop-nav">
+          <div class="flex1 logo-container">
+            <a href="index"><img src="assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai"/></a>
+          </div>
+          <nav class="flex4 navigation flex column">
+            <a href="index" class="nav-link">Accueil</a>
+            <a href="enterprises" class="nav-link active">Solutions pour entreprise</a>
+            <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Ressource de développement</a>
+            <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Projet de recherche</a>
+            <a href="#contact" class="nav-link">Nous contacter</a>
+          </nav>
         </div>
-        <nav class="flex3 navigation flex column">
-          <a href="index" class="nav-link">Homepage</a>
-          <a href="enterprises" class="nav-link active">Enterprise solutions</a>
-          <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
-          <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research project</a>
-        </nav>
-      </div>
-      <div class="wrapper flex row" id="burger-nav">
-        <div class="flex1 logo-container">
-          <a href="index"><img src="assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai"/></a>
-        </div>
-        <div class="flex1 burger-menu-container flex row">
-          <button id="burger-menu" class="closed"></button>
-          <div id="burger-menu-nav" class="hidden">
-            <nav class="flex3 navigation flex col">
-              <a href="index" class="nav-link">Homepage</a>
-              <a href="enterprises" class="nav-link active">Enterprise solutions</a>
-              <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
-              <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research project</a>
-            </nav>
+        <div class="wrapper flex row" id="burger-nav">
+          <div class="flex1 logo-container">
+            <a href="index"><img src="assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai"/></a>
+          </div>
+          <div class="flex1 burger-menu-container flex row">
+            <button id="burger-menu" class="closed"></button>
+            <div id="burger-menu-nav" class="hidden">
+              <nav class="flex3 navigation flex col">
+                <a href="index" class="nav-link">Accueil</a>
+                <a href="enterprises" class="nav-link active">Solutions pour entreprise</a>
+                <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Ressources pour développement</a>
+                <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Projet de recherche</a>
+                <a href="#contact" class="nav-link">Nous contacter</a>
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
       <!-- END HEADER -->
       <!-- Vertical Navigation -->
       <div id="page-content">
