@@ -1,33 +1,17 @@
 $(document).ready(function () {
-  const browserLang = window.navigator.userLanguage || window.navigator.language
   const cookieLang = getCookie('userLang')
-  const url = document.location.href
-  let urlSplit = url.split('/')
-  let currentPageLang = 'fr'
-  let basePath = ''
+  let currentPageLang = 'en'
+  let basePath = '' 
+  if(window.location.host === 'linto-ai.github.io') {
+    basePath ='https://linto-ai.github.io/homepage-website'
+  } else if (window.location === 'linto-ai.local'){
+    basePath ='http://linto-ai.local'
+  }
 
-  if (urlSplit[urlSplit.length - 2 ] === 'en') {
-    currentPageLang = 'en'
-    for(let i = 0; i < urlSplit.length - 2; i++) {
-      basePath += urlSplit[i] + '/'
-    }
-  } else {
-    for(let i = 0; i < urlSplit.length - 1; i++) {
-      basePath += urlSplit[i] + '/'
-    }
+  if (window.location.href.indexOf('/fr') >= 0) {
+    currentPageLang = 'fr'
   }
-  if (cookieLang === 'undefined' || cookieLang.length === 0) { // No cookie
-    if (browserLang !== 'fr-FR' && currentPageLang !== 'en') {
-      document.location.href = basePath + 'en/' 
-    }
-  } else { // userLang Cookie
-    if(cookieLang === 'en' && currentPageLang === 'fr') {
-      document.location.href = basePath + 'en'
-    } 
-    else if (cookieLang === 'fr' && currentPageLang === 'en') {
-      document.location.href = basePath
-    }
-  }
+
   $('#lang-btn').on('click', function () {
     if ($('.lang-list').hasClass('hidden')) {
       $('.lang-list').removeClass('hidden').addClass('visible')
@@ -38,15 +22,12 @@ $(document).ready(function () {
     }
   })
 
-
   $('.lang-update').on('click', function() {
     const target = $(this).attr('data-href')
     const lang = $(this).attr('data-lang')
-
-    setCookie('userLang', lang, 31);
-
+    setCookie('userLang', lang, 31)
     setTimeout(function () {
-      document.location.href = target
+      document.location.href = basePath + target
     }, 300)
   })
 

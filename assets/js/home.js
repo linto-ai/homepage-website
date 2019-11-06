@@ -21,7 +21,6 @@ $(document).ready(function () {
         $('.hdiw-arrow.next').removeClass('enabled').addClass('disabled');
       } else {
         $('.hdiw-arrow.next').removeClass('disabled').addClass('enabled');
-
       }
     }
   }
@@ -50,11 +49,9 @@ $(document).ready(function () {
   const url = document.location.href
   const urlSplit = url.split('/')
   let jsonPath = 'assets/json/data.json'
-
-  if(urlSplit[urlSplit.length - 2] === 'en') {
+  if(urlSplit[urlSplit.length - 1] === 'fr' || urlSplit[urlSplit.length - 2] === 'fr') {
     jsonPath = '../assets/json/data.json'
   }
-
   const animationContainer = document.getElementById('linto-animated')
   lottie.loadAnimation({
     container: animationContainer, // the dom element that will contain the animation
