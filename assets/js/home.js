@@ -25,6 +25,7 @@ $(document).ready(function () {
 
       let jsonPath = 'assets/json/animation-0' + index + '.json'
       if (window.location.href.indexOf('/fr') >= 0) {
+        console.log('fr page')
         jsonPath = '../assets/json/animation-0' + index + '.json'
       }
 
@@ -42,7 +43,6 @@ $(document).ready(function () {
         })
       }, 150)
       
-
       if(index === 1) {
         $('.hdiw-arrow.prev').removeClass('enabled').addClass('disabled')
       } else {
