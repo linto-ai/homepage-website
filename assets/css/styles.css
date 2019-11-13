@@ -556,7 +556,7 @@ h1.home-title{
 .hdiw-controls-arrow button.next.enabled:hover{
   background-position: -30px -60px;
 }
-.hdiw-animation {
+#hdiw-animation {
   text-align: right;
 }
 .linto-schema{

@@ -4,7 +4,6 @@ window.onload = function (e) {
   setContentSection()
   $(window).on('resize', function() {
     setContentSection()
-    
   })
 
   function setContentSection () {

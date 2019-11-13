@@ -1,8 +1,19 @@
 $(document).ready(function () {
-  $('.hdiw-control').on('click', function () {
-    setHdiwStep(parseInt($(this).attr('data-index')))
+
+  // Init How does it work animation
+  const hdiwAnimationContainer = document.getElementById('hdiw-animation')
+  let hdiwAnimation = lottie.loadAnimation({
+    container: hdiwAnimationContainer, // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'assets/json/animation-01.json', // the path to the animation json
+    rendererSettings: {
+      className: 'linto-animation-hdiw'
+    }
   })
 
+  // how does it work : step
   function setHdiwStep (index) {
     const activeStep = $('.hdiw-content.active').attr('data-index')
     const nbItems = $('.hdiw-content').length
@@ -12,25 +23,53 @@ $(document).ready(function () {
       $('.hdiw-control.active').removeClass('active')
       $('.hdiw-control[data-index="'+index+'"]').addClass('active')
 
+      let jsonPath = 'assets/json/animation-0' + index + '.json'
+      if (window.location.href.indexOf('/fr') >= 0) {
+        jsonPath = '../assets/json/animation-0' + index + '.json'
+      }
+
+      hdiwAnimation.destroy()
+      setTimeout(function () {
+        hdiwAnimation = lottie.loadAnimation({
+          container: hdiwAnimationContainer, // the dom element that will contain the animation
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: jsonPath, // the path to the animation json
+          rendererSettings: {
+            className: 'linto-animation-hdiw'
+          }
+        })
+      }, 150)
+      
+
       if(index === 1) {
-        $('.hdiw-arrow.prev').removeClass('enabled').addClass('disabled');
+        $('.hdiw-arrow.prev').removeClass('enabled').addClass('disabled')
       } else {
-        $('.hdiw-arrow.prev').removeClass('disabled').addClass('enabled');
+        $('.hdiw-arrow.prev').removeClass('disabled').addClass('enabled')
       } 
       if (index === nbItems) {
-        $('.hdiw-arrow.next').removeClass('enabled').addClass('disabled');
+        $('.hdiw-arrow.next').removeClass('enabled').addClass('disabled')
       } else {
-        $('.hdiw-arrow.next').removeClass('disabled').addClass('enabled');
+        $('.hdiw-arrow.next').removeClass('disabled').addClass('enabled')
       }
     }
   }
 
+  // On click : HDIW step number
+  $('.hdiw-control').on('click', function () {
+    setHdiwStep(parseInt($(this).attr('data-index')))
+  })
+
+  // On click : HDIW prev arrow
   $('.hdiw-arrow.prev').on('click', function () {
     const currentIndex = parseInt($('.hdiw-content.active').attr('data-index'))
     if(currentIndex !== 1 && !$(this).hasClass('disabled')) {
       setHdiwStep(currentIndex - 1)
     }
   })
+
+  // On click : HDIW next arrow
   $('.hdiw-arrow.next').on('click', function () {
     const currentIndex = $('.hdiw-content.active').attr('data-index')
     const nbItems = $('.hdiw-content').length
@@ -40,16 +79,15 @@ $(document).ready(function () {
     }
   })
 
-  // SLIDER 
+  // Init use-cases SLIDER 
   $('#use-cases-slider').slick({
     autoplay: false,
     dots: true
   })
   
-  const url = document.location.href
-  const urlSplit = url.split('/')
+  // Animation LinTO Blink
   let jsonPath = 'assets/json/data.json'
-  if(urlSplit[urlSplit.length - 1] === 'fr' || urlSplit[urlSplit.length - 2] === 'fr') {
+  if (window.location.href.indexOf('/fr') >= 0) {
     jsonPath = '../assets/json/data.json'
   }
   const animationContainer = document.getElementById('linto-animated')

@@ -12,6 +12,7 @@ $(document).ready(function () {
     currentPageLang = 'fr'
   }
 
+  // Toggle page language menu
   $('#lang-btn').on('click', function () {
     if ($('.lang-list').hasClass('hidden')) {
       $('.lang-list').removeClass('hidden').addClass('visible')
@@ -22,6 +23,7 @@ $(document).ready(function () {
     }
   })
 
+  // Page language update
   $('.lang-update').on('click', function() {
     const target = $(this).attr('data-href')
     const lang = $(this).attr('data-lang')

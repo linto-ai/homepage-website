@@ -1,9 +1,8 @@
 $(document).ready(function(){
-
+  // Submit contact form
   $('.submit-btn').on('click', function () {
     handleForm()
   })
-
 
   function testName () {
     const regex = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ\s\-\']+$/
