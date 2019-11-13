@@ -2,12 +2,16 @@ $(document).ready(function () {
 
   // Init How does it work animation
   const hdiwAnimationContainer = document.getElementById('hdiw-animation')
+  let jsonPath = 'assets/json/animation-0' + index + '.json'
+  if (window.location.href.indexOf('/fr') >= 0) {
+    jsonPath = '../assets/json/animation-0' + index + '.json'
+  }
   let hdiwAnimation = lottie.loadAnimation({
     container: hdiwAnimationContainer, // the dom element that will contain the animation
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: 'assets/json/animation-01.json', // the path to the animation json
+    path: jsonPath, // the path to the animation json
     rendererSettings: {
       className: 'linto-animation-hdiw'
     }
@@ -22,13 +26,10 @@ $(document).ready(function () {
       $('.hdiw-content[data-index="'+index+'"]').removeClass('hidden').addClass('active')
       $('.hdiw-control.active').removeClass('active')
       $('.hdiw-control[data-index="'+index+'"]').addClass('active')
-
-      let jsonPath = 'assets/json/animation-0' + index + '.json'
+      let animPath = 'assets/json/animation-0' + index + '.json'
       if (window.location.href.indexOf('/fr') >= 0) {
-        console.log('fr page')
-        jsonPath = '../assets/json/animation-0' + index + '.json'
+        animPath = '../assets/json/animation-0' + index + '.json'
       }
-
       hdiwAnimation.destroy()
       setTimeout(function () {
         hdiwAnimation = lottie.loadAnimation({
@@ -36,7 +37,7 @@ $(document).ready(function () {
           renderer: 'svg',
           loop: true,
           autoplay: true,
-          path: jsonPath, // the path to the animation json
+          path: animPath, // the path to the animation json
           rendererSettings: {
             className: 'linto-animation-hdiw'
           }
