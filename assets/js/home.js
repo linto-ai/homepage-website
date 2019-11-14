@@ -2,16 +2,16 @@ $(document).ready(function () {
 
   // Init How does it work animation
   const hdiwAnimationContainer = document.getElementById('hdiw-animation')
-  let jsonPath = 'assets/json/animation-0' + index + '.json'
+  let jsonAnimationPath = 'assets/json/animation-01.json'
   if (window.location.href.indexOf('/fr') >= 0) {
-    jsonPath = '../assets/json/animation-0' + index + '.json'
+    jsonAnimationPath = '../assets/json/animation-01.json'
   }
   let hdiwAnimation = lottie.loadAnimation({
     container: hdiwAnimationContainer, // the dom element that will contain the animation
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: jsonPath, // the path to the animation json
+    path: jsonAnimationPath, // the path to the animation json
     rendererSettings: {
       className: 'linto-animation-hdiw'
     }

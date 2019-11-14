@@ -84,6 +84,7 @@
             <li class="parent"><a href="#linto-in-solutions" class="content-nav-link">LinTO dans vos solutions</a>
               <ul>
                 <li class="child"><a href="#linto-raspberry-arm" class="content-nav-link">Raspberry Pi & systèmes ARM</a></li>
+                <li class="child"><a href="#create-smart-assistant" class="content-nav-link">Concevoir un smart-assistant</a></li>
                 <li class="child"><a href="#linto-multiplateforme" class="content-nav-link">Multiplateforme</a></li>
                 <li class="child"><a href="#without-android" class="content-nav-link">Assistant vocal Android SANS Google</a></li>
               </ul>
@@ -110,15 +111,15 @@
           <div class="wrapper flex col">
             <div class="flex row enterprise-top-container">
               <div class="flex2 flex col enterprise-top-content">
-                <h3 class="content-title">Un projet développé et maintenu par LINAGORA</h1>
+                <h3 class="content-title">Un projet par LINAGORA</h1>
                 <p>La plateforme LinTO est une boîte à outils Open-Source permettant le développement et l'intégration de processus d’interactions vocales répondant aux besoins des professionnels et de l’industrie.</p>
                 <p>Le projet de recherche est subventionné par le PIA (Programme d'Investissement d'Avenir) de l'état Français dans le cadre des Grands Défis du numérique. Il allie des entreprises technologique telles que LINAGORA et ZELROS et des laboratoires de recherche comme l'IRIT, le LaaS, le CNRS et le laboratoire de recherche en informatique de l'école polytechnique.</p>
 
 
                 <h3 class="content-title">Notre modèle économique</h3>
-                <p>Le système est intégralement rendu disponible en Open-Source sous <a href="https://doc.linto.ai/#/?id=gnu-affero-general-public-licence" target="_blank" class="content-link">licence GNU Affero</a>, sans coût caché, sans frais de licence, sans modèle freemium.
+                <p>Le système est intégralement rendu disponible en Open-Source sous <a href="https://doc.linto.ai/#/?id=gnu-affero-general-public-licence-v3" target="_blank" class="content-link">licence GNU Affero</a>, sans coût caché, sans frais de licence, sans modèle freemium.
                 </p>
-                <p>Nous proposons nos services pour déployer, spécialiser et maintenir la solution chez vous ou pour vous (SaaS). Nous proposons également d’appuyer vos travaux de recherche & développement en proposant des formations à haute valeur ajoutée (par exemple sur la génération de modèles d’IA) ou encore en développant des compétences métier spécifiques à votre usage.</p>
+                <p>Nous déployons, spécialisons et maintenons la solution chez vous ou pour vous (SaaS). Nous appuyons vos travaux de recherche & développement avec des formations à haute valeur ajoutée et réalisons des développements spécifiques pour votre usage.</p>
               </div>
               <div class="flex1 flex col enterpise-top-img">
                 <img src="../assets/img/linto.svg" alt="LinTO" class="linto-ent">
@@ -142,7 +143,7 @@
                 <div class="flex row flex-content">
                   <div class="flex2 content">
                     <p>Nous adressons le besoin de souveraineté des données pour tous les acteurs de l’industrie, du médical, des banques… Plus généralement, nous proposons un système compatible avec la vie privée et la réglementation RGPD.</p>
-                    <p>Les composants la plateforme sont  conçus pour être déployés sur vos infrastructures propres, en toute indépendance, selon une architecture client-serveur entièrement modulaire</p>
+                    <p>Les composants la plateforme sont  conçus pour être déployés sur vos infrastructures propres, en toute indépendance, selon une architecture client-serveur entièrement modulaire.</p>
                   </div>
                   <div class="flex1 flex centered">
                     <img class="gafam-free" alt="GAFAM free" src="../assets/img/gafam-free.png" />
@@ -424,7 +425,7 @@
                 <div class="flex row flex-content">
                   <div class="flex1 content">
                       <p>Ce composant est le point d’entrée sécurisé pour les systèmes clients de votre plateforme.</p>
-                      <p>Utilise le standard IoT MQTT pour assurer une exploitation temps réel avec une qualité de service parfaite.</p>
+                      <p>Il utilise le standard IoT MQTT pour assurer une exploitation temps réel avec une qualité de service parfaite.</p>
                       <p>N’importe quel logiciel disposant d’une connectivité MQTT ou WebSocket peut établir la connexion vers votre plateforme.</p>
                     </ul>
                   </div>
@@ -596,8 +597,9 @@
 
                 <h3 class="content-title title-anchor" id="linto-raspberry-arm">LinTO pour Raspberry Pi & systèmes ARM</h3>
                 <p>Nous proposons actuellement un client LinTO de référence basé sur le Raspberry Pi (ou autres smart board ARM). Cette solution est un démonstrateur idéal pour vos travaux de R&D sur l’assistance vocale en entreprises.</p>
-                <p>Cette solution peut-être mise en oeuvre très simplement car nous la proposons clef en main (kit Raspberry, guides et liens de téléchargement) depuis notre <a href="https://doc.linto.ai/" target="_blank" class="content-link">espace dédié aux développeurs</a>.</p>
+                <p>Cette solution est livrée clef en main depuis notre <a href="https://doc.linto.ai/" target="_blank" class="content-link">espace dédié aux développeurs</a>.</p>
                 <p>Pour les makers, les hobbyistes et les équipes de R&D qui veulent s’affranchir de toute connexion extérieure aux systèmes des GAFAM, nous proposons ici le système le plus abouti dans l’état de l’art des projets open-source d’assistants vocaux.</p>
+
                 <ul class="content-list">
                   <li>Modèles de Wake word(s) embarqués customizables</li>
                   <li>Toute la chaîne de traitement vocal maîtrisée sur infrastructures propres</li>
@@ -619,16 +621,16 @@
                 <h3 class="content-title title-anchor" id="linto-multiplateforme">LinTO multiplateforme</h3>
                 <p>La connexion d’un système client à la plateforme est simplifiée grâce à l’utilisation du composant LinTO - Server qui supporte le protocole standard de l’IoT, le  MQTT. Cette connexion se met facilement en oeuvre dans un développement logiciel dédié à votre projet.</p>
                 <p>Le développement d’un client Android et Web, rationalisant l’expérience du client LinTO, constitue l’approche que nous privilégions dans notre roadmap produit.</p>
-                <p>Le client multiplateforme est actuellement en cours de développement et vise à répondre aux attentes de l’industrie quant au déploiement de la solution sans développements spécifiques. (Objectif de première version publique Q2 2020)</p>
+                <p>Le client multiplateforme est actuellement en cours de développement et vise à répondre aux attentes de l’industrie quant au déploiement de la solution sans développements spécifiques (Objectif de première version publique Q2 2020).</p>
 
 
                 <h3 class="content-title title-anchor" id="without-android">Assistant vocal Android SANS Google</h3>
-                <p>De nombreuses initiatives existent pour "dé-googliser" les téléphones Android. (<a href="https://lineageos.org/" target="_blank" class="content-link">Lineage OS</a> ou le projet <a href="https://e.foundation/?lang=fr" target="_blank" class="content-link">/e/</a>)</p>
+                <p>De nombreuses initiatives existent pour "dé-googliser" les téléphones Android. (<a href="https://lineageos.org/" target="_blank" class="content-link">Lineage OS</a> ou le projet <a href="https://e.foundation/?lang=fr" target="_blank" class="content-link">/e/</a>).</p>
                 <p>Ces initiatives s’appuient sur diverses API oogle (<a href="http://www.nicola-spanti.info/fr/documents/tutorials/computing/os/android/without-google-as-a-user.html" target="_blank" class="content-link">exemple</a>).</p>
                 <p>Les notifications push, les cartes géographiques, le moteur de recherche... des alternatives existent, mais pas pour remplacer le fameux "Ok Google".</p>
                 <p>Beaucoup d’entreprises distribuent ainsi des produits Android professionnalisés grâce à ce type de distribution AOSP (<a href="https://source.android.com/" target="_blank" class="content-link">Android Open Source Project</a>) mais doivent faire l’impasse sur le pilotage vocal.</p>
                 <p>La plateforme LinTO vise à permettre enfin de mettre en oeuvre l’interactivité vocale dans un périphérique Android entièrement respectueux des données des utilisateurs.</p>
-                <p>Si vous vous reconnaissez dans ce cas de figure contactez-nous pour avoir en priorité un aperçu des capacités de notre système.</p>
+                <p>Si vous vous reconnaissez dans ce cas de figure <a href="#contact" class="content-link">contactez-nous</a> pour avoir en priorité un aperçu des capacités de notre système.</p>
               </div>
             </section>
           </div>
@@ -677,27 +679,6 @@
           </div>
         </section>
         <footer>
-          <div class="flex row pre-footer" id="pre-footer">
-            <div class="wrapper flex row">
-              <div class="flex1">
-                <span class="footer-label">LinTO.ai</span>
-                <ul class="flex col">
-                  <li>
-                    <a class="footer-link" href="index">Accueil</a>
-                  </li>
-                  <li>
-                    <a class="footer-link" href="enterprises">Solutions pour entreprise</a>
-                  </li>
-                  <li>
-                    <a class="footer-link" href="https://doc.linto.ai/" target="_blank">Ressources de développement</a>
-                  </li>
-                  <li>
-                    <a class="footer-link" href="https://research.linagora.com/display/home/Home" target="_blank">Projet de recherche</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
           <div class="copyright">
             <div class="wrapper">
               Copyright Linagora 2019
