@@ -1030,7 +1030,7 @@ summary {
   top: 60px;
   left: 0;
   z-index: 10;
-  padding: 40px 20px;
+  padding: 20px;
 }
 #content-nav.visible ul {
   display: flex;
@@ -1275,13 +1275,14 @@ img.schema-deploy-linto{
   top: 10px;
   left: 10px;
 }
-#main #page-content footer ul li a.footer-link {
+#main #page-content footer a.footer-link {
   display: inline-block;
   color: #fff;
+  font-weight: 600;
   text-decoration: none;
   font-size: 14px;
 }
-#main #page-content footer ul li a.footer-link:hover {
+#main #page-content footer a.footer-link:hover {
   text-decoration: underline;
 }
 
