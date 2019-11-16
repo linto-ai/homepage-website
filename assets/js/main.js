@@ -13,9 +13,6 @@ $(document).ready(function () {
   }
 
   //modal
-  $("#ex1").modal({
-    fadeDuration: 100
-  });
 
   // Toggle page language menu
   $('#lang-btn').on('click', function () {
