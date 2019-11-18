@@ -4,26 +4,27 @@ $(document).ready(function () {
 
   // Init Animation "how does it work?"
   const hdiwAnimationContainer = document.getElementById('hdiw-animation')
-  let jsonAnimationPath01 = 'assets/json/animation-01.json'
+  let jsonAnimationPath = 'assets/json/animation.json'
   if (window['page_lang'] === 'fr') { 
-    jsonAnimationPath01 = '../assets/json/animation-01.json'
+    jsonAnimationPath = '../assets/json/animation.json'
   }
   let hdiwAnimation = lottie.loadAnimation({
     container: hdiwAnimationContainer, // the dom element that will contain the animation
     renderer: 'svg',
-    loop: true,
+    loop: false,
     autoplay: false,
-    path: jsonAnimationPath01, // the path to the animation json
+    path: jsonAnimationPath, // the path to the animation json
     rendererSettings: {
       className: 'linto-animation-hdiw'
     }
   })
+  hdiwAnimation.setSpeed(0.8)
   // Animation Segments
   const segments = [
-    [0, 50], // part 1
-    [51, 100], // part 2 
-    [101, 150], // part 3 
-    [151, 200] // part 4
+    [0, 235], // part 1
+    [230, 370], // part 2 
+    [365, 460], // part 3 
+    [460, 750] // part 4
   ]
 
   hdiwAnimation.addEventListener('data_ready', function(){

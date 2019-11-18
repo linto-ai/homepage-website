@@ -1,6 +1,26 @@
 
 window.onload = function (e) {
-  
+  window['page_lang'] = window.location.href.indexOf('/fr') >= 0 ? 'fr' : 'en'
+
+  // Init Animation "how does it work?"
+  const animationContainer = document.getElementById('linto-animation')
+  let jsonAnimationPath = 'assets/json/animation.json'
+  if (window['page_lang'] === 'fr') { 
+    jsonAnimationPath = '../assets/json/animation.json'
+  }
+  let hdiwAnimation = lottie.loadAnimation({
+    container: animationContainer, // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: jsonAnimationPath, // the path to the animation json
+    rendererSettings: {
+      className: 'linto-animation-hdiw'
+    }
+  })
+  hdiwAnimation.setSpeed(0.8)
+
+
   setContentSection()
   $(window).on('resize', function() {
     setContentSection()

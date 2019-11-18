@@ -15,6 +15,7 @@
       crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js" type="text/
     javascript"></script>
+    <script type="text/javascript" src="./assets/js/lottie.min.js"></script>
     <script type="text/javascript" src="./assets/js/ScrollMagic.js"></script>
     <script type="text/javascript" src="./assets/js/main.js"></script>
     <script type="text/javascript" src="./assets/js/enterprises.js"></script>
@@ -409,17 +410,12 @@
                 </div>
                 <h3 class="content-title title-anchor" id="architecture">Modular client-server architecture and services</h3>
                 <div class="flex row flex-content">
-                  <div class="flex1 flex centered">
+                  <div class="flex1 flex col">
                     <img src="./assets/img/schema-services.png" class="schema-services">
                   </div>
                   <div class="flex3 content">
                     <p>The LinTO platform is made of independent services and usable as you wish in a client / server logic</p>
-                    <ul class="content-list" style="margin-top: 20px;">
-                      <li><strong>LinTO - Server</strong>: This component is the securised entry point for client system of your platform</li>
-                      <li><strong>LinTO - LinSTT</strong>: Speech To Text API. Ce composant réalise la transcription des audios au format texte, via une API</li>
-                      <li><strong>LinTO - NLU</strong>: Natural Language Understanding. This component evaluate the understanding of the natural language from a text file through its API</li>
-                      <li><strong>LinTO - Skills Server</strong>: Base on IBM "Node Red" engine, It enables the provision of skills for one or more LinTO customers in their business contexts</li>
-                    </ul>
+                    <div id="linto-animation"></div>
                   </div>
                 </div>
 

@@ -557,13 +557,14 @@ h1.home-title{
   background-position: -30px -60px;
 }
 #hdiw-animation {
-  text-align: right;
+  text-align: center;
 }
-.linto-schema{
-  display: inline-block;
-  width: 90%;
-  height: auto;
-
+#linto-animation{
+  text-align: center;
+}
+#linto-animation svg,
+#hdiw-animation svg {
+  width: 90% !important;
 }
 /*===== END HOW DOES IT WORK ? =====*/
 
