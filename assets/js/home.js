@@ -1,23 +1,36 @@
 $(document).ready(function () {
 
-  // Init How does it work animation
+  window['page_lang'] = window.location.href.indexOf('/fr') >= 0 ? 'fr' : 'en'
+
+  // Init Animation "how does it work?"
   const hdiwAnimationContainer = document.getElementById('hdiw-animation')
-  let jsonAnimationPath = 'assets/json/animation-01.json'
-  if (window.location.href.indexOf('/fr') >= 0) {
-    jsonAnimationPath = '../assets/json/animation-01.json'
+  let jsonAnimationPath01 = 'assets/json/animation-01.json'
+  if (window['page_lang'] === 'fr') { 
+    jsonAnimationPath01 = '../assets/json/animation-01.json'
   }
   let hdiwAnimation = lottie.loadAnimation({
     container: hdiwAnimationContainer, // the dom element that will contain the animation
     renderer: 'svg',
     loop: true,
-    autoplay: true,
-    path: jsonAnimationPath, // the path to the animation json
+    autoplay: false,
+    path: jsonAnimationPath01, // the path to the animation json
     rendererSettings: {
       className: 'linto-animation-hdiw'
     }
   })
+  // Animation Segments
+  const segments = [
+    [0, 50], // part 1
+    [51, 100], // part 2 
+    [101, 150], // part 3 
+    [151, 200] // part 4
+  ]
 
-  // how does it work : step
+  hdiwAnimation.addEventListener('data_ready', function(){
+    hdiwAnimation.playSegments(segments[0], true)
+  })
+  
+  // how does it work : steps
   function setHdiwStep (index) {
     const activeStep = $('.hdiw-content.active').attr('data-index')
     const nbItems = $('.hdiw-content').length
@@ -26,24 +39,7 @@ $(document).ready(function () {
       $('.hdiw-content[data-index="'+index+'"]').removeClass('hidden').addClass('active')
       $('.hdiw-control.active').removeClass('active')
       $('.hdiw-control[data-index="'+index+'"]').addClass('active')
-      let animPath = 'assets/json/animation-0' + index + '.json'
-      if (window.location.href.indexOf('/fr') >= 0) {
-        animPath = '../assets/json/animation-0' + index + '.json'
-      }
-      hdiwAnimation.destroy()
-      setTimeout(function () {
-        hdiwAnimation = lottie.loadAnimation({
-          container: hdiwAnimationContainer, // the dom element that will contain the animation
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          path: animPath, // the path to the animation json
-          rendererSettings: {
-            className: 'linto-animation-hdiw'
-          }
-        })
-      }, 150)
-      
+      hdiwAnimation.playSegments(segments[index - 1], true)
       if(index === 1) {
         $('.hdiw-arrow.prev').removeClass('enabled').addClass('disabled')
       } else {
@@ -82,7 +78,8 @@ $(document).ready(function () {
 
   // Init use-cases SLIDER 
   $('#use-cases-slider').slick({
-    autoplay: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
     dots: true
   })
   
