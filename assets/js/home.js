@@ -23,14 +23,21 @@ $(document).ready(function () {
   const segments = [
     [0, 235], // part 1
     [230, 370], // part 2 
-    [365, 460], // part 3 
+    [370, 460], // part 3 
     [460, 750] // part 4
   ]
 
-  hdiwAnimation.addEventListener('data_ready', function(){
-    hdiwAnimation.playSegments(segments[0], true)
+  const controller = new ScrollMagic.Controller()
+  const scene = new ScrollMagic.Scene({
+    triggerElement: "#hdiw",
+    triggerHook: 0,
+    offset: '-120'
   })
-  
+  .addTo(controller)
+  .on("enter", function (e) {
+    hdiwAnimation.playSegments(segments[0], true)      
+  })
+
   // how does it work : steps
   function setHdiwStep (index) {
     const activeStep = $('.hdiw-content.active').attr('data-index')
@@ -41,11 +48,12 @@ $(document).ready(function () {
       $('.hdiw-control.active').removeClass('active')
       $('.hdiw-control[data-index="'+index+'"]').addClass('active')
       hdiwAnimation.playSegments(segments[index - 1], true)
+      $('.hdiw-replay').attr('data-index', index)
       if(index === 1) {
         $('.hdiw-arrow.prev').removeClass('enabled').addClass('disabled')
       } else {
         $('.hdiw-arrow.prev').removeClass('disabled').addClass('enabled')
-      } 
+      }
       if (index === nbItems) {
         $('.hdiw-arrow.next').removeClass('enabled').addClass('disabled')
       } else {
@@ -57,6 +65,13 @@ $(document).ready(function () {
   // On click : HDIW step number
   $('.hdiw-control').on('click', function () {
     setHdiwStep(parseInt($(this).attr('data-index')))
+  })
+
+  // Replay animation 
+  $('.hdiw-replay').on('click', function () {
+    const index = $(this).attr('data-index')
+    console.log(index, segments[index-1][0])
+    hdiwAnimation.playSegments(segments[index-1], true)
   })
 
   // On click : HDIW prev arrow
