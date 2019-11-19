@@ -18,7 +18,6 @@ $(document).ready(function () {
       className: 'linto-animation-hdiw'
     }
   })
-  console.log(hdiwAnimation)
   hdiwAnimation.setSpeed(0.8)
   // Animation Segments
   const segments = [
