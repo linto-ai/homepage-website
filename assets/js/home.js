@@ -18,20 +18,21 @@ $(document).ready(function () {
       className: 'linto-animation-hdiw'
     }
   })
+  console.log(hdiwAnimation)
   hdiwAnimation.setSpeed(0.8)
   // Animation Segments
   const segments = [
-    [0, 235], // part 1
-    [230, 370], // part 2 
-    [370, 460], // part 3 
-    [460, 750] // part 4
+    [0, 290], // part 1
+    [290, 428], // part 2 
+    [428, 534], // part 3 
+    [534, 798] // part 4
   ]
 
   const controller = new ScrollMagic.Controller()
   const scene = new ScrollMagic.Scene({
     triggerElement: "#hdiw",
     triggerHook: 0,
-    offset: '-120'
+    offset: '-160'
   })
   .addTo(controller)
   .on("enter", function (e) {
