@@ -253,6 +253,9 @@
   #compare-table tbody tr td .label {
     display: none;
   }
+  #compare-table tbody tr td .label.label-only {
+    display: inline-block;
+  }
   table.content-table tbody tr td.brand-logo{
     border: none;
     padding: 0;
@@ -262,6 +265,9 @@
     display: none;
   }
 
+  #hdiw-animation svg {
+    margin-top: 40px;
+  }
 }
 @media screen and (max-width: 720px){}
 @media screen and (max-width: 600px){}

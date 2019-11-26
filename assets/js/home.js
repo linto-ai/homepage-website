@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
   window['page_lang'] = window.location.href.indexOf('/fr') >= 0 ? 'fr' : 'en'
+  window['animationStarted'] = false
 
   // Init Animation "how does it work?"
   const hdiwAnimationContainer = document.getElementById('hdiw-animation')
@@ -35,7 +36,10 @@ $(document).ready(function () {
   })
   .addTo(controller)
   .on("enter", function (e) {
-    hdiwAnimation.playSegments(segments[0], true)      
+    if(!window['animationStarted']) {
+      hdiwAnimation.playSegments(segments[0], true)
+      window['animationStarted'] = true
+    }
   })
 
   // how does it work : steps
@@ -70,7 +74,6 @@ $(document).ready(function () {
   // Replay animation 
   $('.hdiw-replay').on('click', function () {
     const index = $(this).attr('data-index')
-    console.log(index, segments[index-1][0])
     hdiwAnimation.playSegments(segments[index-1], true)
   })
 
