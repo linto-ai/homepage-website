@@ -1,18 +1,10 @@
 $(document).ready(function () {
-  const cookieLang = getCookie('userLang')
-  let currentPageLang = 'en'
   let basePath = ''
   if (window.location.host === 'linto-ai.github.io') {
     basePath = 'https://linto-ai.github.io/homepage-website'
   } else if (window.location === 'linto-ai.local') {
     basePath = 'http://linto-ai.local'
   }
-
-  if (window.location.href.indexOf('/fr') >= 0) {
-    currentPageLang = 'fr'
-  }
-
-  //modal
 
   // Toggle page language menu
   $('#lang-btn').on('click', function () {
@@ -28,8 +20,6 @@ $(document).ready(function () {
   // Page language update
   $('.lang-update').on('click', function () {
     const target = $(this).attr('data-href')
-    const lang = $(this).attr('data-lang')
-    setCookie('userLang', lang, 31)
     setTimeout(function () {
       document.location.href = basePath + target
     }, 300)
@@ -59,27 +49,4 @@ $(document).ready(function () {
       }
     }
   })
-
-  function setCookie(cname, cvalue, exdays) {
-    var d = new Date()
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))
-    var expires = "expires=" + d.toUTCString()
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
-  }
-
-  function getCookie(cname) {
-    var name = cname + "="
-    var decodedCookie = decodeURIComponent(document.cookie)
-    var ca = decodedCookie.split(';')
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i]
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1)
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length)
-      }
-    }
-    return ""
-  }
 })
