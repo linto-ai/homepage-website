@@ -319,20 +319,18 @@ p{
 }
 
 #lang-container{
-  width: 160px;
   height: 20px;
   padding: 5px 0;
-  position: absolute;
-  top: 5px;
-  left: 100%;
-  margin-left: -160px;
+  margin-top: 10px;
 }
+
 .lang-btn-container {
   display: inline-block;
   position: relative;
   vertical-align: top;
   margin: 0;
   padding: 0;
+  height: 40px;
 }
 #lang-container .title{
   display: inline-block;
@@ -355,7 +353,8 @@ p{
   background-color: transparent;
 }
 
-#lang-btn{
+#lang-btn,
+#lang-btn-burger{
   background-image: url('../img/select-arrow@2x.png');
   background-size: 15px 80px;
   background-position: 100% 0;
@@ -370,6 +369,7 @@ p{
 }
 .lang-selector .label{
   font-size: 14px;
+  color: #fff;
   
 }
 .lang-selector .icon{
@@ -406,13 +406,16 @@ p{
 .lang-selector:hover .label {
   color: var(--blueChart);
 }
-#lang-btn.closed:hover {
+#lang-btn.closed:hover,
+#lang-btn-burger.closed:hover {
   background-position: 100% -20px;
 }
-#lang-btn.opened {
+#lang-btn.opened,
+#lang-btn-burger.opened {
   background-position: 100% -40px;
 }
-#lang-btn.opened:hover {
+#lang-btn.opened:hover,
+#lang-btn-burger.opened:hover {
   background-position: 100% -60px;
 }
 

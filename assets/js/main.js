@@ -7,7 +7,7 @@ $(document).ready(function () {
   }
 
   // Toggle page language menu
-  $('#lang-btn').on('click', function () {
+  $('#lang-btn, #lang-btn-burger').on('click', function () {
     if ($('.lang-list').hasClass('hidden')) {
       $('.lang-list').removeClass('hidden').addClass('visible')
       $(this).removeClass('closed').addClass('opened')

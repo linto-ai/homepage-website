@@ -34,22 +34,54 @@
     <!-- HEADER -->
     <header id="header">
       <div class="wrapper flex row" id="desktop-nav">
-        <div class="flex1 logo-container">
+        <div class="flex logo-container">
           <a href="index"><img src="./assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai" /></a>
         </div>
-        <nav class="flex3 navigation flex column">
+        <div>
+          <div id="lang-container">
+            <div class="lang-btn-container">
+              <button id="lang-btn" class="lang-selector closed">
+                <span class="icon en"></span>
+                <span class="label">EN</span>
+              </button>
+              <div class="lang-list hidden">
+                <button class="lang-selector lang-update" data-href="/fr/" data-lang="fr">
+                  <span class="icon fr"></span>
+                  <span class="label">FR</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="flex1 navigation flex column">
           <a href="index" class="nav-link active">Homepage</a>
           <a href="enterprises" class="nav-link">Enterprise solutions</a>
           <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
           <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research
             project</a>
           <a href="#contact" class="nav-link">Contact us</a>
-
         </nav>
       </div>
+      
       <div class="wrapper flex row" id="burger-nav">
-        <div class="flex1 logo-container">
+        <div class="logo-container">
           <a href="index"><img src="./assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai" /></a>
+        </div>
+        <div>
+          <div id="lang-container">
+            <div class="lang-btn-container">
+              <button id="lang-btn-burger" class="lang-selector closed">
+                <span class="icon en"></span>
+                <span class="label">EN</span>
+              </button>
+              <div class="lang-list hidden">
+                <button class="lang-selector lang-update" data-href="/fr/" data-lang="fr">
+                  <span class="icon fr"></span>
+                  <span class="label">FR</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="flex1 burger-menu-container flex row">
           <button id="burger-menu" class="closed"></button>
@@ -68,20 +100,7 @@
     </header>
     <div id="page-content">
       <section id="home" class="gradient">
-        <div id="lang-container">
-          <div class="lang-btn-container">
-            <button id="lang-btn" class="lang-selector closed">
-              <span class="icon en"></span>
-              <span class="label">EN</span>
-            </button>
-            <div class="lang-list hidden">
-              <button class="lang-selector lang-update" data-href="/fr/" data-lang="fr">
-                <span class="icon fr"></span>
-                <span class="label">FR</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        
         <div class="wrapper flex row">
           <div class="flex1 flex col home-title-container">
             <h1 class="home-title">Your open source end-to-end platform for voice-operated solutions</h1>
