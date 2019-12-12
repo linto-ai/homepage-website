@@ -741,6 +741,25 @@ img.schema-server{
 }
 /*===== END PARTNERS =====*/
 
+/*===== WAKEMEUP =====*/
+#wakemeup .wrapper{
+  align-items: center;
+}
+#wakemeup .wrapper p {
+  text-align: center;
+  padding: 0 ;
+}
+#wakemeup .wrapper a {
+  display: inline-block;
+  width: auto;
+}
+.wakemeup-img{
+  display: block;
+  width: 280px;
+  margin: 10px auto;
+  height: auto;
+}
+/*===== END WAKEMEUP =====*/
 
 /*=== ENTERPRISES SOLUTIONS ===*/
 #enterprises-solutions-top {
@@ -764,7 +783,6 @@ img.schema-server{
 .section-content-container{
   align-items: flex-end;
   max-width: 100%;
-
 }
 
 #main.enterprises #page-content a{
