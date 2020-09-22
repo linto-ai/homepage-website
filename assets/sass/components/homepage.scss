@@ -15,3 +15,106 @@ h1 {
 .homepage__top-btn {
     margin-top: 40px;
 }
+
+
+/* Privacy matter */
+
+#privacy-matters {
+    padding-top: 80px;
+}
+
+.markets-items {
+    margin: 40px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    .market-item {
+        padding: 20px;
+        margin: 10px 20px;
+        width: 140px;
+        min-width: 140px;
+        max-width: 140px;
+        height: 180px;
+        @include borderRadius(3px);
+        @include blockShadow();
+        @include transition(all 0.3s ease);
+        flex: 1;
+        .market-item__img {
+            background: red;
+            display: inline-block;
+            height: 120px;
+        }
+        .market-item__label {
+            padding-top: 10px;
+            display: inline-block;
+            @include fluid-font(1.4vw, 16px, 18px, 16px);
+            width: 100%;
+            text-align: center;
+            line-height: 24px;
+            font-family: $Barlow;
+            font-weight: 500;
+        }
+        &:hover {
+            @include blockShadowHover();
+            .market-item__label {
+                color: $purple;
+            }
+        }
+    }
+}
+
+
+/* LinTO products */
+
+.products-items {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 40px 0;
+    .product-item {
+        border: none;
+        display: inline-block;
+        flex: 1 1 40%;
+        max-width: 45%;
+        padding: 20px;
+        border: 1px solid #444;
+        margin: 10px;
+        @include borderRadius(5px);
+        background-color: $textColor;
+        color: #fff;
+        @include transition(all 0.3s ease);
+        h3 {
+            @include fluid-font(2vh, 18px, 24px, 20px);
+            padding: 20px 0 10px 0;
+            font-weight: 700;
+            font-family: $Martel;
+        }
+        .product-item__desc {
+            @include fluid-font(1.3vh, 14px, 16px, 16px);
+        }
+        &:hover {
+            background: $purple;
+        }
+    }
+}
+
+
+/* Partners */
+
+.partners-items {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .partner-item__logo {
+        display: inline-block;
+        height: 100px;
+        width: auto;
+    }
+}
+
+.wakemeup-item {
+    justify-content: space-evenly;
+    margin: 20px 0;
+    .wakemeup-logo {
+        display: inline-block;
+        height: 180px;
+        width: auto;
+    }
+}

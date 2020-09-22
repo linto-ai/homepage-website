@@ -175,6 +175,11 @@ body {
 }
 
 .flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
     display: flex;
     .col {
         flex-direction: column;
@@ -236,7 +241,7 @@ p.page-content {
             width: 30px;
             height: 20px;
             position: absolute;
-            top: 15px;
+            top: 17px;
             left: 100%;
             margin-left: -35px;
             @include arrowAppear();
