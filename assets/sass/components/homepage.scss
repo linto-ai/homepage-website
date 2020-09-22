@@ -1,0 +1,17 @@
+/*** HOME TOP ***/
+
+#home-top {
+    padding: 120px 0;
+    background: #ccc;
+}
+
+h1 {
+    @include fluid-font(3.5vw, 24px, 36px, 28px);
+    font-weight: 700;
+    font-family: $Martel;
+    line-height: 50px;
+}
+
+.homepage__top-btn {
+    margin-top: 40px;
+}

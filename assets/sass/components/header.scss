@@ -1,0 +1,62 @@
+#header {
+    padding: 20px 0;
+    height: 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.header--logo {
+    display: inline-block;
+    height: 40px;
+    width: 175px;
+    @include maskImage('../img/svg/linto-ai.svg');
+    background-color: $textColor;
+}
+
+.header--nav {
+    justify-content: space-evenly;
+    a.header--nav-link {
+        display: inline-block;
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        font-family: $Martel;
+        @include fluid-font(1.6vw, 14px, 18px, 16px);
+        font-weight: 600;
+        text-decoration: none;
+        color: $textColor;
+        &:hover {
+            color: $purple;
+        }
+        &.active {
+            color: $purple;
+        }
+    }
+    .header--nav-children {
+        position: absolute;
+        top: 60px;
+        background: #fff;
+        padding: 20px;
+        @include borderRadius(3px);
+        @include blockShadowStrong();
+        z-index: 10;
+        a.header--nav-link__child {
+            flex: 1;
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            padding: 15px 10px;
+            position: relative;
+            font-family: $Barlow;
+            @include fluid-font(1.6vw, 14px, 18px, 16px);
+            font-weight: 400;
+            text-decoration: none;
+            color: $textColor;
+            border-bottom: 1px solid #ececec;
+            &:hover {
+                background-color: $purple;
+            }
+        }
+    }
+}
