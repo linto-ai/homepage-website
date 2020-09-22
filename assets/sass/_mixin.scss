@@ -8,8 +8,8 @@
     animation-name: arrowappear;
     -webkit-animation-name: arrowappear;
     /* Safari 4.0 - 8.0 */
-    animation-duration: 0.3s;
-    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
     /* Safari 4.0 - 8.0 */
     animation-iteration-count: 1;
     -webkit-animation-iteration-count: 1;
@@ -249,12 +249,12 @@ $botleft) {
     }
 }
 
-@mixin traceBorderTop {
-    -webkit-animation: traceBorder 2s linear;
-    -moz-animation: traceBorder 2s linear;
-    -ms-animation: traceBorder 2s linear;
-    -o-animation: traceBorder 2s linear;
-    animation: traceBorder 2s linear;
+@mixin underline {
+    -webkit-animation: traceBorder 0.5s ease;
+    -moz-animation: traceBorder 0.5s ease;
+    -ms-animation: traceBorder 0.5s ease;
+    -o-animation: traceBorder 0.5s ease;
+    animation: traceBorder 0.5s ease;
 }
 
 @mixin fontdef-woff($FontPath,

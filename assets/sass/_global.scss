@@ -229,19 +229,43 @@ p.page-content {
     line-height: 26px;
 }
 
-.link--arrow {
+.link--underline {
     position: relative;
     @include transition(all 0.3s ease);
+    &:hover {
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background-color: #efefef;
+            position: absolute;
+            top: 18px;
+            left: 0;
+            @include underline();
+        }
+    }
+}
+
+.link--arrow {
+    display: inline-block;
+    padding: 10px !important;
+    position: relative;
+    @include transition(all 0.3s ease);
+    font-size: 16px !important;
+    font-weight: 500;
+    font-family: $Barlow;
     &:hover {
         color: #fff !important;
         padding-right: 40px !important;
         &:after {
             content: "";
+            overflow: hidden;
             display: inline-block;
             width: 30px;
             height: 20px;
             position: absolute;
-            top: 17px;
+            top: 10px;
             left: 100%;
             margin-left: -35px;
             @include arrowAppear();
