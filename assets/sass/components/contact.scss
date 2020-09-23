@@ -1,5 +1,8 @@
 #contact {
-    background-color: #ccc;
+    background-color: $blueDark;
+    h2 {
+        color: #fff;
+    }
 }
 
 .contact-form {
@@ -10,6 +13,7 @@
     .field-container {
         padding: 10px 0;
         .contact-form__label {
+            color: #fff;
             @include fluid-font(1.4vh, 16px, 20px, 18px);
             font-weight: 600;
             font-family: $Barlow;
@@ -72,5 +76,27 @@
                 cursor: pointer;
             }
         }
+    }
+}
+
+.contact__links {
+    padding: 20px 20px 20px 40px;
+    border-left: 1px solid #fff;
+    h3.contact__subtitle {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 10px;
+        color: #fff;
+        font-weight: 600;
+        font-family: $Martel;
+        @include fluid-font(1.4vw, 16px, 20px, 18px);
+    }
+    a.contact__link {
+        display: inline-block;
+        padding-bottom: 40px;
+        @include fluid-font(1.4vw, 16px, 20px, 18px);
+        font-family: $Barlow;
+        color: #fff;
+        @include linkUnderline(24px);
     }
 }

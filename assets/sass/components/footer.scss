@@ -22,10 +22,14 @@ footer {
             .footer__link {
                 display: inline-block;
                 color: #cecece;
+                @include linkUnderline(18px);
                 &.disabled {
                     position: relative;
                     color: #656565;
                     text-decoration: line-through;
+                    &:before {
+                        display: none !important;
+                    }
                     &:after {
                         content: "Coming soon";
                         width: 100px;
@@ -40,8 +44,12 @@ footer {
             }
             .footer__link--get-started {
                 background-color: $purple;
+                font-size: 16px;
                 color: #fff;
                 @include borderRadius(3px);
+                &:hover {
+                    background-color: $blueDark;
+                }
             }
         }
     }

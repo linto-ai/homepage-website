@@ -1,8 +1,8 @@
 /*** HOME TOP ***/
 
 #home-top {
-    padding: 120px 0;
-    background: #ccc;
+    padding: 200px 0;
+    @include blueGradient();
 }
 
 h1 {
@@ -10,6 +10,7 @@ h1 {
     font-weight: 700;
     font-family: $Martel;
     line-height: 50px;
+    color: #fff;
 }
 
 .homepage__top-btn {
@@ -20,7 +21,7 @@ h1 {
 /* Privacy matter */
 
 #privacy-matters {
-    padding-top: 80px;
+    padding-top: 120px;
 }
 
 .markets-items {
@@ -39,7 +40,6 @@ h1 {
         @include transition(all 0.3s ease);
         flex: 1;
         .market-item__img {
-            background: red;
             display: inline-block;
             height: 120px;
         }
@@ -51,12 +51,13 @@ h1 {
             text-align: center;
             line-height: 24px;
             font-family: $Barlow;
-            font-weight: 500;
+            font-weight: 600;
         }
         &:hover {
+            background-color: $blueDark;
             @include blockShadowHover();
             .market-item__label {
-                color: $purple;
+                color: #fff;
             }
         }
     }
@@ -74,13 +75,14 @@ h1 {
         display: inline-block;
         flex: 1 1 40%;
         max-width: 45%;
-        padding: 20px;
-        border: 1px solid #444;
+        padding: 40px 20px;
         margin: 10px;
         @include borderRadius(5px);
-        background-color: $textColor;
+        @include blockShadow();
         color: #fff;
         @include transition(all 0.3s ease);
+        background-color: $blue;
+        position: relative;
         h3 {
             @include fluid-font(2vh, 18px, 24px, 20px);
             padding: 20px 0 10px 0;
@@ -88,10 +90,27 @@ h1 {
             font-family: $Martel;
         }
         .product-item__desc {
-            @include fluid-font(1.3vh, 14px, 16px, 16px);
+            font-size: 16px;
+            line-height: 20px;
         }
         &:hover {
-            background: $purple;
+            @include blockShadowHover();
+            background: $blueDark;
+            &:after {
+                content: "Read more...";
+                display: inline-block;
+                width: 120px;
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+                position: absolute;
+                font-style: italic;
+                top: 100%;
+                left: 100%;
+                margin-top: -40px;
+                margin-left: -140px;
+                @include textAppear();
+            }
         }
     }
 }

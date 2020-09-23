@@ -213,10 +213,11 @@ h2 {
     @include fluid-font(2.6vw,
     24px,
     28px,
-    30px);
+    32px);
     font-weight: 700;
     padding-bottom: 20px;
     font-family: $Martel;
+    color: $blueDark;
 }
 
 p.page-content {
@@ -249,10 +250,9 @@ p.page-content {
 
 .link--arrow {
     display: inline-block;
-    padding: 10px !important;
+    padding: 10px 15px !important;
     position: relative;
     @include transition(all 0.3s ease);
-    font-size: 16px !important;
     font-weight: 500;
     font-family: $Barlow;
     &:hover {
@@ -279,11 +279,8 @@ p.page-content {
     height: 20px;
     line-height: 20px;
     padding: 15px;
+    background-color: $purple;
     @include borderRadius(5px);
-    background: blue;
-    &:hover {
-        background: red;
-    }
     @include fluid-font(1.3vw,
     14px,
     18px,
@@ -293,17 +290,18 @@ p.page-content {
     &:visited {
         color: #fff;
     }
+    &:hover {
+        background-color: $blueDark;
+    }
     &.big {
         height: 40px;
         line-height: 40px;
-        @include fluid-font(1.5vw,
-        16px,
-        22px,
-        20px);
+        font-size: 20px;
+        font-weight: 600;
         &.link--arrow {
             &:hover {
                 &:after {
-                    top: 27px;
+                    top: 22px;
                 }
             }
         }
@@ -311,5 +309,5 @@ p.page-content {
 }
 
 section {
-    padding: 40px 0;
+    padding: 60px 0;
 }

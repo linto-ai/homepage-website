@@ -2,7 +2,6 @@
     padding: 10px 0;
     height: 40px;
     background-color: #fff;
-    border-bottom: 1px solid #ccc;
 }
 
 .header--logo {
@@ -10,7 +9,7 @@
     height: 40px;
     width: 175px;
     @include maskImage('../img/svg/linto-ai.svg');
-    background-color: $textColor;
+    background-color: $blue;
 }
 
 .header--nav {
@@ -27,10 +26,10 @@
         text-decoration: none;
         color: $textColor;
         &:hover {
-            color: $purple;
+            color: $blueDark;
         }
         &.active {
-            color: $purple;
+            color: $blueDark;
         }
     }
     .header--nav-children {
@@ -55,7 +54,7 @@
             color: $textColor;
             border-bottom: 1px solid #ececec;
             &:hover {
-                background-color: $purple;
+                background-color: $blueDark;
             }
         }
     }

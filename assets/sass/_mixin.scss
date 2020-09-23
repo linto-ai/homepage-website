@@ -1,3 +1,49 @@
+@mixin linkUnderline ($top) {
+    position: relative;
+    @include transition(all 0.3s ease);
+    &:hover {
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background-color: #efefef;
+            position: absolute;
+            top: $top;
+            left: 0;
+            -webkit-animation: traceBorder 0.5s ease;
+            -moz-animation: traceBorder 0.5s ease;
+            -ms-animation: traceBorder 0.5s ease;
+            -o-animation: traceBorder 0.5s ease;
+            animation: traceBorder 0.5s ease;
+        }
+    }
+}
+
+@mixin blueGradient() {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1b92ea+0,05eaff+100 */
+    background: #1b92ea;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #1b92ea 0%, #05eaff 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #1b92ea 0%, #05eaff 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #1b92ea 0%, #05eaff 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin purpleGradient() {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a96fd6+0,7510ac+100 */
+    background: #a96fd6;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #a96fd6 0%, #7510ac 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #a96fd6 0%, #7510ac 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #a96fd6 0%, #7510ac 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
 @mixin arrowAppear() {
     mask-image: url('../img/svg/arrow-link.svg');
     -webkit-mask-image: url('../img/svg/arrow-link.svg');
@@ -37,16 +83,45 @@
     }
 }
 
+@mixin textAppear() {
+    animation-name: textAppear;
+    -webkit-animation-name: textAppear;
+    /* Safari 4.0 - 8.0 */
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    /* Safari 4.0 - 8.0 */
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes textAppear {
+    from {
+        left: 120%
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes textAppear {
+    from {
+        left: 120%
+    }
+    to {
+        left: 100%;
+    }
+}
+
 @mixin blockShadow() {
-    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
 @mixin blockShadowHover() {
-    -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
 @mixin blockShadowStrong() {
