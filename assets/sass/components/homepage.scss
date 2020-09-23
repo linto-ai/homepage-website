@@ -20,10 +20,6 @@ h1 {
 
 /* Privacy matter */
 
-#privacy-matters {
-    padding-top: 120px;
-}
-
 .markets-items {
     margin: 40px 0;
     justify-content: center;
@@ -66,6 +62,19 @@ h1 {
 
 /* LinTO products */
 
+#linto-products {
+    background-image: linear-gradient(160deg, #091A90 0%, #7510ac 100%);
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+    color: #fff;
+    h2 {
+        color: #fff;
+    }
+    padding-top: 80px;
+    position: relative;
+}
+
 .products-items {
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -81,21 +90,43 @@ h1 {
         @include blockShadow();
         color: #fff;
         @include transition(all 0.3s ease);
-        background-color: $blue;
+        background-color: #fff;
         position: relative;
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: $blueDark;
+            position: absolute;
+            @include maskImage('../img/svg/app.svg');
+            @include transition(all 0.3s ease);
+            top: 20px;
+            left: 100%;
+            margin-left: -40px;
+        }
         h3 {
             @include fluid-font(2vh, 18px, 24px, 20px);
             padding: 20px 0 10px 0;
             font-weight: 700;
             font-family: $Martel;
+            color: $blueDark;
         }
         .product-item__desc {
             font-size: 16px;
             line-height: 20px;
+            color: $textColor;
         }
         &:hover {
             @include blockShadowHover();
-            background: $blueDark;
+            background: $purple;
+            h3,
+            .product-item__desc {
+                color: #fff;
+            }
+            &:before {
+                background-color: #fff;
+            }
             &:after {
                 content: "Read more...";
                 display: inline-block;
