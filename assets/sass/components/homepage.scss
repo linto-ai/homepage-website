@@ -1,16 +1,19 @@
 /*** HOME TOP ***/
 
 #home-top {
-    padding: 200px 0;
+    padding: 120px 0;
     @include blueGradient();
 }
 
-h1 {
-    @include fluid-font(3.5vw, 24px, 36px, 28px);
-    font-weight: 700;
-    font-family: $Martel;
-    line-height: 50px;
-    color: #fff;
+svg {
+    background: rgba(255, 255, 255, 0.5);
+    @include borderRadius(50px);
+}
+
+.homepage__title {
+    h1 {
+        padding-top: 100px;
+    }
 }
 
 .homepage__top-btn {

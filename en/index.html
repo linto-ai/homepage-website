@@ -10,7 +10,8 @@
     <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon/favicon.ico" />
     <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
     <!-- Scripts -->
-    <script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lottie.min.js"></script>
 
     <!-- Matomo Tag Manager 
   <script type="text/javascript">
@@ -22,7 +23,7 @@
    End Matomo Tag Manager -->
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css" />
 </head>
 
 <body>
@@ -34,7 +35,7 @@
             </div>
             <div class="flex row flex2 header--nav">
                 <div>
-                    <a href="#" class="header--nav-link">Setup</a>
+                    <a href="/setup" class="header--nav-link">Setup</a>
                 </div>
                 <div>
                     <a href="#" id="products" class="header--nav-link header--nav-link__parent">Open source products</a>
@@ -84,6 +85,9 @@
                             <a href="#" class="header--nav-link__child link--arrow">Hands free processes</a>
                         </div>
                         <div class="flex row">
+                            <a href="#" class="header--nav-link__child link--arrow">User accessibility</a>
+                        </div>
+                        <div class="flex row">
                             <a href="#" class="header--nav-link__child link--arrow">Hobbyist, hackers and AI enthousiast</a>
                         </div>
                     </div>
@@ -92,7 +96,7 @@
                     <a href="#" class="header--nav-link">Documentation</a>
                 </div>
                 <div>
-                    <a href="#" class="header--nav-link">Contact</a>
+                    <a href="#contact" class="header--nav-link">Contact</a>
                 </div>
             </div>
         </div>
@@ -101,20 +105,18 @@
     <!-- HOME TOP -->
     <section id="home-top" class="flex col">
         <div class="wrapper flex1 flex row">
-            <div class="flex col">
-                <div class="flex1 homepage__title">
+            <div class="flex1 flex col">
+                <div class="homepage__title">
                     <h1>Your open source private platfrom <br/>for voice-operated solutions</h1>
                 </div>
-
                 <div class="flex row homepage__top-btn">
-                    <a href="#" class="btn big link--arrow">Get Started</a>
+                    <a href="/setup" class="btn big link--arrow">Get Started</a>
                     <a href="#" class="btn big link--arrow disabled">Try LinTO in your browser</a>
                 </div>
-
             </div>
 
-            <div class="flex1">
-                IMG
+            <div class="flex row">
+                <div id="animation-home"></div>
             </div>
         </div>
     </section>
@@ -214,7 +216,7 @@
 
             <div class="flex row wakemeup-item">
                 <a href="https://wakemeup.linto.ai/" target="_blank">
-                    <img src="./assets/img/logo-wakemeup.png" alt="Wakemeup.linto.ai" class="wakemeup-logo" />
+                    <img src="/assets/img/logo-wakemeup.png" alt="Wakemeup.linto.ai" class="wakemeup-logo" />
                 </a>
             </div>
         </div>
@@ -339,56 +341,56 @@
                 <span class="footer__label">Try LinTO</span>
                 <ul class="footer__list">
                     <li>
-                        <a href="#" class="link--arrow footer__link--get-started">Get started</a>
+                        <a href="/setup" class=" link--arrow footer__link--get-started ">Get started</a>
                     </li>
                     <li>
-                        <a href="#" class="footer__link ">Documentation</a>
+                        <a href="# " class="footer__link ">Documentation</a>
                     </li>
                     <li>
-                        <span class="footer__link disabled">Try LinTO on your web browser</span>
+                        <span class="footer__link disabled ">Try LinTO on your web browser</span>
                     </li>
                 </ul>
             </div>
-            <div class="flex1 flex col">
-                <span class="footer__label">Research project</span>
-                <ul class="footer__list">
+            <div class="flex1 flex col ">
+                <span class="footer__label ">Research project</span>
+                <ul class="footer__list ">
                     <li>
-                        <a href="https://research.linagora.com/display/home/Home" target="_blank" class="footer__link ">research.linagora.com</a>
+                        <a href="https://research.linagora.com/display/home/Home " target="_blank " class="footer__link ">research.linagora.com</a>
                     </li>
                     <li>
-                        <a href="https://wakemeup.linto.ai/" target="_blank" class="footer__link ">wakemeup.linto.ai<a>
+                        <a href="https://wakemeup.linto.ai/ " target="_blank " class="footer__link ">wakemeup.linto.ai<a>
                       
                     </li>
                 </ul>
 
-                <span class="footer__label">Partners</span>
-                <ul class="footer__list">
+                <span class="footer__label ">Partners</span>
+                <ul class="footer__list ">
                     <li>
-                        <a href="https://linagora.com/" target="_blank" class="footer__link ">Linagora</a>
+                        <a href="https://linagora.com/ " target="_blank " class="footer__link ">Linagora</a>
                     </li>
                     <li>
-                        <a href="https://www.irit.fr/" target="_blank" class="footer__link ">IRIT</a>
+                        <a href="https://www.irit.fr/ " target="_blank " class="footer__link ">IRIT</a>
                     </li>
                     <li>
-                        <a href="https://www.zelros.com/" target="_blank" class="footer__link ">Zelros</a>
+                        <a href="https://www.zelros.com/ " target="_blank " class="footer__link ">Zelros</a>
                     </li>
                     <li>
-                        <a href="https://www.laas.fr/public/" target="_blank" class="footer__link ">LAAS CNRS</a>
+                        <a href="https://www.laas.fr/public/ " target="_blank " class="footer__link ">LAAS CNRS</a>
                     </li>
                     <li>
-                        <a href="https://www.polytechnique.edu/fr" target="_blank" class="footer__link ">l'X polytechnique</a>
+                        <a href="https://www.polytechnique.edu/fr " target="_blank " class="footer__link ">l'X polytechnique</a>
                     </li>
                 </ul>
             </div>
-            <div class="flex col" style="justify-content: flex-end">
-                <a href="https://linagora.com/" target="_blank" class="footer__link"></a>
-                <img src="/assets/img/logo-linagora.png" alt="Linagora" class="footer__img--linagora"></a>
-                <a href="/" class="footer__link--lintoai"></a>
+            <div class="flex col " style="justify-content: flex-end ">
+                <a href="https://linagora.com/ " target="_blank " class="footer__link "></a>
+                <img src="/assets/img/logo-linagora.png " alt="Linagora " class="footer__img--linagora "></a>
+                <a href="/ " class="footer__link--lintoai "></a>
             </div>
         </div>
     </footer>
 
-    <script type="text/javascript">
+    <script type="text/javascript ">
         $(document).ready(function() {
             // get nav links
             const navLinks = $('.header--nav-link')
@@ -407,7 +409,7 @@
                     navLinksParents.removeClass('active')
 
                     const linkId = jThis.attr('id')
-                    const targetSub = $('div[data-parent="' + linkId + '"]')
+                    const targetSub = $('div[data-parent=" ' + linkId + ' "]')
                     if (targetSub.hasClass('hidden')) {
                         targetSub.removeClass('hidden')
                         jThis.addClass('active')
@@ -427,6 +429,20 @@
                     navChildrens.addClass('hidden')
                 }
 
+            })
+
+            // Animation LinTO Blink
+            let jsonPath = '/assets/json/animation.json'
+            const animationContainer = document.getElementById('animation-home')
+            lottie.loadAnimation({
+                container: animationContainer, // the dom element that will contain the animation
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: jsonPath, // the path to the animation json
+                rendererSettings: {
+                    className: 'linto-animation-home'
+                }
             })
         })
     </script>

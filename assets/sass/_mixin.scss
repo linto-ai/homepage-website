@@ -45,6 +45,17 @@
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+@mixin blueGradient2() {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1b92ea+0,bcd3e5+100,7db9e8+100 */
+    background: #1b92ea;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #1b92ea 0%, #bcd3e5 100%, #7db9e8 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #1b92ea 0%, #bcd3e5 100%, #7db9e8 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #1b92ea 0%, #bcd3e5 100%, #7db9e8 100%);
+}
+
 @mixin purpleGradient() {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a96fd6+0,7510ac+100 */
     background: #a96fd6;

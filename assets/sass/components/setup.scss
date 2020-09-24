@@ -1,0 +1,83 @@
+#getstarted {
+    @include blueGradient();
+    .wrapper>div {
+        margin: 20px;
+    }
+    p.page-content {
+        font-weight: 500;
+    }
+    .container--white {
+        padding: 20px;
+        background-color: #fff;
+        @include borderRadius(5px);
+        justify-items: space-evenly;
+    }
+    .quote {
+        @include fluid-font(1.2vw, 16px, 20px, 16px);
+        padding-bottom: 20px;
+        font-weight: 600;
+        font-family: $Martel;
+        font-style: italic;
+        line-height: 24px;
+    }
+    .from-select__label {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 600;
+        padding: 20px 0 10px 0;
+    }
+    .form-select {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        font-family: $Barlow;
+        border: 1px solid #fff;
+        max-width: 320px;
+        background-color: #fff;
+        font-weight: 600;
+        @include borderRadius(3px);
+    }
+}
+
+.setup-steps {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 40px 0;
+    background: #ececec;
+    h3 {
+        color: $blue;
+        @include fluid-font(1.4vw, 18px, 20px, 20px);
+        font-weight: 500;
+        font-family: $Martel;
+        padding-bottom: 20px;
+    }
+    .setup__list {
+        li {
+            display: inline-block;
+            padding: 10px 0;
+            width: 100%;
+            .setup__step {
+                font-weight: 500;
+            }
+            .setup__content {
+                strong {
+                    font-weight: 500;
+                    color: $blueDark;
+                }
+            }
+        }
+    }
+}
+
+.setup__illustration {
+    align-items: center;
+}
+
+.setup-illustration {
+    display: block;
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    background: #ccc;
+}

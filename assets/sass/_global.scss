@@ -209,6 +209,17 @@ body {
     display: none;
 }
 
+h1 {
+    @include fluid-font(3.5vw,
+    24px,
+    36px,
+    28px);
+    font-weight: 700;
+    font-family: $Martel;
+    line-height: 50px;
+    color: #fff;
+}
+
 h2 {
     @include fluid-font(2.6vw,
     24px,
@@ -222,7 +233,7 @@ h2 {
 
 p.page-content {
     display: inline-block;
-    @include fluid-font(1.2vw,
+    @include fluid-font(1.3vw,
     16px,
     18px,
     20px);
@@ -280,6 +291,7 @@ p.page-content {
     line-height: 20px;
     padding: 15px;
     background-color: $purple;
+    margin-right: 20px;
     @include borderRadius(5px);
     @include fluid-font(1.3vw,
     14px,
@@ -287,6 +299,12 @@ p.page-content {
     16px);
     font-weight: 500;
     color: #fff;
+    &.btn--blue {
+        background-color: $blue;
+    }
+    &.btn--black {
+        background-color: #434343;
+    }
     &:visited {
         color: #fff;
     }
@@ -312,7 +330,6 @@ p.page-content {
             overflow: hidden;
             font-style: italic;
             &:hover {
-                margin-left: 20px;
                 background-color: #ccc;
                 color: #444 !important;
                 padding-right: 15px !important;
