@@ -409,7 +409,7 @@
                     navLinksParents.removeClass('active')
 
                     const linkId = jThis.attr('id')
-                    const targetSub = $('div[data-parent=" ' + linkId + ' "]')
+                    const targetSub = $('div[data-parent="' + linkId + '"]')
                     if (targetSub.hasClass('hidden')) {
                         targetSub.removeClass('hidden')
                         jThis.addClass('active')
@@ -424,26 +424,27 @@
 
             navLinks.on('mouseover', function(e) {
                 if (!$(this).hasClass('header--nav-link__parent')) {
-                    console.log(e)
                     navLinksParents.removeClass('active')
                     navChildrens.addClass('hidden')
                 }
 
             })
+            setTimeout(() => {
+                // Animation LinTO Blink
+                let jsonPath = '/assets/json/animation.json'
+                const animationContainer = document.getElementById('animation-home')
+                lottie.loadAnimation({
+                    container: animationContainer, // the dom element that will contain the animation
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: jsonPath, // the path to the animation json
+                    rendererSettings: {
+                        className: 'linto-animation-home'
+                    }
+                })
+            }, 250);
 
-            // Animation LinTO Blink
-            let jsonPath = '/assets/json/animation.json'
-            const animationContainer = document.getElementById('animation-home')
-            lottie.loadAnimation({
-                container: animationContainer, // the dom element that will contain the animation
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: jsonPath, // the path to the animation json
-                rendererSettings: {
-                    className: 'linto-animation-home'
-                }
-            })
         })
     </script>
 </body>
