@@ -305,6 +305,39 @@ p.page-content {
                 }
             }
         }
+        &.disabled {
+            margin-left: 20px;
+            background-color: #ccc;
+            color: #656565;
+            overflow: hidden;
+            font-style: italic;
+            &:hover {
+                margin-left: 20px;
+                background-color: #ccc;
+                color: #444 !important;
+                padding-right: 15px !important;
+                &:after {
+                    display: inline-block;
+                    content: "Coming soon...";
+                    font-style: italic;
+                    position: absolute;
+                    background-color: #ccc;
+                    top: 0;
+                    left: 20px;
+                    height: 40px;
+                    padding: 10px 15px;
+                    width: 100%;
+                    line-height: 40px;
+                    font-size: 20px;
+                    font-weight: 600;
+                    z-index: 5;
+                    color: $red;
+                    mask-image: none;
+                    -webkit-mask-image: none;
+                    text-align: center;
+                }
+            }
+        }
     }
 }
 
