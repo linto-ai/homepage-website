@@ -11,6 +11,9 @@
         background-color: #fff;
         @include borderRadius(5px);
         justify-items: space-evenly;
+        p.page-content {
+            padding-bottom: 20px;
+        }
     }
     .quote {
         @include fluid-font(1.2vw, 16px, 20px, 16px);
@@ -22,21 +25,24 @@
     }
     .from-select__label {
         font-size: 18px;
-        color: #fff;
+        color: $textColor;
         font-weight: 600;
         padding: 20px 0 10px 0;
     }
     .form-select {
         display: inline-block;
-        height: 30px;
-        line-height: 30px;
+        height: 40px;
+        line-height: 40px;
         font-size: 16px;
         font-family: $Barlow;
         border: 1px solid #fff;
+        min-width: 220px;
         max-width: 320px;
         background-color: #fff;
         font-weight: 600;
+        padding: 0 10px;
         @include borderRadius(3px);
+        @include blockShadow();
     }
 }
 
@@ -44,7 +50,8 @@
     padding: 20px;
     border: 1px solid #ccc;
     margin: 40px 0;
-    background: #ececec;
+    background: #f1f1f1;
+    @include borderRadius(5px);
     h3 {
         color: $blue;
         @include fluid-font(1.4vw, 18px, 20px, 20px);

@@ -8,6 +8,7 @@
 svg {
     background: rgba(255, 255, 255, 0.5);
     @include borderRadius(50px);
+    max-width: 600px;
 }
 
 .homepage__title {

@@ -7,7 +7,7 @@ module.exports = (webServer) => {
         requireAuth: true,
         controller: (req, res, next) => {
             res.setHeader("Content-Type", "text/html")
-            res.sendFile(process.env.BASE_PATH + 'en/setup.html')
+            res.sendFile(process.env.BASE_PATH + 'setup.html')
         }
     }]
 }
