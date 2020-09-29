@@ -181,10 +181,10 @@ body {
     display: -moz-flex;
     display: -webkit-flex;
     display: flex;
-    .col {
+    &.col {
         flex-direction: column;
     }
-    .row {
+    &.row {
         flex-direction: row;
     }
 }

@@ -6,6 +6,7 @@ module.exports = (webServer) => {
         "/setup": require('./setup')(webServer),
         "/products": require('./products')(webServer),
         "/markets": require('./markets')(webServer),
+        "/playground": require('./playground')(webServer),
         "/fr": require('./fr')(webServer),
         "/mail": require('./contact')(webServer)
     }

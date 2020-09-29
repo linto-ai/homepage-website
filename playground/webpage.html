@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LinTO, open source end-to-end platform for voice-operated solutions</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Linagora" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en-GB" />
+    <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
+    <!-- Scripts -->
+    <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/slick.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css" />
+</head>
+
+<body>
+    <div id="playground-view" class="flex col">
+        <header id="playground__header" class="flex row">
+            <div class="flex flex1">
+                <a href="/" class="header--logo"></a>
+            </div>
+            <div class="flex row flex2">
+                <h1>LinTO playground</h1>
+            </div>
+            <div class="flex1"></div>
+        </header>
+
+        <div class="flex1 flex row" id="playground-wrapper">
+            <div id="playground-side">
+                SIDE
+            </div>
+            <div class="flex1" id="playground-app">
+                <section class="playground__block flex col playground__block playground__block--selected" data-index="1">
+                    <h2 class="playground__title">My section title 1 (selected)</h2>
+                    <p class="playground__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis tortor pulvinar dolor aliquam lobortis. Aliquam mattis arcu quis pellentesque ullamcorper. Etiam urna mauris, tempus a justo vel, aliquam egestas orci. Duis risus
+                        nisl, sagittis ac egestas quis, iaculis a odio. Aliquam bibendum, arcu ac venenatis dictum, leo odio porttitor augue, a vestibulum nibh eros congue nisl. Pellentesque consectetur ipsum tincidunt orci rhoncus ultrices. Donec eget
+                        suscipit justo, aliquet finibus mauris. Fusce cursus vulputate pharetra.</p>
+                </section>
+
+                <section class="playground__block flex col playground__block " data-index="2">
+                    <h2 class="playground__title">My section title 2</h2>
+                    <p class="playground__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis tortor pulvinar dolor aliquam lobortis. Aliquam mattis arcu quis pellentesque ullamcorper. Etiam urna mauris, tempus a justo vel, aliquam egestas orci. Duis risus
+                        nisl, sagittis ac egestas quis, iaculis a odio. Aliquam bibendum, arcu ac venenatis dictum, leo odio porttitor augue, a vestibulum nibh eros congue nisl. Pellentesque consectetur ipsum tincidunt orci rhoncus ultrices. Donec eget
+                        suscipit justo, aliquet finibus mauris. Fusce cursus vulputate pharetra.</p>
+                </section>
+                <section class="playground__block flex col playground__block " data-index="3">
+                    <h2 class="playground__title">Audio player</h2>
+                    <audio src="/assets/audio/example.mp3" controls>
+                        Your browser does not support the
+                        <code>audio</code> element.
+                </audio>
+                </section>
+                <section class="playground__block flex col playground__block " data-index="4">
+                    <div id="playground__slider">
+                        <div class="playground__slider-item">TEST1</div>
+                        <div class="playground__slider-item">TEST2</div>
+                        <div class="playground__slider-item">TEST3</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="playground-footer" class="flex row">
+        <div class="flex1 playground-footer--item">
+            <a href="#" class="playground-footer__link active">Webpage</a>
+        </div>
+        <div class="flex1 playground-footer--item">
+            <a href="#" class="playground-footer__link">Meeting room</a>
+        </div>
+        <div class="flex1 playground-footer--item">
+            <a href="#" class="playground-footer__link">Other</a>
+        </div>
+    </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            console.log('start')
+
+            $('#playground__slider').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                arrows: true
+            });
+        })
+    </script>
+</body>
+
+</html>
