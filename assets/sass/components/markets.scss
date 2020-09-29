@@ -1,10 +1,10 @@
-#product-title {
-    @include blueToPurpleGradient();
+#market-title {
+    @include blueGradient();
     padding: 60px 0;
-    .product__title {
+    .market__title {
         text-align: center;
     }
-    .product__desc {
+    .market__desc {
         color: #fff;
         padding-top: 20px;
         @include fluid-font(1.4vw, 18px, 22px, 20px);

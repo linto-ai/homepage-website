@@ -67,10 +67,7 @@ svg {
 /* LinTO products */
 
 #linto-products {
-    background-image: linear-gradient(160deg, #091A90 0%, #7510ac 100%);
-    background-repeat: no-repeat;
-    background-blend-mode: multiply;
-    background-size: cover;
+    @include blueToPurpleGradient();
     color: #fff;
     h2 {
         color: #fff;
@@ -96,6 +93,7 @@ svg {
         @include transition(all 0.3s ease);
         background-color: #fff;
         position: relative;
+        overflow: hidden;
         &:before {
             content: '';
             display: inline-block;
@@ -123,7 +121,7 @@ svg {
         }
         &:hover {
             @include blockShadowHover();
-            background: $purple;
+            background: $blue;
             h3,
             .product-item__desc {
                 color: #fff;
@@ -153,6 +151,12 @@ svg {
 
 /* Partners */
 
+#wakemeup {
+    p.page-content {
+        padding-top: 20px;
+    }
+}
+
 .partners-items {
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -165,7 +169,7 @@ svg {
 
 .wakemeup-item {
     justify-content: space-evenly;
-    margin: 20px 0;
+    margin-top: -40px;
     .wakemeup-logo {
         display: inline-block;
         height: 180px;
