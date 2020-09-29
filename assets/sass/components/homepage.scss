@@ -34,7 +34,7 @@ svg {
         width: 140px;
         min-width: 140px;
         max-width: 140px;
-        height: 180px;
+        height: 200px;
         @include borderRadius(3px);
         @include blockShadow();
         @include transition(all 0.3s ease);
@@ -49,9 +49,11 @@ svg {
             @include fluid-font(1.4vw, 16px, 18px, 16px);
             width: 100%;
             text-align: center;
-            line-height: 24px;
-            font-family: $Barlow;
-            font-weight: 600;
+            line-height: 16px;
+            line-height: 22px;
+            font-family: $Martel;
+            font-weight: 700;
+            padding-bottom: 10px;
         }
         &:hover {
             background-color: $blueDark;
