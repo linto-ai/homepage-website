@@ -5,9 +5,12 @@
         text-align: center;
     }
     .market__desc {
+        display: inline-block;
+        width: 100%;
         color: #fff;
         padding-top: 20px;
         @include fluid-font(1.4vw, 18px, 22px, 20px);
         line-height: 24px;
+        text-align: center;
     }
 }

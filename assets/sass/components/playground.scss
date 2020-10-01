@@ -1,3 +1,22 @@
+#playground-title {
+    padding: 60px 0;
+    @include blueToPurpleGradient();
+    .playground__title {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    .playground__desc {
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        padding-top: 20px;
+        @include fluid-font(1.4vw, 18px, 22px, 20px);
+        line-height: 24px;
+        text-align: center;
+    }
+}
+
 #lintoweb-area {
     width: 300px;
 }
@@ -70,6 +89,7 @@
         margin-bottom: 40px;
         &.playground__block--selected {
             background-color: $blueDark;
+            @include boxShadow(0, 0, 10px, 0, rgba(0, 50, 120, 0.5));
             h2 {
                 color: #fff;
             }

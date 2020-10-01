@@ -305,6 +305,13 @@ p.page-content {
     &.btn--black {
         background-color: #434343;
     }
+    &.btn--white {
+        background-color: #fff;
+        color: $blueDark !important;
+        &:hover {
+            color: #fff !important;
+        }
+    }
     &:visited {
         color: #fff;
     }
