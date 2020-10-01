@@ -3,12 +3,18 @@
 #home-top {
     padding: 120px 0;
     @include blueGradient();
-}
-
-svg {
-    background: rgba(255, 255, 255, 0.5);
-    @include borderRadius(50px);
-    max-width: 600px;
+    @include transition(all 0.3s ease);
+    svg {
+        background: rgba(255, 255, 255, 0.5);
+        @include borderRadius(50px);
+        max-width: 600px;
+    }
+    &.contrasted {
+        background: $blueDark !important;
+        svg {
+            background: #ececec;
+        }
+    }
 }
 
 .homepage__title {
@@ -70,12 +76,16 @@ svg {
 
 #linto-products {
     @include blueToPurpleGradient();
+    @include transition(all 0.3s ease);
     color: #fff;
+    padding-top: 80px;
+    position: relative;
     h2 {
         color: #fff;
     }
-    padding-top: 80px;
-    position: relative;
+    &.contrasted {
+        background: $blueDark !important;
+    }
 }
 
 .products-items {

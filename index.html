@@ -33,6 +33,9 @@
             <div class="flex flex1">
                 <a href="/" class="header--logo"></a>
             </div>
+            <div class="flex row">
+                <button id="high-contrast">High contrast</button>
+            </div>
             <div class="flex row flex2 header--nav">
                 <div>
                     <a href="/setup" class="header--nav-link">Setup</a>
@@ -456,6 +459,20 @@
                 })
             }, 250);
 
+
+            const contrastBtn = $('#high-contrast')
+            const targetBlocks = ['#home-top', '#linto-products']
+
+            contrastBtn.on('click', function() {
+                for (let index in targetBlocks) {
+                    const target = $(targetBlocks[index])
+                    if (target.hasClass('contrasted'))  {
+                        target.removeClass('contrasted')
+                    } else  {
+                        target.addClass('contrasted')
+                    }
+                }
+            })
         })
     </script>
 </body>
