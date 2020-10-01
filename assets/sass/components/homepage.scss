@@ -45,14 +45,46 @@
         @include blockShadow();
         @include transition(all 0.3s ease);
         flex: 1;
+        align-items: center;
         .market-item__img {
             display: inline-block;
             height: 120px;
         }
+        .market-item__icon {
+            display: inline-block;
+            height: 120px;
+            width: 120px;
+            background-size: 120px 120px;
+            background-repeat: no-repeat;
+            &.banking {
+                background-image: url('../img/svg/banking.svg');
+            }
+            &.meeting {
+                background-image: url('../img/svg/meeting.svg');
+            }
+            &.building {
+                background-image: url('../img/svg/building.svg');
+            }
+            &.handsfree {
+                background-image: url('../img/svg/handsfree.svg');
+            }
+            &.developer {
+                background-image: url('../img/svg/developer.svg');
+            }
+            &.healthcare {
+                background-image: url('../img/svg/healthcare.svg');
+            }
+            &.vocal {
+                background-image: url('../img/svg/vocal.svg');
+            }
+        }
         .market-item__label {
             padding-top: 10px;
             display: inline-block;
-            @include fluid-font(1.4vw, 16px, 18px, 16px);
+            @include fluid-font(1.4vw,
+            16px,
+            18px,
+            16px);
             width: 100%;
             text-align: center;
             line-height: 16px;
@@ -66,6 +98,29 @@
             @include blockShadowHover();
             .market-item__label {
                 color: #fff;
+            }
+            .market-item__icon {
+                &.banking {
+                    background-image: url('../img/svg/banking-white.svg');
+                }
+                &.meeting {
+                    background-image: url('../img/svg/meeting-white.svg');
+                }
+                &.building {
+                    background-image: url('../img/svg/building-white.svg');
+                }
+                &.handsfree {
+                    background-image: url('../img/svg/handsfree-white.svg');
+                }
+                &.developer {
+                    background-image: url('../img/svg/developer-white.svg');
+                }
+                &.healthcare {
+                    background-image: url('../img/svg/healthcare-white.svg');
+                }
+                &.vocal {
+                    background-image: url('../img/svg/vocal-white.svg');
+                }
             }
         }
     }
@@ -120,7 +175,10 @@
             margin-left: -40px;
         }
         h3 {
-            @include fluid-font(2vh, 18px, 24px, 20px);
+            @include fluid-font(2vh,
+            18px,
+            24px,
+            20px);
             padding: 20px 0 10px 0;
             font-weight: 700;
             font-family: $Martel;

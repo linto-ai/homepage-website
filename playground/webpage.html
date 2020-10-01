@@ -11,6 +11,7 @@
     <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
     <!-- Scripts -->
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lottie.min.js"></script>
 
     <!-- Matomo Tag Manager 
   <script type="text/javascript">
@@ -112,7 +113,7 @@
             </div>
             <div class="flex1">
                 <p class="playground__desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ultricies massa, sed commodo eros sodales a.
+                    Try LinTO in your web browser and navigate with your voice
                 </p>
             </div>
         </div>
@@ -120,8 +121,12 @@
     <!-- END PAGE TITLE -->
     <!-- PLAYGROUND -->
     <div id="lintoweb">
-        <div id="linto-status" class="sleeping">
 
+        <div id="linto-animated" class="sleeping">
+        </div>
+        <div id="linto-btn">
+            <button id="sleeping">Sleeping</button>
+            <button id="wakeup">Wakeup</button>
         </div>
 
     </div>
@@ -389,31 +394,27 @@
 
 
             const sleeping = $('#sleeping')
-            const listening = $('#listening')
-            const thinking = $('#thinking')
-            const action = $('#action')
-            const error = $('#error')
+            const wakeup = $('#wakeup')
+
 
             sleeping.on('click', function()  {
                 changeLintoState('sleeping')
+                loadAnimation('sleeping.json', true)
             })
-            listening.on('click', function() {
-                changeLintoState('listening')
+            wakeup.on('click', function() {
+                changeLintoState('wakeup')
+                loadAnimation('wakeup.json', false)
             })
-            thinking.on('click', function() {
-                changeLintoState('thinking')
-            })
-            action.on('click', function() {
-                changeLintoState('action')
-            })
-            error.on('click', function() {
-                changeLintoState('error')
-            })
+
+            // INIT 
+            loadAnimation('sleeping.json', true)
 
             function changeLintoState(val) {
                 const lintoStatus = $('#linto-status')
                 if (lintoStatus.hasClass('sleeping')) {
                     lintoStatus.removeClass('sleeping')
+                } else if (lintoStatus.hasClass('wakeup')) {
+                    lintoStatus.removeClass('wakeup')
                 } else if (lintoStatus.hasClass('listening')) {
                     lintoStatus.removeClass('listening')
                 } else if (lintoStatus.hasClass('thinking')) {
@@ -426,6 +427,26 @@
 
                 lintoStatus.addClass(val)
             }
+
+            function loadAnimation(jsonName, loop)  {
+                // Animation LinTO Blink
+                let jsonPath = '../assets/json/' + jsonName
+
+                const animationContainer = document.getElementById('linto-animated')
+                animationContainer.innerHTML = ''
+                lottie.loadAnimation({
+                    container: animationContainer, // the dom element that will contain the animation
+                    renderer: 'svg',
+                    loop,
+                    autoplay: true,
+                    path: jsonPath, // the path to the animation json
+                    rendererSettings: {
+                        className: 'linto-animation'
+                    }
+                })
+            }
+
+
         })
     </script>
 </body>

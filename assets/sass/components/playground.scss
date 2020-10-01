@@ -27,15 +27,17 @@
     left: 25px;
     width: 250px;
     height: 250px;
-    background: $blue;
+    background: #fff;
     z-index: 20;
     @include borderRadius(200px);
     @include boxShadow(0, 0, 20px, 5px, rgba(0, 0, 0, 0.3));
 }
 
-#linto-status {
+#linto-animated {
     width: 120px;
     height: 120px;
+    padding: 10px;
+    @include borderRadius(70px);
     margin: 30px auto;
     position: relative;
     &:after {
@@ -43,40 +45,56 @@
         width: 100%;
         height: 20px;
         position: absolute;
-        top: 130px;
+        top: 120px;
         left: 0;
         text-align: center;
-        color: #fff;
+        color: $blue;
     }
     &.sleeping {
-        background: #555;
         &:after {
             content: "sleeping";
         }
     }
+    &.wakeup {
+        &:after {
+            content: "waking up";
+        }
+    }
     &.listening {
-        background: green;
         &:after {
             content: "listening";
         }
     }
     &.thinking {
-        background: yellow;
         &:after {
             content: "thinking";
         }
     }
     &.action {
-        background: pink;
         &:after {
             content: "action";
         }
     }
     &.error {
-        background: red;
         &:after {
             content: "error";
         }
+    }
+}
+
+#linto-btn {
+    position: fixed;
+    top: 200px;
+    left: 250px;
+    background: #fff;
+    width: 100px;
+    padding: 10px;
+    z-index: 20;
+    @include boxShadow(0, 0, 20px, 5px, rgba(0, 0, 0, 0.3));
+    button {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 
@@ -97,14 +115,8 @@
                 color: #fff;
                 strong {
                     font-weight: 600;
-                    color: $red;
+                    color: $yellow;
                 }
-            }
-        }
-        .page-content {
-            strong {
-                font-weight: 600;
-                color: $red;
             }
         }
         h3.tosay__title {
