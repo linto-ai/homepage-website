@@ -127,6 +127,8 @@
         <div id="linto-btn">
             <button id="sleeping">Sleeping</button>
             <button id="wakeup">Wakeup</button>
+            <button id="nextblock">Next block</button>
+            <button id="prevblock">Previous block</button>
         </div>
 
     </div>
@@ -139,10 +141,10 @@
             <button id="error">Error</button> -->
         </div>
         <div class="playground__wrapper flex1 flex col">
-            <section class="flex col playground__block playground__block--selected" data-index="1">
+            <section class="flex col playground__block playground__block--selected" data-index="1" id="block1">
                 <div class="flex col wrapper">
                     <h2>How to use LinTO on your web browser</h2>
-                    <p class="page-content">You should have a <strong>notification</strong> form your web browser to <strong>enable audio capture</strong> from your computre. <br/>Please <strong>accept</strong> it for being able to use LinTO.</p>
+                    <p class="page-content">You should have a <strong>notification</strong> from your web browser to <strong>enable audio capture</strong> from your computer. <br/>Please <strong>accept</strong> it for being able to use LinTO.</p>
                     <p class="page-content">Once you have enabled the audio capture, you should see <strong>LinTO</strong> on the top left corner of the webpage.<br/> He is asleep, isn't he ? <br/></p>
 
                     <h3 class="tosay__title">> To wake LinTO up, you have to say :</h3>
@@ -151,24 +153,24 @@
                     <p class="page-content">Now, LinTO should be awaken, and he is waiting for you to ask him something.<br/> Begin by asking LinTO to <strong>go to the next section</strong>.</p>
 
                     <h3 class="tosay__title">> To go to the next section, you have to say :</h3>
-                    <span class="tosay">"Please go to the next section"</span>
+                    <span class="tosay">"Go to the next section"</span>
                 </div>
             </section>
-            <section class="flex col playground__block">
+            <section class="flex col playground__block" data-index="2" id="block2">
                 <div class="flex col wrapper">
                     <h2>How to use LinTO on your web browser</h2>
                     <p class="page-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ultricies massa, sed commodo eros sodales a. Duis velit turpis, ultrices vel enim eget, eleifend mollis nulla. Nulla viverra odio porta justo consequat, in venenatis
                         nisl semper. Fusce commodo nulla dignissim lacus lobortis rhoncus. Praesent vitae quam lacinia, dapibus justo quis, iaculis metus. Morbi rhoncus sollicitudin semper.</p>
                 </div>
             </section>
-            <section class="flex col playground__block">
+            <section class="flex col playground__block" data-index="3" id="block3">
                 <div class="flex col wrapper">
                     <h2>How to use LinTO on your web browser</h2>
                     <p class="page-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ultricies massa, sed commodo eros sodales a. Duis velit turpis, ultrices vel enim eget, eleifend mollis nulla. Nulla viverra odio porta justo consequat, in venenatis
                         nisl semper. Fusce commodo nulla dignissim lacus lobortis rhoncus. Praesent vitae quam lacinia, dapibus justo quis, iaculis metus. Morbi rhoncus sollicitudin semper.</p>
                 </div>
             </section>
-            <section class="flex col playground__block">
+            <section class="flex col playground__block" data-index="4" id="block4">
                 <div class="flex col wrapper">
                     <h2>How to use LinTO on your web browser</h2>
                     <p class="page-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ultricies massa, sed commodo eros sodales a. Duis velit turpis, ultrices vel enim eget, eleifend mollis nulla. Nulla viverra odio porta justo consequat, in venenatis
@@ -391,9 +393,11 @@
 
             })
 
+
+            /* ANIMATIONS LINTO */
+
             const sleeping = $('#sleeping')
             const wakeup = $('#wakeup')
-
 
             sleeping.on('click', function()  {
                 changeLintoState('sleeping')
@@ -444,7 +448,41 @@
                 })
             }
 
+            /* SCROLL TO */
+            const nextBlock = $('#nextblock')
+            const prevBlock = $('#prevblock')
 
+            nextBlock.on('click', function()  {
+                const activeBlock = $('.playground__block--selected')
+                const activeIndex = activeBlock.attr('data-index')
+                const targetBlock = $('.playground__block[data-index="' + (parseInt(activeIndex) + 1) + '"]')
+                if (targetBlock.length > 0) {
+                    const targetAnchor = '#' + targetBlock.attr('id')
+                    goTo(targetAnchor)
+                }
+
+            })
+
+            prevBlock.on('click', function()  {
+                const activeBlock = $('.playground__block--selected')
+                const activeIndex = activeBlock.attr('data-index')
+                const targetBlock = $('.playground__block[data-index="' + (parseInt(activeIndex) - 1) + '"]')
+                if (targetBlock.length > 0) {
+                    const targetAnchor = '#' + targetBlock.attr('id')
+                    goTo(targetAnchor)
+                }
+
+            })
+
+            function goTo(anchor) {
+                $('html, body').animate({
+                    scrollTop: $(anchor).offset().top - 20
+                }, 800, function() {})
+
+                const activeBlock = $('.playground__block--selected')
+                activeBlock.removeClass('playground__block--selected')
+                $(anchor).addClass('playground__block--selected')
+            }
         })
     </script>
 </body>
