@@ -14,7 +14,7 @@
         padding: 10px 0;
         .contact-form__label {
             color: #fff;
-            @include fluid-font(1.4vh, 16px, 20px, 18px);
+            font-size: 16px;
             font-weight: 600;
             font-family: $Barlow;
             .required {
@@ -29,7 +29,7 @@
             border: 1px solid #fff;
             @include borderRadius(5px);
             @include blockShadow();
-            @include fluid-font(1.2vh, 14px, 18px, 16px);
+            font-size: 16px;
             font-family: $Barlow;
             background-color: #fff;
             color: $textColor;
@@ -48,7 +48,7 @@
             border: 1px solid #fff;
             @include borderRadius(5px);
             @include blockShadow();
-            @include fluid-font(1.2vh, 14px, 18px, 16px);
+            font-size: 16px;
             font-family: $Barlow;
             background-color: #fff;
             color: $textColor;
@@ -66,7 +66,7 @@
             height: 15px;
             width: 100%;
             line-height: 15px;
-            @include fluid-font(1vh, 14px, 16px, 14px);
+            font-size: 14px;
             color: $red;
             font-style: italic;
         }
@@ -89,12 +89,12 @@
         color: #fff;
         font-weight: 600;
         font-family: $Martel;
-        @include fluid-font(1.4vw, 16px, 20px, 18px);
+        font-size: 16px;
     }
     a.contact__link {
         display: inline-block;
         padding-bottom: 40px;
-        @include fluid-font(1.4vw, 16px, 20px, 18px);
+        font-size: 16px;
         font-family: $Barlow;
         color: #fff;
         @include linkUnderline(24px);

@@ -160,10 +160,7 @@ a:visited {
 body {
     z-index: 1;
     position: relative;
-    @include fluid-font(1.3vw,
-    14px,
-    18px,
-    16px);
+    font-size: 16px;
     font-family: $Barlow;
     color: $textColor;
     font-weight: 400;
@@ -172,6 +169,7 @@ body {
 .wrapper {
     max-width: 1600px;
     padding: 0 40px;
+    margin: 0 auto;
 }
 
 .flex {
@@ -210,10 +208,7 @@ body {
 }
 
 h1 {
-    @include fluid-font(3.5vw,
-    24px,
-    36px,
-    28px);
+    font-size: 36px;
     font-weight: 700;
     font-family: $Martel;
     line-height: 50px;
@@ -221,10 +216,7 @@ h1 {
 }
 
 h2 {
-    @include fluid-font(2.6vw,
-    24px,
-    28px,
-    32px);
+    font-size: 30px;
     font-weight: 700;
     padding-bottom: 20px;
     font-family: $Martel;
@@ -233,10 +225,6 @@ h2 {
 
 p.page-content {
     display: inline-block;
-    @include fluid-font(1.3vw,
-    16px,
-    18px,
-    20px);
     font-family: $Barlow;
     line-height: 26px;
 }
@@ -293,10 +281,7 @@ p.page-content {
     background-color: $purple;
     margin-right: 20px;
     @include borderRadius(5px);
-    @include fluid-font(1.3vw,
-    14px,
-    18px,
-    16px);
+    font-size: 16px;
     font-weight: 500;
     color: #fff;
     &.btn--blue {
@@ -321,7 +306,7 @@ p.page-content {
     &.big {
         height: 40px;
         line-height: 40px;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         &.link--arrow {
             &:hover {

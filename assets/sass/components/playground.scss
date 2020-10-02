@@ -11,7 +11,7 @@
         width: 100%;
         color: #fff;
         padding-top: 20px;
-        @include fluid-font(1.4vw, 18px, 22px, 20px);
+        font-size: 20px;
         line-height: 24px;
         text-align: center;
     }
@@ -103,36 +103,41 @@
         padding: 40px;
     }
     .playground__block {
+        max-width: 1200px;
+        margin: 0 auto;
         border: 1px solid #ccc;
         margin-bottom: 40px;
+        .wrapper {
+            width: 980px;
+            margin: 0;
+        }
+        .page-content {
+            font-size: 18px;
+        }
         &.playground__block--selected {
-            background-color: $blueDark;
             @include boxShadow(0, 0, 10px, 0, rgba(0, 50, 120, 0.5));
-            h2 {
-                color: #fff;
-            }
+            border-color: $blue;
+            background-color: #f7fcff;
             .page-content {
-                color: #fff;
                 strong {
                     font-weight: 600;
-                    color: $yellow;
+                    color: $red;
                 }
             }
         }
         h3.tosay__title {
             padding: 20px 0;
-            color: #fff;
             font-family: $Martel;
-            @include fluid-font(1.6vw, 24px, 34px, 30px);
+            font-size: 24px;
             font-weight: 700;
         }
         .tosay {
             display: inline-block;
             font-family: $Martel;
-            @include fluid-font(1.6vw, 20px, 30px, 26px);
+            font-size: 20px;
             margin-bottom: 20px;
-            background-color: #fff;
-            color: $purple;
+            background-color: $blueDark;
+            color: #fff;
             padding: 20px;
             font-weight: 700;
         }

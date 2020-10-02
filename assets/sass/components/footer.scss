@@ -5,7 +5,7 @@ footer {
     .footer__label {
         display: inline-block;
         width: 100%;
-        @include fluid-font(1vw, 14px, 16px, 16px);
+        font-size: 16px;
         font-family: $Martel;
         font-weight: 700;
         color: #6b8296;
@@ -16,7 +16,7 @@ footer {
         li {
             display: inline-block;
             width: 100%;
-            @include fluid-font(1vw, 14px, 14px, 14px);
+            font-size: 14px;
             padding: 7px 0;
             position: relative;
             .footer__link {

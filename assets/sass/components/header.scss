@@ -21,7 +21,7 @@
         line-height: 40px;
         padding: 0 10px;
         font-family: $Martel;
-        @include fluid-font(1.6vw, 14px, 18px, 16px);
+        font-size: 16px;
         font-weight: 600;
         text-decoration: none;
         color: $textColor;
@@ -48,7 +48,7 @@
             padding: 15px 10px;
             position: relative;
             font-family: $Barlow;
-            @include fluid-font(1.6vw, 14px, 18px, 16px);
+            font-size: 16px;
             font-weight: 400;
             text-decoration: none;
             color: $textColor;
