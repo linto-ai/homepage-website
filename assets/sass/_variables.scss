@@ -1,8 +1,10 @@
-$textColor: #161e26;
-$red: #c63d43;
-
 /* Font families */
 
+$Ubuntu: 'Ubuntu',
+'Open Sans',
+Arial,
+Helvetica,
+sans-serif;
 $Barlow: 'Barlow',
 'Open Sans',
 Arial,
@@ -14,16 +16,31 @@ $Martel: 'Martel',
 Arial,
 Helvetica,
 sans-serif;
-
-/*$blueDark: #091A90;
-$blue: #1B92EA;*/
-
+$textColor: #333333;
+// white    : yes (16,8)
+// black    : no
+// blue     : yes (5,1)
+// blueDark : no (1,7)
+// purple   : no (2,9)
 $blueDark: #273799;
-
-/*$blue: #32b0c3;*/
-
-$blue: #1B92EA;
+// white    : yes (10)
+// black    : no
+// blue     : no
 $purple: #854cab;
+// white    : yes (5,8)
+// blue     : no
+// black    : no
+$blue: #1B92EA;
+// white    : no (3,3)
+// black    : no
+// blueDark : no (3)
+// purple   : no (1,8)
+$red: #c63d43;
+// white    : yes (5,1)
+// black    : no
+// blue     : no
+// blueDark : no
+$blueLightGradient: #86fbff;
+// white    : no (1,2)
+// black    : no
 $blueLight: #C5C8DC;
-$orange: #EE5D14;
-$yellow: #ffe000;

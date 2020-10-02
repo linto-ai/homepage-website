@@ -2,11 +2,9 @@
 
 #home-top {
     padding: 120px 0;
-    @include blueGradient();
+    @include blueGradientHome();
     @include transition(all 0.3s ease);
     svg {
-        background: rgba(255, 255, 255, 0.5);
-        @include borderRadius(50px);
         max-width: 600px;
     }
     &.contrasted {
@@ -20,6 +18,7 @@
 .homepage__title {
     h1 {
         padding-top: 100px;
+        font-family: $Ubuntu;
     }
 }
 
@@ -86,8 +85,8 @@
             text-align: center;
             line-height: 16px;
             line-height: 22px;
-            font-family: $Martel;
-            font-weight: 700;
+            font-family: $Ubuntu;
+            font-weight: 500;
             padding-bottom: 10px;
         }
         &:hover {
@@ -179,13 +178,14 @@
             color: $blueDark;
         }
         .product-item__desc {
+            font-family: $Ubuntu;
             font-size: 16px;
             line-height: 20px;
             color: $textColor;
         }
         &:hover {
             @include blockShadowHover();
-            background: $blue;
+            background: $blueDark;
             h3,
             .product-item__desc {
                 color: #fff;

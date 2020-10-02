@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
 /*===== RESET CSS =====*/
 
@@ -165,7 +166,7 @@ body {
     z-index: 1;
     position: relative;
     font-size: 16px;
-    font-family: $Barlow;
+    font-family: $Ubuntu;
     color: $textColor;
     font-weight: 400;
 }
@@ -214,7 +215,7 @@ body {
 h1 {
     font-size: 36px;
     font-weight: 700;
-    font-family: $Martel;
+    font-family: $Barlow;
     line-height: 50px;
     color: #fff;
 }
@@ -229,7 +230,7 @@ h2 {
 
 p.page-content {
     display: inline-block;
-    font-family: $Barlow;
+    font-family: $Ubuntu;
     line-height: 26px;
 }
 
@@ -288,6 +289,7 @@ p.page-content {
     font-size: 16px;
     font-weight: 500;
     color: #fff;
+    font-family: $Barlow;
     &.btn--blue {
         background-color: $blue;
     }

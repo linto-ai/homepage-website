@@ -20,28 +20,41 @@
     }
 }
 
-@mixin blueGradient() {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1b92ea+0,05eaff+100 */
+@mixin blueGradientHome() {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1b92ea+1,007dea+99 */
     background: #1b92ea;
     /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #1b92ea 0%, #86fbff 80%);
+    background: -moz-linear-gradient(135deg, #1b92ea 30%, #F3F9FE 70%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #1b92ea 0%, #86fbff 80%);
+    background: -webkit-linear-gradient(135deg, #1b92ea 30%, #F3F9FE 70%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #1b92ea 0%, #86fbff 80%);
+    background: linear-gradient(135deg, #1b92ea 0%, #F3F9FE 70%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin blueGradient() {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1b92ea+1,007dea+99 */
+    background: #1b92ea;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #1b92ea 0%, #007dea 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #1b92ea 0%, #007dea 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #1b92ea 0%, #007dea 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 @mixin blueToPurpleGradient() {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1b92ea+0,05eaff+100 */
-    background: $blueDark;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#854cab+0,9849af+100 */
+    background: #854cab;
     /* Old browsers */
-    background: -moz-linear-gradient(60deg, $blueDark 0%, $purple 80%);
+    background: -moz-linear-gradient(top, #854cab 0%, #9849af 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(60deg, $blueDark 0%, $purple 80%);
+    background: -webkit-linear-gradient(top, #854cab 0%, #9849af 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, $blueDark 0%, $purple 80%);
+    background: linear-gradient(to bottom, #854cab 0%, #9849af 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* IE6-9 */
 }
 
 @mixin arrowAppear() {

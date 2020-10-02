@@ -20,11 +20,12 @@
         height: 40px;
         line-height: 40px;
         padding: 0 10px;
-        font-family: $Martel;
+        font-family: $Barlow;
         font-size: 16px;
         font-weight: 600;
         text-decoration: none;
         color: $textColor;
+        text-transform: uppercase;
         &:hover {
             color: $blueDark;
         }
