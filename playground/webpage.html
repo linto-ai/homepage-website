@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/lottie.min.js"></script>
+    <script type="text/javascript" src="/assets/js/slick.min.js"></script>
 
     <!-- Matomo Tag Manager 
   <script type="text/javascript">
@@ -133,13 +134,7 @@
 
     </div>
     <div id="playground" class="flex row">
-        <div id="lintoweb-area">
-            <!-- <button id="sleeping">sleeping</button>
-            <button id="listening">Listening</button>
-            <button id="thinking">Thinking</button>
-            <button id="action">Action</button>
-            <button id="error">Error</button> -->
-        </div>
+        <div id="lintoweb-area"></div>
         <div class="playground__wrapper flex1 flex col">
             <section class="flex col playground__block playground__block--selected" data-index="1" id="block1">
                 <div class="flex col wrapper">
@@ -158,28 +153,65 @@
             </section>
             <section class="flex col playground__block" data-index="2" id="block2">
                 <div class="flex col wrapper">
-                    <h2>How to use LinTO on your web browser</h2>
-                    <p class="page-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ultricies massa, sed commodo eros sodales a. Duis velit turpis, ultrices vel enim eget, eleifend mollis nulla. Nulla viverra odio porta justo consequat, in venenatis
-                        nisl semper. Fusce commodo nulla dignissim lacus lobortis rhoncus. Praesent vitae quam lacinia, dapibus justo quis, iaculis metus. Morbi rhoncus sollicitudin semper.</p>
+                    <h2>LinTO can help you to read content</h2>
+                    <p class="page-content">LinTO can enable an <strong>accessibility mode</strong> fore people having trouble to see for example.</p>
+                    <h3 class="tosay__title">> To enable or disable accessibility mode, please say :</h3>
+                    <span class="tosay">"LinTO, enable accessibility mode"<br/>
+                    "LinTO, disable accessibility mode"</span>
+
+
+                    <p class="page-content">LinTO <strong>Text to speech</strong> (TTS) service enables you to read text as an audio file. You can ask LinTO to <strong>read content</strong> from the webpage, as long as the content field can be targeted.</p>
+
+
+                    <h3 class="tosay__title">> To read the following text sample, please say :</h3>
+                    <span class="tosay">"LinTO, read the paragraph"</span>
+
+                    <p id="paragraph1" class="readable-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet fermentum lorem. Vestibulum convallis arcu non libero aliquam, eu dictum sem tristique. Nunc laoreet metus non sodales interdum. Donec non vehicula urna. Nunc
+                        laoreetmollis risus, vitae hendrerit ligula commodo sit amet.</p>
+
                 </div>
+
             </section>
             <section class="flex col playground__block" data-index="3" id="block3">
                 <div class="flex col wrapper">
-                    <h2>How to use LinTO on your web browser</h2>
-                    <p class="page-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ultricies massa, sed commodo eros sodales a. Duis velit turpis, ultrices vel enim eget, eleifend mollis nulla. Nulla viverra odio porta justo consequat, in venenatis
-                        nisl semper. Fusce commodo nulla dignissim lacus lobortis rhoncus. Praesent vitae quam lacinia, dapibus justo quis, iaculis metus. Morbi rhoncus sollicitudin semper.</p>
+                    <h2>LinTO can control images</h2>
+                    <p class="page-content">LinTO in your browser allows you to control different kind of media as <strong>pictures, audio or video</strong>.<br/> LinTO can help you to <strong>see images</strong> on a biggest format.</p>
+                    <h3 class="tosay__title">> To zoom in the following image, please say :</h3>
+                    <span class="tosay">"LinTO, zoom in image"<br/>
+                    "LinTO, zoom out"</span>
+
+                    <div class="flex row">
+                        <img class="lightbox__img" src="/assets/img/pet.jpg" alt="pet" />
+                    </div>
+
+                    <p class="page-content">You can also control a <strong>slider</strong> by asking LinTO to go to next or previous slide.</p>
+
+                    <h3 class="tosay__title">> To change slide, please say :</h3>
+                    <span class="tosay">"LinTO, next slide"<br/>
+                    "LinTO, previous slide"</span>
+
+                    <div id="playground-slider">
+                        <img src="/assets/img/slider/slide1.png" />
+                        <img src="/assets/img/slider/slide2.png" />
+                    </div>
+
                 </div>
             </section>
             <section class="flex col playground__block" data-index="4" id="block4">
                 <div class="flex col wrapper">
-                    <h2>How to use LinTO on your web browser</h2>
-                    <p class="page-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ultricies massa, sed commodo eros sodales a. Duis velit turpis, ultrices vel enim eget, eleifend mollis nulla. Nulla viverra odio porta justo consequat, in venenatis
-                        nisl semper. Fusce commodo nulla dignissim lacus lobortis rhoncus. Praesent vitae quam lacinia, dapibus justo quis, iaculis metus. Morbi rhoncus sollicitudin semper.</p>
-                </div>
+                    <h2>LinTO can control media</h2>
+
+                    <p class="page-content">You also can control other types of media, like <strong>audio and video</strong>. <br/> Try it by saying the following commands: </p>
+                    <h3 class="tosay__title">> To control the audio player, please say :</h3>
+                    <span class="tosay">"LinTO, play podcast"<br/>
+                  "LinTO, pause podcast"<br/>
+                  "LinTO, stop podcast"</span>
+
+                    <audio controls src="/assets/audio/example.mp3"></audio>
             </section>
+            </div>
         </div>
     </div>
-
 
     <!-- CONTACT -->
     <section id="contact" class="flex row">
@@ -483,6 +515,49 @@
                 activeBlock.removeClass('playground__block--selected')
                 $(anchor).addClass('playground__block--selected')
             }
+
+
+            /* Slider */
+            $('#playground-slider').slick({
+                dots: true,
+                arrows: true
+            })
+
+            /* light box */
+            $('.lightbox__img').on('click', function(e)  {
+                const src = $(this).attr('src')
+                let directionClass = ''
+                if (!!e.target) {
+                    const offsetWidth = e.target.offsetWidth
+                    const offsetHeight = e.target.offsetHeight
+
+                    if (offsetWidth - offsetHeight < 0) {
+                        //portrait
+                        directionClass = 'portrait'
+                    } else {
+                        //paysage
+                        directionClass = 'landscape'
+                    }
+                }
+                const lightbox = `
+                <div class="lightbox--wrapper" id="lightbox">
+                  <div class="lightbox--container">
+                    <button class="lightbox__btn--close">close</button>
+                    <img src="${src}" class="lightbox__img--zoomed ${directionClass}"/>
+                  </div>
+                </div>
+                `
+                    // Open lightbox
+                $('body').append(lightbox)
+
+                // Close lightbox
+                $('.lightbox__btn--close').on('click', function(e)  {
+
+                    $('#lightbox').remove()
+                })
+            })
+
+
         })
     </script>
 </body>

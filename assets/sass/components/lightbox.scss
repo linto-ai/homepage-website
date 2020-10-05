@@ -1,0 +1,54 @@
+.lightbox__img {
+    display: inline-block;
+    height: 120px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.lightbox--wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lightbox--container {
+    display: inline-block;
+    padding: 20px;
+    background: #fff;
+    position: relative;
+}
+
+.lightbox__img--zoomed {
+    display: inline-block;
+}
+
+.lightbox__img--zoomed.landscape {
+    max-width: 960px;
+    width: 100%;
+    height: auto;
+}
+
+.lightbox__img--zoomed.portrait {
+    max-height: 660px;
+    height: 100%;
+    width: auto;
+}
+
+.lightbox__btn--close {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: red;
+    position: absolute;
+    top: -15px;
+    left: 100%;
+    margin-left: -15px;
+}

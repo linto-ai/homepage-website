@@ -104,26 +104,24 @@
     }
     .playground__block {
         max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
         border: 1px solid #ccc;
         margin-bottom: 40px;
         .wrapper {
-            width: 980px;
             margin: 0;
         }
         .page-content {
             font-size: 18px;
+            strong {
+                font-weight: 600;
+                color: $red;
+            }
         }
         &.playground__block--selected {
             @include boxShadow(0, 0, 10px, 0, rgba(0, 50, 120, 0.5));
             border-color: $blue;
             background-color: #f7fcff;
-            .page-content {
-                strong {
-                    font-weight: 600;
-                    color: $red;
-                }
-            }
         }
         h3.tosay__title {
             padding: 20px 0;
@@ -141,6 +139,57 @@
             color: #fff;
             padding: 20px;
             font-weight: 700;
+            line-height: 30px;
         }
     }
+}
+
+.readable-content {
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    background-color: #ececec;
+    font-size: 18px;
+    line-height: 24px;
+    font-style: italic;
+}
+
+#playground-slider {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto 20px auto;
+}
+
+.slick-prev,
+.slick-next {
+    &,
+    &:focus {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        margin-top: -15px;
+        background: $blue;
+        background-image: none !important;
+        &:before {
+            display: none;
+        }
+        &:hover {
+            background: $blueDark;
+        }
+    }
+}
+
+.slick-prev {
+    @include maskImage('../img/svg/arrow-left.svg');
+    left: -60px;
+}
+
+.slick-next {
+    @include maskImage('../img/svg/arrow-right.svg');
+    left: 100%;
+    margin-left: 30px;
 }
