@@ -130,6 +130,7 @@
             <button id="wakeup">Wakeup</button>
             <button id="nextblock">Next block</button>
             <button id="prevblock">Previous block</button>
+            <button id="accessibility">accesibility mode</button>
         </div>
 
     </div>
@@ -168,9 +169,18 @@
 
                     <p id="paragraph1" class="readable-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet fermentum lorem. Vestibulum convallis arcu non libero aliquam, eu dictum sem tristique. Nunc laoreet metus non sodales interdum. Donec non vehicula urna. Nunc
                         laoreetmollis risus, vitae hendrerit ligula commodo sit amet.</p>
-
                 </div>
+            </section>
+            <section class="flex col playground__block" data-index="2" id="block2">
+                <div class="flex col wrapper">
+                    <h2>LinTO can write for you</h2>
+                    <p class="page-content">LinTO <strong>Speech To Text</strong> (STT) service allows you to write content with your voice.<br/> It can be helpfull to fill a form for example. Try it by starting the dictation mode and saying some words.</p>
+                    <h3 class="tosay__title">> To strat or stop dictation mode, please say :</h3>
+                    <span class="tosay">"LinTO, start dication mode"<br/>
+                  "LinTO, stop dictation mode mode"</span>
 
+                    <textarea id="dictation"></textarea>
+                </div>
             </section>
             <section class="flex col playground__block" data-index="3" id="block3">
                 <div class="flex col wrapper">
@@ -555,6 +565,25 @@
 
                     $('#lightbox').remove()
                 })
+            })
+
+
+            /* ACCESSIBLITY */
+            $('#accessibility').on('click', function() {
+                const playgroundTitle = $('#playground-title')
+                const playgourndWrapper = $('#playground')
+
+                if (playgroundTitle.hasClass('accessibility')) {
+                    playgroundTitle.removeClass('accessibility')
+                } else {
+                    playgroundTitle.addClass('accessibility')
+                }
+
+                if (playgourndWrapper.hasClass('accessibility')) {
+                    playgourndWrapper.removeClass('accessibility')
+                } else {
+                    playgourndWrapper.addClass('accessibility')
+                }
             })
 
 

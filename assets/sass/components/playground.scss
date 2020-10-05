@@ -1,6 +1,14 @@
+@font-face {
+    font-family: 'Open-Dyslexic Roman';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open-Dyslexic Roman'), url('../fonts/open-dyslexic/open-dyslexic.woff') format('woff');
+}
+
 #playground-title {
     padding: 60px 0;
     @include blueToPurpleGradient();
+    @include transition(all 0.3s ease);
     .playground__title {
         display: inline-block;
         width: 100%;
@@ -14,6 +22,13 @@
         font-size: 20px;
         line-height: 24px;
         text-align: center;
+    }
+    &.accessibility {
+        background: $blueDark;
+        .playground__title,
+        .playground__desc {
+            font-family: $accessibilityFont;
+        }
     }
 }
 
@@ -30,7 +45,11 @@
     background: #fff;
     z-index: 20;
     @include borderRadius(200px);
-    @include boxShadow(0, 0, 20px, 5px, rgba(0, 0, 0, 0.3));
+    @include boxShadow(0,
+    0,
+    20px,
+    5px,
+    rgba(0, 0, 0, 0.3));
 }
 
 #linto-animated {
@@ -90,7 +109,11 @@
     width: 100px;
     padding: 10px;
     z-index: 20;
-    @include boxShadow(0, 0, 20px, 5px, rgba(0, 0, 0, 0.3));
+    @include boxShadow(0,
+    0,
+    20px,
+    5px,
+    rgba(0, 0, 0, 0.3));
     button {
         display: inline-block;
         width: 100%;
@@ -99,10 +122,16 @@
 }
 
 #playground {
+    @include transition(all 0.3s ease);
     .playground__wrapper {
         padding: 40px;
     }
     .playground__block {
+        h2,
+        h3 {
+            @include transition(all 0.3s ease);
+        }
+        @include transition(all 0.3s ease);
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
@@ -112,6 +141,7 @@
             margin: 0;
         }
         .page-content {
+            @include transition(all 0.3s ease);
             font-size: 18px;
             strong {
                 font-weight: 600;
@@ -119,7 +149,11 @@
             }
         }
         &.playground__block--selected {
-            @include boxShadow(0, 0, 10px, 0, rgba(0, 50, 120, 0.5));
+            @include boxShadow(0,
+            0,
+            10px,
+            0,
+            rgba(0, 50, 120, 0.5));
             border-color: $blue;
             background-color: #f7fcff;
         }
@@ -131,6 +165,7 @@
             color: $blue;
         }
         .tosay {
+            @include transition(all 0.3s ease);
             display: inline-block;
             font-family: $Martel;
             font-size: 20px;
@@ -142,18 +177,74 @@
             line-height: 30px;
         }
     }
+    .readable-content {
+        display: inline-block;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        background-color: #ececec;
+        font-size: 18px;
+        line-height: 24px;
+        font-style: italic;
+    }
+    #dictation {
+        display: inline-block;
+        width: 100%;
+        min-height: 80px;
+        border-color: #454545;
+        padding: 5px;
+        background-color: #f7fcff;
+    }
+    &.accessibility {
+        background: #111;
+        font-family: $accessibilityFont;
+        .playground__block {
+            border: 1px solid #666;
+            background-color: #111;
+            font-family: $accessibilityFont;
+            .page-content {
+                font-family: $accessibilityFont;
+                font-size: 18px;
+                color: #fff;
+                strong {
+                    color: #ffa242;
+                }
+            }
+            h2,
+            h3 {
+                color: #fff;
+                font-family: $accessibilityFont;
+            }
+            .tosay {
+                font-family: $accessibilityFont;
+                background-color: #fff;
+                color: $blueDark;
+            }
+            &.playground__block--selected {
+                @include cancelBoxShadow();
+                border-color: #fff;
+                background-color: #fcfcfc;
+                .page-content {
+                    color: $textColor;
+                    strong {
+                        color: $red;
+                    }
+                }
+                h2,
+                h3 {
+                    color: $blueDark;
+                }
+                .tosay {
+                    background-color: $blueDark;
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
 
-.readable-content {
-    display: inline-block;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    background-color: #ececec;
-    font-size: 18px;
-    line-height: 24px;
-    font-style: italic;
-}
+
+/* SLIDER */
 
 #playground-slider {
     width: 300px;
