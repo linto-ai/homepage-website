@@ -3,6 +3,12 @@
       @media screen and (max-width:1440px) {}
       
       @media screen and (max-width:1280px) {
+          h1 {
+              font-size: 32px;
+          }
+          h2 {
+              font-size: 28px;
+          }
           /* Header */
           .header--nav {
               .header--nav-link__parent-container.custom {
@@ -21,6 +27,20 @@
                   }
               }
           }
+          /* Homepage markets */
+          .markets-items {
+              .market-item {
+                  width: 120px;
+                  min-width: 120px;
+                  max-width: 120px;
+                  height: 160px;
+                  .market-item__icon {
+                      width: 80px;
+                      height: 80px;
+                      background-size: 80px 80px;
+                  }
+              }
+          }
       }
       
       @media screen and (max-width:1024px) {
@@ -35,6 +55,7 @@
               width: 100%;
               display: block;
               z-index: 20;
+              padding: 10px 0;
               .header--burger-btn-container {
                   justify-content: flex-end;
                   #header--burger-btn {
@@ -125,6 +146,18 @@
                   }
               }
           }
+          /* END Header */
+          /* Homepage */
+          #home-top {
+              padding: 80px 0;
+          }
+          /* END Homepage */
+          /* Contact */
+          .contact-form-container {
+              flex-direction: column !important;
+              padding-left: 40px;
+          }
+          /* END Contact */
       }
       
       @media screen and (max-width:960px) {
@@ -139,6 +172,10 @@
       }
       
       @media screen and (max-width:840px) {
+          h2 {
+              font-size: 28px;
+          }
+          /* Header */
           #header-mobile.opened {
               #mobile-nav {
                   .header-mobile--nav-link {
@@ -157,6 +194,28 @@
                   }
               }
           }
+          /* END Header */
+          /* Homepage products */
+          .products-items {
+              flex-direction: column !important;
+              .product-item {
+                  max-width: 100%;
+                  flex: 1;
+              }
+          }
+          /* END Homepage products */
+          /* Homepage wakemeup */
+          .wakemeup-content {
+              flex-direction: column !important;
+          }
+          .wakemeup-item {
+              margin-top: 20px;
+              .wakemeup-logo {
+                  height: 120px;
+                  width: auto;
+              }
+          }
+          /* END Homepage wakemeup */
       }
       
       @media screen and (max-width:720px) {}

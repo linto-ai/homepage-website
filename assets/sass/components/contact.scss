@@ -5,11 +5,16 @@
     }
 }
 
-.contact-form {
+.contact-form-container {
     justify-content: center;
     &>div {
         max-width: 500px;
+        justify-content: center;
     }
+}
+
+.contact-form {
+    justify-content: center;
     .field-container {
         padding: 10px 0;
         .contact-form__label {

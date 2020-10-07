@@ -264,7 +264,7 @@
     <section id="wakemeup" class="flex col">
         <div class="flex col wrapper flex1">
             <h2>Help us improve our models</h2>
-            <div class="flex row">
+            <div class="flex row wakemeup-content">
                 <p class="page-content flex1">Participate in our keywords campaign by recording your voice and validating audio samples.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet fermentum lorem. Vestibulum convallis arcu non libero aliquam, eu dictum
                     sem tristique.
                 </p>
@@ -283,60 +283,64 @@
             <h2>Contact us</h2>
             <div class="contact-form flex row">
 
-                <div class="flex1 flex col">
-                    <div class="field-container flex col flex1">
-                        <span class="contact-form__label">Name<i class="required">*</i> :</span>
-                        <input type="text" id="contact-name" class="contact-form__input" />
-                        <span class="contact-form__error username">
-                    </div>
-                    <div class="field-container flex col flex1">
-                        <span class="contact-form__label">Email<i class="required">*</i> :</span>
-                        <input type="text" id="contact-email" class="contact-form__input error" />
-                        <span class="contact-form__error email">Invalid email format</span>
-                    </div>
-                    <div class="field-container flex col flex1">
-                        <span class="contact-form__label">Phone number :</span>
-                        <input type="text" id="contact-phone" class="contact-form__input" />
-                        <span class="contact-form__error phone"></span>
-                    </div>
-                    <div class="field-container flex col flex1">
-                        <span class="contact-form__label">Society :</span>
-                        <input type="text" id="contact-society" class="contact-form__input" />
-                        <span class="contact-form__error society"></span>
-                    </div>
-                </div>
+                <div class="flex row flex1">
+                    <div class="flex1 flex row contact-form-container">
 
-                <div class="flex1 flex col">
-                    <div class="field-container flex col flex1">
-                        <span class="contact-form__label">Message<i class="required">*</i> :</span>
-                        <textarea id="contact-msg" class="contact-form__textarea"></textarea>
-                        <span class="contact-form__error msg"></span>
-                    </div>
-                    <div class="field-container submit">
-                        <a id="contact-form__submit" class="btn link--arrow">Send</a>
-                        <div class="send-notif hidden">
-                            <span class="notif-msg"></span>
+                        <div class="flex col flex1">
+                            <div class="field-container flex col flex1">
+                                <span class="contact-form__label">Name<i class="required">*</i> :</span>
+                                <input type="text" id="contact-name" class="contact-form__input" />
+                                <span class="contact-form__error username">
+                          </div>
+                          <div class="field-container flex col flex1">
+                            <span class="contact-form__label">Email<i class="required">*</i> :</span>
+                                <input type="text" id="contact-email" class="contact-form__input error" />
+                                <span class="contact-form__error email">Invalid email format</span>
+                            </div>
+                            <div class="field-container flex col flex1">
+                                <span class="contact-form__label">Phone number :</span>
+                                <input type="text" id="contact-phone" class="contact-form__input" />
+                                <span class="contact-form__error phone"></span>
+                            </div>
+                            <div class="field-container flex col flex1">
+                                <span class="contact-form__label">Society :</span>
+                                <input type="text" id="contact-society" class="contact-form__input" />
+                                <span class="contact-form__error society"></span>
+                            </div>
+                        </div>
+
+                        <div class="flex1 flex col">
+                            <div class="field-container flex col flex1">
+                                <span class="contact-form__label">Message<i class="required">*</i> :</span>
+                                <textarea id="contact-msg" class="contact-form__textarea"></textarea>
+                                <span class="contact-form__error msg"></span>
+                            </div>
+                            <div class="field-container submit">
+                                <a id="contact-form__submit" class="btn link--arrow">Send</a>
+                                <div class="send-notif hidden">
+                                    <span class="notif-msg"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="flex col contact__links">
+                        <h3 class="contact__subtitle">Support</h3>
+                        <ul>
+                            <li>
+                                <a href="#" class="contact__link">support@linto.ai</a>
+                            </li>
+                        </ul>
+
+                        <h3 class="contact__subtitle">Commercial</h3>
+                        <ul>
+                            <li>
+                                <a href="#" class="contact__link">commercial@linto.ai</a>
+                            </li>
+                        </ul>
+
+
+                    </div>
                 </div>
-                <div class="flex col contact__links">
-                    <h3 class="contact__subtitle">Support</h3>
-                    <ul>
-                        <li>
-                            <a href="#" class="contact__link">support@linto.ai</a>
-                        </li>
-                    </ul>
-
-                    <h3 class="contact__subtitle">Commercial</h3>
-                    <ul>
-                        <li>
-                            <a href="#" class="contact__link">commercial@linto.ai</a>
-                        </li>
-                    </ul>
-
-
-                </div>
-            </div>
     </section>
     <!-- END CONTACT-->
     <!-- FOOTER -->
