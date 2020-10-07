@@ -284,3 +284,30 @@
     left: 100%;
     margin-left: 30px;
 }
+
+
+/* Meeting room */
+
+#playground-meeting-room {}
+
+#svg-container {
+    max-width: 1400px;
+    height: auto;
+}
+
+#meeting-room-btn {
+    position: fixed;
+    width: 200px;
+    top: 20%;
+    left: 100%;
+    margin-left: -240px;
+    background: yellow;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
