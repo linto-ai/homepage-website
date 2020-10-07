@@ -15,6 +15,12 @@
     }
 }
 
+.homepage-title-container {
+    &>.flex {
+        padding-left: 40px;
+    }
+}
+
 .homepage__title {
     h1 {
         padding-top: 100px;
