@@ -4,6 +4,14 @@
     background-color: #fff;
 }
 
+#header-mobile {
+    display: none;
+}
+
+.header--logo-container {
+    min-width: 200px;
+}
+
 .header--logo {
     display: inline-block;
     height: 40px;
@@ -13,29 +21,56 @@
 }
 
 .header--nav {
-    justify-content: space-evenly;
+    position: relative;
+    justify-content: flex-end;
     a.header--nav-link {
         display: inline-block;
         position: relative;
         height: 40px;
         line-height: 40px;
         padding: 0 10px;
+        margin: 0 10px;
         font-family: $Barlow;
         font-size: 16px;
         font-weight: 600;
         text-decoration: none;
         color: $textColor;
         text-transform: uppercase;
+        @include transition(all 0.3s ease);
         &:hover {
             color: $blueDark;
         }
         &.active {
             color: $blueDark;
         }
+        &.border {
+            @include borderRadius(3px);
+            border: 1px solid #111;
+            line-height: 20px;
+            height: auto !important;
+            padding: 0;
+            background-color: #fff;
+            &.try {
+                color: $blue;
+                border-color: $blue;
+                &:hover {
+                    background-color: $blue;
+                    color: #fff;
+                }
+            }
+            &.contribute {
+                color: #333;
+                border-color: #333;
+                &:hover {
+                    background-color: #333;
+                    color: #fff;
+                }
+            }
+        }
     }
     .header--nav-children {
         position: absolute;
-        top: 60px;
+        top: 50px;
         background: #fff;
         padding: 20px;
         @include borderRadius(3px);

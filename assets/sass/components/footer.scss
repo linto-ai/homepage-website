@@ -2,6 +2,13 @@ footer {
     padding: 40px 0;
     background-color: #111;
     color: #efefef;
+    .footer-links-container {
+        flex-wrap: wrap;
+    }
+    .footer-links {
+        padding: 0 10px;
+        min-width: 160px;
+    }
     .footer__label {
         display: inline-block;
         width: 100%;
@@ -22,23 +29,16 @@ footer {
             .footer__link {
                 display: inline-block;
                 color: #cecece;
-                @include linkUnderline(18px);
+                //@include linkUnderline(18px);
+                &:hover {
+                    text-decoration: underline;
+                }
                 &.disabled {
                     position: relative;
                     color: #656565;
                     text-decoration: line-through;
                     &:before {
                         display: none !important;
-                    }
-                    &:after {
-                        content: "Coming soon";
-                        width: 100px;
-                        position: absolute;
-                        font-style: italic;
-                        top: 0;
-                        left: 100%;
-                        margin-left: 5px;
-                        color: $red;
                     }
                 }
             }
