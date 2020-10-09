@@ -2,21 +2,20 @@ $(document).ready(function() {
     const shutterBtn = $('#toggle-store')
     const lightBtn = $('#toggle-light')
 
+    const nextSlideBtn = $('#next-slide')
+    const prevSlideBtn = $('#prev-slide')
+
     const s = Snap('#meeting-room-svg')
 
     /* Turn ON / OFF light */
     const light = s.select('#LUMIERE-ON')
     lightBtn.on('click', function() {
-
-        console.log(light)
         if ($('#LUMIERE-ON').hasClass('off')) {
-            light.animate({ opacity: 1 }, 500, function() {
-                console.log('cb1')
+            light.animate({ opacity: 0.7 }, 500, function() {
                 $('#LUMIERE-ON').removeClass('off').addClass('on')
             })
         } else if (light.hasClass('on'))  {
             light.animate({ opacity: 0 }, 500, function() {
-                console.log('cb2')
                 $('#LUMIERE-ON').removeClass('on').addClass('off')
             })
 
@@ -67,34 +66,85 @@ $(document).ready(function() {
         }
     })
 
-
     /* Projector */
     const projBtn = $('#toggle-proj')
+    const projector = $('#VIDEOPROJ-ON')
+
     projBtn.on('click', function() {
         const projection = s.select('#VIDEOPROJ-ON')
-        if ($('#VIDEOPROJ-ON').hasClass('off')) {
+        if (projector.hasClass('off')) {
             projection.animate({ opacity: 1 }, 500, function() {
-                $('#VIDEOPROJ-ON').removeClass('off').addClass('on')
+                projector.removeClass('off').addClass('on')
             })
-        } else if ($('#VIDEOPROJ-ON').hasClass('on')) {
+        } else if (projector.hasClass('on')) {
             projection.animate({ opacity: 0 }, 500, function() {
-                $('#VIDEOPROJ-ON').removeClass('on').addClass('off')
+                projector.removeClass('on').addClass('off')
             })
         }
-
     })
 
+    nextSlideBtn.on('click', function() {
+        const pcSlides = $('.pc-proj')
+        let target = null
+        let targetProj = null
+        const currentSlide = $('.pc-proj.active')
+        const currentSlideIndex = parseInt(currentSlide.attr('data-index'));
+        const currentProj = $('#VIDEOPROJ-ON-' + currentSlideIndex)
 
+        if (currentSlideIndex === pcSlides.length) {
+            target = $('.pc-proj[data-index="1"]')
+            targetProj = $('.proj[data-index="1"]')
+        } else {
+            target = $('.pc-proj[data-index="' + (currentSlideIndex + 1) + '"]')
+            targetProj = $('.proj[data-index="' + (currentSlideIndex + 1) + '"]')
+        }
+        const svgCurrent = s.select('#' + currentSlide.attr('id'))
+        const svgTarget = s.select('#' + target.attr('id'))
+        const svgCurrentProj = s.select('#VIDEOPROJ-ON-' + currentSlideIndex)
+        const svgTargetProj = s.select('#' + targetProj.attr('id'))
 
+        svgCurrent.animate({ opacity: 0 }, 300, function() {
+            currentSlide.removeClass('active')
+            target.addClass('active')
 
+            currentProj.removeClass('active')
+            targetProj.addClass('active')
+            svgTarget.animate({ opacity: 1 }, 300)
+            svgCurrentProj.animate({ opacity: 0 }, 300, function() {
+                svgTargetProj.animate({ opacity: 1 }, 300)
+            })
+        })
+    })
 
-});
+    prevSlideBtn.on('click', function() {
+        const pcSlides = $('.pc-proj')
+        let target = null
+        let targetProj = null
+        const currentSlide = $('.pc-proj.active')
+        const currentSlideIndex = parseInt(currentSlide.attr('data-index'));
+        const currentProj = $('#VIDEOPROJ-ON-' + currentSlideIndex)
 
-/*
-<!-- mask volets -->
-<g id="mask_x5F_volets">
-             <polygon id="mask_x5F_volet_x5F_d_1_" class="st76" points="264.9,170.3 409.5,87.4 409.5,322.6 264.9,405.5 	"/>
-             <polygon id="mask_x5F_volet_x5F_g" class="st76" points="116.1,255.4 260.7,172.5 260.7,407.7 116.1,490.6 	"/>
-             <polygon id="mask_x5F_volet_x5F_d_2_" class="st86" points="264.9,170.3 409.5,87.4 409.5,88.5 264.9,171.6 	"/>
-             <polygon id="mask_x5F_volet_x5F_g_1_" class="st86" points="116.1,255.4 260.7,172.5 260.7,173.5 116.1,257.1 	"/>
-           </g>*/
+        if (currentSlideIndex === 1) {
+            target = $('.pc-proj[data-index="' + pcSlides.length + '"]')
+            targetProj = $('.proj[data-index="' + pcSlides.length + '"]')
+        } else {
+            target = $('.pc-proj[data-index="' + (currentSlideIndex - 1) + '"]')
+            targetProj = $('.proj[data-index="' + (currentSlideIndex - 1) + '"]')
+        }
+        const svgCurrent = s.select('#' + currentSlide.attr('id'))
+        const svgTarget = s.select('#' + target.attr('id'))
+        const svgCurrentProj = s.select('#VIDEOPROJ-ON-' + currentSlideIndex)
+        const svgTargetProj = s.select('#' + targetProj.attr('id'))
+
+        svgCurrent.animate({ opacity: 0 }, 300, function() {
+            currentSlide.removeClass('active')
+            target.addClass('active')
+            currentProj.removeClass('active')
+            targetProj.addClass('active')
+            svgTarget.animate({ opacity: 1 }, 300)
+            svgCurrentProj.animate({ opacity: 0 }, 300, function() {
+                svgTargetProj.animate({ opacity: 1 }, 300)
+            })
+        })
+    })
+})

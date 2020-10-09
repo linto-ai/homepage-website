@@ -308,8 +308,28 @@
     opacity: 0;
 }
 
+.proj {
+    opacity: 0;
+}
+
+.proj.active {
+    opacity: 1;
+}
+
 #VIDEOPROJ-ON {
     opacity: 0;
+}
+
+.pc-proj.active {
+    opacity: 1;
+}
+
+.pc-proj {
+    opacity: 0;
+}
+
+.pc-proj.active {
+    opacity: 1;
 }
 
 .meeting-room-btn {
@@ -550,7 +570,6 @@
 }
 
 .st55 {
-    display: none;
     fill: #FFCEA9;
 }
 
@@ -694,4 +713,16 @@
     opacity: 0.4;
     fill: #FFFFFF;
     enable-background: new;
+}
+
+.st87 {
+    fill: #1E67F7;
+}
+
+.st88 {
+    fill: #F99F00;
+}
+
+.st89 {
+    fill: #00AD0C;
 }
