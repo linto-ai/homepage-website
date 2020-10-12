@@ -44,11 +44,35 @@
 
 .lightbox__btn--close {
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    background: red;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    top: -15px;
+    top: -20px;
     left: 100%;
-    margin-left: -15px;
+    @include borderRadius(20px);
+    margin-left: -20px;
+    border: none;
+    background-color: $red;
+    cursor: pointer;
+    @include transition(all 0.3s ease);
+    @include blockShadowStrong();
+    outline: none;
+    &:after {
+        content: "";
+        @include transition(all 0.3s ease);
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include maskImage('../img/svg/close.svg');
+    }
+    &:hover {
+        background-color: #fff;
+        &:after {
+            background-color: $red;
+        }
+    }
 }

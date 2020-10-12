@@ -11,15 +11,7 @@
     <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
     <!-- Scripts -->
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
-
-    <!-- Matomo Tag Manager 
-  <script type="text/javascript">
-    var _mtm = _mtm || [];
-    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://piwik.linagora.com/piwik/js/container_Fcxr1OWo.js'; s.parentNode.insertBefore(g,s);
-  </script>
-   End Matomo Tag Manager -->
+    <script type="text/javascript" src="/assets/js/navigation.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css" />
@@ -29,14 +21,25 @@
     <!-- HEADER -->
     <nav id="header">
         <div class="flex row wrapper">
-            <div class="flex flex1">
+            <div class="flex header--logo-container">
                 <a href="/" class="header--logo"></a>
             </div>
-            <div class="flex row flex2 header--nav">
-                <div>
+            <div class="flex row flex1 header--nav">
+                <div class="header--nav-link__parent-container">
                     <a href="/setup" class="header--nav-link">Setup</a>
                 </div>
-                <div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#" id="playground" class="header--nav-link header--nav-link__parent">Try LinTO</a>
+                    <div data-parent="playground" class="header--nav-children hidden flex col">
+                        <div class="flex row">
+                            <a href="/playground/webpage" class="header--nav-link__child link--arrow">In a webpage</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/playground/meeting-room" class="header--nav-link__child link--arrow">In a meeting room</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header--nav-link__parent-container">
                     <a href="#" id="products" class="header--nav-link header--nav-link__parent">Open source products</a>
                     <div data-parent="products" class="header--nav-children hidden flex col">
                         <div class="flex row">
@@ -62,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="header--nav-link__parent-container">
                     <a href="#" id="markets" class="header--nav-link header--nav-link__parent">Markets</a>
                     <div data-parent="markets" class="header--nav-children hidden flex col">
                         <div class="flex row">
@@ -94,13 +97,68 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="header--nav-link__parent-container">
                     <a href="https://doc.linto.ai/" class="header--nav-link" target="_blank">Documentation</a>
                 </div>
-                <div>
+                <div class="header--nav-link__parent-container">
                     <a href="#contact" class="header--nav-link">Contact</a>
                 </div>
+                <div class="header--nav-link__parent-container custom contribute">
+                    <a href="https://github.com/linto-ai" target="_blank" class="header--nav-link border contribute link--arrow">Contribute</a>
+                </div>
             </div>
+        </div>
+    </nav>
+    <nav id="header-mobile" class="closed">
+        <div class="flex row wrapper">
+            <div class="flex header--logo-container">
+                <a href="/" class="header--logo"></a>
+            </div>
+            <div class="flex1 header--burger-btn-container flex row">
+                <button id="header--burger-btn"></button>
+            </div>
+        </div>
+        <div id="mobile-nav" class="flex col hidden">
+            <div class="flex row">
+                <div class="flex1 flex col parents-links">
+                    <a href="/setup" class="header-mobile--nav-link">Setup</a>
+                    <a href="/setup" class="header-mobile--nav-link">Documentation</a>
+                    <a href="/setup" class="header-mobile--nav-link">Contact</a>
+                    <a href="https://github.com/linto-ai" target="_blank" class="header-mobile--nav-link">Contribute</a>
+                </div>
+                <div class="flex1 flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Try LinTO</span>
+                    <a href="/playground/webpage" class="header-mobile--nav-link child">In a webpage</a>
+                    <a href="/playground/meeting-room" class="header-mobile--nav-link child">In a meeting room</a>
+                </div>
+            </div>
+
+            <div class=" flex col">
+
+                <div class="flex1 flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Open source products</span>
+                    <a href="/products/speech-to-text-engine" class="header-mobile--nav-link child">Speech to text engine</a>
+                    <a href="/products/multiplatform-voice-access-endpoint" class="header-mobile--nav-link child">Multiplatform voice access endpoints</a>
+                    <a href="/products/conversational-ai-and-chatbots" class="header-mobile--nav-link child">Conversational AIs, chatbots and callbots</a>
+                    <a href="/products/customizable-wake-word-detection" class="header-mobile--nav-link child">Customizable Wake Word Detection</a>
+                    <a href="/products/productivity-and-skills-development-toolkit" class="header-mobile--nav-link child">Productivity and skills development toolkit</a>
+                    <a href="/products/linto-voice-assistant" class="header-mobile--nav-link child">LinTO voice assistant</a>
+                    <a href="/products/fleet-management" class="header-mobile--nav-link child">Fleet management</a>
+                </div>
+                <div class=" flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Markets</span>
+                    <a href="/markets/healthcare" class="header-mobile--nav-link child">Healthcare</a>
+                    <a href="/markets/banking" class="header-mobile--nav-link child">Banking</a>
+                    <a href="/markets/voice-enabled-web-applications" class="header-mobile--nav-link child">Voice enabled web applications</a>
+                    <a href="/markets/meeting-rooms-and-entreprise" class="header-mobile--nav-link child">Meeting rooms and entreprise</a>
+                    <a href="/markets/smart-building-smart-office" class="header-mobile--nav-link child">Smart Building / Smart office</a>
+                    <a href="/markets/hands-free-processes" class="header-mobile--nav-link child">Hands free processes</a>
+                    <a href="/markets/user-accessibility" class="header-mobile--nav-link child">User accessibility</a>
+                    <a href="/markets/aeronautics" class="header-mobile--nav-link child">Aeronautics</a>
+                    <a href="/markets/hobbyist-hackers-and-ai-enthousiast" class="header-mobile--nav-link child">Hobbyist, hackers and AI enthousiast</a>
+                </div>
+            </div>
+
         </div>
     </nav>
     <!-- END HEADER -->
@@ -311,47 +369,6 @@
         </div>
     </footer>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // get nav links
-            const navLinks = $('.header--nav-link')
-
-            // get parents nav links
-            const navLinksParents = $('.header--nav-link__parent')
-
-            // get children blocks
-            const navChildrens = $('.header--nav-children')
-
-            // parents nav link on : mouseover
-            navLinksParents.on('mouseover', function(e) {
-                const jThis = $(this)
-                if (!jThis.hasClass('active')) {
-                    navChildrens.addClass('hidden')
-                    navLinksParents.removeClass('active')
-
-                    const linkId = jThis.attr('id')
-                    const targetSub = $('div[data-parent="' + linkId + '"]')
-                    if (targetSub.hasClass('hidden')) {
-                        targetSub.removeClass('hidden')
-                        jThis.addClass('active')
-                    }
-
-                    targetSub.on('mouseleave', function() {
-                        jThis.removeClass('active')
-                        targetSub.addClass('hidden')
-                    })
-                }
-            })
-
-            navLinks.on('mouseover', function(e) {
-                if (!$(this).hasClass('header--nav-link__parent')) {
-                    navLinksParents.removeClass('active')
-                    navChildrens.addClass('hidden')
-                }
-
-            })
-        })
-    </script>
 </body>
 
 </html>

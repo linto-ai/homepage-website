@@ -97,7 +97,7 @@
             .header--burger-btn-container {
                 #header--burger-btn {
                     background-color: #fff;
-                    @include maskImage('../img/svg/mobile-menu-close.svg');
+                    @include maskImage('../img/svg/close.svg');
                 }
             }
             #mobile-nav {
