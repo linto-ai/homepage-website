@@ -247,9 +247,12 @@
 */
 
 #playground-title {
-    padding: 60px 0;
+    padding: 40px 0;
     @include blueToPurpleGradient();
     @include transition(all 0.3s ease);
+    .wrapper {
+        position: relative;
+    }
     .playground__title {
         display: inline-block;
         width: 100%;
@@ -271,27 +274,57 @@
             font-family: $accessibilityFont;
         }
     }
+    .playground__anchor {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        @include borderRadius(20px);
+        @include blockShadowStrong();
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-top: 15px;
+        margin-left: -20px;
+        z-index: 10;
+        @include transition(all 0.3s ease);
+        &:after {
+            content: '';
+            @include maskImage('../img/svg/arrow-down.svg');
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: $blue;
+            @include transition(all 0.3s ease);
+        }
+        &:hover {
+            background: $blue;
+            &:after {
+                background: #fff;
+            }
+        }
+    }
 }
 
 #playground-webpage {
     padding: 40px 20px;
-    &>div {
-        margin: 0 10px;
-    }
+    max-height: 820px;
     h2 {
         font-size: 24px;
     }
 }
 
-.playgournd-webpage-area {
+.playground-webpage-area {
+    margin: 10px;
     padding: 20px;
     @include blockShadowStrong();
 }
 
-#playgound-infos {
+#playground-infos {
     background: #ececec;
     border: 1px solid #ccc;
     padding: 20px;
+    margin: 10px;
     p {
         font-size: 16px;
         line-height: 20px;
@@ -310,8 +343,7 @@
     }
 }
 
-#playgound-webpage-content {
-    max-height: 720px;
+#playground-webpage-content {
     overflow: auto;
     .playground-webpage-content-block {
         margin-bottom: 20px;
@@ -339,44 +371,51 @@
     }
 }
 
-#playgound-webpage-podcast {
-    height: 260px;
+#playground-webpage-podcast {
     margin-right: 20px;
     .podcast-link {
         display: inline-block;
-        padding-bottom: 10px;
+        padding: 5px 5px 5px 15px;
         position: relative;
         font-size: 18px;
         &.active {
             color: $blue;
-            padding-left: 15px;
             &:before {
                 content: ">";
                 display: inline-block;
                 width: 15px;
                 height: 15px;
                 position: absolute;
-                top: 0px;
+                top: 3px;
                 left: -5px;
             }
         }
     }
+    audio {
+        margin-top: 10px;
+    }
 }
 
-#playgound-webpage-image {
-    height: 260px;
+#playground-webpage-image {
     width: 300px;
+    .flex {
+        justify-content: center;
+    }
 }
 
-#playgound-webpage-slider {
-    margin-top: 20px;
+#dicatation {
+    display: inline-block;
+    resize: none;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #f2f2f2;
 }
 
 
 /* SLIDER */
 
 #playground-slider {
-    width: 420px;
+    width: 320px;
     height: auto;
     margin: 0 auto 20px auto;
 }
