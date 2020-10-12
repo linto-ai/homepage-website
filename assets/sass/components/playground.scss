@@ -5,6 +5,8 @@
     src: local('Open-Dyslexic Roman'), url('../fonts/open-dyslexic/open-dyslexic.woff') format('woff');
 }
 
+
+/*
 #playground-title {
     padding: 60px 0;
     @include blueToPurpleGradient();
@@ -242,13 +244,140 @@
         }
     }
 }
+*/
+
+#playground-title {
+    padding: 60px 0;
+    @include blueToPurpleGradient();
+    @include transition(all 0.3s ease);
+    .playground__title {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    .playground__desc {
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        padding-top: 20px;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+    &.accessibility {
+        background: $blueDark;
+        .playground__title,
+        .playground__desc {
+            font-family: $accessibilityFont;
+        }
+    }
+}
+
+#playground-webpage {
+    padding: 40px 20px;
+    &>div {
+        margin: 0 10px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+
+.playgournd-webpage-area {
+    padding: 20px;
+    @include blockShadowStrong();
+}
+
+#playgound-infos {
+    background: #ececec;
+    border: 1px solid #ccc;
+    padding: 20px;
+    p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .playground-webpage-command {
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        font-weight: 500;
+        color: $blueDark;
+        margin: 5px 0;
+        strong {
+            color: $red;
+        }
+    }
+}
+
+#playgound-webpage-content {
+    max-height: 720px;
+    overflow: auto;
+    .playground-webpage-content-block {
+        margin-bottom: 20px;
+        padding: 20px;
+        h3.playground-content-block__title {
+            font-size: 20px;
+            font-family: $Martel;
+            font-weight: 700;
+            color: $blue;
+            padding-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            font-family: $Barlow;
+            line-height: 20px;
+            color: $textColor;
+        }
+        &.active {
+            background-color: $blue;
+            h3,
+            p {
+                color: #fff;
+            }
+        }
+    }
+}
+
+#playgound-webpage-podcast {
+    height: 260px;
+    margin-right: 20px;
+    .podcast-link {
+        display: inline-block;
+        padding-bottom: 10px;
+        position: relative;
+        font-size: 18px;
+        &.active {
+            color: $blue;
+            padding-left: 15px;
+            &:before {
+                content: ">";
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                top: 0px;
+                left: -5px;
+            }
+        }
+    }
+}
+
+#playgound-webpage-image {
+    height: 260px;
+    width: 300px;
+}
+
+#playgound-webpage-slider {
+    margin-top: 20px;
+}
 
 
 /* SLIDER */
 
 #playground-slider {
-    width: 300px;
-    height: 200px;
+    width: 420px;
+    height: auto;
     margin: 0 auto 20px auto;
 }
 

@@ -37,6 +37,7 @@
         color: $textColor;
         text-transform: uppercase;
         @include transition(all 0.3s ease);
+        white-space: nowrap;
         &:hover {
             color: $blueDark;
         }

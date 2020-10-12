@@ -39,6 +39,17 @@
                     <a href="/setup" class="header--nav-link">Setup</a>
                 </div>
                 <div class="header--nav-link__parent-container">
+                    <a href="#" id="playground" class="header--nav-link header--nav-link__parent">Try LinTO</a>
+                    <div data-parent="playground" class="header--nav-children hidden flex col">
+                        <div class="flex row">
+                            <a href="/playground/webpage" class="header--nav-link__child link--arrow">In a webpage</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/playground/meeting-room" class="header--nav-link__child link--arrow">In a meeting room</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header--nav-link__parent-container">
                     <a href="#" id="products" class="header--nav-link header--nav-link__parent">Open source products</a>
                     <div data-parent="products" class="header--nav-children hidden flex col">
                         <div class="flex row">
@@ -102,10 +113,6 @@
                 <div class="header--nav-link__parent-container">
                     <a href="#contact" class="header--nav-link">Contact</a>
                 </div>
-                <div class="header--nav-link__parent-container custom trylinto">
-                    <a href="/playground/webpage" class="header--nav-link border try link--arrow">Try LinTO</a>
-
-                </div>
                 <div class="header--nav-link__parent-container custom contribute">
                     <a href="#" class="header--nav-link border contribute link--arrow">Contribute</a>
                 </div>
@@ -122,12 +129,21 @@
             </div>
         </div>
         <div id="mobile-nav" class="flex col hidden">
-            <div class="flex col parents-links">
-                <a href="/setup" class="header-mobile--nav-link">Setup</a>
-                <a href="/setup" class="header-mobile--nav-link">Documentation</a>
-                <a href="/setup" class="header-mobile--nav-link">Contact</a>
+            <div class="flex row">
+                <div class="flex1 flex col parents-links">
+                    <a href="/setup" class="header-mobile--nav-link">Setup</a>
+                    <a href="/setup" class="header-mobile--nav-link">Documentation</a>
+                    <a href="/setup" class="header-mobile--nav-link">Contact</a>
+                </div>
+                <div class="flex1 flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Try LinTO</span>
+                    <a href="/playground/webpage" class="header-mobile--nav-link child">In a webpage</a>
+                    <a href="/playground/meeting-room" class="header-mobile--nav-link child">In a meeting room</a>
+                </div>
             </div>
+
             <div class=" flex col">
+
                 <div class="flex1 flex col mobile-sub-menu">
                     <span class="header-mobile--nav-label">Open source products</span>
                     <a href="/products/speech-to-text-engine" class="header-mobile--nav-link child">Speech to text engine</a>
