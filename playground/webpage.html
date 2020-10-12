@@ -16,6 +16,20 @@
     <script type="text/javascript" src="/assets/js/navigation.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            /* Accessibility mode */
+            $('#toggle-accessibility').on('click', function() {
+                const playground = $('#playground-webpage')
+                const playgroundTitle = $('#playground-title')
+                if (playground.hasClass('accessibility')) {
+                    playground.removeClass('accessibility')
+                    playgroundTitle.removeClass('accessibility')
+                } else {
+                    playground.addClass('accessibility')
+                    playgroundTitle.addClass('accessibility')
+                }
+            })
+
+            /* slider */
             $('#playground-slider').slick({
                 dots: true,
                 arrows: true
@@ -233,6 +247,8 @@
 
             <span class="playground-webpage-command">LinTO, <strong>play </strong> podcast</span>
             <span class="playground-webpage-command">LinTO, <strong>pause</strong> podcast</span> ...
+
+            <button id="toggle-accessibility">Accessibility mode</button>
 
         </div>
         <div class="flex2 flex col playground-webpage-area" id="playground-webpage-content">
