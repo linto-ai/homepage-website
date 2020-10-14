@@ -12,77 +12,16 @@
     <!-- Scripts -->
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/lottie.min.js"></script>
+    <script type="text/javascript" src="/assets/js/linto.min.js"></script>
+
     <script type="text/javascript" src="/assets/js/slick.min.js"></script>
     <script type="text/javascript" src="/assets/js/lightbox.js"></script>
     <script type="text/javascript" src="/assets/js/navigation.js"></script>
+    <script type="text/javascript" src="/assets/js/linto-playground-web.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(async function() {
+
             // INIT 
-            window['lintoState'] = 'sleeping'
-
-            let jsonPath = '../assets/json/linto-full.json'
-            const animationContainer = document.getElementById('linto-animation')
-            let lintoAnim = lottie.loadAnimation({
-                container: animationContainer, // the dom element that will contain the animation
-                renderer: 'svg',
-                loop: false,
-                autoplay: true,
-                path: jsonPath, // the path to the animation json
-                rendererSettings: {
-                    className: 'linto-animation'
-                }
-            })
-
-            const segments = {
-                sleeping: {
-                    start: 0,
-                    end: 90,
-                    endPreLoop: null
-                },
-                listening: {
-                    start: 91,
-                    end: 210,
-                    endPreLoop: 147
-                },
-                thinking: {
-                    start: 211,
-                    end: 315,
-                    endPreLoop: 260
-                }
-            }
-
-            lintoAnim.addEventListener('enterFrame', function(e) {
-                if (window['lintoState'] === 'sleeping') {
-                    if (e.currentTime >= segments.sleeping.end) {
-                        lintoAnim.goToAndPlay(segments.sleeping.start, true)
-                    }
-                } else if (window['lintoState'] === 'wakeup') {
-                    if (e.currentTime >= segments.listening.end) {
-                        lintoAnim.setSpeed(1)
-                        lintoAnim.goToAndPlay(segments.listening.endPreLoop, true)
-                    }
-                } else if (window['lintoState'] === 'thinking') {
-                    if (e.currentTime >= segments.thinking.end) {
-                        lintoAnim.goToAndPlay(segments.thinking.endPreLoop, true)
-                    }
-                }
-            })
-
-            $('#linto-sleeping').on('click', function() {
-                window['lintoState'] = 'sleeping'
-                lintoAnim.goToAndPlay(segments.sleeping.start, true)
-            })
-
-            $('#linto-listening').on('click', function() {
-                window['lintoState'] = 'wakeup'
-                lintoAnim.goToAndPlay(segments.listening.start, true)
-                lintoAnim.setSpeed(1.2)
-            })
-
-            $('#linto-thinking').on('click', function() {
-                window['lintoState'] = 'thinking'
-                lintoAnim.goToAndPlay(segments.thinking.start, true)
-            })
 
             // Resize playground max height to screen heiht
             $('#playground-webpage').attr('style', 'max-height: ' + (window.innerHeight - 80) + 'px;');
@@ -276,7 +215,7 @@
     <!-- END PAGE TITLE -->
     <!-- PLAYGROUND -->
     <section id="playground-webpage" class="flex row">
-
+        <div id="loading"></div>
         <div class="flex1 flex col" id="playground-infos">
             <div class="flex row" id="linto-container">
                 <div id="linto">
@@ -301,11 +240,11 @@
                     <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
                     <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
 
-                    <span class="playground-webpage-command">LinTO, <strong>joue </strong> le podcast</span>
+                    <span class="playground-webpage-command">LinTO, <strong>démarre </strong> le podcast</span>
                     <span class="playground-webpage-command">LinTO, <strong>stoppe</strong> le podcast</span>
 
-                    <span class="playground-webpage-command">LinTO, slide <strong>suivante</strong></span>
-                    <span class="playground-webpage-command">LinTO, slide <strong>précédente</strong></span>
+                    <span class="playground-webpage-command">LinTO, diapo <strong>suivante</strong></span>
+                    <span class="playground-webpage-command">LinTO, diapo <strong>précédente</strong></span>
 
                     <span class="playground-webpage-command">LinTO, <strong>agrandis</strong> l'image</span>
                     <span class="playground-webpage-command">LinTO, <strong>réduis</strong> l'image</span>
@@ -372,8 +311,8 @@
 
                         <div class="flex col">
                             <a href="#" class="podcast-link active">Podcast 1</a>
-                            <a href="#" class="podcast-link">Podcast 2</a>
-                            <audio controls src="/assets/audio/example.mp3"></audio>
+                            <!-- <a href="#" class="podcast-link">Podcast 2</a> -->
+                            <audio controls id="podcast" src="/assets/audio/example.mp3"></audio>
                         </div>
                     </div>
 
