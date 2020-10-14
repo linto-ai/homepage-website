@@ -11,11 +11,85 @@
     <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
     <!-- Scripts -->
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lottie.min.js"></script>
     <script type="text/javascript" src="/assets/js/slick.min.js"></script>
     <script type="text/javascript" src="/assets/js/lightbox.js"></script>
     <script type="text/javascript" src="/assets/js/navigation.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            // INIT 
+            window['lintoState'] = 'sleeping'
+
+            let jsonPath = '../assets/json/linto-full.json'
+            const animationContainer = document.getElementById('linto-animation')
+            let lintoAnim = lottie.loadAnimation({
+                container: animationContainer, // the dom element that will contain the animation
+                renderer: 'svg',
+                loop: false,
+                autoplay: true,
+                path: jsonPath, // the path to the animation json
+                rendererSettings: {
+                    className: 'linto-animation'
+                }
+            })
+
+            const segments = {
+                sleeping: {
+                    start: 0,
+                    end: 90,
+                    endPreLoop: null
+                },
+                listening: {
+                    start: 91,
+                    end: 210,
+                    endPreLoop: 147
+                },
+                thinking: {
+                    start: 211,
+                    end: 315,
+                    endPreLoop: 260
+                }
+            }
+
+            lintoAnim.addEventListener('enterFrame', function(e) {
+                if (window['lintoState'] === 'sleeping') {
+                    if (e.currentTime >= segments.sleeping.end) {
+                        lintoAnim.goToAndPlay(segments.sleeping.start, true)
+                    }
+                } else if (window['lintoState'] === 'wakeup') {
+                    if (e.currentTime >= segments.listening.end) {
+                        lintoAnim.setSpeed(1)
+                        lintoAnim.goToAndPlay(segments.listening.endPreLoop, true)
+                    }
+                } else if (window['lintoState'] === 'thinking') {
+                    if (e.currentTime >= segments.thinking.end) {
+                        lintoAnim.goToAndPlay(segments.thinking.endPreLoop, true)
+                    }
+                }
+            })
+
+            $('#linto-sleeping').on('click', function() {
+                window['lintoState'] = 'sleeping'
+                lintoAnim.goToAndPlay(segments.sleeping.start, true)
+            })
+
+            $('#linto-listening').on('click', function() {
+                window['lintoState'] = 'wakeup'
+                lintoAnim.goToAndPlay(segments.listening.start, true)
+                lintoAnim.setSpeed(1.2)
+            })
+
+            $('#linto-thinking').on('click', function() {
+                window['lintoState'] = 'thinking'
+                lintoAnim.goToAndPlay(segments.thinking.start, true)
+            })
+
+            // Resize playground max height to screen heiht
+            $('#playground-webpage').attr('style', 'max-height: ' + (window.innerHeight - 80) + 'px;');
+            window.onresize = function() {
+                $('#playground-webpage').attr('style', 'max-height: ' + (window.innerHeight - 80) + 'px;');
+            }
+
             /* Accessibility mode */
             $('#toggle-accessibility').on('click', function() {
                 const playground = $('#playground-webpage')
@@ -35,39 +109,6 @@
                 arrows: true
             })
 
-            /* light box */
-            $('.lightbox__img').on('click', function(e)  {
-                const src = $(this).attr('src')
-                let directionClass = ''
-                if (!!e.target) {
-                    const offsetWidth = e.target.offsetWidth
-                    const offsetHeight = e.target.offsetHeight
-
-                    if (offsetWidth - offsetHeight < 0) {
-                        //portrait
-                        directionClass = 'portrait'
-                    } else {
-                        //paysage
-                        directionClass = 'landscape'
-                    }
-                }
-                const lightbox = `
-              <div class="lightbox--wrapper" id="lightbox">
-                <div class="lightbox--container">
-                  <button class="lightbox__btn--close"></button>
-                  <img src="${src}" class="lightbox__img--zoomed ${directionClass}"/>
-                </div>
-              </div>
-              `
-                    // Open lightbox
-                $('body').append(lightbox)
-
-                // Close lightbox
-                $('.lightbox__btn--close').on('click', function(e)  {
-
-                    $('#lightbox').remove()
-                })
-            })
 
         })
     </script>
@@ -235,21 +276,48 @@
     <!-- END PAGE TITLE -->
     <!-- PLAYGROUND -->
     <section id="playground-webpage" class="flex row">
+
         <div class="flex1 flex col" id="playground-infos">
-            <h2>Voice commands</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. </p>
+            <div class="flex row" id="linto-container">
+                <div id="linto">
+                    <div id="linto-animation" class="sleeping"></div>
+                    <span id="linto-state">sleeping</span>
+                </div>
+                <div class="flex col">
+                    <button id="linto-sleeping">Sleeping</button>
+                    <button id="linto-listening">Listening</button>
+                    <button id="linto-thinking">Thinking</button>
+                    <!-- <button id="linto-action">Action</button> -->
+                </div>
+            </div>
+            <div class="flex1 flex col" id="commands">
+                <h2>Commandes vocales</h2>
+                <div class="playground-infos-commands flex1 flex col">
+                    <p>Pour pouvoir utiliser <strong>LinTO</strong> dans la page web, vous devrez <strong>autoriser l'accès aux périphériques audio</strong> de votre ordinateur.</p>
+                    <p>Il vous suffira ensuite prononcer <strong>"LinTO"</strong>, pour passer en mode écoute, puis <strong>prononcer les phrases d'exemple</strong> suivantes pour activer des fonctionnalités à la voix:</p>
 
-            <span class="playground-webpage-command">LinTO, go to <strong>next</strong> block </span>
-            <span class="playground-webpage-command">LinTO, go to <strong>previous</strong> block </span>
+                    <span class="playground-webpage-command">LinTO, va au bloque <strong>suivant</strong></span>
+                    <span class="playground-webpage-command">LinTO, va au bloque <strong>précédent</strong></span>
+                    <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
+                    <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
 
-            <span class="playground-webpage-command">LinTO, read <strong>title</strong></span>
-            <span class="playground-webpage-command">LinTO, read <strong>content</strong></span>
+                    <span class="playground-webpage-command">LinTO, <strong>joue </strong> le podcast</span>
+                    <span class="playground-webpage-command">LinTO, <strong>stoppe</strong> le podcast</span>
 
-            <span class="playground-webpage-command">LinTO, <strong>play </strong> podcast</span>
-            <span class="playground-webpage-command">LinTO, <strong>pause</strong> podcast</span> ...
+                    <span class="playground-webpage-command">LinTO, slide <strong>suivante</strong></span>
+                    <span class="playground-webpage-command">LinTO, slide <strong>précédente</strong></span>
 
-            <button id="toggle-accessibility">Accessibility mode</button>
+                    <span class="playground-webpage-command">LinTO, <strong>agrandis</strong> l'image</span>
+                    <span class="playground-webpage-command">LinTO, <strong>réduis</strong> l'image</span>
 
+                    <span class="playground-webpage-command">LinTO, <strong>active</strong> le mode accéssibilité</span>
+                    <span class="playground-webpage-command">LinTO, <strong>désactive</strong> le mode accéssibilité</span>
+
+
+
+                    <button id="toggle-accessibility">Accessibility mode</button>
+                </div>
+            </div>
         </div>
         <div class="flex2 flex col playground-webpage-area" id="playground-webpage-content">
             <div class="flex1">

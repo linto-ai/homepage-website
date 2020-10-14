@@ -88,13 +88,24 @@
         @include blockShadowStrong();
     }
     #playground-infos {
+        overflow: hidden;
         background: #ececec;
         border: 1px solid #ccc;
         padding: 20px;
         margin: 10px;
+        #commands {
+            overflow: hidden;
+            .playground-infos-commands {
+                overflow-y: scroll;
+            }
+        }
         p {
             font-size: 16px;
-            line-height: 20px;
+            line-height: 22px;
+            strong {
+                font-weight: 700;
+                color: $red;
+            }
         }
         .playground-webpage-command {
             padding: 10px;
@@ -173,48 +184,56 @@
         font-size: 14px;
         background-color: #f2f2f2;
     }
-}
-
-#playground-webpage.accessibility {
-    * {
-        font-family: $accessibilityFont !important;
-    }
-    #playground-infos {
-        background: $textColor;
-        border: none;
-        h2 {
-            color: $orange;
+    &.accessibility {
+        * {
+            font-family: $accessibilityFont !important;
         }
-        p {
-            color: #fff
-        }
-    }
-    #playground-webpage-content {
-        .playground-webpage-content-block {
-            h3.playground-content-block__title {
-                color: $blueDark;
+        #playground-infos {
+            background: $textColor;
+            border: none;
+            h2 {
+                color: $orange;
             }
             p {
-                font-size: 16px;
-                font-family: $accessibilityFont;
-                line-height: 20px;
-                color: $textColor;
+                color: #fff
             }
-            &.active {
-                background-color: $blueDark;
-                h3.playground-content-block__title,
+        }
+        #playground-webpage-content {
+            .playground-webpage-content-block {
+                h3.playground-content-block__title {
+                    color: $blueDark;
+                }
                 p {
-                    color: #fff;
+                    font-size: 16px;
+                    font-family: $accessibilityFont;
+                    line-height: 20px;
+                    color: $textColor;
+                }
+                &.active {
+                    background-color: $blueDark;
+                    h3.playground-content-block__title,
+                    p {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        #playground-webpage-podcast {
+            .podcast-link {
+                &.active {
+                    color: $blueDark;
                 }
             }
         }
     }
-    #playground-webpage-podcast {
-        .podcast-link {
-            &.active {
-                color: $blueDark;
-            }
-        }
+}
+
+#linto-container {
+    min-height: 200px;
+    margin-bottom: 20px;
+    #linto-animation {
+        width: 150px;
+        height: 150px;
     }
 }
 
