@@ -125,6 +125,13 @@ let commandPublished = function(event) {
 let hotword = function(event) {
     console.log("Hotword triggered : ", event.detail)
 
+    const audioPlayer = document.getElementById('podcast')
+
+    if (!audioPlayer.paused) {
+        audioPlayer.pause()
+        audioPlayer.setAttribute('data-tmppause', true)
+    }
+
     // Play beep sound
     window.lintoUISound.src = '../assets/audio/linto/beep3.wav'
     window.lintoUISound.play()
@@ -184,7 +191,7 @@ let customHandler = async function(event) {
     }
 
     // Podcast stop
-    if (event.detail.behavior.customAction.kind === 'podcast_stop') {
+    if (event.detail.behavior.customAction.kind === 'podcast_stop' || event.detail.behavior.customAction.kind === 'podcast_pause') {
         const audioPlayer = document.getElementById('podcast')
         if (!audioPlayer.paused) {
             document.getElementById('podcast').pause()
@@ -222,6 +229,11 @@ let customHandler = async function(event) {
     }
     lintoSleep()
 
+    const audioPlayer = document.getElementById('podcast')
+    if (audioPlayer.getAttribute('data-tmppause') === true || audioPlayer.getAttribute('data-tmppause') === 'true') {
+        audioPlayer.play()
+        audioPlayer.setAttribute('data-tmppause', false)
+    }
     console.log(`${event.detail.behavior.customAction.kind} fired`)
     console.log(event.detail.behavior)
     console.log(event.detail.transcript)
