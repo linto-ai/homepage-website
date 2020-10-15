@@ -1,4 +1,5 @@
-window['lintoState'] = 'sleeping'
+window.stramingContent = ''
+window.lintoState = 'sleeping'
 window.lintoAnim = null
 window.lintoAnimSegments =   {
     sleeping: {
@@ -20,17 +21,17 @@ window.lintoAnimSegments =   {
 window.lintoUISound = new Audio()
 
 let lintoSleep = function() {
-    window['lintoState'] = 'sleeping'
+    window.lintoState = 'sleeping'
     window.lintoAnim.goToAndPlay(window.lintoAnimSegments.sleeping.start, true)
 }
 
 let lintoListen = function() {
-    window['lintoState'] = 'wakeup'
+    window.lintoState = 'wakeup'
     window.lintoAnim.goToAndPlay(window.lintoAnimSegments.listening.endPreLoop, true)
 }
 
 let lintoThink = function() {
-    window['lintoState'] = 'thinking'
+    window.lintoState = 'thinking'
     window.lintoAnim.goToAndPlay(window.lintoAnimSegments.thinking.endPreLoop, true)
 }
 let getActiveTitle = function() {
@@ -87,6 +88,8 @@ let disableAccessibility = function() {
     playground.removeClass('accessibility')
     playgroundTitle.removeClass('accessibility')
 }
+
+
 
 let mqttConnectHandler = function(event) {
     console.log("mqtt up !")
@@ -158,10 +161,17 @@ let askFeedback = async function(event) {
 }
 
 let streamingChunk = function(event) {
-    if (event.detail.behavior.streaming.partial)
+    if (event.detail.behavior.streaming.partial) {
         console.log("Streaming chunk received : ", event.detail.behavior.streaming.partial)
-    if (event.detail.behavior.streaming.text)
+        $('#dictation').html(window.stramingContent + ' ' + event.detail.behavior.streaming.partial)
+    }
+    $('#dictation').html(event.detail.behavior.streaming.partial)
+    if (event.detail.behavior.streaming.text) {
         console.log("Streaming utterance completed : ", event.detail.behavior.streaming.text)
+        window.stramingContent += ' ' + event.detail.behavior.streaming.text
+        $('#dictation').html(window.stramingContent)
+    }
+
 }
 
 let streamingStart = function(event) {
@@ -170,6 +180,10 @@ let streamingStart = function(event) {
 
 let streamingFinal = function(event) {
     console.log("Streaming ended, here's the final transcript : ", event.detail.behavior.streaming.result)
+
+    const result = JSON.parse(event.detail.behavior.streaming.result)
+    window.stramingContent = result.text
+    $('#dictation').html(window.stramingContent)
 }
 
 let streamingFail = function(event) {
@@ -243,8 +257,8 @@ let customHandler = async function(event) {
 
 window.start = async function() {
     try {
-        //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
-        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
+        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
+            //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
 
         // Some feedbacks for UX implementation
         linto.addEventListener("mqtt_connect", mqttConnectHandler)
@@ -284,19 +298,35 @@ window.start = async function() {
 
         window.lintoAnim.addEventListener('enterFrame', function(e) {
 
-            if (window['lintoState'] === 'sleeping') {
+            if (window.lintoState === 'sleeping') {
                 if (e.currentTime >= window.lintoAnimSegments.sleeping.end) {
                     window.lintoAnim.goToAndPlay(window.lintoAnimSegments.sleeping.start, true)
                 }
-            } else if (window['lintoState'] === 'wakeup') {
+            } else if (window.lintoState === 'wakeup') {
                 if (e.currentTime >= window.lintoAnimSegments.listening.end) {
                     window.lintoAnim.goToAndPlay(window.lintoAnimSegments.listening.endPreLoop, true)
                 }
-            } else if (window['lintoState'] === 'thinking') {
+            } else if (window.lintoState === 'thinking') {
                 if (e.currentTime >= window.lintoAnimSegments.thinking.end) {
                     window.lintoAnim.goToAndPlay(window.lintoAnimSegments.thinking.endPreLoop, true)
                 }
             }
+        })
+
+        $('#toggle-streaming').on('click', function() {
+            if ($(this).hasClass('disabled'))  {
+                console.log('STREAMING ON')
+                $(this).removeClass('disabled').addClass('enabled')
+                linto.stopCommandPipeline();
+                linto.startStreaming()
+            } else if ($(this).hasClass('enabled'))  {
+                console.log('STREAMING OFF')
+                $(this).removeClass('enabled').addClass('disabled')
+                linto.stopStreaming()
+                linto.startCommandPipeline()
+
+            }
+
         })
         return true
     } catch (e) {

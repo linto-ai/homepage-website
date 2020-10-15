@@ -198,7 +198,21 @@
             justify-content: center;
         }
     }
-    #dicatation {
+    #toggle-streaming {
+        display: inline-block;
+        margin: 5px 0;
+        background-color: #fff;
+        outline: none;
+        &.disabled {
+            color: red;
+            border: 1px solid red;
+        }
+        &.enabled {
+            color: green;
+            border: 1px solid green;
+        }
+    }
+    #dictation {
         display: inline-block;
         resize: none;
         padding: 5px;
