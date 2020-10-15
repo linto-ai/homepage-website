@@ -11,9 +11,11 @@
     <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
     <!-- Scripts -->
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/linto.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lottie.min.js"></script>
     <script type="text/javascript" src="/assets/js/snap.svg-min.js"></script>
     <script type="text/javascript" src="/assets/js/navigation.js"></script>
-    <script type="text/javascript" src="/assets/js/meeting-room.js"></script>
+    <script type="text/javascript" src="/assets/js/linto-playground-meeting-room.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css" />
@@ -175,13 +177,39 @@
                     Try LinTO in a meeting room
                 </p>
             </div>
+            <a href="#playground-meeting-room" class="playground__anchor"></a>
         </div>
     </section>
     <!-- END PAGE TITLE -->
     <!-- PLAYGROUND -->
     <section id="playground-meeting-room">
         <div class="wrapper flex row">
-            <div id="svg-container" class="flex1">
+            <div class="flex1 flex col" id="playground-infos">
+                <div class="flex row" id="linto-container">
+                    <div id="linto">
+                        <div id="linto-animation" class="sleeping"></div>
+                    </div>
+                </div>
+                <div class="flex1 flex col" id="commands">
+                    <h2>Commandes vocales</h2>
+                    <div class="playground-infos-commands flex1 flex col">
+                        <p>Pour pouvoir utiliser <strong>LinTO</strong> dans la page web, vous devrez <strong>autoriser l'accès aux périphériques audio</strong> de votre ordinateur.</p>
+                        <p>Il vous suffira ensuite prononcer <strong>"LinTO"</strong>, pour passer en mode écoute, puis <strong>prononcer les phrases d'exemple</strong> suivantes pour activer des fonctionnalités à la voix:</p>
+                        <span class="playground-webpage-command">LinTO, <strong>allume</strong> la lumière</span>
+                        <span class="playground-webpage-command">LinTO, <strong>éteind</strong> la lumière</span>
+                        <span class="playground-webpage-command">LinTO, <strong>allume</strong> le projecteur</span>
+                        <span class="playground-webpage-command">LinTO, <strong>éteind</strong> le projecteur</span>
+                        <span class="playground-webpage-command">LinTO, <strong>ouvre</strong> les stores</span>
+                        <span class="playground-webpage-command">LinTO, <strong>ferme</strong> les stores</span>
+                        <span class="playground-webpage-command">LinTO, diapo <strong>suivante</strong></span>
+                        <span class="playground-webpage-command">LinTO, diapo <strong>précedente</strong></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="svg-container" class="flex3 flex col">
                 <svg version="1.1" id="meeting-room-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 921.6 775.7" style="enable-background:new 0 0 921.6 775.7;" xml:space="preserve">
               <g id="ILLUSTRATION_1_">
                 <g id="MUR-SOL">
@@ -1721,7 +1749,7 @@
                 c1,0.5,1.6,1.6,1.6,3.4c0,0.2,0,0.4-0.1,0.6l263,151.8c1.2-0.7,3.1-0.6,3.9-0.2l5.7,2.8l0,0c1,0.5,1.6,1.6,1.6,3.4
                 c0,3.1-2.3,7.1-5,8.7c-1.3,0.8-2.5,0.9-3.4,0.4L788,457.5C788.6,457.5,789.3,457.6,789.7,457.8z M765.9,419.4
                 c0.3-1.2,0.7-2.4,1-3.5l0.3,2.2L765.9,419.4z"/>
-                <g id="LUMIERE-ON" class="off">
+                <g id="LUMIERE-ON" class="on">
                   <ellipse class="st82" cx="456.2" cy="86.5" rx="15.1" ry="8.7"/>
                   <path class="st83" d="M441.1,86c0,2-0.4,7.7-5,15.7c-5.4,9.4,0.2,31.7,20.1,31.7c19.8,0,25.5-22.3,20.1-31.7c-4-6.9-4.8-13-5-15.8
                     "/>
@@ -1746,13 +1774,7 @@
 
 
             </div>
-            <div class="flex col">
-                <button class="meeting-room-btn" id="toggle-light">Light</button>
-                <button class="meeting-room-btn" id="toggle-store">Shutter</button>
-                <button class="meeting-room-btn" id="toggle-proj">Projector</button>
-                <button class="meeting-room-btn" id="next-slide">Next slide</button>
-                <button class="meeting-room-btn" id="prev-slide">Prev slide</button>
-            </div>
+
         </div>
     </section>
 

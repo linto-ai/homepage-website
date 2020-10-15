@@ -76,9 +76,10 @@
     }
 }
 
+#playground-meeting-room,
 #playground-webpage {
     padding: 40px 20px;
-    max-height: 820px;
+    min-height: 800px;
     position: relative;
     #loading {
         position: absolute;
