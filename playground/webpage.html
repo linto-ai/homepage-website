@@ -21,34 +21,20 @@
     <script type="text/javascript">
         $(document).ready(async function() {
 
-            // INIT 
-
             // Resize playground max height to screen heiht
-            $('#playground-webpage').attr('style', 'max-height: ' + (window.innerHeight - 80) + 'px;');
-            window.onresize = function() {
+            if (window.innerHeight >= 800) {
                 $('#playground-webpage').attr('style', 'max-height: ' + (window.innerHeight - 80) + 'px;');
-            }
-
-            /* Accessibility mode */
-            $('#toggle-accessibility').on('click', function() {
-                const playground = $('#playground-webpage')
-                const playgroundTitle = $('#playground-title')
-                if (playground.hasClass('accessibility')) {
-                    playground.removeClass('accessibility')
-                    playgroundTitle.removeClass('accessibility')
-                } else {
-                    playground.addClass('accessibility')
-                    playgroundTitle.addClass('accessibility')
+                window.onresize = function() {
+                    $('#playground-webpage').attr('style', 'max-height: ' + (window.innerHeight - 80) + 'px;');
                 }
-            })
+            }
 
             /* slider */
             $('#playground-slider').slick({
                 dots: true,
-                arrows: true
+                arrows: true,
+                autoplay: false
             })
-
-
         })
     </script>
 
@@ -220,13 +206,6 @@
             <div class="flex row" id="linto-container">
                 <div id="linto">
                     <div id="linto-animation" class="sleeping"></div>
-                    <span id="linto-state">sleeping</span>
-                </div>
-                <div class="flex col">
-                    <button id="linto-sleeping">Sleeping</button>
-                    <button id="linto-listening">Listening</button>
-                    <button id="linto-thinking">Thinking</button>
-                    <!-- <button id="linto-action">Action</button> -->
                 </div>
             </div>
             <div class="flex1 flex col" id="commands">
@@ -234,7 +213,10 @@
                 <div class="playground-infos-commands flex1 flex col">
                     <p>Pour pouvoir utiliser <strong>LinTO</strong> dans la page web, vous devrez <strong>autoriser l'accès aux périphériques audio</strong> de votre ordinateur.</p>
                     <p>Il vous suffira ensuite prononcer <strong>"LinTO"</strong>, pour passer en mode écoute, puis <strong>prononcer les phrases d'exemple</strong> suivantes pour activer des fonctionnalités à la voix:</p>
-
+                    <span class="playground-webpage-command">LinTO, va au bloque <strong>suivant</strong></span>
+                    <span class="playground-webpage-command">LinTO, va au bloque <strong>précédent</strong></span>
+                    <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
+                    <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
 
                     <span class="playground-webpage-command">LinTO, <strong>démarre </strong> le podcast</span>
                     <span class="playground-webpage-command">LinTO, <strong>stoppe</strong> le podcast</span>
@@ -245,57 +227,48 @@
                     <span class="playground-webpage-command">LinTO, <strong>agrandis</strong> l'image</span>
                     <span class="playground-webpage-command">LinTO, <strong>réduis</strong> l'image</span>
 
-                    <!--
-
-                    <span class="playground-webpage-command">LinTO, va au bloque <strong>suivant</strong></span>
-                    <span class="playground-webpage-command">LinTO, va au bloque <strong>précédent</strong></span>
-                    <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
-                    <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
-
-
                     <span class="playground-webpage-command">LinTO, <strong>active</strong> le mode accéssibilité</span>
                     <span class="playground-webpage-command">LinTO, <strong>désactive</strong> le mode accéssibilité</span>
--->
-                    <button id="toggle-accessibility">Accessibility mode</button>
+
                 </div>
             </div>
         </div>
         <div class="flex2 flex col playground-webpage-area" id="playground-webpage-content">
             <div class="flex1">
                 <h2>Navigation and content reading</h2>
-                <div class="playground-webpage-content-block active">
-                    <h3 class="playground-content-block__title">My block title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
+                <div class="playground-webpage-content-block active" data-index="1">
+                    <h3 class="playground-content-block__title">Bonjour je suis un titre</h3>
+                    <p class="playground-content-block__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
                         nec vel nulla. Sed eu accumsan felis. Maecenas at erat et lectus fringilla pharetra id nec mauris. Fusce ut est tincidunt, porttitor nisl quis, mattis nulla. Integer iaculis blandit dui, a rutrum leo iaculis sed. Curabitur gravida
                         condimentum enim, eu varius tortor pulvinar et. </p>
                 </div>
-                <div class="playground-webpage-content-block">
+                <div class="playground-webpage-content-block" data-index="2">
                     <h3 class="playground-content-block__title">My block title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
+                    <p class="playground-content-block__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
                         nec vel nulla. Sed eu accumsan felis. Maecenas at erat et lectus fringilla pharetra id nec mauris. Fusce ut est tincidunt, porttitor nisl quis, mattis nulla. Integer iaculis blandit dui, a rutrum leo iaculis sed. Curabitur gravida
                         condimentum enim, eu varius tortor pulvinar et. </p>
                 </div>
-                <div class="playground-webpage-content-block">
-                    <h3 class="playground-content-block__title">My block title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
+                <div class="playground-webpage-content-block" data-index="3" id="anchor">
+                    <h3 class="playground-content-block__title">My TEST</h3>
+                    <p class="playground-content-block__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
                         nec vel nulla. Sed eu accumsan felis. Maecenas at erat et lectus fringilla pharetra id nec mauris. Fusce ut est tincidunt, porttitor nisl quis, mattis nulla. Integer iaculis blandit dui, a rutrum leo iaculis sed. Curabitur gravida
                         condimentum enim, eu varius tortor pulvinar et. </p>
                 </div>
-                <div class="playground-webpage-content-block">
+                <div class="playground-webpage-content-block" data-index="4">
                     <h3 class="playground-content-block__title">My block title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
+                    <p class="playground-content-block__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
                         nec vel nulla. Sed eu accumsan felis. Maecenas at erat et lectus fringilla pharetra id nec mauris. Fusce ut est tincidunt, porttitor nisl quis, mattis nulla. Integer iaculis blandit dui, a rutrum leo iaculis sed. Curabitur gravida
                         condimentum enim, eu varius tortor pulvinar et. </p>
                 </div>
-                <div class="playground-webpage-content-block">
+                <div class="playground-webpage-content-block" data-index="5">
                     <h3 class="playground-content-block__title">My block title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
+                    <p class="playground-content-block__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
                         nec vel nulla. Sed eu accumsan felis. Maecenas at erat et lectus fringilla pharetra id nec mauris. Fusce ut est tincidunt, porttitor nisl quis, mattis nulla. Integer iaculis blandit dui, a rutrum leo iaculis sed. Curabitur gravida
                         condimentum enim, eu varius tortor pulvinar et. </p>
                 </div>
-                <div class="playground-webpage-content-block">
+                <div class="playground-webpage-content-block" data-index="6">
                     <h3 class="playground-content-block__title">My block title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
+                    <p class="playground-content-block__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac dolor ac velit maximus mollis non non nibh. Morbi tincidunt orci at mi tempus, sed egestas metus vestibulum. Suspendisse potenti. Sed luctus diam in mi egestas volutpat
                         nec vel nulla. Sed eu accumsan felis. Maecenas at erat et lectus fringilla pharetra id nec mauris. Fusce ut est tincidunt, porttitor nisl quis, mattis nulla. Integer iaculis blandit dui, a rutrum leo iaculis sed. Curabitur gravida
                         condimentum enim, eu varius tortor pulvinar et. </p>
                 </div>

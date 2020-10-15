@@ -17,6 +17,7 @@ window.lintoAnimSegments =   {
         endPreLoop: 260
     }
 }
+window.lintoUISound = new Audio()
 
 let lintoSleep = function() {
     window['lintoState'] = 'sleeping'
@@ -25,13 +26,66 @@ let lintoSleep = function() {
 
 let lintoListen = function() {
     window['lintoState'] = 'wakeup'
-    window.lintoAnim.goToAndPlay(window.lintoAnimSegments.listening.start, true)
-    window.lintoAnim.setSpeed(1.2)
+    window.lintoAnim.goToAndPlay(window.lintoAnimSegments.listening.endPreLoop, true)
 }
 
 let lintoThink = function() {
-    window.lintoAnim['lintoState'] = 'thinking'
-    window.lintoAnim.goToAndPlay(window.lintoAnimSegments.thinking.start, true)
+    window['lintoState'] = 'thinking'
+    window.lintoAnim.goToAndPlay(window.lintoAnimSegments.thinking.endPreLoop, true)
+}
+let getActiveTitle = function() {
+    const currentTitle = $('.playground-webpage-content-block.active .playground-content-block__title')
+    return currentTitle.html();
+}
+let getActiveContent = function() {
+    const currentContent = $('.playground-webpage-content-block.active .playground-content-block__content')
+    return currentContent.html();
+}
+let goToBlock = function(direction) {
+    const block = document.getElementById('playground-webpage-content')
+
+    const currentBlock = $('.playground-webpage-content-block.active')
+    const currentBlockIndex = parseInt(currentBlock.attr('data-index'))
+    const blockCount = parseInt($('.playground-webpage-content-block').length)
+
+    let targetIndex = 0
+    if (direction === 'next') {
+        if (currentBlockIndex === blockCount) {
+            targetIndex = 1
+        } else {
+            targetIndex = currentBlockIndex + 1
+        }
+
+    } else if (direction === 'prev') {
+        if (currentBlockIndex === 1) {
+            targetIndex = blockCount
+        } else {
+            targetIndex = currentBlockIndex - 1
+        }
+    }
+    const targetBlock = $('.playground-webpage-content-block[data-index="' + targetIndex + '"]')
+    const targetOffset = targetBlock[0].offsetTop - 60
+
+    currentBlock.removeClass('active')
+    targetBlock.addClass('active')
+
+    block.scrollTo({
+        top: targetOffset,
+        behavior: 'smooth'
+    });
+}
+
+let enableAccessibility = function() {
+    const playground = $('#playground-webpage')
+    const playgroundTitle = $('#playground-title')
+    playground.addClass('accessibility')
+    playgroundTitle.addClass('accessibility')
+}
+let disableAccessibility = function() {
+    const playground = $('#playground-webpage')
+    const playgroundTitle = $('#playground-title')
+    playground.removeClass('accessibility')
+    playgroundTitle.removeClass('accessibility')
 }
 
 let mqttConnectHandler = function(event) {
@@ -61,6 +115,7 @@ let audioSpeakingOff = function(event) {
 
 let commandAcquired = function(event) {
     console.log("Command acquired")
+    lintoThink()
 }
 
 let commandPublished = function(event) {
@@ -69,6 +124,10 @@ let commandPublished = function(event) {
 
 let hotword = function(event) {
     console.log("Hotword triggered : ", event.detail)
+
+    // Play beep sound
+    window.lintoUISound.src = '../assets/audio/linto/beep3.wav'
+    window.lintoUISound.play()
     lintoListen()
 }
 
@@ -78,6 +137,11 @@ let commandTimeout = function(event) {
 
 let sayFeedback = async function(event) {
     console.log("Saying : ", event.detail.behavior.say.text, " ---> Answer to : ", event.detail.transcript)
+
+    // If no command found
+    window.lintoUISound.src = '../assets/audio/linto/beep4.wav'
+    window.lintoUISound.play()
+    lintoSleep();
     await linto.say(linto.lang, event.detail.behavior.say.text)
 }
 
@@ -105,7 +169,7 @@ let streamingFail = function(event) {
     console.log("Streaming cannot start : ", event.detail)
 }
 
-let customHandler = function(event) {
+let customHandler = async function(event) {
     // Zoom picture
     if (event.detail.behavior.customAction.kind === 'picture_zoom_in') {
         $('.lightbox__img').trigger('click')
@@ -132,10 +196,31 @@ let customHandler = function(event) {
     }
     // Slide previous
     if (event.detail.behavior.customAction.kind === 'slide_previous') {
-
         $('#playground-slider').slick('slickPrev')
     }
 
+    // Slide previous
+    if (event.detail.behavior.customAction.kind === 'block_next') {
+        goToBlock('next')
+    }
+    if (event.detail.behavior.customAction.kind === 'block_previous') {
+        goToBlock('prev')
+    }
+    if (event.detail.behavior.customAction.kind === 'read_title') {
+        const content = getActiveTitle();
+        await linto.say(linto.lang, content)
+    }
+    if (event.detail.behavior.customAction.kind === 'read_content') {
+        const content = getActiveContent();
+        await linto.say(linto.lang, content)
+    }
+    if (event.detail.behavior.customAction.kind === 'accesibility_on') {
+        enableAccessibility()
+    }
+    if (event.detail.behavior.customAction.kind === 'accesibility_off') {
+        disableAccessibility()
+    }
+    lintoSleep()
 
     console.log(`${event.detail.behavior.customAction.kind} fired`)
     console.log(event.detail.behavior)
@@ -146,8 +231,8 @@ let customHandler = function(event) {
 
 window.start = async function() {
     try {
-        //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
-        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
+        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
+            //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
 
         // Some feedbacks for UX implementation
         linto.addEventListener("mqtt_connect", mqttConnectHandler)
@@ -193,7 +278,6 @@ window.start = async function() {
                 }
             } else if (window['lintoState'] === 'wakeup') {
                 if (e.currentTime >= window.lintoAnimSegments.listening.end) {
-                    window.lintoAnim.setSpeed(1)
                     window.lintoAnim.goToAndPlay(window.lintoAnimSegments.listening.endPreLoop, true)
                 }
             } else if (window['lintoState'] === 'thinking') {
@@ -202,20 +286,6 @@ window.start = async function() {
                 }
             }
         })
-        $('#linto-sleeping').on('click', function() {
-            lintoSleep()
-        })
-
-        $('#linto-listening').on('click', function() {
-            lintoListen()
-        })
-
-        $('#linto-thinking').on('click', function() {
-            lintoThink()
-        })
-
-
-
         return true
     } catch (e) {
         console.log(e)

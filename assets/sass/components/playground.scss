@@ -143,6 +143,7 @@
     #playground-webpage-content {
         overflow: auto;
         .playground-webpage-content-block {
+            @include transition (all 0.3s ease);
             margin-bottom: 20px;
             padding: 20px;
             h3.playground-content-block__title {
@@ -250,10 +251,10 @@
 
 #linto-container {
     min-height: 200px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
     #linto-animation {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
     }
 }
 
