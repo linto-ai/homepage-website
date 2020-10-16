@@ -1,4 +1,4 @@
-window.stramingContent = ''
+window.streamingContent = ''
 window.lintoState = 'sleeping'
 window.lintoAnim = null
 window.lintoAnimSegments =   {
@@ -131,7 +131,7 @@ let hotword = function(event) {
     const audioPlayer = document.getElementById('podcast')
 
     if (!audioPlayer.paused) {
-        audioPlayer.pause()
+        audioPlayer.volume = 0.1
         audioPlayer.setAttribute('data-tmppause', true)
     }
 
@@ -163,13 +163,13 @@ let askFeedback = async function(event) {
 let streamingChunk = function(event) {
     if (event.detail.behavior.streaming.partial) {
         console.log("Streaming chunk received : ", event.detail.behavior.streaming.partial)
-        $('#dictation').html(window.stramingContent + ' ' + event.detail.behavior.streaming.partial)
+        $('#dictation').html(window.streamingContent + event.detail.behavior.streaming.partial)
     }
-    $('#dictation').html(event.detail.behavior.streaming.partial)
+
     if (event.detail.behavior.streaming.text) {
         console.log("Streaming utterance completed : ", event.detail.behavior.streaming.text)
-        window.stramingContent += ' ' + event.detail.behavior.streaming.text
-        $('#dictation').html(window.stramingContent)
+        window.streamingContent += event.detail.behavior.streaming.text + '<br/>'
+        $('#dictation').html(window.streamingContent)
     }
 
 }
@@ -182,10 +182,9 @@ let streamingFinal = function(event) {
     console.log("Streaming ended, here's the final transcript : ", event.detail.behavior.streaming.result)
 
     const result = JSON.parse(event.detail.behavior.streaming.result)
-    window.stramingContent = result.text
-    $('#dictation').html(window.stramingContent)
+        //window.streamingContent += ' ' + result.text
+    $('#dictation').html(window.streamingContent)
 }
-
 let streamingFail = function(event) {
     console.log("Streaming cannot start : ", event.detail)
 }
@@ -245,7 +244,7 @@ let customHandler = async function(event) {
 
     const audioPlayer = document.getElementById('podcast')
     if (audioPlayer.getAttribute('data-tmppause') === true || audioPlayer.getAttribute('data-tmppause') === 'true') {
-        audioPlayer.play()
+        audioPlayer.volume = 1
         audioPlayer.setAttribute('data-tmppause', false)
     }
     console.log(`${event.detail.behavior.customAction.kind} fired`)
@@ -257,10 +256,8 @@ let customHandler = async function(event) {
 
 window.start = async function() {
     try {
-        //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
-
-
-        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
+        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
+            //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
 
         // Some feedbacks for UX implementation
         linto.addEventListener("mqtt_connect", mqttConnectHandler)
@@ -318,10 +315,12 @@ window.start = async function() {
         $('#toggle-streaming').on('click', function() {
             if ($(this).hasClass('disabled'))  {
                 $(this).removeClass('disabled').addClass('enabled')
+                $(this).html('Steaming activé')
                 linto.stopCommandPipeline();
                 linto.startStreaming()
             } else if ($(this).hasClass('enabled'))  {
                 $(this).removeClass('enabled').addClass('disabled')
+                $(this).html('Steaming désactivé')
                 linto.stopStreaming()
                 linto.startCommandPipeline()
 

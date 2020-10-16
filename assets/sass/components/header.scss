@@ -2,6 +2,14 @@
     padding: 10px 0;
     height: 40px;
     background-color: #fff;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &.border {
+        border-bottom: 1px solid $textColor;
+    }
 }
 
 #header-mobile {

@@ -20,7 +20,7 @@
     <script type="text/javascript" src="/assets/js/linto-playground-web.js"></script>
     <script type="text/javascript">
         $(document).ready(async function() {
-
+            /*
             // Resize playground max height to screen heiht
             if (window.innerHeight >= 800) {
                 $('#playground-webpage').attr('style', 'max-height: ' + (window.innerHeight - 80) + 'px;');
@@ -28,7 +28,7 @@
                     $('#playground-webpage').attr('style', 'max-height: ' + (window.innerHeight - 80) + 'px;');
                 }
             }
-
+*/
             /* slider */
             $('#playground-slider').slick({
                 dots: true,
@@ -45,7 +45,7 @@
 
 <body>
     <!-- HEADER -->
-    <nav id="header">
+    <nav id="header" class="border">
         <div class="flex row wrapper">
             <div class="flex header--logo-container">
                 <a href="/" class="header--logo"></a>
@@ -188,7 +188,7 @@
         </div>
     </nav>
     <!-- END HEADER -->
-    <!-- PAGE TITLE -->
+    <!-- PAGE TITLE
     <section class="flex col" id="playground-title">
         <div class="flex col wrapper">
             <h1 class="playground__title">Playground - Webpage</h1>
@@ -201,92 +201,100 @@
     <!-- END PAGE TITLE -->
     <!-- PLAYGROUND -->
     <section id="playground-webpage" class="flex row">
-        <div id="loading"></div>
-        <div class="flex1 flex col" id="playground-infos">
-            <div class="flex row" id="linto-container">
-                <div id="linto">
-                    <div id="linto-animation" class="sleeping"></div>
+        <div class="flex row">
+            <div id="loading"></div>
+
+
+            <div class="flex col" id="playground-infos">
+                <div class="flex row" id="linto-container">
+                    <div id="linto">
+                        <div id="linto-animation" class="sleeping"></div>
+                    </div>
+                </div>
+                <div class="flex1 flex col" id="commands">
+                    <h2>Commandes vocales</h2>
+                    <div class="playground-infos-commands flex1 flex col">
+                        <!--
+                        <p>Pour pouvoir utiliser <strong>LinTO</strong> dans la page web, vous devrez <strong>autoriser l'accès aux périphériques audio</strong> de votre ordinateur.</p>
+                        <p>Il vous suffira ensuite prononcer <strong>"LinTO"</strong>, pour passer en mode écoute, puis <strong>prononcer les phrases d'exemple</strong> suivantes pour activer des fonctionnalités à la voix:</p>
+
+                        -->
+                        <span class="playground-webpage-command">LinTO, va au bloque <strong>suivant</strong></span>
+                        <span class="playground-webpage-command">LinTO, va au bloque <strong>précédent</strong></span>
+                        <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
+                        <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
+
+                        <span class="playground-webpage-command">LinTO, <strong>démarre </strong> le podcast</span>
+                        <span class="playground-webpage-command">LinTO, <strong>stoppe</strong> le podcast</span>
+
+                        <span class="playground-webpage-command">LinTO, diapo <strong>suivante</strong></span>
+                        <span class="playground-webpage-command">LinTO, diapo <strong>précédente</strong></span>
+
+                        <span class="playground-webpage-command">LinTO, <strong>agrandis</strong> l'image</span>
+                        <span class="playground-webpage-command">LinTO, <strong>réduis</strong> l'image</span>
+
+                        <span class="playground-webpage-command">LinTO, <strong>active</strong> le mode accéssibilité</span>
+                        <span class="playground-webpage-command">LinTO, <strong>désactive</strong> le mode accéssibilité</span>
+
+                    </div>
                 </div>
             </div>
-            <div class="flex1 flex col" id="commands">
-                <h2>Commandes vocales</h2>
-                <div class="playground-infos-commands flex1 flex col">
-                    <p>Pour pouvoir utiliser <strong>LinTO</strong> dans la page web, vous devrez <strong>autoriser l'accès aux périphériques audio</strong> de votre ordinateur.</p>
-                    <p>Il vous suffira ensuite prononcer <strong>"LinTO"</strong>, pour passer en mode écoute, puis <strong>prononcer les phrases d'exemple</strong> suivantes pour activer des fonctionnalités à la voix:</p>
-                    <span class="playground-webpage-command">LinTO, va au bloque <strong>suivant</strong></span>
-                    <span class="playground-webpage-command">LinTO, va au bloque <strong>précédent</strong></span>
-                    <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
-                    <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
 
-                    <span class="playground-webpage-command">LinTO, <strong>démarre </strong> le podcast</span>
-                    <span class="playground-webpage-command">LinTO, <strong>stoppe</strong> le podcast</span>
 
-                    <span class="playground-webpage-command">LinTO, diapo <strong>suivante</strong></span>
-                    <span class="playground-webpage-command">LinTO, diapo <strong>précédente</strong></span>
-
-                    <span class="playground-webpage-command">LinTO, <strong>agrandis</strong> l'image</span>
-                    <span class="playground-webpage-command">LinTO, <strong>réduis</strong> l'image</span>
-
-                    <span class="playground-webpage-command">LinTO, <strong>active</strong> le mode accéssibilité</span>
-                    <span class="playground-webpage-command">LinTO, <strong>désactive</strong> le mode accéssibilité</span>
+            <div class="flex2 flex col playground-webpage-area" id="playground-webpage-content">
+                <div class="flex1">
+                    <h2>Navigation et Lecture de contenu</h2>
+                    <div class="playground-webpage-content-block active" data-index="1">
+                        <h3 class="playground-content-block__title">Je suis le titre du premier bloque</h3>
+                        <p class="playground-content-block__content">Ce texte est un exemple et ne dois donc pas être considéré comme "sérieux". Il nous permet de démontrer les skills de lecture de LinTO.</p>
+                    </div>
+                    <div class="playground-webpage-content-block" data-index="2">
+                        <h3 class="playground-content-block__title">Titre du second bloque</h3>
+                        <p class="playground-content-block__content">Ce text a été inventé dans le but de réaliser des démonstration de lecture avec Linto, directement depuis une page web. N'est-ce pas fabuleux ? </p>
+                    </div>
+                    <div class="playground-webpage-content-block" data-index="3">
+                        <h3 class="playground-content-block__title">Troisième titre </h3>
+                        <p class="playground-content-block__content">Comme vous pouvez le constater, la lecture se fait de façon fluide. Ce que nous réalisons ici est un test qui nous donne des très bons résultats. </p>
+                    </div>
+                    <div class="playground-webpage-content-block" data-index="4" style="margin-top: 300px;">
+                        <h3 class="playground-content-block__title">Je suis le dernier bloque, tout en bas</h3>
+                        <p class="playground-content-block__content">Dernier bloque de contenu pour la démonstration. Incroyable, non ? </p>
+                    </div>
 
                 </div>
             </div>
-        </div>
-        <div class="flex2 flex col playground-webpage-area" id="playground-webpage-content">
-            <div class="flex1">
-                <h2>Navigation and content reading</h2>
-                <div class="playground-webpage-content-block active" data-index="1">
-                    <h3 class="playground-content-block__title">Je suis le titre du premier bloque</h3>
-                    <p class="playground-content-block__content">Ce texte est un exemple et ne dois donc pas être considéré comme "sérieux". Il nous permet de démontrer les skills de lecture de LinTO.</p>
-                </div>
-                <div class="playground-webpage-content-block" data-index="2">
-                    <h3 class="playground-content-block__title">Titre du second bloque</h3>
-                    <p class="playground-content-block__content">Ce text a été inventé dans le but de réaliser des démonstration de lecture avec Linto, directement depuis une page web. N'est-ce pas fabuleux ? </p>
-                </div>
-                <div class="playground-webpage-content-block" data-index="3">
-                    <h3 class="playground-content-block__title">Troisième titre </h3>
-                    <p class="playground-content-block__content">Comme vous pouvez le constater, la lecture se fait de façon fluide. Ce que nous réalisons ici est un test qui nous donne des très bons résultats. </p>
-                </div>
-                <div class="playground-webpage-content-block" data-index="4" style="margin-top: 300px;">
-                    <h3 class="playground-content-block__title">Je suis le dernier bloque, tout en bas</h3>
-                    <p class="playground-content-block__content">Dernier bloque de contenu pour la démonstration. Incroyable, non ? </p>
-                </div>
+            <div class="flex2 flex col" id="playground-webpage-media">
+                <div class="flex row">
+                    <div class="flex1 flex col playground-webpage-area" id="playground-webpage-dictation">
+                        <h2>Dictée vocale</h2>
+                        <button id="toggle-streaming" class="disabled">Streaming désactivé</button>
+                        <div id="dictation" class="flex1"></div>
+                    </div>
+                    <div class="flex col">
+                        <div class="flex1 flex col playground-webpage-area" id="playground-webpage-podcast">
+                            <h2>Controler un podcast</h2>
+                            <div class="flex col">
+                                <!-- <a href="#" class="podcast-link active">Podcast 1</a> -->
+                                <!-- <a href="#" class="podcast-link">Podcast 2</a> -->
+                                <audio controls id="podcast" src="/assets/audio/example.mp3" data-tmppause="false"></audio>
+                            </div>
+                        </div>
 
-            </div>
-        </div>
-        <div class="flex2 flex col" id="playground-webpage-media">
-            <div class="flex row">
-                <div class="flex1 flex col playground-webpage-area">
-                    <h2>Dictation</h2>
-                    <button id="toggle-streaming" class="disabled">Streaming</button>
-                    <textarea id="dictation" class="flex1" disabled></textarea>
-                </div>
-                <div class="flex col">
-                    <div class="flex1 flex col playground-webpage-area" id="playground-webpage-podcast">
-                        <h2>Control media player</h2>
-
-                        <div class="flex col">
-                            <a href="#" class="podcast-link active">Podcast 1</a>
-                            <!-- <a href="#" class="podcast-link">Podcast 2</a> -->
-                            <audio controls id="podcast" src="/assets/audio/example.mp3" data-tmppause="false"></audio>
+                        <div class="flex col playground-webpage-area" id="playground-webpage-image">
+                            <h2>Agrandir une image</h2>
+                            <div class="flex row">
+                                <img class="lightbox__img" src="/assets/img/pet.jpg" alt="pet" />
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex col playground-webpage-area" id="playground-webpage-image">
-                        <h2>Enlarge pictures</h2>
-                        <div class="flex row">
-                            <img class="lightbox__img" src="/assets/img/pet.jpg" alt="pet" />
-                        </div>
-                    </div>
                 </div>
-
-            </div>
-            <div class="flex1 flex col playground-webpage-area" id="playground-webpage-slider">
-                <h2>Control slider</h2>
-                <div id="playground-slider">
-                    <img src="/assets/img/slider/slide1.png" />
-                    <img src="/assets/img/slider/slide2.png" />
+                <div class="flex1 flex col playground-webpage-area" id="playground-webpage-slider">
+                    <h2>Controler un slider</h2>
+                    <div id="playground-slider">
+                        <img src="/assets/img/slider/slide1.png" />
+                        <img src="/assets/img/slider/slide2.png" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -294,7 +302,7 @@
 
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT 
     <section id="contact" class="flex row">
         <div class="wrapper flex col flex1">
             <h2>Contact us</h2>
@@ -351,8 +359,8 @@
                 </div>
             </div>
     </section>
-    <!-- END CONTACT-->
-    <!-- FOOTER -->
+    <!-- END CONTACT
+    <!-- FOOTER 
     <footer>
         <div class="flex row wrapper">
             <div class="flex1 col">
@@ -465,6 +473,7 @@
             </div>
         </div>
     </footer>
+    <!-- END FOOTER -->
 </body>
 
 </html>

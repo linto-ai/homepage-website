@@ -109,6 +109,47 @@
     }
 }
 
+@mixin buttonBlinkGreen() {
+    animation-name: btnBlink;
+    -webkit-animation-name: btnBlink;
+    /* Safari 4.0 - 8.0 */
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes btnBlink {
+    0% {
+        background-color: #fff;
+        color: green;
+    }
+    50% {
+        background-color: green;
+        color: #fff;
+    }
+    100% {
+        background-color: #fff;
+        color: green;
+    }
+}
+
+@keyframes textAppear {
+    0% {
+        background-color: #fff;
+        color: green;
+    }
+    50% {
+        background-color: green;
+        color: #fff;
+    }
+    100% {
+        background-color: #fff;
+        color: green;
+    }
+}
+
 @mixin textAppear() {
     animation-name: textAppear;
     -webkit-animation-name: textAppear;
