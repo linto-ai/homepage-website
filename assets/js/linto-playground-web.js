@@ -256,8 +256,8 @@ let customHandler = async function(event) {
 
 window.start = async function() {
     try {
-        //        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
-        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
+        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
+            //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
 
         // Some feedbacks for UX implementation
         linto.addEventListener("mqtt_connect", mqttConnectHandler)
@@ -315,12 +315,12 @@ window.start = async function() {
         $('#toggle-streaming').on('click', function() {
             if ($(this).hasClass('disabled'))  {
                 $(this).removeClass('disabled').addClass('enabled')
-                $(this).html('Steaming activé')
+                $(this).html('Dictée activée')
                 linto.stopCommandPipeline();
                 linto.startStreaming()
             } else if ($(this).hasClass('enabled'))  {
                 $(this).removeClass('enabled').addClass('disabled')
-                $(this).html('Steaming désactivé')
+                $(this).html('Dictée en pause')
                 linto.stopStreaming()
                 linto.startCommandPipeline()
 

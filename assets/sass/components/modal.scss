@@ -1,0 +1,139 @@
+#modal.hidden {
+    display: none !important;
+}
+
+#modal.visible {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.75);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container {
+    width: 100%;
+    max-width: 960px;
+    max-height: 720px;
+    background-color: #fff;
+    @include blockShadowStrong();
+}
+
+.modal-header {
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid #cecece;
+    h2 {
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+        font-size: 24px;
+        line-height: 28px;
+        color: $blueDark;
+    }
+    .modal__close {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-color: $red;
+        position: absolute;
+        top: 20px;
+        left: 100%;
+        margin-left: -50px;
+        border: none;
+        @include borderRadius(3px);
+        @include transition(all 0.3s ease);
+        padding: 0;
+        border: 1px solid $red;
+        cursor: pointer;
+        outline: none;
+        .icon {
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            @include maskImage('../img/svg/close.svg');
+            background-color: #fff;
+        }
+        &:hover {
+            background-color: #fff;
+            .icon {
+                background-color: $red;
+            }
+        }
+    }
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 600px;
+    overflow: auto;
+    .modal-content {
+        margin-bottom: 20px;
+    }
+    h3 {
+        font-size: 20px;
+        color: $blueDark;
+        padding-bottom: 10px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 22px;
+        strong {
+            font-weight: 700;
+            color: $red;
+        }
+    }
+    img {
+        display: inline-block;
+        border: 1px solid #ccc;
+        height: 120px;
+        margin: 10px 0;
+    }
+    .modal-content-step {
+        font-family: $Ubuntu;
+        display: inline-block;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 16px;
+        border: 1px solid $red;
+        color: $red;
+        strong {
+            font-weight: 600;
+        }
+    }
+}
+
+.linto-helper-states {
+    margin: 0 20px;
+    padding: 20px;
+    background: #ececec;
+    align-items: center;
+    .linto-helper-state__item {
+        margin-bottom: 20px;
+        .linto-helper-state {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+        .linto-helper-state__img {
+            border: none;
+            display: inline-block;
+            width: 100px;
+            height: auto;
+            margin: 0;
+        }
+        .linto-helper-state__label {
+            display: inline-block;
+            padding: 5px 0;
+            color: $blueDark;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

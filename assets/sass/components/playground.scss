@@ -124,7 +124,7 @@
         overflow: hidden;
         background: $textColor;
         padding: 20px;
-        margin: 0 10px 0 0;
+        margin: 0 20px 0 0;
         h2 {
             color: #fff;
         }
@@ -159,7 +159,7 @@
         overflow: auto;
         .playground-webpage-content-block {
             @include transition (all 0.3s ease);
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             padding: 20px;
             h3.playground-content-block__title {
                 font-size: 20px;
@@ -295,6 +295,7 @@
 }
 
 #linto-container {
+    position: relative;
     background: #fff;
     min-height: 150px;
     @include borderRadius(100px);
@@ -308,6 +309,17 @@
     #linto-animation {
         width: 150px;
         height: 150px;
+    }
+    #helper {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: $blue;
+        color: #fff;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 100%;
     }
 }
 

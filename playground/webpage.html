@@ -35,6 +35,13 @@
                 arrows: true,
                 autoplay: false
             })
+
+            $('#helper').on('click', function() {
+                $('#modal').removeClass('hidden').addClass('visible')
+            })
+            $('#modal-close').on('click', function() {
+                $('#modal').removeClass('visible').addClass('hidden')
+            })
         })
     </script>
 
@@ -188,39 +195,22 @@
         </div>
     </nav>
     <!-- END HEADER -->
-    <!-- PAGE TITLE
-    <section class="flex col" id="playground-title">
-        <div class="flex col wrapper">
-            <h1 class="playground__title">Playground - Webpage</h1>
-            <p class="playground__desc">
-                Try LinTO in your web browser and navigate with your voice
-            </p>
-            <a href="#playground-webpage" class="playground__anchor"></a>
-        </div>
-    </section>
-    <!-- END PAGE TITLE -->
     <!-- PLAYGROUND -->
     <section id="playground-webpage" class="flex row">
-        <div class="flex row">
+        <div class="flex1 flex row">
             <div id="loading"></div>
-
-
             <div class="flex col" id="playground-infos">
                 <div class="flex row" id="linto-container">
                     <div id="linto">
                         <div id="linto-animation" class="sleeping"></div>
                     </div>
+                    <!--<button id="helper">Help</button>-->
                 </div>
                 <div class="flex1 flex col" id="commands">
                     <h2>Commandes vocales</h2>
                     <div class="playground-infos-commands flex1 flex col">
-                        <!--
-                        <p>Pour pouvoir utiliser <strong>LinTO</strong> dans la page web, vous devrez <strong>autoriser l'accès aux périphériques audio</strong> de votre ordinateur.</p>
-                        <p>Il vous suffira ensuite prononcer <strong>"LinTO"</strong>, pour passer en mode écoute, puis <strong>prononcer les phrases d'exemple</strong> suivantes pour activer des fonctionnalités à la voix:</p>
-
-                        -->
-                        <span class="playground-webpage-command">LinTO, va au bloque <strong>suivant</strong></span>
-                        <span class="playground-webpage-command">LinTO, va au bloque <strong>précédent</strong></span>
+                        <span class="playground-webpage-command">LinTO, va au bloc <strong>suivant</strong></span>
+                        <span class="playground-webpage-command">LinTO, va au bloc <strong>précédent</strong></span>
                         <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
                         <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
 
@@ -245,20 +235,20 @@
                 <div class="flex1">
                     <h2>Navigation et Lecture de contenu</h2>
                     <div class="playground-webpage-content-block active" data-index="1">
-                        <h3 class="playground-content-block__title">Je suis le titre du premier bloque</h3>
-                        <p class="playground-content-block__content">Ce texte est un exemple et ne dois donc pas être considéré comme "sérieux". Il nous permet de démontrer les skills de lecture de LinTO.</p>
+                        <h3 class="playground-content-block__title">Je suis le titre du premier bloc</h3>
+                        <p class="playground-content-block__content">Ceci est le texte du premier bloc de contenu.</p>
                     </div>
                     <div class="playground-webpage-content-block" data-index="2">
-                        <h3 class="playground-content-block__title">Titre du second bloque</h3>
-                        <p class="playground-content-block__content">Ce text a été inventé dans le but de réaliser des démonstration de lecture avec Linto, directement depuis une page web. N'est-ce pas fabuleux ? </p>
+                        <h3 class="playground-content-block__title">Titre du second bloc</h3>
+                        <p class="playground-content-block__content">Ce texte constitue le contenu du second bloc.</p>
                     </div>
                     <div class="playground-webpage-content-block" data-index="3">
-                        <h3 class="playground-content-block__title">Troisième titre </h3>
-                        <p class="playground-content-block__content">Comme vous pouvez le constater, la lecture se fait de façon fluide. Ce que nous réalisons ici est un test qui nous donne des très bons résultats. </p>
+                        <h3 class="playground-content-block__title">Titre du troisième bloc</h3>
+                        <p class="playground-content-block__content">Ce texte est le contenu du troisième et avant-dernier bloc.</p>
                     </div>
                     <div class="playground-webpage-content-block" data-index="4" style="margin-top: 300px;">
-                        <h3 class="playground-content-block__title">Je suis le dernier bloque, tout en bas</h3>
-                        <p class="playground-content-block__content">Dernier bloque de contenu pour la démonstration. Incroyable, non ? </p>
+                        <h3 class="playground-content-block__title">Titre du quatrième bloc</h3>
+                        <p class="playground-content-block__content">Ce texte est le dernier contenu pour la démonstration.</p>
                     </div>
 
                 </div>
@@ -267,7 +257,7 @@
                 <div class="flex row">
                     <div class="flex1 flex col playground-webpage-area" id="playground-webpage-dictation">
                         <h2>Dictée vocale</h2>
-                        <button id="toggle-streaming" class="disabled">Streaming désactivé</button>
+                        <button id="toggle-streaming" class="disabled">Dictée en pause</button>
                         <div id="dictation" class="flex1"></div>
                     </div>
                     <div class="flex col">
@@ -298,9 +288,71 @@
                 </div>
             </div>
         </div>
-
-
     </section>
+    <div id="modal" class="hidden flex col">
+        <div class="modal-container flex1">
+            <div class="modal-header">
+                <h2>Navigation à la voix</h2>
+                <button id="modal-close" class="modal__close"><span class="icon"></span></button>
+            </div>
+            <div class="modal-body">
+                <div class="flex row">
+
+                    <div class="flex1 flex col">
+                        <div class="modal-content flex col">
+                            <h3>Comment ça marche ?</h3>
+                            <p>Bienvenue sur la page de démonstration de LinTO dans un navigateur web. La navigation et les interactions sur cette page se font à la voix, grâce à l'assistant LinTO. Pour povoir utiliser les commandes vocales, veuillez-suivre
+                                les indications suivantes.
+                            </p>
+                        </div>
+                        <div class="modal-content flex col">
+                            <h3>1/ Autoriser l'utilisation du microphone sur la page web</h3>
+                            <p>Lorsqe vous chargez la page web, un message de votre navigateur devrait apparaitre, vous demandant d'autoriser l'utilisation de votre micropohone sur cette page web.</p>
+                            <div class="flex row">
+                                <img src="../assets/img/audio-browser.jpg" alt="autoriser l'aquisition audio" />
+                            </div>
+                            <span class="modal-content-step">Veuillez <strong>autoriser</strong> l'utilisation du microphone.</span>
+                        </div>
+                        <div class="modal-content flex col">
+                            <h3>2/ Prononcer le mot-réveil pour passer en mode "écoute"</h3>
+                            <p>Une fois l'uilisation de votre microphone autorisé, vous devriez voir LinTO apparaitre dans le coin suppérieur gauche de la page. lorsqu'il est en état de "repos", cela signifie qu'il attend qu'on prononce le mot de réveil
+                                "LinTO" avant d'écouter les commandes proncées.</p>
+                            <span class="modal-content-step">Dites : <strong>"LinTO"</strong></span>
+                            <p>Lorsque le mot de réveil est capté par "LinTO", vous devriez entendre un <strong>bip sonore</strong> et voir LinTO passer en état d'<strong>écoute</strong></p>
+
+                        </div>
+                        <div class="modal-content flex col">
+                            <h3>3/ Prononcer une commande</h3>
+                            <p>Lorsque le mot de réveil a été capté et que LinTO est en mode écoute, prononcez une commande parmis celle renseignées sur la page.</p>
+                            <span class="modal-content-step">Dites : <strong>"bloc suivant"</strong></span>
+
+                        </div>
+                    </div>
+                    <div class="flex col linto-helper-states">
+                        <h3>Status de LinTO</h3>
+                        <div class="linto-helper-state__item flex col">
+                            <div class="flex row">
+                                <img src="../assets/img/svg/linto-sleeping.svg" alt="linto sleeping" class="linto-helper-state__img">
+                            </div>
+                            <span class="linto-helper-state__label">Passif</span>
+                        </div>
+                        <div class="linto-helper-state__item flex col">
+                            <div class="flex row">
+                                <img src="../assets/img/svg/linto-listening.svg" alt="linto listening" class="linto-helper-state__img">
+                            </div>
+                            <span class="linto-helper-state__label">Ecoute</span>
+                        </div>
+                        <div class="linto-helper-state__item flex col">
+                            <div class="flex row">
+                                <img src="../assets/img/svg/linto-thinking.svg" alt="linto thinking" class="linto-helper-state__img">
+                            </div>
+                            <span class="linto-helper-state__label">Recherche</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- CONTACT 
     <section id="contact" class="flex row">
