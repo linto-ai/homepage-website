@@ -232,6 +232,17 @@ p.page-content {
     display: inline-block;
     font-family: $Ubuntu;
     line-height: 26px;
+    strong {
+        font-weight: 600;
+        color: $blue;
+    }
+    a {
+        color: $blue;
+        text-decoration: underline;
+        &:hover {
+            color: $blueDark;
+        }
+    }
 }
 
 .link--underline {

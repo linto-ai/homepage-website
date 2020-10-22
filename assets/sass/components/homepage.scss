@@ -82,6 +82,9 @@
             &.vocal {
                 background-image: url('../img/svg/vocal.svg');
             }
+            &.accessibility {
+                background-image: url('../img/svg/accessibility.svg');
+            }
         }
         .market-item__label {
             padding-top: 10px;
@@ -122,6 +125,9 @@
                 }
                 &.vocal {
                     background-image: url('../img/svg/vocal-white.svg');
+                }
+                &.accessibility {
+                    background-image: url('../img/svg/accessibility-white.svg');
                 }
             }
         }
