@@ -11,6 +11,9 @@
     }
     /* Header */
     .header--nav {
+        a.header--nav-link {
+            font-size: 15px;
+        }
         .header--nav-link__parent-container.custom {
             position: absolute;
             left: 100%;
@@ -18,14 +21,23 @@
             &.contribute {
                 margin-left: -160px;
             }
-            a.header--nav-link.border {
-                width: 100px;
-                text-align: center;
+            a.header--nav-link {
+                &.border {
+                    width: 100px;
+                    text-align: center;
+                }
             }
         }
     }
     .homepage__title h1 {
         padding-top: 60px;
+    }
+    .homepage__top-btn {
+        flex-direction: column !important;
+        align-items: flex-start;
+        .btn.big {
+            margin: 10px 0;
+        }
     }
     /* Homepage markets */
     .markets-items {
