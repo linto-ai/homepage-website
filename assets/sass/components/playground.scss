@@ -312,14 +312,46 @@
     }
     #helper {
         display: inline-block;
-        width: 40px;
-        height: 40px;
-        background: $blue;
-        color: #fff;
+        width: 30px;
+        height: 30px;
         padding: 0;
         position: absolute;
         top: 0;
         left: 100%;
+        background-color: $blue;
+        border: none;
+        @include borderRadius( 3px);
+        cursor: pointer;
+        outline: none;
+        .icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            padding: 0;
+            @include maskImage('../img/svg/help.svg');
+        }
+        &:hover {
+            background-color: #fff;
+            &:after {
+                content: "Help";
+                display: inline-block;
+                height: 30px;
+                width: 50px;
+                line-height: 30px;
+                font-size: 14px;
+                color: $blue;
+                background-color: #fff;
+                @include borderRadius(3px);
+                position: absolute;
+                top: 0;
+                left: 100%;
+                margin-left: -3px;
+            }
+            .icon {
+                background-color: $blue;
+            }
+        }
     }
 }
 
