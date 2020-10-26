@@ -15,6 +15,19 @@
     <script type="text/javascript" src="/assets/js/navigation.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            function preloadHiddenImages() {
+                $('footer').append(`
+                <div class="hidden">
+                  <img src="/assets/img/svg/accessibility-white.svg" />
+                  <img src="/assets/img/svg/healthcare-white.svg" />
+                  <img src="/assets/img/svg/vocal-white.svg" />
+                  <img src="/assets/img/svg/developer-white.svg" />
+                  <img src="/assets/img/svg/building-white.svg" />
+                  </div>
+              `)
+            }
+            preloadHiddenImages()
+
             setTimeout(() => {
                 // Animation LinTO Blink
                 let jsonPath = '/assets/json/animation.json'
