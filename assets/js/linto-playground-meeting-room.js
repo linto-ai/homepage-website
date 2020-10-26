@@ -294,12 +294,10 @@ $(document).ready(function() {
         console.log(event.detail.transcript)
     }
 
-
-
     window.start = async function() {
         try {
-            //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
-            window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
+            window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
+                //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
 
             // Some feedbacks for UX implementation
             linto.addEventListener("mqtt_connect", mqttConnectHandler)

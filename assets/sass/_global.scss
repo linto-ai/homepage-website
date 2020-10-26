@@ -245,80 +245,61 @@ p.page-content {
     }
 }
 
-.link--underline {
-    position: relative;
-    @include transition(all 0.3s ease);
-    &:hover {
-        &:after {
-            content: "";
-            display: inline-block;
-            width: 100%;
-            height: 1px;
-            background-color: #efefef;
-            position: absolute;
-            top: 18px;
-            left: 0;
-            @include underline();
-        }
-    }
-}
-
-.link--arrow {
-    display: inline-block;
-    padding: 10px 15px !important;
-    position: relative;
-    @include transition(all 0.3s ease);
-    font-weight: 500;
-    font-family: $Barlow;
-    &:hover {
-        color: #fff !important;
-        padding-right: 40px !important;
-        &:after {
-            content: "";
-            overflow: hidden;
-            display: inline-block;
-            width: 30px;
-            height: 20px;
-            position: absolute;
-            top: 10px;
-            left: 100%;
-            margin-left: -35px;
-            @include arrowAppear();
-            background-color: #fff;
-        }
-    }
-}
-
 .btn {
     display: inline-block;
     height: 20px;
     line-height: 20px;
     padding: 15px;
-    background-color: $purple;
     margin-right: 20px;
     @include borderRadius(5px);
     font-size: 16px;
     font-weight: 500;
-    color: #fff;
     font-family: $Barlow;
-    &.btn--blue {
-        background-color: $blue;
-    }
-    &.btn--black {
-        background-color: #434343;
+    border: 1px solid #fff;
+    &.btn--purple {
+        background-color: $purple;
+        color: #fff;
+        border-color: $purple;
+        &:hover {
+            background-color: #fff;
+            color: $purple;
+        }
     }
     &.btn--white {
         background-color: #fff;
-        color: $blueDark !important;
+        color: $blueDark;
+        border-color: #fff;
         &:hover {
-            color: #fff !important;
+            background-color: $blueDark;
+            color: #fff;
         }
     }
-    &:visited {
-        color: #fff;
-    }
-    &:hover {
+    &.btn--bluedark {
         background-color: $blueDark;
+        color: #fff;
+        border-color: $blueDark;
+        &:hover {
+            background-color: #fff;
+            color: $blueDark;
+        }
+    }
+    &.btn--blue {
+        background-color: $blue;
+        border-color: $blue;
+        color: #fff;
+        &:hover {
+            background-color: #fff;
+            color: $blue;
+        }
+    }
+    &.btn--black {
+        background-color: #fff;
+        color: #434343;
+        border-color: #434343;
+        &:hover {
+            background-color: #434343;
+            color: #fff;
+        }
     }
     &.big {
         height: 40px;
@@ -362,6 +343,69 @@ p.page-content {
                     -webkit-mask-image: none;
                     text-align: center;
                 }
+            }
+        }
+    }
+}
+
+.link--underline {
+    position: relative;
+    @include transition(all 0.3s ease);
+    &:hover {
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background-color: #efefef;
+            position: absolute;
+            top: 18px;
+            left: 0;
+            @include underline();
+        }
+    }
+}
+
+.link--arrow {
+    display: inline-block;
+    padding: 10px 15px !important;
+    position: relative;
+    @include transition(all 0.3s ease);
+    font-weight: 500;
+    font-family: $Barlow;
+    &:hover {
+        padding-right: 40px !important;
+        &:after {
+            content: "";
+            overflow: hidden;
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            position: absolute;
+            top: 11px;
+            left: 100%;
+            margin-left: -35px;
+            @include arrowAppear();
+            background-color: #fff;
+        }
+        &.btn--bluedark {
+            &:after {
+                background-color: $blueDark;
+            }
+        }
+        &.btn--purple {
+            &:after {
+                background-color: $purple;
+            }
+        }
+        &.btn--blue {
+            &:after {
+                background-color: $blue;
+            }
+        }
+        &.btn--black {
+            &:after {
+                background-color: #fff;
             }
         }
     }
