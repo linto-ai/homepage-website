@@ -15,6 +15,8 @@
     <script type="text/javascript" src="/assets/js/navigation.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+
+            /* Preload hidden images */
             function preloadHiddenImages() {
                 $('footer').append(`
                 <div class="hidden">
@@ -23,13 +25,19 @@
                   <img src="/assets/img/svg/vocal-white.svg" />
                   <img src="/assets/img/svg/developer-white.svg" />
                   <img src="/assets/img/svg/building-white.svg" />
+                  <img src="/assets/img/svg/accessibility-bluedark.svg" />
+                  <img src="/assets/img/svg/healthcare-bluedark.svg" />
+                  <img src="/assets/img/svg/vocal-bluedark.svg" />
+                  <img src="/assets/img/svg/developer-bluedark.svg" />
+                  <img src="/assets/img/svg/building-bluedark.svg" />
                   </div>
               `)
             }
             preloadHiddenImages()
 
+            /* LinTO animation */
             setTimeout(() => {
-                // Animation LinTO Blink
+
                 let jsonPath = '/assets/json/animation.json'
                 const animationContainer = document.getElementById('animation-home')
                 lottie.loadAnimation({
@@ -43,6 +51,44 @@
                     }
                 })
             }, 100)
+
+            /* Accessibility panel */
+            $('#accessibility').on('click', function() {
+                $('#accessibility-panel').toggleClass('hidden')
+            })
+            $('.accessibility-panel--close').on('click', function() {
+                $('#accessibility-panel').toggleClass('hidden')
+            })
+            $('#accessibility-highlight').on('click', function() {
+                $('h1, h2, h3, h4').toggleClass('highlighted')
+                if ($(this).hasClass('disabled')) {
+                    $(this).removeClass('disabled').addClass('enabled')
+                } else if ($(this).hasClass('enabled')) {
+                    $(this).removeClass('enabled').addClass('disabled')
+                }
+            })
+            $('#accessibility-dyslexia').on('click', function() {
+                $('body').toggleClass('dyslexia')
+                if ($(this).hasClass('disabled')) {
+                    $(this).removeClass('disabled').addClass('enabled')
+                } else if ($(this).hasClass('enabled')) {
+                    $(this).removeClass('enabled').addClass('disabled')
+                }
+            })
+            $('#accessibility-contrast').on('click', function() {
+                if ($(this).hasClass('disabled')) {
+                    $(this).removeClass('disabled').addClass('enabled')
+                } else if ($(this).hasClass('enabled')) {
+                    $(this).removeClass('enabled').addClass('disabled')
+                }
+                $('#home-top').toggleClass('contrasted')
+                $('#privacy-matters').toggleClass('contrasted')
+                if ($('#home-top').hasClass('contrasted')) {
+                    $('#trylinto-link').removeClass('btn--bluedark').addClass('btn--white')
+                } else {
+                    $('#trylinto-link').addClass('btn--bluedark').removeClass('btn--white')
+                }
+            })
         })
     </script>
     <!-- CSS -->
@@ -55,6 +101,7 @@
         <div class="flex row wrapper">
             <div class="flex header--logo-container">
                 <a href="/" class="header--logo"></a>
+
             </div>
             <div class="flex row flex1 header--nav">
                 <div class="header--nav-link__parent-container">
@@ -95,6 +142,7 @@
                         <div class="flex row">
                             <a href="/products/fleet-management" class="header--nav-link__child link--arrow">Management de flottes</a>
                         </div>
+
                     </div>
                 </div>
                 <div class="header--nav-link__parent-container">
@@ -123,8 +171,12 @@
                 <div class="header--nav-link__parent-container">
                     <a href="#contact" class="header--nav-link">Contact</a>
                 </div>
+
                 <div class="header--nav-link__parent-container custom contribute">
                     <a href="https://github.com/linto-ai" target="_blank" class="header--nav-link border contribute link--arrow">Contribuer</a>
+                </div>
+                <div class="header--nav-link__parent-container custom accessibility">
+                    <button id="accessibility"></button>
                 </div>
             </div>
         </div>
@@ -177,6 +229,31 @@
         </div>
     </nav>
     <!-- END HEADER -->
+    <!-- ACCESSIBILITY -->
+    <div id="accessibility-panel" class="hidden">
+        <span class="accessibility-panel--title">Paramètre d'accessibilité</span>
+        <button class="accessibility-panel--close"></button>
+        <table id="accessibilty-table">
+            <tbody>
+                <tr>
+                    <td><span class="accesibility--icon highlight"></span></td>
+                    <td><span class="accesibility--label">Highlight titles</span></td>
+                    <td><button class="toggle-accessibilty disabled" id="accessibility-highlight"></button></td>
+                </tr>
+                <tr>
+                    <td><span class="accesibility--icon dyslexia"></span></td>
+                    <td><span class="accesibility--label">Dyslexia font</span></td>
+                    <td><button class="toggle-accessibilty disabled" id="accessibility-dyslexia"></button></td>
+                </tr>
+                <tr>
+                    <td><span class="accesibility--icon contrast"></span></td>
+                    <td><span class="accesibility--label">Hight contrast</span></td>
+                    <td><button class="toggle-accessibilty disabled" id="accessibility-contrast"></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END ACCESSIBILITY -->
     <!-- HOME TOP -->
     <section id="home-top" class="flex row">
         <div class="wrapper flex1 flex row homepage-title-container">
@@ -186,7 +263,7 @@
                 </div>
                 <div class="flex row homepage__top-btn">
                     <a href="/setup" class="btn big link--arrow btn--purple">Commencer</a>
-                    <a href="/playground/webpage" class="btn big link--arrow btn--bluedark">Essayer LinTO dans votre navigateur</a>
+                    <a href="/playground/webpage" class="btn big link--arrow btn--bluedark" id="trylinto-link">Essayer LinTO dans votre navigateur</a>
                 </div>
             </div>
 
@@ -289,7 +366,7 @@
                 </p>
                 <div class="flex row wakemeup-item flex1">
                     <a href="https://wakemeup.linto.ai/" target="_blank">
-                        <img src="/assets/img/logo-wakemeup.png" alt="Wakemeup.linto.ai" class="wakemeup-logo" />
+                        <img src="/assets/img/logo-wakemeup.png" alt="logo wakemeup.linto.ai" class="wakemeup-logo" />
                     </a>
                 </div>
             </div>
@@ -364,7 +441,7 @@
     <footer>
         <div class="flex row wrapper footer-links-container">
             <div class="flex1 col footer-links">
-                <span class="footer__label">Produits open source</span>
+                <h3 class="footer__label">Produits open source</h3>
                 <ul class="footer__list">
                     <li>
                         <a href="/products/speech-to-text-engine" class="footer__link">Dictée vocale</a>
@@ -390,7 +467,7 @@
                 </ul>
             </div>
             <div class="flex1 flex col footer-links">
-                <span class="footer__label">Marchés</span>
+                <h3 class="footer__label">Marchés</h3>
                 <ul class="footer__list">
                     <li>
                         <a href="/markets/healthcare" class="footer__link">Santé</a>
@@ -410,7 +487,7 @@
                 </ul>
             </div>
             <div class="flex1 flex col footer-links">
-                <span class="footer__label">Essayer LinTO</span>
+                <h3 class="footer__label">Essayer LinTO</h3>
                 <ul class="footer__list">
                     <li>
                         <a href="/setup" class="btn link--arrow btn--purple">Commencer à utiliser LinTO</a>
@@ -424,18 +501,12 @@
           </ul>
       </div>
       <div class="flex1 flex col footer-links">
-          <span class="footer__label">Projet de recherche</span>
+          <h3 class="footer__label">Projet de recherche</h3>
           <ul class="footer__list">
-              <li>
-                  <a href="https://research.linagora.com/display/home/Home" target="_blank" class="footer__link">research.linagora.com</a>
-                    </li>
-                    <li>
-                        <a href="https://wakemeup.linto.ai/" target="_blank" class="footer__link">wakemeup.linto.ai<a>
-              
-            </li>
-        </ul>
-
-        <span class="footer__label">Partenaires</span>
+            <li><a href="https://research.linagora.com/display/home/Home" target="_blank" class="footer__link">research.linagora.com</a></li>
+                    <li><a href="https://wakemeup.linto.ai/" target="_blank" class="footer__link">wakemeup.linto.ai<a></li>
+          </ul>
+        <h3 class="footer__label">Partenaires</h3>
         <ul class="footer__list">
             <li>
                 <a href="https://linagora.com/" target="_blank" class="footer__link">Linagora</a>
@@ -458,7 +529,7 @@
         <div class="flex col wrapper">
             <div class="flex row" style="justify-content: flex-end;">
                 <a href="https://linagora.com/" target="_blank" class="footer__link">
-                    <img src="/assets/img/logo-linagora.png" alt="Linagora" class="footer__img--linagora">
+                    <img src="/assets/img/logo-linagora.png" alt="logo Linagora" class="footer__img--linagora">
                 </a>
             </div>
             <div class="flex row" style="justify-content: flex-end;">
@@ -466,6 +537,7 @@
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>

@@ -7,132 +7,160 @@
     svg {
         max-width: 600px;
     }
-    &.contrasted {
-        background: $blueDark !important;
-        svg {
-            background: #ececec;
+    .homepage-title-container {
+        &>.flex {
+            padding-left: 40px;
         }
     }
-}
-
-.homepage-title-container {
-    &>.flex {
-        padding-left: 40px;
+    .homepage__title {
+        h1 {
+            margin-top: 100px;
+            font-family: $Ubuntu;
+        }
     }
-}
-
-.homepage__title {
-    h1 {
-        padding-top: 100px;
-        font-family: $Ubuntu;
+    .homepage__top-btn {
+        margin-top: 40px;
     }
-}
-
-.homepage__top-btn {
-    margin-top: 40px;
+    &.contrasted {
+        background: $blueDark;
+        svg {
+            background: #fff;
+        }
+    }
 }
 
 
 /* Privacy matter */
 
 #privacy-matters {
-    padding-top: 100px
-}
-
-.markets-items {
-    margin: 40px 0;
-    justify-content: center;
-    flex-wrap: wrap;
-    .market-item {
-        padding: 20px;
-        margin: 10px 20px;
-        width: 140px;
-        min-width: 140px;
-        max-width: 140px;
-        height: 200px;
-        @include borderRadius(3px);
-        @include blockShadow();
-        @include transition(all 0.3s ease);
-        flex: 1;
-        align-items: center;
-        background-color: #fff;
-        .market-item__img {
-            display: inline-block;
-            height: 120px;
-        }
-        .market-item__icon {
-            display: inline-block;
-            height: 120px;
-            width: 120px;
-            background-size: 120px 120px;
-            background-repeat: no-repeat;
-            &.banking {
-                background-image: url('../img/svg/banking.svg');
-            }
-            &.meeting {
-                background-image: url('../img/svg/meeting.svg');
-            }
-            &.building {
-                background-image: url('../img/svg/building.svg');
-            }
-            &.handsfree {
-                background-image: url('../img/svg/handsfree.svg');
-            }
-            &.developer {
-                background-image: url('../img/svg/developer.svg');
-            }
-            &.healthcare {
-                background-image: url('../img/svg/healthcare.svg');
-            }
-            &.vocal {
-                background-image: url('../img/svg/vocal.svg');
-            }
-            &.accessibility {
-                background-image: url('../img/svg/accessibility.svg');
-            }
-        }
-        .market-item__label {
-            padding-top: 10px;
-            display: inline-block;
-            font-size: 16px;
-            width: 100%;
-            text-align: center;
-            line-height: 16px;
-            line-height: 22px;
-            font-family: $Ubuntu;
-            font-weight: 500;
-            padding-bottom: 10px;
-        }
-        &:hover {
-            background-color: $blueDark;
-            @include blockShadowHover();
-            .market-item__label {
-                color: #fff;
+    padding-top: 100px;
+    .markets-items {
+        margin: 40px 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        .market-item {
+            padding: 20px;
+            margin: 10px 20px;
+            width: 140px;
+            min-width: 140px;
+            max-width: 140px;
+            height: 200px;
+            @include borderRadius(3px);
+            @include blockShadow();
+            @include transition(all 0.3s ease);
+            flex: 1;
+            align-items: center;
+            background-color: #fff;
+            .market-item__img {
+                display: inline-block;
+                height: 120px;
             }
             .market-item__icon {
+                display: inline-block;
+                height: 120px;
+                width: 120px;
+                background-size: 120px 120px;
+                background-repeat: no-repeat;
                 &.banking {
-                    background-image: url('../img/svg/banking-white.svg');
+                    background-image: url('../img/svg/banking.svg');
                 }
                 &.meeting {
-                    background-image: url('../img/svg/meeting-white.svg');
+                    background-image: url('../img/svg/meeting.svg');
                 }
                 &.building {
-                    background-image: url('../img/svg/building-white.svg');
+                    background-image: url('../img/svg/building.svg');
                 }
                 &.handsfree {
-                    background-image: url('../img/svg/handsfree-white.svg');
+                    background-image: url('../img/svg/handsfree.svg');
                 }
                 &.developer {
-                    background-image: url('../img/svg/developer-white.svg');
+                    background-image: url('../img/svg/developer.svg');
                 }
                 &.healthcare {
-                    background-image: url('../img/svg/healthcare-white.svg');
+                    background-image: url('../img/svg/healthcare.svg');
                 }
                 &.vocal {
-                    background-image: url('../img/svg/vocal-white.svg');
+                    background-image: url('../img/svg/vocal.svg');
                 }
                 &.accessibility {
-                    background-image: url('../img/svg/accessibility-white.svg');
+                    background-image: url('../img/svg/accessibility.svg');
+                }
+            }
+            .market-item__label {
+                padding-top: 10px;
+                display: inline-block;
+                font-size: 16px;
+                width: 100%;
+                text-align: center;
+                line-height: 16px;
+                line-height: 22px;
+                font-family: $Ubuntu;
+                font-weight: 500;
+                padding-bottom: 10px;
+            }
+            &:hover {
+                background-color: $blueDark;
+                @include blockShadowHover();
+                .market-item__label {
+                    color: #fff;
+                }
+                .market-item__icon {
+                    &.banking {
+                        background-image: url('../img/svg/banking-white.svg') !important;
+                    }
+                    &.meeting {
+                        background-image: url('../img/svg/meeting-white.svg') !important;
+                    }
+                    &.building {
+                        background-image: url('../img/svg/building-white.svg') !important;
+                    }
+                    &.handsfree {
+                        background-image: url('../img/svg/handsfree-white.svg') !important;
+                    }
+                    &.developer {
+                        background-image: url('../img/svg/developer-white.svg') !important;
+                    }
+                    &.healthcare {
+                        background-image: url('../img/svg/healthcare-white.svg') !important;
+                    }
+                    &.vocal {
+                        background-image: url('../img/svg/vocal-white.svg') !important;
+                    }
+                    &.accessibility {
+                        background-image: url('../img/svg/accessibility-white.svg') !important;
+                    }
+                }
+            }
+        }
+    }
+    &.contrasted {
+        .markets-items {
+            .market-item {
+                .market-item__icon {
+                    &.banking {
+                        background-image: url('../img/svg/banking-bluedark.svg');
+                    }
+                    &.meeting {
+                        background-image: url('../img/svg/meeting-bluedark.svg');
+                    }
+                    &.building {
+                        background-image: url('../img/svg/building-bluedark.svg');
+                    }
+                    &.handsfree {
+                        background-image: url('../img/svg/handsfree-bluedark.svg');
+                    }
+                    &.developer {
+                        background-image: url('../img/svg/developer-bluedark.svg');
+                    }
+                    &.healthcare {
+                        background-image: url('../img/svg/healthcare-bluedark.svg');
+                    }
+                    &.vocal {
+                        background-image: url('../img/svg/vocal-bluedark.svg');
+                    }
+                    &.accessibility {
+                        background-image: url('../img/svg/accessibility-bluedark.svg');
+                    }
                 }
             }
         }
@@ -174,7 +202,7 @@
             display: inline-block;
             width: 30px;
             height: 30px;
-            background-color: $blue;
+            background-color: $blueDark;
             position: absolute;
             @include maskImage('../img/svg/app.svg');
             @include transition(all 0.3s ease);
@@ -184,7 +212,8 @@
         }
         h3 {
             font-size: 20px;
-            padding: 20px 0 10px 0;
+            padding: 10px 0 10px 0;
+            margin-bottom: 5px;
             font-weight: 700;
             font-family: $Martel;
             color: $blueDark;
@@ -193,7 +222,7 @@
             font-family: $Ubuntu;
             font-size: 16px;
             line-height: 20px;
-            color: $textColor;
+            color: #666;
             font-style: italic;
             padding-bottom: 20px;
         }

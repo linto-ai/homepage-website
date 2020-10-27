@@ -1,0 +1,164 @@
+#accessibility {
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 0 0 10px;
+    background-color: #fff;
+    border: none;
+    position: relative;
+    @include borderRadius(20px);
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        @include maskImage('../img/svg/handicap.svg');
+        @include transition(all 0.3s ease);
+        background-color: $blueDark;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:hover {
+        background-color: $blueDark;
+        &:after {
+            background-color: #fff;
+        }
+        &:before {
+            content: "Paramètre d'accessibilité";
+            display: inline-block;
+            height: 30px;
+            position: absolute;
+            width: 140px;
+            top: 100%;
+            margin-top: 10px;
+            left: -60px;
+            background-color: $blueDark;
+            color: #fff;
+            padding: 5px;
+            font-family: $Ubuntu;
+            @include borderRadius(3px);
+        }
+    }
+}
+
+#accessibility-panel {
+    padding: 40px 20px 20px 20px;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    z-index: 20;
+    background: #fff;
+    @include blockShadowStrong();
+    @include borderRadius(3px);
+    .accessibility-panel--close {
+        @include transition(all 0.3s ease);
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border: 1px solid $red;
+        @include borderRadius(3px);
+        background-color: #fff;
+        position: absolute;
+        top: 5px;
+        left: 100%;
+        margin-left: -30px;
+        cursor: pointer;
+        outline: none;
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            @include maskImage('../img/svg/close.svg');
+            background-color: $red;
+            position: absolute;
+            top: -1px;
+            left: -1px;
+        }
+        &:hover {
+            background-color: $red;
+            &:after {
+                background-color: #fff;
+            }
+        }
+    }
+    .accessibility-panel--title {
+        display: inline-block;
+        font-size: 20px;
+        color: $blueDark;
+    }
+}
+
+#accessibilty-table {
+    margin-top: 20px;
+    tr {
+        td {
+            height: 30px;
+            padding: 10px 5px;
+            border-top: 1px solid #ccc;
+            &>span,
+            &>button {
+                vertical-align: top;
+            }
+            .accesibility--icon {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                vertical-align: top;
+                background-color: $blueDark;
+                &.highlight {
+                    @include maskImage('../img/svg/highlight-titles.svg')
+                }
+                &.dyslexia {
+                    @include maskImage('../img/svg/dyslexia-font.svg')
+                }
+                &.contrast {
+                    @include maskImage('../img/svg/high-contrast.svg')
+                }
+            }
+            .accesibility--label {
+                font-size: 16px;
+                padding: 0 5px;
+                line-height: 30px;
+            }
+            .toggle-accessibilty {
+                display: inline-block;
+                width: 40px;
+                height: 20px;
+                border: 2px solid #000;
+                background-color: #fff;
+                @include borderRadius(15px);
+                position: relative;
+                margin-top: 5px;
+                cursor: pointer;
+                &:after {
+                    @include transition(all 0.3s ease);
+                    content: '';
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    position: absolute;
+                    top: 1px;
+                    background: blue;
+                    z-index: 10;
+                    @include borderRadius(10px);
+                }
+                &.disabled {
+                    &:after {
+                        left: 2px;
+                        background: red;
+                    }
+                }
+                &.enabled {
+                    &:after {
+                        left: 100%;
+                        margin-left: -16px;
+                        background: green;
+                    }
+                }
+            }
+        }
+    }
+}

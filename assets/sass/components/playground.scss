@@ -1,10 +1,3 @@
-@font-face {
-    font-family: 'Open-Dyslexic Roman';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Open-Dyslexic Roman'), url('../fonts/open-dyslexic/open-dyslexic.woff') format('woff');
-}
-
 #playground-title {
     padding: 40px 0;
     @include blueToPurpleGradient();
@@ -301,11 +294,7 @@
     @include borderRadius(100px);
     padding: 15px;
     margin: 0 auto 20px auto;
-    @include boxShadow(0,
-    0,
-    12px,
-    4px,
-    rgba(0, 0, 0, 0.5));
+    @include boxShadow(0, 0, 12px, 4px, rgba(0, 0, 0, 0.5));
     #linto-animation {
         width: 150px;
         height: 150px;
