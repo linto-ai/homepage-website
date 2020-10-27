@@ -169,6 +169,7 @@ body {
     font-family: $Ubuntu;
     color: $textColor;
     font-weight: 400;
+    background-color: #fcfcfc;
 }
 
 .wrapper {
@@ -232,9 +233,10 @@ p.page-content {
     display: inline-block;
     font-family: $Ubuntu;
     line-height: 26px;
+    font-size: 18px;
     strong {
         font-weight: 600;
-        color: $blue;
+        color: $textColor;
     }
     a {
         color: $blue;

@@ -35,6 +35,10 @@
 
 /* Privacy matter */
 
+#privacy-matters {
+    padding-top: 100px
+}
+
 .markets-items {
     margin: 40px 0;
     justify-content: center;
@@ -51,6 +55,7 @@
         @include transition(all 0.3s ease);
         flex: 1;
         align-items: center;
+        background-color: #fff;
         .market-item__img {
             display: inline-block;
             height: 120px;
@@ -138,14 +143,9 @@
 /* LinTO products */
 
 #linto-products {
-    @include blueToPurpleGradient();
     @include transition(all 0.3s ease);
-    color: #fff;
     padding-top: 80px;
     position: relative;
-    h2 {
-        color: #fff;
-    }
     &.contrasted {
         background: $blueDark !important;
     }
@@ -174,7 +174,7 @@
             display: inline-block;
             width: 30px;
             height: 30px;
-            background-color: $blueDark;
+            background-color: $blue;
             position: absolute;
             @include maskImage('../img/svg/app.svg');
             @include transition(all 0.3s ease);
@@ -247,10 +247,18 @@
 
 .wakemeup-item {
     justify-content: space-evenly;
-    margin-top: -40px;
-    .wakemeup-logo {
-        display: inline-block;
-        height: 180px;
-        width: auto;
+    margin-top: 40px;
+    a {
+        padding: 10px;
+        @include borderRadius(3px);
+        .wakemeup-logo {
+            display: inline-block;
+            height: 140px;
+            width: auto;
+        }
+        &:hover {
+            background: #fff;
+            @include blockShadow();
+        }
     }
 }
