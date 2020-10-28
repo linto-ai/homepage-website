@@ -37,7 +37,6 @@
 
             /* LinTO animation */
             setTimeout(() => {
-
                 let jsonPath = '/assets/json/animation.json'
                 const animationContainer = document.getElementById('animation-home')
                 lottie.loadAnimation({
@@ -59,6 +58,8 @@
             $('.accessibility-panel--close').on('click', function() {
                 $('#accessibility-panel').toggleClass('hidden')
             })
+
+            // Enable/disable highlight titles
             $('#accessibility-highlight').on('click', function() {
                 $('h1, h2, h3, h4').toggleClass('highlighted')
                 if ($(this).hasClass('disabled')) {
@@ -67,6 +68,8 @@
                     $(this).removeClass('enabled').addClass('disabled')
                 }
             })
+
+            // Enable/disable dyslexia font
             $('#accessibility-dyslexia').on('click', function() {
                 $('body').toggleClass('dyslexia')
                 if ($(this).hasClass('disabled')) {
@@ -75,6 +78,8 @@
                     $(this).removeClass('enabled').addClass('disabled')
                 }
             })
+
+            // Enable/disable hight contrast
             $('#accessibility-contrast').on('click', function() {
                 if ($(this).hasClass('disabled')) {
                     $(this).removeClass('disabled').addClass('enabled')
@@ -83,11 +88,26 @@
                 }
                 $('#home-top').toggleClass('contrasted')
                 $('#privacy-matters').toggleClass('contrasted')
+                $('.footer__label').toggleClass('contrasted')
                 if ($('#home-top').hasClass('contrasted')) {
                     $('#trylinto-link').removeClass('btn--bluedark').addClass('btn--white')
+                    $('#contact-form__submit').removeClass('btn--purple').addClass('btn--white')
+                    $('footer .btn--purple').removeClass('btn--purple').addClass('btn--white')
                 } else {
                     $('#trylinto-link').addClass('btn--bluedark').removeClass('btn--white')
+                    $('#contact-form__submit').addClass('btn--purple').removeClass('btn--white')
+                    $('footer .btn--purple').addClass('btn--purple').removeClass('btn--white')
                 }
+            })
+
+            // Zoom text
+            $('#accessibility-zoom').on('click', function() {
+                if ($(this).hasClass('disabled')) {
+                    $(this).removeClass('disabled').addClass('enabled')
+                } else if ($(this).hasClass('enabled')) {
+                    $(this).removeClass('enabled').addClass('disabled')
+                }
+                $('body').toggleClass('zoom')
             })
         })
     </script>
@@ -175,9 +195,6 @@
                 <div class="header--nav-link__parent-container custom contribute">
                     <a href="https://github.com/linto-ai" target="_blank" class="header--nav-link border contribute link--arrow">Contribuer</a>
                 </div>
-                <div class="header--nav-link__parent-container custom accessibility">
-                    <button id="accessibility"></button>
-                </div>
             </div>
         </div>
     </nav>
@@ -230,8 +247,9 @@
     </nav>
     <!-- END HEADER -->
     <!-- ACCESSIBILITY -->
+    <button id="accessibility"></button>
     <div id="accessibility-panel" class="hidden">
-        <span class="accessibility-panel--title">Paramètre d'accessibilité</span>
+        <span class="accessibility-panel--title">Paramètres d'accessibilité</span>
         <button class="accessibility-panel--close"></button>
         <table id="accessibilty-table">
             <tbody>
@@ -249,6 +267,11 @@
                     <td><span class="accesibility--icon contrast"></span></td>
                     <td><span class="accesibility--label">Hight contrast</span></td>
                     <td><button class="toggle-accessibilty disabled" id="accessibility-contrast"></button></td>
+                </tr>
+                <tr>
+                    <td><span class="accesibility--icon increase-font"></span></td>
+                    <td><span class="accesibility--label">Increase font size</span></td>
+                    <td><button class="toggle-accessibilty disabled" id="accessibility-zoom"></button></td>
                 </tr>
             </tbody>
         </table>

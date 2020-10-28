@@ -286,10 +286,6 @@ p.page-content {
         background-color: #fff;
         color: $blueDark;
         border-color: #fff;
-        &:hover {
-            background-color: $blueDark;
-            color: #fff;
-        }
     }
     &.btn--bluedark {
         background-color: $blueDark;
@@ -405,6 +401,11 @@ p.page-content {
             @include arrowAppear();
             background-color: #fff;
         }
+        &.btn--white {
+            &:after {
+                background-color: $blueDark;
+            }
+        }
         &.btn--bluedark {
             &:after {
                 background-color: $blueDark;
@@ -440,5 +441,37 @@ h4 {
         background-color: yellow;
         color: $blueDark !important;
         padding-left: 10px !important;
+    }
+}
+
+body.zoom {
+    p,
+    span,
+    a,
+    li {
+        font-size: 22px !important;
+        line-height: 28px !important;
+    }
+    .header--nav a.header--nav-link.border.contribute {
+        font-size: 22px !important;
+        line-height: 40px !important;
+        padding: 5px 10px !important;
+        &:hover {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    .btn.big {
+        font-size: 22px !important;
+        line-height: 40px !important;
+    }
+    .header--nav a.header--nav-link {
+        font-size: 22px !important;
+        line-height: 50px !important;
+    }
+    h2 {
+        font-size: 34px !important;
+        line-height: 40px !important;
     }
 }

@@ -44,7 +44,6 @@
             width: 140px;
             min-width: 140px;
             max-width: 140px;
-            height: 200px;
             @include borderRadius(3px);
             @include blockShadow();
             @include transition(all 0.3s ease);

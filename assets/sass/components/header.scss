@@ -1,6 +1,6 @@
 #header {
     padding: 10px 0;
-    height: 40px;
+    height: auto;
     background-color: #fff;
     z-index: 10;
     position: fixed;
@@ -24,6 +24,7 @@
     display: inline-block;
     height: 40px;
     width: 175px;
+    margin: 5px 0;
     @include maskImage('../img/svg/linto-ai.svg');
     background-color: $blue;
 }
@@ -31,6 +32,10 @@
 .header--nav {
     position: relative;
     justify-content: flex-end;
+    flex-wrap: wrap;
+    .header--nav-link__parent-container {
+        margin: 5px 0;
+    }
     a.header--nav-link {
         display: inline-block;
         position: relative;

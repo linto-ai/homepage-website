@@ -3,11 +3,18 @@
     display: inline-block;
     width: 40px;
     height: 40px;
-    margin: 0 0 0 10px;
-    background-color: #fff;
+    margin: 3px 0 0 10px;
+    background-color: $blueDark;
     border: none;
-    position: relative;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    margin-top: -60px;
+    left: 20px;
+    outline: none;
     @include borderRadius(20px);
+    z-index: 50;
+    @include blockShadow();
     &:after {
         content: '';
         display: inline-block;
@@ -15,25 +22,22 @@
         height: 40px;
         @include maskImage('../img/svg/handicap.svg');
         @include transition(all 0.3s ease);
-        background-color: $blueDark;
+        background-color: #fff;
         position: absolute;
         top: 0;
         left: 0;
     }
     &:hover {
-        background-color: $blueDark;
-        &:after {
-            background-color: #fff;
-        }
+        @include blockShadowStrong();
         &:before {
             content: "Paramètre d'accessibilité";
             display: inline-block;
             height: 30px;
             position: absolute;
             width: 140px;
-            top: 100%;
-            margin-top: 10px;
-            left: -60px;
+            top: 0;
+            left: 100%;
+            margin-left: 10px;
             background-color: $blueDark;
             color: #fff;
             padding: 5px;
@@ -117,6 +121,9 @@
                 &.contrast {
                     @include maskImage('../img/svg/high-contrast.svg')
                 }
+                &.increase-font {
+                    @include maskImage('../img/svg/increase-font.svg')
+                }
             }
             .accesibility--label {
                 font-size: 16px;
@@ -133,6 +140,7 @@
                 position: relative;
                 margin-top: 5px;
                 cursor: pointer;
+                outline: none;
                 &:after {
                     @include transition(all 0.3s ease);
                     content: '';
@@ -141,21 +149,20 @@
                     height: 14px;
                     position: absolute;
                     top: 1px;
-                    background: blue;
                     z-index: 10;
                     @include borderRadius(10px);
                 }
                 &.disabled {
                     &:after {
                         left: 2px;
-                        background: red;
+                        background: $red;
                     }
                 }
                 &.enabled {
                     &:after {
                         left: 100%;
                         margin-left: -16px;
-                        background: green;
+                        background: #00b100;
                     }
                 }
             }

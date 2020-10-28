@@ -18,6 +18,9 @@ footer {
         color: #6b8296;
         padding: 5px 0;
         margin-bottom: 5px;
+        &.contrasted {
+            color: #fff;
+        }
     }
     ul.footer__list {
         margin-bottom: 20px;
