@@ -1,3 +1,27 @@
+.volume-bar{
+    height: 30px;
+    width: 220px;
+    border: 1px solid #000;
+    background: #fff;
+    position: relative;
+    #volume-value{
+        display: inline-block;
+        height: 30px;
+        width: 0px;
+        background: blue; 
+        @include transition(all 0.1s ease);
+    }
+}
+#lintosound {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -100px;
+    border: 1px solid #fff;
+    z-index:5;
+}
 #playground-title {
     padding: 40px 0;
     @include blueToPurpleGradient();
@@ -289,16 +313,21 @@
 
 #linto-container {
     position: relative;
-    background: #fff;
-    min-height: 150px;
-    @include borderRadius(100px);
-    padding: 15px;
-    margin: 0 auto 20px auto;
-    @include boxShadow(0, 0, 12px, 4px, rgba(0, 0, 0, 0.5));
+    height: 200px;
+    margin: 0 0 20px 0;
+    justify-content: center;
+    align-items: center;
     #linto-animation {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
+        @include borderRadius(100px);
+        padding: 15px;
+        background-color: #fff;
+        @include boxShadow(0, 0, 12px, 4px, rgba(0, 0, 0, 0.5));
+        z-index:10;
+        position: relative;
     }
+    
     #helper {
         display: inline-block;
         width: 30px;

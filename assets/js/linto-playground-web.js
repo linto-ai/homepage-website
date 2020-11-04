@@ -107,13 +107,17 @@ let mqttErrorHandler = function(event) {
 let mqttDisconnectHandler = function(event) {
     console.log("MQTT Offline")
 }
-
 let audioSpeakingOn = function(event) {
     console.log("Speaking")
+    window.speaking = 'on'
+    window.lintoMicNode.connect(window.lintoMic.audioContext.destination)
 }
 
 let audioSpeakingOff = function(event) {
     console.log("Not speaking")
+    window.speaking = 'off'
+    window.lintoMicVolume = 0
+    window.lintoMicNode.disconnect(window.lintoMic.audioContext.destination)
 }
 
 let commandAcquired = function(event) {
@@ -252,13 +256,31 @@ let customHandler = async function(event) {
     console.log(event.detail.transcript)
 }
 
-
+let findContext = function(){
+    return new Promise((resolve, reject) => {
+        if(!!linto.audio.mic.audioContext && typeof(linto.audio.mic) !== 'undefined') {
+            console.log('MIC found', linto.audio.mic.audioContext)
+            resolve(linto.audio.mic)
+        } else {
+            setTimeout(()=> {
+                if(!!linto.audio.mic || typeof(linto.audio.mic) === 'undefined') {
+                    console.log('MIC found', linto.audio.mic)
+                    $('#loading').addClass('hidden')
+                    resolve(linto.audio.mic)
+                } else {
+                    console.log('context not found after 1Sec')
+                    resolve(null)
+                }
+            }, 1500)
+        }
+    })
+}
 
 window.start = async function() {
     try {
-        //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
-
-        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
+        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL 
+ 
+        //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "IzpMpsZ6LZiUSpv3", 10000) // PROD
 
         // Some feedbacks for UX implementation
         linto.addEventListener("mqtt_connect", mqttConnectHandler)
@@ -281,9 +303,48 @@ window.start = async function() {
         await linto.login()
         linto.startAudioAcquisition(true, "linto", 0.99) // Uses hotword built in WebVoiceSDK by name / model / threshold (0.99 is fine enough)
         linto.startCommandPipeline()
-        $('#loading').addClass('hidden')
+        
 
-
+        window.lintoMicVolume = 0
+        window.lintoMic = await findContext()
+        window.lintoMicNode = window.lintoMic.audioContext.createScriptProcessor(4096,1,1)
+        window.lintoMicAnalyzer = window.lintoMic.audioContext.createAnalyser()
+        window.lintoMicAnalyzer.fftSize = 256
+        window.lintoMicAnalyzer.smoothingTimeConstant = 0.8
+        window.lintoMic.mediaStreamSource.connect(window.lintoMicAnalyzer)
+        window.lintoMicAnalyzer.connect(window.lintoMicNode)
+        window.soundAnim = false
+        window.lintoMicNode.onaudioprocess = function(e){
+            tempArray = new Uint8Array(window.lintoMicAnalyzer.frequencyBinCount)
+            window.lintoMicAnalyzer.getByteFrequencyData(tempArray)
+            const length = tempArray.length
+            let values = 0
+            for (let i = 0; i < length; i++) {
+                values += tempArray[i]
+            }
+            let avgVolume =  values / length
+            if(avgVolume > 50) {
+                avgVolume = 50
+            }
+            window.lintoMicVolume = avgVolume
+            if(window.speaking === 'on' && window.lintoMicVolume > 5) {
+            console.log('trigger soundwave')
+            const s = Snap('#lintosound')
+            const circle = s.circle(100,100,50).attr({'fill':'#FFF', 'opacity':0.8})
+                if(!window.soundAnim){
+                    window.soundAnim = true
+                    circle.animate({
+                        opacity: 0.4,
+                        r: Math.round(window.lintoMicVolume) / 2 + 80
+                    }, 200, function() {
+                        circle.animate({opacity:0}, 200, () => {
+                            circles.remove()
+                        })
+                        window.soundAnim = false
+                    })
+                }
+            }
+        }
         const animationContainer = document.getElementById('linto-animation')
         window.lintoAnim = lottie.loadAnimation({
             container: animationContainer, // the dom element that will contain the animation
@@ -297,7 +358,6 @@ window.start = async function() {
         })
 
         window.lintoAnim.addEventListener('enterFrame', function(e) {
-
             if (window.lintoState === 'sleeping') {
                 if (e.currentTime >= window.lintoAnimSegments.sleeping.end) {
                     window.lintoAnim.goToAndPlay(window.lintoAnimSegments.sleeping.start, true)
