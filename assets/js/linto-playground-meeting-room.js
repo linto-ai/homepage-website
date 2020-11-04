@@ -196,10 +196,17 @@ $(document).ready(function() {
 
     let audioSpeakingOn = function(event) {
         console.log("Speaking")
+        window.speaking = 'on'
+        window.lintoMicNode.connect(window.lintoMic.audioContext.destination)
+        requestAnimationFrame(drawSound)
     }
 
     let audioSpeakingOff = function(event) {
         console.log("Not speaking")
+        window.speaking = 'off'
+        window.lintoMicVolume = 0
+        window.lintoMicNode.disconnect(window.lintoMic.audioContext.destination)
+        cancelAnimationFrame(drawSound)
     }
 
     let commandAcquired = function(event) {
@@ -294,6 +301,35 @@ $(document).ready(function() {
         console.log(event.detail.transcript)
     }
 
+
+    let findContext = function() {
+        return new Promise((resolve, reject) => {
+            if (!!linto.audio.mic.audioContext && typeof(linto.audio.mic) !== 'undefined') {
+                resolve(linto.audio.mic)
+            } else {
+                setTimeout(() => {
+                    if (!!linto.audio.mic || typeof(linto.audio.mic) === 'undefined') {
+                        $('#loading').addClass('hidden')
+                        resolve(linto.audio.mic)
+                    } else {
+                        console.log('context not found after 1.5 sec')
+                        resolve(null)
+                    }
+                }, 1500)
+            }
+        })
+    }
+
+    let drawSound = function(timestamp) {
+        if (window.speaking === 'on') {
+            if (window.lintoMicVolume > 15) {
+                $('#volume-bar').attr('style', 'height:' + window.lintoMicVolume + '%')
+            }
+        } else {
+            $('#volume-bar').attr('style', 'height: 0%')
+        }
+        requestAnimationFrame(drawSound)
+    }
     window.start = async function() {
         try {
             //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL
@@ -320,7 +356,32 @@ $(document).ready(function() {
             await linto.login()
             linto.startAudioAcquisition(true, "linto", 0.99) // Uses hotword built in WebVoiceSDK by name / model / threshold (0.99 is fine enough)
             linto.startCommandPipeline()
-            $('#loading').addClass('hidden')
+
+            window.lintoMicVolume = 0
+            window.lintoMic = await findContext()
+            window.lintoMicNode = window.lintoMic.audioContext.createScriptProcessor(4096, 1, 1)
+            window.lintoMicAnalyzer = window.lintoMic.audioContext.createAnalyser()
+            window.lintoMicAnalyzer.fftSize = 256
+            window.lintoMicAnalyzer.smoothingTimeConstant = 0.8
+            window.lintoMic.mediaStreamSource.connect(window.lintoMicAnalyzer)
+            window.lintoMicAnalyzer.connect(window.lintoMicNode)
+            window.soundAnim = false
+
+            // Get microphone volume on audio process
+            window.lintoMicNode.onaudioprocess = function(e) {
+                tempArray = new Uint8Array(window.lintoMicAnalyzer.frequencyBinCount)
+                window.lintoMicAnalyzer.getByteFrequencyData(tempArray)
+                const length = tempArray.length
+                let values = 0
+                for (let i = 0; i < length; i++) {
+                    values += tempArray[i]
+                }
+                let avgVolume = values / length
+                if (avgVolume > 100) {
+                    avgVolume = 100
+                }
+                window.lintoMicVolume = avgVolume
+            }
 
 
             const animationContainer = document.getElementById('linto-animation')

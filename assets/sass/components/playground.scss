@@ -1,27 +1,3 @@
-.volume-bar{
-    height: 30px;
-    width: 220px;
-    border: 1px solid #000;
-    background: #fff;
-    position: relative;
-    #volume-value{
-        display: inline-block;
-        height: 30px;
-        width: 0px;
-        background: blue; 
-        @include transition(all 0.1s ease);
-    }
-}
-#lintosound {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-left: -100px;
-    border: 1px solid #fff;
-    z-index:5;
-}
 #playground-title {
     padding: 40px 0;
     @include blueToPurpleGradient();
@@ -113,16 +89,16 @@
         background: #fff;
         width: 100%;
         height: 100%;
-        z-index: 9;
+        z-index: 30;
         &:after {
-            content: "loading...";
+            content: "Chargement...";
             display: inline-block;
             width: 100%;
             text-align: center;
             font-family: $Ubuntu;
             font-size: 22px;
             color: $blueDark;
-            padding-top: 40px;
+            padding-top: 140px;
         }
     }
     h2 {
@@ -311,12 +287,33 @@
     }
 }
 
+#volume {
+    height: 120px;
+    width: 10px;
+    background: #757575;
+    position: relative;
+    margin-left: 30px;
+    #volume-bar {
+        @include transition(all 0.3s ease);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0px;
+        z-index: 6;
+        background-color: #00f300;
+    }
+}
+
 #linto-container {
     position: relative;
     height: 200px;
-    margin: 0 0 20px 0;
     justify-content: center;
     align-items: center;
+    #linto {
+        justify-content: center;
+        align-items: center;
+    }
     #linto-animation {
         width: 120px;
         height: 120px;
@@ -324,18 +321,18 @@
         padding: 15px;
         background-color: #fff;
         @include boxShadow(0, 0, 12px, 4px, rgba(0, 0, 0, 0.5));
-        z-index:10;
+        z-index: 10;
         position: relative;
+        overflow: hidden;
     }
-    
     #helper {
         display: inline-block;
         width: 30px;
         height: 30px;
         padding: 0;
         position: absolute;
-        top: 0;
-        left: 100%;
+        top: 10px;
+        left: 0;
         background-color: $blue;
         border: none;
         @include borderRadius( 3px);
