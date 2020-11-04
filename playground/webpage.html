@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/lottie.min.js"></script>
+    <script type="text/javascript" src="/assets/js/snap.svg-min.js"></script>
     <script type="text/javascript" src="/assets/js/linto.min.js"></script>
 
     <script type="text/javascript" src="/assets/js/slick.min.js"></script>
@@ -194,10 +195,22 @@
                 <div class="flex row" id="linto-container">
                     <div id="linto">
                         <div id="linto-animation" class="sleeping"></div>
+                        <svg id="lintosound" width="200" height="200" viewBox="0 0 200 200"></svg>
+                        
                     </div>
                     <button id="helper">
                       <span class="icon"></span>
                     </button>
+                </div>
+
+
+
+
+                <div class="flex row">
+                    
+                    <div class="volume-bar">
+                        <span id="volume-value"></span>
+                    </div>
                 </div>
                 <div class="flex1 flex col" id="commands">
                     <h2>Commandes vocales</h2>
