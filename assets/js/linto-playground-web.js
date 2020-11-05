@@ -108,21 +108,22 @@ let mqttDisconnectHandler = function(event) {
 let audioSpeakingOn = function(event) {
     console.log("Speaking")
     window.speaking = 'on'
-    window.lintoMicNode.connect(window.lintoMic.audioContext.destination)
-    requestAnimationFrame(drawSound)
+
 }
 
 let audioSpeakingOff = function(event) {
     console.log("Not speaking")
     window.speaking = 'off'
     window.lintoMicVolume = 0
-    window.lintoMicNode.disconnect(window.lintoMic.audioContext.destination)
-    cancelAnimationFrame(drawSound)
+
 }
 
 let commandAcquired = function(event) {
     console.log("Command acquired")
     lintoThink()
+    window.lintoMicNode.disconnect(window.lintoMic.audioContext.destination)
+    cancelAnimationFrame(drawSound)
+    $('#volume').removeClass('visible').addClass('hidden')
 }
 
 let commandPublished = function(event) {
@@ -131,18 +132,20 @@ let commandPublished = function(event) {
 
 let hotword = function(event) {
     console.log("Hotword triggered : ", event.detail)
-
     const audioPlayer = document.getElementById('podcast')
-
     if (!audioPlayer.paused) {
         audioPlayer.volume = 0.1
         audioPlayer.setAttribute('data-tmppause', true)
     }
 
     // Play beep sound
-    window.lintoUISound.src = '../assets/audio/linto/beep3.wav'
+    window.lintoUISound.src = '/assets/audio/linto/beep3.wav'
     window.lintoUISound.play()
     lintoListen()
+
+    $('#volume').removeClass('hidden').addClass('visible')
+    window.lintoMicNode.connect(window.lintoMic.audioContext.destination)
+    requestAnimationFrame(drawSound)
 }
 
 let commandTimeout = function(event) {
@@ -273,8 +276,6 @@ let findContext = function() {
         }
     })
 }
-
-
 let drawSound = function(timestamp) {
     if (window.speaking === 'on') {
         if (window.lintoMicVolume > 15) {
@@ -344,7 +345,7 @@ window.start = async function() {
             renderer: 'svg',
             loop: false,
             autoplay: true,
-            path: '../assets/json/linto-full.json', // the path to the animation json
+            path: '/assets/json/linto-full.json', // the path to the animation json
             rendererSettings: {
                 className: 'linto-animation'
             }
@@ -369,17 +370,23 @@ window.start = async function() {
         $('#toggle-streaming').on('click', function() {
             if ($(this).hasClass('disabled'))  {
                 $(this).removeClass('disabled').addClass('enabled')
-                $(this).html('Dictée activée')
+                if ($(this).attr('data-lang') === 'fr') {
+                    $(this).html('Dictée activée')
+                } else {
+                    $(this).html('Streaming on')
+                }
                 linto.stopCommandPipeline();
                 linto.startStreaming()
             } else if ($(this).hasClass('enabled'))  {
                 $(this).removeClass('enabled').addClass('disabled')
-                $(this).html('Dictée en pause')
+                if ($(this).attr('data-lang') === 'fr') {
+                    $(this).html('Dictée en pause')
+                } else {
+                    $(this).html('Streaming off')
+                }
                 linto.stopStreaming()
                 linto.startCommandPipeline()
-
             }
-
         })
         return true
     } catch (e) {

@@ -196,7 +196,7 @@
                     <div id="linto" class="flex1 flex row">
                         <div id="linto-animation" class="sleeping">
                         </div>
-                        <div id="volume">
+                        <div id="volume" class="hidden">
                             <div id="volume-bar"></div>
                         </div>
                     </div>
@@ -208,24 +208,24 @@
 
                 </div>
                 <div class="flex1 flex col" id="commands">
-                    <h2>Commandes vocales</h2>
+                    <h2>Vocal commands</h2>
                     <div class="playground-infos-commands flex1 flex col">
-                        <span class="playground-webpage-command">LinTO, va au bloc <strong>suivant</strong></span>
-                        <span class="playground-webpage-command">LinTO, va au bloc <strong>précédent</strong></span>
-                        <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
-                        <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
+                        <span class="playground-webpage-command">LinTO, go to <strong>next</strong> block</span>
+                        <span class="playground-webpage-command">LinTO, go to <strong>previous</strong> block</span>
+                        <span class="playground-webpage-command">LinTO, read the <strong>title</strong></span>
+                        <span class="playground-webpage-command">LinTO, read the <strong>content</strong></span>
 
-                        <span class="playground-webpage-command">LinTO, <strong>démarre </strong> le podcast</span>
-                        <span class="playground-webpage-command">LinTO, <strong>stoppe</strong> le podcast</span>
+                        <span class="playground-webpage-command">LinTO, <strong>start </strong> the podcast</span>
+                        <span class="playground-webpage-command">LinTO, <strong>stop</strong> the podcast</span>
 
-                        <span class="playground-webpage-command">LinTO, diapo <strong>suivante</strong></span>
-                        <span class="playground-webpage-command">LinTO, diapo <strong>précédente</strong></span>
+                        <span class="playground-webpage-command">LinTO, <strong>next</strong> slide</span>
+                        <span class="playground-webpage-command">LinTO, <strong>previous</strong> slide</span>
 
-                        <span class="playground-webpage-command">LinTO, <strong>agrandis</strong> l'image</span>
-                        <span class="playground-webpage-command">LinTO, <strong>réduis</strong> l'image</span>
+                        <span class="playground-webpage-command">LinTO, <strong>Zoom in</strong> (image)</span>
+                        <span class="playground-webpage-command">LinTO, <strong>Zoom out</strong> (image)</span>
 
-                        <span class="playground-webpage-command">LinTO, <strong>active</strong> le mode accéssibilité</span>
-                        <span class="playground-webpage-command">LinTO, <strong>désactive</strong> le mode accéssibilité</span>
+                        <span class="playground-webpage-command">LinTO, <strong>enable</strong> accessibility mode</span>
+                        <span class="playground-webpage-command">LinTO, <strong>disable</strong> accessibility mode</span>
 
                     </div>
                 </div>
@@ -234,22 +234,22 @@
 
             <div class="flex2 flex col playground-webpage-area" id="playground-webpage-content">
                 <div class="flex1">
-                    <h2>Navigation et Lecture de contenu</h2>
+                    <h2>Navigation and content reading</h2>
                     <div class="playground-webpage-content-block active" data-index="1">
-                        <h3 class="playground-content-block__title">Je suis le titre du premier bloc</h3>
-                        <p class="playground-content-block__content">Ceci est le texte du premier bloc de contenu.</p>
+                        <h3 class="playground-content-block__title">I'm first block's title</h3>
+                        <p class="playground-content-block__content">This is the content of the first block.</p>
                     </div>
                     <div class="playground-webpage-content-block" data-index="2">
-                        <h3 class="playground-content-block__title">Titre du second bloc</h3>
-                        <p class="playground-content-block__content">Ce texte constitue le contenu du second bloc.</p>
+                        <h3 class="playground-content-block__title">Second block title</h3>
+                        <p class="playground-content-block__content">This is the content of the second block.</p>
                     </div>
                     <div class="playground-webpage-content-block" data-index="3">
-                        <h3 class="playground-content-block__title">Titre du troisième bloc</h3>
-                        <p class="playground-content-block__content">Ce texte est le contenu du troisième et avant-dernier bloc.</p>
+                        <h3 class="playground-content-block__title">Third block title</h3>
+                        <p class="playground-content-block__content">this is the content of the third block.</p>
                     </div>
                     <div class="playground-webpage-content-block" data-index="4" style="margin-top: 300px;">
-                        <h3 class="playground-content-block__title">Titre du quatrième bloc</h3>
-                        <p class="playground-content-block__content">Ce texte est le dernier contenu pour la démonstration.</p>
+                        <h3 class="playground-content-block__title">Title of the last block</h3>
+                        <p class="playground-content-block__content">This is the content of the last block.</p>
                     </div>
 
                 </div>
@@ -257,13 +257,13 @@
             <div class="flex2 flex col" id="playground-webpage-media">
                 <div class="flex row">
                     <div class="flex1 flex col playground-webpage-area" id="playground-webpage-dictation">
-                        <h2>Dictée vocale</h2>
-                        <button id="toggle-streaming" class="disabled" data-lang="fr">Dictée en pause</button>
+                        <h2>Speech to text streaming</h2>
+                        <button id="toggle-streaming" class="disabled" data-lang="en">Streaming off</button>
                         <div id="dictation" class="flex1"></div>
                     </div>
                     <div class="flex col">
                         <div class="flex1 flex col playground-webpage-area" id="playground-webpage-podcast">
-                            <h2>Controler un podcast</h2>
+                            <h2>Podcast</h2>
                             <div class="flex col">
                                 <!-- <a href="#" class="podcast-link active">Podcast 1</a> -->
                                 <!-- <a href="#" class="podcast-link">Podcast 2</a> -->
@@ -272,7 +272,7 @@
                         </div>
 
                         <div class="flex col playground-webpage-area" id="playground-webpage-image">
-                            <h2>Agrandir une image</h2>
+                            <h2>Enlarge a picture</h2>
                             <div class="flex row">
                                 <img class="lightbox__img" src="/assets/img/pet.jpg" alt="pet" />
                             </div>
@@ -281,7 +281,7 @@
 
                 </div>
                 <div class="flex1 flex col playground-webpage-area" id="playground-webpage-slider">
-                    <h2>Controler un slider</h2>
+                    <h2>Slider</h2>
                     <div id="playground-slider">
                         <img src="/assets/img/slider/slide1.png" />
                         <img src="/assets/img/slider/slide2.png" />
@@ -295,7 +295,7 @@
     <div id="modal" class="hidden flex col">
         <div class="modal-container flex1">
             <div class="modal-header">
-                <h2>Navigation à la voix</h2>
+                <h2>Voice navigation</h2>
                 <button id="modal-close" class="modal__close"><span class="icon"></span></button>
             </div>
             <div class="modal-body">
@@ -303,52 +303,53 @@
 
                     <div class="flex1 flex col">
                         <div class="modal-content flex col">
-                            <h3>Comment ça marche ?</h3>
-                            <p>Bienvenue sur la page de démonstration de LinTO dans un navigateur web. La navigation et les interactions sur cette page se font à la voix, grâce à l'assistant LinTO. Pour pouvoir utiliser les commandes vocales, veuillez-suivre
-                                les indications suivantes.
-                            </p>
+                            <h3>How does it works ?</h3>
+                            <p>Welcome to the demonstration page of LinTO in a web browser. Navigation and actions can be triggered by voice, thanks to LinTO assistant. Please follow the instructions to be able to use vocal commands.</p>
                         </div>
                         <div class="modal-content flex col">
-                            <h3>1/ Autoriser l'utilisation du microphone sur la page web</h3>
-                            <p>Lorsqe vous chargez la page web, un message de votre navigateur devrait apparaitre, vous demandant d'<strong>autoriser l'utilisation de votre micropohone</strong> sur cette page web.</p>
-                            <div class="flex row">
-                                <img src="/assets/img/audio-browser.jpg" alt="autoriser l'aquisition audio" />
-                            </div>
-                            <span class="modal-content-step">Veuillez <strong>autoriser</strong> l'utilisation du microphone.</span>
+                            <h3>1/ Allow the microhpone access to the webpage</h3>
+                            <p>Once the webpage is loaded, a notification should pop on your browser, asking you to <strong>allow microphone access</strong>.
+                                <div class="flex row">
+                                    <img src="/assets/img/audio-browser.jpg" alt="autoriser l'aquisition audio" />
+                                </div>
+                                <span class="modal-content-step">Please <strong>allow</strong> the using of your microphone.</span>
                         </div>
                         <div class="modal-content flex col">
-                            <h3>2/ Prononcer le mot-réveil pour passer en mode "écoute"</h3>
-                            <p>Une fois l'uilisation de votre microphone autorisé, vous devriez voir LinTO apparaitre dans le coin suppérieur gauche de la page. lorsqu'il est en état de "repos", cela signifie qu'il attend qu'on <strong>prononce le mot de réveil</strong>                                "LinTO" avant d'écouter les commandes proncées.</p>
-                            <span class="modal-content-step">Dites : <strong>"LinTO"</strong></span>
-                            <p>Lorsque le mot de réveil est capté par "LinTO", vous devriez entendre un <strong>bip sonore</strong> et voir LinTO passer en état d'<strong>écoute</strong></p>
+                            <h3>2/ Say the wake-up-word</h3>
+
+                            <p>Once you've allowed the using of your microphone, you should see LinTO appear on the top-left corner of your browser. When he is "asleep", that means that he is waiting for someone to say the <strong>wake-up-word</strong> before
+                                listening to your commands.</p>
+                            <span class="modal-content-step">Say : <strong>"LinTO"</strong></span>
+
+                            <p>If LinTO correctly understood the wake-up-word, you should hear a <strong>"beep"</strong> and see LinTO changing state. He is now listening to your commands</p>
 
                         </div>
                         <div class="modal-content flex col">
-                            <h3>3/ Prononcer une commande</h3>
-                            <p>Lorsque le mot de réveil a été capté et que LinTO est en mode écoute, <strong>prononcez une commande</strong> parmis celle renseignées sur la page.</p>
-                            <span class="modal-content-step">Dites : <strong>"bloc suivant"</strong></span>
+                            <h3>3/ Ask for interaction</h3>
+                            <p>Once LinTO is "listening", <strong>say a command</strong> among those that are written on the webpage.</p>
+                            <span class="modal-content-step">Say : <strong>"go to next block"</strong></span>
 
                         </div>
                     </div>
                     <div class="flex col linto-helper-states">
-                        <h3>Status de LinTO</h3>
+                        <h3>LinTO states</h3>
                         <div class="linto-helper-state__item flex col">
                             <div class="flex row">
                                 <img src="/assets/img/svg/linto-sleeping.svg" alt="linto sleeping" class="linto-helper-state__img">
                             </div>
-                            <span class="linto-helper-state__label">Passif</span>
+                            <span class="linto-helper-state__label">Sleeping</span>
                         </div>
                         <div class="linto-helper-state__item flex col">
                             <div class="flex row">
                                 <img src="/assets/img/svg/linto-listening.svg" alt="linto listening" class="linto-helper-state__img">
                             </div>
-                            <span class="linto-helper-state__label">Ecoute</span>
+                            <span class="linto-helper-state__label">Listening</span>
                         </div>
                         <div class="linto-helper-state__item flex col">
                             <div class="flex row">
                                 <img src="/assets/img/svg/linto-thinking.svg" alt="linto thinking" class="linto-helper-state__img">
                             </div>
-                            <span class="linto-helper-state__label">Recherche</span>
+                            <span class="linto-helper-state__label">Searching</span>
                         </div>
                     </div>
                 </div>

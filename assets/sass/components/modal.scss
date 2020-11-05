@@ -20,6 +20,8 @@
     max-height: 720px;
     background-color: #fff;
     @include blockShadowStrong();
+    padding: 20px;
+    overflow: hidden;
 }
 
 .modal-header {
@@ -69,7 +71,7 @@
 }
 
 .modal-body {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     max-height: 600px;
     overflow: auto;
     .modal-content {
