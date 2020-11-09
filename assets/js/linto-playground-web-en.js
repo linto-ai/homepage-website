@@ -170,13 +170,14 @@ let askFeedback = async function(event) {
 let streamingChunk = function(event) {
     if (event.detail.behavior.streaming.partial) {
         console.log("Streaming chunk received : ", event.detail.behavior.streaming.partial)
-        $('#dictation').html(window.streamingContent + event.detail.behavior.streaming.partial)
+        $('#dictation').html(window.streamingContent + event.detail.behavior.streaming.partial.toLowerCase())
     }
 
     if (event.detail.behavior.streaming.text) {
         console.log("Streaming utterance completed : ", event.detail.behavior.streaming.text)
-        window.streamingContent += event.detail.behavior.streaming.text + '<br/>'
-        $('#dictation').html(window.streamingContent)
+        window.streamingContent += event.detail.behavior.streaming.text.toLowerCase() + '<br/>'
+
+        $('#dictation').html(window.streamingContent.toLowerCase())
     }
 
 }
@@ -190,7 +191,7 @@ let streamingFinal = function(event) {
 
     const result = JSON.parse(event.detail.behavior.streaming.result)
         //window.streamingContent += ' ' + result.text
-    $('#dictation').html(window.streamingContent)
+    $('#dictation').html(window.streamingContent.toLowerCase())
 }
 let streamingFail = function(event) {
     console.log("Streaming cannot start : ", event.detail)
