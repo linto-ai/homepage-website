@@ -23,12 +23,11 @@
         $(document).ready(async function() {
             /* Slider */
             $('#playground-slider').slick({
-                dots: true,
-                arrows: true,
-                autoplay: false
-            })
-
-            /* Modal */
+                    dots: true,
+                    arrows: true,
+                    autoplay: false
+                })
+                /* Modal */
             $('#helper').on('click', function() {
                 $('#modal').removeClass('hidden').addClass('visible')
             })
@@ -190,7 +189,7 @@
     <!-- PLAYGROUND -->
     <section id="playground-webpage" class="flex row">
         <div class="flex1 flex row">
-            <div id="loading"></div>
+            <div id="loading" class="en"></div>
             <div class="flex col" id="playground-infos">
                 <div class="flex row" id="linto-container">
                     <div id="linto" class="flex1 flex row">
@@ -247,7 +246,7 @@
                         <h3 class="playground-content-block__title">The third block title</h3>
                         <p class="playground-content-block__content">This is the content of the third block.</p>
                     </div>
-                    <div class="playground-webpage-content-block" data-index="4" style="margin-top: 300px;">
+                    <div class="playground-webpage-content-block" data-index="4">
                         <h3 class="playground-content-block__title">Title of the last block</h3>
                         <p class="playground-content-block__content">This is the content of the last block.</p>
                     </div>
@@ -257,7 +256,7 @@
             <div class="flex2 flex col" id="playground-webpage-media">
                 <div class="flex row">
                     <div class="flex1 flex col playground-webpage-area" id="playground-webpage-dictation">
-                        <h2>Speech to text streaming</h2>
+                        <h2>Dictation</h2>
                         <button id="toggle-streaming" class="disabled" data-lang="en">Streaming off</button>
                         <div id="dictation" class="flex1"></div>
                     </div>
@@ -274,7 +273,7 @@
                         <div class="flex col playground-webpage-area" id="playground-webpage-image">
                             <h2>Enlarge a picture</h2>
                             <div class="flex row">
-                                <img class="lightbox__img" src="/assets/img/slider/cat1.jpg" alt="cat - credits unsplash.com" />
+                                <img class="lightbox__img" src="/assets/img/slider/cat2.jpg" alt="cat - credits unsplash.com" />
                             </div>
                         </div>
                     </div>
@@ -305,31 +304,31 @@
                     <div class="flex1 flex col">
                         <div class="modal-content flex col">
                             <h3>How does it work ?</h3>
-                            <p>Welcome to the demonstration page of LinTO in a web browser. Navigation and actions can be triggered by voice, thanks to LinTO assistant. Please follow the instructions to be able to use vocal commands.</p>
+                            <p>Welcome to the demonstration page of LinTO in a web browser. Navigation and actions in a browser can be triggered by your voice thanks to the LinTO assistant. Please follow the instructions to use vocal commands.
+                            </p>
                         </div>
                         <div class="modal-content flex col">
                             <h3>1/ Allow the microhpone access to the webpage</h3>
-                            <p>Once the webpage is loaded, a notification should pop on your browser, asking you to <strong>allow microphone access</strong>.
+                            <p>Once the webpage is loaded, a notification should pop in your browser, asking you to <strong>allow microphone access</strong>.
                                 <div class="flex row">
                                     <img src="/assets/img/audio-browser.jpg" alt="autoriser l'aquisition audio" />
                                 </div>
-                                <span class="modal-content-step">Please <strong>allow</strong> the using of your microphone.</span>
+                                <span class="modal-content-step">Please <strong>allow</strong> the use of your microphone.</span>
                         </div>
                         <div class="modal-content flex col">
-                            <h3>2/ Say the wake-up-word</h3>
+                            <h3>2/ Say the wake word</h3>
 
-                            <p>Once you've allowed the using of your microphone, you should see LinTO appear on the top-left corner of your browser. When he is "asleep", that means that he is waiting for someone to say the <strong>wake-up-word</strong> before
-                                listening to your commands.</p>
+                            <p>Once you've allowed the use of your microphone, you should see LinTO appear on the top left corner of your browser. When he is "asleep" you can wake him up by <strong>saying the wake word clearly</strong>, and then he will
+                                be ready to listen to your commands.</p>
                             <span class="modal-content-step">Say : <strong>"LinTO"</strong></span>
 
-                            <p>If LinTO correctly understood the wake-up-word, you should hear a <strong>"beep"</strong> and see LinTO changing state. He is now listening to your commands</p>
+                            <p> If LinTO correctly understood the wake-up-word, you should hear a <strong>"beep"</strong> and see LinTO changing waking up. He is now listening!</p>
 
                         </div>
                         <div class="modal-content flex col">
-                            <h3>3/ Ask for interaction</h3>
-                            <p>Once LinTO is "listening", <strong>say a command</strong> among those that are written on the webpage.</p>
+                            <h3>3/ Say a command</h3>
+                            <p>Once LinTO is "listening", try using one of the <strong>commands</strong> displayed on the webpage.</p>
                             <span class="modal-content-step">Say : <strong>"go to next block"</strong></span>
-
                         </div>
                     </div>
                     <div class="flex col linto-helper-states">
