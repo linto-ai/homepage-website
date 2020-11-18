@@ -90,48 +90,43 @@ let disableAccessibility = function() {
 }
 
 let mqttConnectHandler = function(event) {
-    console.log("mqtt up !")
+    console.log("MQTT: connected")
 }
 
 let mqttConnectFailHandler = function(event) {
-    console.log("Mqtt failed to connect : ")
+    console.log("MQTT: failed to connect")
     console.log(event)
 }
 
 let mqttErrorHandler = function(event) {
-    console.log("An MQTT error occured : ", event.detail)
+    console.log("MQTT: error")
+    console.log(event.detail)
 }
 
 let mqttDisconnectHandler = function(event) {
-    console.log("MQTT Offline")
+    console.log("MQTT: Offline")
 }
 let audioSpeakingOn = function(event) {
-    console.log("Speaking")
+    // console.log("Speaking")
     window.speaking = 'on'
-
 }
 
 let audioSpeakingOff = function(event) {
-    console.log("Not speaking")
+    // console.log("Not speaking")
     window.speaking = 'off'
-    window.lintoMicVolume = 0
-
 }
 
 let commandAcquired = function(event) {
-    console.log("Command acquired")
+    // console.log("Command acquired")
     lintoThink()
-    window.lintoMicNode.disconnect(window.lintoMic.audioContext.destination)
-    cancelAnimationFrame(drawSound)
-    $('#volume').removeClass('visible').addClass('hidden')
 }
 
 let commandPublished = function(event) {
-    console.log("Command published id :", event.detail)
+    // console.log("Command published id :", event.detail)
 }
 
 let hotword = function(event) {
-    console.log("Hotword triggered : ", event.detail)
+    // console.log("Hotword triggered : ", event.detail)
     const audioPlayer = document.getElementById('podcast')
     if (!audioPlayer.paused) {
         audioPlayer.volume = 0.1
@@ -142,55 +137,48 @@ let hotword = function(event) {
     window.lintoUISound.src = '/assets/audio/linto/beep3.wav'
     window.lintoUISound.play()
     lintoListen()
-
-    $('#volume').removeClass('hidden').addClass('visible')
-    window.lintoMicNode.connect(window.lintoMic.audioContext.destination)
-    requestAnimationFrame(drawSound)
 }
 
 let commandTimeout = function(event) {
-    console.log("Command timeout, id : ", event.detail)
+    // console.log("Command timeout, id : ", event.detail)
 }
 
 let sayFeedback = async function(event) {
-    console.log("Saying : ", event.detail.behavior.say.text, " ---> Answer to : ", event.detail.transcript)
+    // console.log("Saying : ", event.detail.behavior.say.text, " ---> Answer to : ", event.detail.transcript)
 
     // If no command found
-    window.lintoUISound.src = '../assets/audio/linto/beep4.wav'
+    window.lintoUISound.src = '/assets/audio/linto/beep4.wav'
     window.lintoUISound.play()
     lintoSleep();
     await linto.say(linto.lang, event.detail.behavior.say.text)
 }
 
 let askFeedback = async function(event) {
-    console.log("Asking : ", event.detail.behavior.ask.text, " ---> Answer to : ", event.detail.transcript)
+    // console.log("Asking : ", event.detail.behavior.ask.text, " ---> Answer to : ", event.detail.transcript)
     await linto.ask(linto.lang, event.detail.behavior.ask.text)
 }
 
 let streamingChunk = function(event) {
     if (event.detail.behavior.streaming.partial) {
-        console.log("Streaming chunk received : ", event.detail.behavior.streaming.partial)
-        $('#dictation').html(window.streamingContent + event.detail.behavior.streaming.partial)
+        // console.log("Streaming chunk received : ", event.detail.behavior.streaming.partial)
+        $('#dictation').html(window.streamingContent.toLowerCase() + event.detail.behavior.streaming.partial.toLowerCase())
     }
 
     if (event.detail.behavior.streaming.text) {
-        console.log("Streaming utterance completed : ", event.detail.behavior.streaming.text)
+        // console.log("Streaming utterance completed : ", event.detail.behavior.streaming.text)
         window.streamingContent += event.detail.behavior.streaming.text + '<br/>'
-        $('#dictation').html(window.streamingContent)
+        $('#dictation').html(window.streamingContent.toLowerCase())
     }
 
 }
 
 let streamingStart = function(event) {
-    console.log("Streaming started with no errors")
+    // console.log("Streaming started with no errors")
 }
 
 let streamingFinal = function(event) {
-    console.log("Streaming ended, here's the final transcript : ", event.detail.behavior.streaming.result)
-
-    const result = JSON.parse(event.detail.behavior.streaming.result)
-        //window.streamingContent += ' ' + result.text
-    $('#dictation').html(window.streamingContent)
+    // console.log("Streaming ended, here's the final transcript : ", event.detail.behavior.streaming.result)
+    $('#dictation').html(window.streamingContent.toLowerCase())
 }
 let streamingFail = function(event) {
     console.log("Streaming cannot start : ", event.detail)
@@ -254,38 +242,11 @@ let customHandler = async function(event) {
         audioPlayer.volume = 1
         audioPlayer.setAttribute('data-tmppause', false)
     }
-    console.log(`${event.detail.behavior.customAction.kind} fired`)
-    console.log(event.detail.behavior)
-    console.log(event.detail.transcript)
+    // console.log(`${event.detail.behavior.customAction.kind} fired`)
+    // console.log(event.detail.behavior)
+    // console.log(event.detail.transcript)
 }
 
-let findContext = function() {
-    return new Promise((resolve, reject) => {
-        if (!!linto.audio.mic.audioContext && typeof(linto.audio.mic) !== 'undefined') {
-            resolve(linto.audio.mic)
-        } else {
-            setTimeout(() => {
-                if (!!linto.audio.mic || typeof(linto.audio.mic) === 'undefined') {
-                    $('#loading').addClass('hidden')
-                    resolve(linto.audio.mic)
-                } else {
-                    console.log('context not found after 1.5 sec')
-                    resolve(null)
-                }
-            }, 1500)
-        }
-    })
-}
-let drawSound = function(timestamp) {
-    if (window.speaking === 'on') {
-        if (window.lintoMicVolume > 15) {
-            $('#volume-bar').attr('style', 'height:' + window.lintoMicVolume + '%')
-        }
-    } else {
-        $('#volume-bar').attr('style', 'height: 0%')
-    }
-    requestAnimationFrame(drawSound)
-}
 window.start = async function() {
     try {
         //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL 
@@ -312,32 +273,7 @@ window.start = async function() {
         await linto.login()
         linto.startAudioAcquisition(true, "linto", 0.99) // Uses hotword built in WebVoiceSDK by name / model / threshold (0.99 is fine enough)
         linto.startCommandPipeline()
-
-        window.lintoMicVolume = 0
-        window.lintoMic = await findContext()
-        window.lintoMicNode = window.lintoMic.audioContext.createScriptProcessor(4096, 1, 1)
-        window.lintoMicAnalyzer = window.lintoMic.audioContext.createAnalyser()
-        window.lintoMicAnalyzer.fftSize = 256
-        window.lintoMicAnalyzer.smoothingTimeConstant = 0.8
-        window.lintoMic.mediaStreamSource.connect(window.lintoMicAnalyzer)
-        window.lintoMicAnalyzer.connect(window.lintoMicNode)
-        window.soundAnim = false
-
-        // Get microphone volume on audio process
-        window.lintoMicNode.onaudioprocess = function(e) {
-            tempArray = new Uint8Array(window.lintoMicAnalyzer.frequencyBinCount)
-            window.lintoMicAnalyzer.getByteFrequencyData(tempArray)
-            const length = tempArray.length
-            let values = 0
-            for (let i = 0; i < length; i++) {
-                values += tempArray[i]
-            }
-            let avgVolume = values / length
-            if (avgVolume > 100) {
-                avgVolume = 100
-            }
-            window.lintoMicVolume = avgVolume
-        }
+        $('#loading').addClass('hidden')
 
         const animationContainer = document.getElementById('linto-animation')
         window.lintoAnim = lottie.loadAnimation({
@@ -393,7 +329,6 @@ window.start = async function() {
         console.log(e)
         return e.message
     }
-
 }
 
 start()

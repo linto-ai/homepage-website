@@ -90,8 +90,13 @@
         width: 100%;
         height: 100%;
         z-index: 30;
-        &:after {
+        &.fr:after {
             content: "Chargement...";
+        }
+        &.en:after {
+            content: "Loading...";
+        }
+        &:after {
             display: inline-block;
             width: 100%;
             text-align: center;
