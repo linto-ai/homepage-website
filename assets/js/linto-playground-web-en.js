@@ -249,8 +249,9 @@ let customHandler = async function(event) {
 
 window.start = async function() {
     try {
-        //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "czeihcL8ciaaRwtn", 10000) // dev.linto.local 
-        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "rfkY8MYDZroVbwxK", 10000) // linto-test.netlify.app 
+        // TODO > declare host on alpha.linto.ai
+        // window.linto = new Linto("https://alpha.linto.ai/overwatch/local/web/login", "TO_GENERATE", 10000) // LOCAL
+        //window.linto = new Linto("https://alpha.linto.ai/overwatch/local/web/login", "TO_GENERATE", 10000) // PROD
 
         // Some feedbacks for UX implementation
         linto.addEventListener("mqtt_connect", mqttConnectHandler)
