@@ -2,390 +2,565 @@
 <html>
 
 <head>
-  <title>LinTO, open source end-to-end platform for voice-operated solutions</title>
-  <meta charset="utf-8">
-  <meta name="author" content="Linagora" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="language" content="en-GB" />
-  <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-  <link rel="shortcut icon" type="image/png" href="/favicon-32x32.png" />
-  <!-- Scripts -->
-  <script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="./assets/js/jquery.modal.min.js"></script>
-  <script type="text/javascript" src="./assets/js/axios.min.js"></script>
-  <script type="text/javascript" src="./assets/js/lottie.min.js"></script>
-  <script type="text/javascript" src="./assets/js/main.js"></script>
-  <script type="text/javascript" src="./assets/js/home.js"></script>
-  <script type="text/javascript" src="./assets/js/contact-en.js"></script>
-  <script type="text/javascript" src="./assets/js/slick.min.js"></script>
-  <script type="text/javascript" src="./assets/js/ScrollMagic.min.js"></script>
-  <!-- Matomo Tag Manager -->
-  <script type="text/javascript">
-    var _mtm = _mtm || [];
-    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://piwik.linagora.com/piwik/js/container_Fcxr1OWo.js'; s.parentNode.insertBefore(g,s);
-  </script>
-  <!-- End Matomo Tag Manager -->
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="./assets/css/slick.css" />
-  <link rel="stylesheet" type="text/css" href="./assets/css/slick-theme.css" />
-  <link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css" />
+    <title>LinTO, open source end-to-end platform for voice-operated solutions</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Linagora" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en-GB" />
+    <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
+    <!-- Scripts -->
+    <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lottie.min.js"></script>
+    <script type="text/javascript" src="/assets/js/navigation.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            /* Preload hidden images */
+            function preloadHiddenImages() {
+                $('footer').append(`
+                <div class="hidden">
+                  <img src="/assets/img/svg/accessibility-white.svg" />
+                  <img src="/assets/img/svg/healthcare-white.svg" />
+                  <img src="/assets/img/svg/vocal-white.svg" />
+                  <img src="/assets/img/svg/developer-white.svg" />
+                  <img src="/assets/img/svg/building-white.svg" />
+                  <img src="/assets/img/svg/accessibility-bluedark.svg" />
+                  <img src="/assets/img/svg/healthcare-bluedark.svg" />
+                  <img src="/assets/img/svg/vocal-bluedark.svg" />
+                  <img src="/assets/img/svg/developer-bluedark.svg" />
+                  <img src="/assets/img/svg/building-bluedark.svg" />
+                  </div>
+              `)
+            }
+            preloadHiddenImages()
+
+            /* LinTO animation */
+            setTimeout(() => {
+                let jsonPath = '/assets/json/animation.json'
+                const animationContainer = document.getElementById('animation-home')
+                lottie.loadAnimation({
+                    container: animationContainer, // the dom element that will contain the animation
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: jsonPath, // the path to the animation json
+                    rendererSettings: {
+                        className: 'linto-animation-home'
+                    }
+                })
+            }, 100)
+
+            /* Accessibility panel */
+            $('#accessibility').on('click', function() {
+                $('#accessibility-panel').toggleClass('hidden')
+            })
+            $('.accessibility-panel--close').on('click', function() {
+                $('#accessibility-panel').toggleClass('hidden')
+            })
+
+            // Enable/disable highlight titles
+            $('#accessibility-highlight').on('click', function() {
+                $('h1, h2, h3, h4').toggleClass('highlighted')
+                if ($(this).hasClass('disabled')) {
+                    $(this).removeClass('disabled').addClass('enabled')
+                } else if ($(this).hasClass('enabled')) {
+                    $(this).removeClass('enabled').addClass('disabled')
+                }
+            })
+
+            // Enable/disable dyslexia font
+            $('#accessibility-dyslexia').on('click', function() {
+                $('body').toggleClass('dyslexia')
+                if ($(this).hasClass('disabled')) {
+                    $(this).removeClass('disabled').addClass('enabled')
+                } else if ($(this).hasClass('enabled')) {
+                    $(this).removeClass('enabled').addClass('disabled')
+                }
+            })
+
+            // Enable/disable hight contrast
+            $('#accessibility-contrast').on('click', function() {
+                if ($(this).hasClass('disabled')) {
+                    $(this).removeClass('disabled').addClass('enabled')
+                } else if ($(this).hasClass('enabled')) {
+                    $(this).removeClass('enabled').addClass('disabled')
+                }
+                $('#home-top').toggleClass('contrasted')
+                $('#privacy-matters').toggleClass('contrasted')
+                $('.footer__label').toggleClass('contrasted')
+                if ($('#home-top').hasClass('contrasted')) {
+                    $('#trylinto-link').removeClass('btn--bluedark').addClass('btn--white')
+                    $('#contact-form__submit').removeClass('btn--purple').addClass('btn--white')
+                    $('footer .btn--purple').removeClass('btn--purple').addClass('btn--white')
+                } else {
+                    $('#trylinto-link').addClass('btn--bluedark').removeClass('btn--white')
+                    $('#contact-form__submit').addClass('btn--purple').removeClass('btn--white')
+                    $('footer .btn--purple').addClass('btn--purple').removeClass('btn--white')
+                }
+            })
+
+            // Zoom text
+            $('#accessibility-zoom').on('click', function() {
+                if ($(this).hasClass('disabled')) {
+                    $(this).removeClass('disabled').addClass('enabled')
+                } else if ($(this).hasClass('enabled')) {
+                    $(this).removeClass('enabled').addClass('disabled')
+                }
+                $('body').toggleClass('zoom')
+            })
+        })
+    </script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css" />
 </head>
+
 <body>
-  <!-- modal-->
-  <div id="ex1" class="modal">
-    <a href="https://www.voicetechparis.com" target="_blank"><img src="./assets/img/parisvoicetech.jpg"
-        style="width:800px; height:600px" /></a>
-  </div>
-  <div id="main">
     <!-- HEADER -->
-    <header id="header">
-      <div class="wrapper flex row" id="desktop-nav">
-        <div class="flex logo-container">
-          <a href="index"><img src="./assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai" /></a>
-        </div>
-        <div>
-          <div id="lang-container">
-            <div class="lang-btn-container">
-              <button id="lang-btn" class="lang-selector closed">
-                <span class="icon en"></span>
-                <span class="label">EN</span>
-              </button>
-              <div class="lang-list hidden">
-                <button class="lang-selector lang-update" data-href="/fr/" data-lang="fr">
-                  <span class="icon fr"></span>
-                  <span class="label">FR</span>
-                </button>
-              </div>
+    <nav id="header">
+        <div class="flex row wrapper">
+            <div class="flex header--logo-container">
+                <a href="/" class="header--logo"></a>
+
             </div>
-          </div>
-        </div>
-        <nav class="flex1 navigation flex column">
-          <a href="index" class="nav-link active">Homepage</a>
-          <a href="enterprises" class="nav-link">Enterprise solutions</a>
-          <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
-          <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research
-            project</a>
-          <a href="#contact" class="nav-link">Contact us</a>
-        </nav>
-      </div>
-      
-      <div class="wrapper flex row" id="burger-nav">
-        <div class="logo-container">
-          <a href="index"><img src="./assets/img/linto-ai.svg" class="linto-ai-logo" alt="linto.ai" /></a>
-        </div>
-        <div>
-          <div id="lang-container">
-            <div class="lang-btn-container">
-              <button id="lang-btn-burger" class="lang-selector closed">
-                <span class="icon en"></span>
-                <span class="label">EN</span>
-              </button>
-              <div class="lang-list hidden">
-                <button class="lang-selector lang-update" data-href="/fr/" data-lang="fr">
-                  <span class="icon fr"></span>
-                  <span class="label">FR</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex1 burger-menu-container flex row">
-          <button id="burger-menu" class="closed"></button>
-          <div id="burger-menu-nav" class="hidden">
-            <nav class="flex3 navigation flex col">
-              <a href="index" class="nav-link active">Homepage</a>
-              <a href="enterprises" class="nav-link">Enterprise solutions</a>
-              <a href="https://doc.linto.ai/" class="nav-link" target="_blank">Developer resources</a>
-              <a href="https://research.linagora.com/display/home/Home" target="_blank" class="nav-link">Research
-                project</a>
-              <a href="#contact" class="nav-link">Contact us</a>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div id="page-content">
-      <section id="home" class="gradient">
-        
-        <div class="wrapper flex row">
-          <div class="flex1 flex col home-title-container">
-            <h1 class="home-title">Your open source end-to-end platform for voice-operated solutions</h1>
-            <a href="#solutions" class="cta-link">Try LinTO</a>
-          </div>
-          <div class="flex1 linto-home-container" id="linto-animated">
-          </div>
-        </div>
-      </section>
-      <section id="batteries-included" class="white-shadow">
-        <div class="wrapper flex col">
-          <h2 class="section-title">Batteries included !</h2>
-          <div class="flex row charactertics-wrapper">
-            <div class="characteristics-item-container flex1 flex col">
-              <!-- Voice command -->
-              <div class="characteristics-item flex row flex1">
-                <div class="icon-container">
-                  <span class="icon voice"></span>
+            <div class="flex row flex1 header--nav">
+                <div class="header--nav-link__parent-container">
+                    <a href="/setup" class="header--nav-link">Installation</a>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#" id="playground" class="header--nav-link header--nav-link__parent">Essayer LinTO</a>
+                    <div data-parent="playground" class="header--nav-children hidden flex col">
+                        <div class="flex row">
+                            <a href="/playground/webpage" class="header--nav-link__child link--arrow">Dans votre navigateur</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/playground/meeting-room" class="header--nav-link__child link--arrow">Dans une salle de réunion</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#" id="products" class="header--nav-link header--nav-link__parent">Produits open source</a>
+                    <div data-parent="products" class="header--nav-children hidden flex col">
+                        <div class="flex row">
+                            <a href="/products/speech-to-text-engine" class="header--nav-link__child link--arrow">Dictée vocale</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/multiplatform-voice-access-endpoint" class="header--nav-link__child link--arrow">Points d'accès vocal multi-plateforme</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/conversational-ai-and-chatbots" class="header--nav-link__child link--arrow">Robots conversationnels augmentés par IA</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/customizable-wake-word-detection" class="header--nav-link__child link--arrow">Détection de mots réveil personnalisés</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/productivity-and-skills-development-toolkit" class="header--nav-link__child link--arrow">Outils de fonctionnalités et de productivité</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/linto-voice-assistant" class="header--nav-link__child link--arrow">Assistant vocal LinTO</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/fleet-management" class="header--nav-link__child link--arrow">Management de flottes</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#" id="markets" class="header--nav-link header--nav-link__parent">Marchés</a>
+                    <div data-parent="markets" class="header--nav-children hidden flex col">
+                        <div class="flex row">
+                            <a href="/markets/healthcare" class="header--nav-link__child link--arrow">Santé</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/voice-enabled-web-applications" class="header--nav-link__child link--arrow">Applications web activées à la voix</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/smart-building-smart-office" class="header--nav-link__child link--arrow">Smart Building & salles de réunions</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/user-accessibility" class="header--nav-link__child link--arrow">Accessibilité</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/hobbyist-hackers-and-ai-enthousiast" class="header--nav-link__child link--arrow">Hackers et développeurs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="https://doc.linto.ai/" class="header--nav-link" target="_blank">Documentation</a>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#contact" class="header--nav-link">Contact</a>
                 </div>
 
-                <div class="content-container">
-                  <h3>Voice control</h3>
-                  <p>Your end-customer pilots their applications without lifting a finger</p>
+                <div class="header--nav-link__parent-container custom contribute">
+                    <a href="https://github.com/linto-ai" target="_blank" class="header--nav-link border contribute link--arrow">Contribuer</a>
                 </div>
-              </div>
-              <!-- END Voice command -->
-              <!-- Rich vocabulary -->
-              <div class="characteristics-item flex row flex1">
-                <div class="icon-container">
-                  <span class="icon vocabulary"></span>
+            </div>
+        </div>
+    </nav>
+    <nav id="header-mobile" class="closed">
+        <div class="flex row wrapper">
+            <div class="flex header--logo-container">
+                <a href="/" class="header--logo"></a>
+            </div>
+            <div class="flex1 header--burger-btn-container flex row">
+                <button id="header--burger-btn"></button>
+            </div>
+        </div>
+        <div id="mobile-nav" class="flex col hidden">
+            <div class="flex row">
+                <div class="flex1 flex col parents-links">
+                    <a href="/setup" class="header-mobile--nav-link">Installation</a>
+                    <a href="/setup" class="header-mobile--nav-link">Documentation</a>
+                    <a href="/setup" class="header-mobile--nav-link">Contact</a>
+                    <a href="https://github.com/linto-ai" target="_blank" class="header-mobile--nav-link">Contribuer</a>
                 </div>
-                <div class="content-container">
-                  <h3>Large vocabulary</h3>
-                  <p>Live retraining of AI models with business-wise dictionaries</p>
+                <div class="flex1 flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Essayer LinTO</span>
+                    <a href="/playground/webpage" class="header-mobile--nav-link child">Dans votre navigateur</a>
+                    <a href="/playground/meeting-room" class="header-mobile--nav-link child">Dans une salle de réunion</a>
                 </div>
-              </div>
-              <!-- END Rich vocabulary -->
-              <!-- Easy intergration -->
-              <div class="characteristics-item flex row flex1">
-                <div class="icon-container">
-                  <span class="icon integration"></span>
-                </div>
-                <div class="content-container">
-                  <h3>Easy integration</h3>
-                  <p>Integrates seamlessly in your workflows</p>
-                </div>
-              </div>
-              <!-- END Easy intergration -->
             </div>
 
-            <div class="characteristics-item-container flex1 flex col">
-              <!-- Increase productivity -->
-              <div class="characteristics-item flex row flex1">
-                <div class="icon-container">
-                  <span class="icon productivity"></span>
+            <div class=" flex col">
+                <div class="flex1 flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Produits open source</span>
+                    <a href="/products/speech-to-text-engine" class="header-mobile--nav-link child">Dictée vocale</a>
+                    <a href="/products/multiplatform-voice-access-endpoint" class="header-mobile--nav-link child">Points d'accès vocal multi-plateforme</a>
+                    <a href="/products/conversational-ai-and-chatbots" class="header-mobile--nav-link child">Robots conversationnels augmentés par IA</a>
+                    <a href="/products/customizable-wake-word-detection" class="header-mobile--nav-link child">Détection de mots réveil personnalisés</a>
+                    <a href="/products/productivity-and-skills-development-toolkit" class="header-mobile--nav-link child">Outils de fonctionnalités et de productivité</a>
+                    <a href="/products/linto-voice-assistant" class="header-mobile--nav-link child">Assistant vocal LinTO</a>
+                    <a href="/products/fleet-management" class="header-mobile--nav-link child">Management de flottes</a>
                 </div>
+                <div class=" flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Marchés</span>
+                    <a href="/markets/healthcare" class="header-mobile--nav-link child">Santé</a>
+                    <a href="/markets/voice-enabled-web-applications" class="header-mobile--nav-link child">Applications web activées à la voix</a>
+                    <a href="/markets/smart-building-smart-office" class="header-mobile--nav-link child">Smart Building & salles de réunions</a>
+                    <a href="/markets/user-accessibility" class="header-mobile--nav-link child">Accessibilité</a>
+                    <a href="/markets/hobbyist-hackers-and-ai-enthousiast" class="header-mobile--nav-link child">Hackers et développeurs</a>
+                </div>
+            </div>
 
-                <div class="content-container">
-                  <h3>Increase productivity</h3>
-                  <p>Boost employee productivity with hands-free natural user interfaces</p>
-                </div>
-              </div>
-              <!-- END Increase productivity -->
-              <!-- Automated skills deployment -->
-              <div class="characteristics-item flex row flex1">
-                <div class="icon-container">
-                  <span class="icon skills"></span>
-                </div>
-                <div class="content-container">
-                  <h3>Automated skills deployment</h3>
-                  <p>Easy management of new vocabulary and skills</p>
-                </div>
-              </div>
-              <!-- END Automated skills deployment -->
-              <!-- Open source by design -->
-              <div class="characteristics-item flex row flex1">
-                <div class="icon-container">
-                  <span class="icon opensource"></span>
-                </div>
-                <div class="content-container">
-                  <h3>Open source by design</h3>
-                  <p>Free, on premise, GDPR compliant, and no GAFAM aboard!</p>
-                </div>
-              </div>
-              <!-- END Open source by design -->
-            </div>
-          </div>
         </div>
-      </section>
-      <section id="hdiw" class="gradient">
-        <div class="wrapper flex col">
-          <h2 class="section-title">How does it work ?</h2>
-          <div class="flex row hdiw-wrapper">
-            <div class="hdiw-controls flex1 flex col">
-              <div class="controls">
-                <button data-index="1" class="hdiw-control active">1</button>
-                <button class="hdiw-control" data-index="2">2</button>
-                <button data-index="3" class="hdiw-control">3</button>
-                <button data-index="4" class="hdiw-control">4</button>
-              </div>
-              <div class="content white-box">
-                <div class="hdiw-content-container">
-                  <div data-index="1" class="hdiw-content flex1 active">
-                    <h3>Voice enabled client</h3>
-                    <ul class="content-list">
-                      <li>Custom HotWords to wake up your LinTO client</li>
-                      <li>Meeting mode with spontaneous multi-party speech</li>
-                      <li>Simple voice commands or large vocabulary integration</li>
-                    </ul>
-                  </div>
-                  <div data-index="2" class="hdiw-content flex1 hidden">
-                    <h3>On premise or SaaS Speech-to-text API</h3>
-                    <ul class="content-list">
-                      <li>Flexible and scalable APIs to handle streaming & audio files</li>
-                      <li>AI based transcription that uses your custom vocabulary</li>
-                      <li>State of the art Word Error Rate</li>
-                    </ul>
-                  </div>
-                  <div data-index="3" class="hdiw-content flex1 hidden">
-                    <h3>Evaluation</h3>
-                    <ul class="content-list">
-                      <li>AI based Natural Language Understanding engine</li>
-                      <li>Intention recognition from text triggering corresponding skills</li>
-                      <li>Automated lexical data augmentation for dictionaries and scenarios</li>
-                    </ul>
-                  </div>
-                  <div data-index="4" class="hdiw-content flex1 hidden">
-                    <h3>Trigger any application with LinTO</h3>
-                    <ul class="content-list">
-                      <li>Modular skills to access any device, API, productivity platform, etc.</li>
-                      <li>Integrates securely into complex workflows</li>
-                      <li>Graphically describe and parametrize your use-cases</li>
-                    </ul>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class="hdiw-animation flex2" id="hdiw-animation">
-              <div class="hdiw-controls-arrow">
-                <button class="hdiw-arrow prev disabled"></button>
-                <button class="hdiw-replay enabled" data-index="1"></button>
-                <button class="hdiw-arrow next enabled"></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="solutions" class="white-shadow">
-        <div class="wrapper flex col">
-          <h2 class="section-title">Solutions</h2>
-          <div class="solution-content-container flex row">
-            <div class="flex1 solution-content ">
-              <h3>The natural voice interface for your company</h3>
-              <p>LinTO will enable you to deploy voice control effectively and efficiently.<br />
-                Let’s explore platform features for your business:</p>
-              <a href="enterprises.html" class="cta-link">Enterprise solutions</a>
-
-              <div id="use-cases-slider">
-                <div class="use-case-item">
-                  <h4>At the heart of your meeting room</h4>
-                  <img src="./assets/img/illustrations/illustration_01.png" class="slider-img">
-                </div>
-                <div class="use-case-item">
-                  <h4>Hands-free processes for better productivity</h4>
-                  <img src="./assets/img/illustrations/illustration_02.png" class="slider-img">
-                </div>
-                <div class="use-case-item">
-                  <h4>Vocal control anywhere in your office</h4>
-                  <img src="./assets/img/illustrations/illustration_03.png" class="slider-img">
-                </div>
-                <div class="use-case-item">
-                  <h4>The open source framework that propels business-aware, private by design, smart-assistants</h4>
-                  <img src="./assets/img/illustrations/illustration_05.png" class="slider-img">
-                </div>
-              </div>
-            </div>
-            <div class="flex1 solution-content ">
-              <h3>Developer? Try it yourself!</h3>
-              <p>Take a look at the LinTO platform documentation and technical resources.<br />
-                Browse existing skills, imagine your own, and contribute!</p>
-              <a href="https://doc.linto.ai/" target="_blank" class="cta-link">Developer resources</a>
-
-              <h3 class="raspberry-title">LinTO for Raspberry pi</h3>
-              <p>The LinTO for Raspberry Pi client, when paired with your LinTO voice platform, is the only 100% open
-                source, 100% private, DIY smart assistant.</p>
-              <img src="./assets/img/raspberry-schema.svg" class="raspberry-schema" alt="raspberry pi 3 schema">
-              <p><a href="https://doc.linto.ai/#/client/rpi" target="_blank" class="cta-link">Read more</a></p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="partners" class="gradient">
-        <div class="wrapper flex col">
-          <h2 class="section-title">Research project partners</h2>
-          <div class="partners-container flex row">
-            <a href="https://linagora.com/" target="_blank">
-              <img src="./assets/img/logo-linagora.png" alt="Linagora" class="partner-logo" />
-            </a>
-            <a href="https://www.irit.fr/" target="_blank">
-              <img src="./assets/img/logo-irit.png" alt="Irit" class="partner-logo" />
-            </a>
-            <a href="https://www.zelros.com/" target="_blank">
-              <img src="./assets/img/logo-zelros.png" alt="Zelros" class="partner-logo" />
-            </a>
-            <a href="https://www.laas.fr/public/" target="_blank">
-              <img src="./assets/img/logo-laas-cnrs.png" alt="LAAS CNRS" class="partner-logo" />
-            </a>
-            <a href="https://www.polytechnique.edu/fr" target="_blank">
-              <img src="./assets/img/logo-x-polytechnique.png" alt="l'X polytechnique" class="partner-logo" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <section id="wakemeup" class="white-shadow">
-        <div class="wrapper flex col">
-          <div class="section-title-container">
-            <h2 class="section-title">Help us improve our data models</h2>
-          </div>
-          <p >Participate in our keywords campaign by recording your voice and validating audio samples.</p>
-          <a href="https://wakemeup.linto.ai/" target="_blank">
-            <img src="./assets/img/wakemeup-logo.png" class="wakemeup-img" />
-          </a>
-        </div>
-      </section>
-      <section id="contact">
-        <div class="wrapper flex col">
-          <div class="section-title-container">
-            <h2 class="section-title white">Contact us</h2>
-          </div>
-          <div class="contact-wrapper flex row">
-            <div class="flex1 flex col">
-              <div class="field-container flex1">
-                <span class="label">Name<i class="required">*</i> :</span>
-                <input type="text" id="contact-name" class="contact-input" />
-                <span class="error-field username">
-              </div>
-              <div class="field-container flex1">
-                <span class="label">Email<i class="required">*</i> :</span>
-                <input type="text" id="contact-email" class="contact-input" />
-                <span class="error-field email"></span>
-              </div>
-              <div class="field-container flex1">
-                <span class="label">Phone number :</span>
-                <input type="text" id="contact-phone" class="contact-input" />
-                <span class="error-field phone"></span>
-              </div>
-              <div class="field-container flex1">
-                <span class="label">Society :</span>
-                <input type="text" id="contact-society" class="contact-input" />
-                <span class="error-field society"></span>
-              </div>
-            </div>
-            <div class="flex1 flex col">
-              <div class="field-container flex1">
-                <span class="label">Message<i class="required">*</i> :</span>
-                <textarea id="contact-msg" class="contact-textarea"></textarea>
-                <span class="error-field msg"></span>
-              </div>
-              <div class="field-container submit">
-                <button class="submit-btn">Send</button>
-                <div class="send-notif hidden">
-                  <span class="notif-msg"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-      </section>
-      <footer>
-        <div class="copyright">
-          <div class="wrapper">
-            Copyright Linagora 2019 - <a class="footer-link" href="https://linagora.com/privacy-policy"
-              target="_blank">legal notice</a>
-          </div>
-        </div>
+    </nav>
+    <!-- END HEADER -->
+    <!-- ACCESSIBILITY -->
+    <button id="accessibility"></button>
+    <div id="accessibility-panel" class="hidden">
+        <span class="accessibility-panel--title">Paramètres d'accessibilité</span>
+        <button class="accessibility-panel--close"></button>
+        <table id="accessibilty-table">
+            <tbody>
+                <tr>
+                    <td><span class="accesibility--icon highlight"></span></td>
+                    <td><span class="accesibility--label">Highlight titles</span></td>
+                    <td><button class="toggle-accessibilty disabled" id="accessibility-highlight"></button></td>
+                </tr>
+                <tr>
+                    <td><span class="accesibility--icon dyslexia"></span></td>
+                    <td><span class="accesibility--label">Dyslexia font</span></td>
+                    <td><button class="toggle-accessibilty disabled" id="accessibility-dyslexia"></button></td>
+                </tr>
+                <tr>
+                    <td><span class="accesibility--icon contrast"></span></td>
+                    <td><span class="accesibility--label">Hight contrast</span></td>
+                    <td><button class="toggle-accessibilty disabled" id="accessibility-contrast"></button></td>
+                </tr>
+                <tr>
+                    <td><span class="accesibility--icon increase-font"></span></td>
+                    <td><span class="accesibility--label">Increase font size</span></td>
+                    <td><button class="toggle-accessibilty disabled" id="accessibility-zoom"></button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <!-- END ACCESSIBILITY -->
+    <!-- HOME TOP -->
+    <section id="home-top" class="flex row">
+        <div class="wrapper flex1 flex row homepage-title-container">
+            <div class="flex1 flex col">
+                <div class="homepage__title">
+                    <h1>Votre plateforme open-source <br/>pour le contrôle des applications à la voix</h1>
+                </div>
+                <div class="flex row homepage__top-btn">
+                    <a href="/setup" class="btn big link--arrow btn--purple">Commencer</a>
+                    <a href="/playground/webpage" class="btn big link--arrow btn--bluedark" id="trylinto-link">Essayer LinTO dans votre navigateur</a>
+                </div>
+            </div>
+
+            <div class="flex1 flex row">
+                <div id="animation-home"></div>
+            </div>
+        </div>
+    </section>
+    <!-- END HOME TOP -->
+    <!-- PRIVACY MATTERS -->
+    <section class="flex col" id="privacy-matters">
+        <div class="wrapper flex1 flex col">
+            <h2>Le respect de votre vie privée avant tout!</h2>
+            <p class="page-content">
+                LinTO est une solution <strong>open-source</strong> d'assistant vocal vous permettant de prendre le contrôle de vos applications ou de vos pages web à <strong>la voix</strong>. Il se démarque des produits et solutions concurrentes en mettant
+                en avant le <strong>respect de la vie privées et des données personnelles</strong> des utilisateurs et le <strong>respect de la réglementation RGPD</strong>. En effet, aucune donnée vocale n'est conservée ou traitée à des fins commerciales
+                ou publicitaires. Cette problématique est au coeur d'une solution se voulant <strong>innovante</strong>, <strong>accessible</strong> et <strong>gratuite</strong> pour répondre à divers cas d'usages, qu'ils soient personnels ou professionnels.
+            </p>
+
+            <div class="flex row markets-items">
+                <!--<a href="#" class="market-item flex1 flex col">
+                    <span class="market-item__icon banking"></span>
+                    <span class="market-item__label">Banking</span>
+                </a>-->
+                <a href="#" class="market-item flex1 flex col">
+                    <span class="market-item__icon healthcare"></span>
+                    <span class="market-item__label">Santé</span>
+                </a>
+                <a href="#" class="market-item flex1 flex col">
+                    <span class="market-item__icon vocal"></span>
+                    <span class="market-item__label">Applications web activées à la voix</span>
+                </a>
+                <a href="#" class="market-item flex1 flex col">
+                    <span class="market-item__icon building"></span>
+                    <span class="market-item__label">Smart buildings & salles de réunion</span>
+                </a>
+                <a href="#" class="market-item flex1 flex col">
+                    <span class="market-item__icon developer"></span>
+                    <span class="market-item__label">Hackers et développeurs</span>
+                </a>
+                <a href="#" class="market-item flex1 flex col">
+                    <span class="market-item__icon accessibility"></span>
+                    <span class="market-item__label">Accessibilité</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- END PRIVACY MATTERS-->
+
+    <!-- PRODUCTS -->
+    <section class="flex col" id="linto-products">
+        <div class="wrapper flex1 flex col">
+            <h2>Découvrez nos produits open-source</h2>
+            <p class="page-content">
+                La plateforme LinTO est composée de plusieurs "briques" techniques répondant chacunes à une problématique autour de la <strong>reconnaissance de la parole</strong>, de la <strong>transcription de texte</strong> assistée par intelligence
+                artificielle, et de la <strong>programmation d’actions définies par un processus personnalisé</strong>. <br/> Découvrez les différents produits autours desquels est articulée notre plateforme.
+            </p>
+
+            <div class="flex row products-items">
+                <a href="/products/speech-to-text-engine" class="product-item flex1 flex col">
+                    <h3 class="product-item__label">Dictée vocale</h3>
+                    <span class="product-item__desc">Pierre angulaire de notre plateforme, ce composant permet de réaliser la transcription textuelle d’audios via une API.</span>
+                </a>
+                <a href="/products/multiplatform-voice-access-endpoint" class="product-item flex1 flex col">
+                    <h3 class="product-item__label">Points d'accès vocales multi-plateforme</h3>
+                    <span class="product-item__desc">Déployez LinTO sur une tablette ou un smartphone android, sur votre navigateur ou sur un client hardware.</span>
+                </a>
+                <a href="/products/conversational-ai-and-chatbots" class="product-item flex1 flex col">
+                    <h3 class="product-item__label">Robots conversationnels augmentés par intelligence artificielle</h3>
+                    <span class="product-item__desc">Concevez votre chatbot et votre modèle de données personnalisé pour répondre à votre cas d’usage.</span>
+                </a>
+                <a href="/products/customizable-wake-word-detection" class="product-item flex1 flex col">
+                    <h3 class="product-item__label">Détection de mots de réveil personnalisés</h3>
+                    <span class="product-item__desc">Créez et utilisez votre propre “wakeup word” (mot de réveil) pour utiliser LinTO.</span>
+                </a>
+                <a href="/products/productivity-and-skills-development-toolkit" class="product-item flex1 flex col">
+                    <h3 class="product-item__label">Outils de fonctionnalités et de productivité</h3>
+                    <span class="product-item__desc">Utilisez LinTO comme un outil de productivité et Développez vos propres “skills” afin d’améliorer vos processus en ajoutant un contrôle vocal personnalisé à vos applications.</span>
+                </a>
+                <a href="/products/linto-voice-assistant" class="product-item flex1 flex col">
+                    <h3 class="product-item__label">LinTO, assistant vocal</h3>
+                    <span class="product-item__desc">LinTO propose des fonctionnalités communes aux assistants vocaux présents sur le marché, tout en respectant vos données personnelles et privées.</span>
+                </a>
+                <a href="/products/fleet-management" class="product-item flex1 flex col">
+                    <h3 class="product-item__label">Management de flottes</h3>
+                    <span class="product-item__desc">Déployez votre interface de monitoring et managez vous même vos flottes d’applications LinTO.</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- END PRODUCTS -->
+    <!-- WAKEMEUP -->
+    <section id="wakemeup" class="flex col">
+        <div class="flex col wrapper flex1">
+            <h2>Participez à l'amélioration de nos modèles de données</h2>
+            <div class="flex col wakemeup-content">
+                <p class="page-content flex1">
+                    Le site web <a href="https://wakemeup.linto.ai/" target="_blank">wakemeup.linto.ai</a> a été mis en place dans le but de <strong>récolter des échantillons audios</strong> afin d'entraîner nos modèles de données. Pour <strong>participer à l'améliorations de
+                    nos modèles</strong>, il vous suffit de vous rendre sur le site web, créer un compte et saisir des échantillons vocaux de façon <strong>anonyme</strong>.
+                </p>
+                <div class="flex row wakemeup-item flex1">
+                    <a href="https://wakemeup.linto.ai/" target="_blank">
+                        <img src="/assets/img/logo-wakemeup.png" alt="logo wakemeup.linto.ai" class="wakemeup-logo" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END WAKEMEUP -->
+    <!-- CONTACT -->
+    <section id="contact" class="flex row">
+        <div class="wrapper flex col flex1">
+            <h2>Nous contacter</h2>
+            <div class="contact-form flex row">
+
+                <div class="flex row flex1">
+                    <div class="flex1 flex row contact-form-container">
+
+                        <div class="flex col flex1">
+                            <div class="field-container flex col flex1">
+                                <span class="contact-form__label">Nom<i class="required">*</i> :</span>
+                                <input type="text" id="contact-name" class="contact-form__input" />
+                                <span class="contact-form__error username">
+                  </div>
+                  <div class="field-container flex col flex1">
+                    <span class="contact-form__label">Email<i class="required">*</i> :</span>
+                                <input type="text" id="contact-email" class="contact-form__input error" />
+                                <span class="contact-form__error email">Invalid email format</span>
+                            </div>
+                            <div class="field-container flex col flex1">
+                                <span class="contact-form__label">Numéro de tel. :</span>
+                                <input type="text" id="contact-phone" class="contact-form__input" />
+                                <span class="contact-form__error phone"></span>
+                            </div>
+                            <div class="field-container flex col flex1">
+                                <span class="contact-form__label">Société :</span>
+                                <input type="text" id="contact-society" class="contact-form__input" />
+                                <span class="contact-form__error society"></span>
+                            </div>
+                        </div>
+
+                        <div class="flex1 flex col">
+                            <div class="field-container flex col flex1">
+                                <span class="contact-form__label">Message<i class="required">*</i> :</span>
+                                <textarea id="contact-msg" class="contact-form__textarea"></textarea>
+                                <span class="contact-form__error msg"></span>
+                            </div>
+                            <div class="field-container submit">
+                                <a id="contact-form__submit" class="btn link--arrow btn--purple">Envoyer</a>
+                                <div class="send-notif hidden">
+                                    <span class="notif-msg"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex col contact__links">
+                        <h3 class="contact__subtitle">Support</h3>
+                        <ul>
+                            <li>
+                                <a href="#" class="contact__link">support@linto.ai</a>
+                            </li>
+                        </ul>
+
+                        <h3 class="contact__subtitle">Commercial</h3>
+                        <ul>
+                            <li>
+                                <a href="#" class="contact__link">commercial@linto.ai</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    </section>
+    <!-- END CONTACT-->
+    <!-- FOOTER -->
+    <footer>
+        <div class="flex row wrapper footer-links-container">
+            <div class="flex1 col footer-links">
+                <h3 class="footer__label">Produits open source</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/products/speech-to-text-engine" class="footer__link">Dictée vocale</a>
+                    </li>
+                    <li>
+                        <a href="/products/multiplatform-voice-access-endpoint" class="footer__link">Points d'accès vocal multi-plateforme</a>
+                    </li>
+                    <li>
+                        <a href="/products/conversational-ai-and-chatbots" class="footer__link">Robots conversationnels augmentés par IA</a>
+                    </li>
+                    <li>
+                        <a href="/products/customizable-wake-word-detection" class="footer__link">Détection de mots réveil personnalisés</a>
+                    </li>
+                    <li>
+                        <a href="/products/productivity-and-skills-development-toolkit" class="footer__link">Outils de fonctionnalités et de productivité</a>
+                    </li>
+                    <li>
+                        <a href="/products/linto-voice-assistant" class="footer__link">Assistant vocal LinTO</a>
+                    </li>
+                    <li>
+                        <a href="/products/fleet-management" class="footer__link">Management de flottes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex1 flex col footer-links">
+                <h3 class="footer__label">Marchés</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/markets/healthcare" class="footer__link">Santé</a>
+                    </li>
+                    <li>
+                        <a href="/markets/voice-enabled-web-applications" class="footer__link">Applications web activées à la voix</a>
+                    </li>
+                    <li>
+                        <a href="/markets/smart-building-smart-office" class="footer__link">Smart Building & salles de réunions</a>
+                    </li>
+                    <li>
+                        <a href="/markets/user-accessibility" class="footer__link">Accessibilité</a>
+                    </li>
+                    <li>
+                        <a href="/markets/hobbyist-hackers-and-ai-enthousiast" class="footer__link">Hackers et développeurs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex1 flex col footer-links">
+                <h3 class="footer__label">Essayer LinTO</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/setup" class="btn link--arrow btn--purple">Commencer à utiliser LinTO</a>
+                    </li>
+                    <li>
+                        <a href="https://doc.linto.ai/" target="_blank" class="footer__link">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="/playground/webpage" class="footer__link">Essayer LinTO dans votre navigateur</span>
+              </li>
+          </ul>
+      </div>
+      <div class="flex1 flex col footer-links">
+          <h3 class="footer__label">Projet de recherche</h3>
+          <ul class="footer__list">
+            <li><a href="https://research.linagora.com/display/home/Home" target="_blank" class="footer__link">research.linagora.com</a></li>
+                    <li><a href="https://wakemeup.linto.ai/" target="_blank" class="footer__link">wakemeup.linto.ai<a></li>
+          </ul>
+        <h3 class="footer__label">Partenaires</h3>
+        <ul class="footer__list">
+            <li>
+                <a href="https://linagora.com/" target="_blank" class="footer__link">Linagora</a>
+                    </li>
+                    <li>
+                        <a href="https://www.irit.fr/" target="_blank" class="footer__link">IRIT</a>
+                    </li>
+                    <li>
+                        <a href="https://www.zelros.com/" target="_blank" class="footer__link">Zelros</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laas.fr/public/" target="_blank" class="footer__link">LAAS CNRS</a>
+                    </li>
+                    <li>
+                        <a href="https://www.polytechnique.edu/fr" target="_blank" class="footer__link">l'X polytechnique</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex col wrapper">
+            <div class="flex row" style="justify-content: flex-end;">
+                <a href="https://linagora.com/" target="_blank" class="footer__link">
+                    <img src="/assets/img/logo-linagora.png" alt="logo Linagora" class="footer__img--linagora">
+                </a>
+            </div>
+            <div class="flex row" style="justify-content: flex-end;">
+                <a href="/" class="footer__link--lintoai"></a>
+            </div>
+        </div>
     </footer>
-  </div>
+
 </body>
+
 </html>

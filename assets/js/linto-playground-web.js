@@ -271,7 +271,6 @@ window.start = async function() {
         linto.addEventListener("streaming_fail", streamingFail)
         linto.addEventListener("custom_action_from_skill", customHandler)
         await linto.login()
-
         linto.startAudioAcquisition(true, "linto", 0.99) // Uses hotword built in WebVoiceSDK by name / model / threshold (0.99 is fine enough)
         linto.startCommandPipeline()
         $('#loading').addClass('hidden')

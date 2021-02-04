@@ -1,0 +1,63 @@
+footer {
+    padding: 40px 0;
+    background-color: #111;
+    color: #efefef;
+    .footer-links-container {
+        flex-wrap: wrap;
+    }
+    .footer-links {
+        padding: 0 10px;
+        min-width: 160px;
+    }
+    .footer__label {
+        display: inline-block;
+        width: 100%;
+        font-size: 16px;
+        font-family: $Martel;
+        font-weight: 700;
+        color: #6b8296;
+        padding: 5px 0;
+        margin-bottom: 5px;
+        &.contrasted {
+            color: #fff;
+        }
+    }
+    ul.footer__list {
+        margin-bottom: 20px;
+        li {
+            display: inline-block;
+            width: 100%;
+            font-size: 14px;
+            padding: 7px 0;
+            position: relative;
+            .footer__link {
+                display: inline-block;
+                color: #cecece;
+                //@include linkUnderline(18px);
+                &:hover {
+                    text-decoration: underline;
+                }
+                &.disabled {
+                    position: relative;
+                    color: #656565;
+                    text-decoration: line-through;
+                    &:before {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+    .footer__link--lintoai {
+        display: inline-block;
+        height: 40px;
+        width: 175px;
+        @include maskImage('../img/svg/linto-ai.svg');
+        background-color: #fff;
+    }
+    .footer__img--linagora {
+        display: inline-block;
+        height: 80px;
+        width: auto;
+    }
+}

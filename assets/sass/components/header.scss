@@ -1,0 +1,112 @@
+#header {
+    padding: 10px 0;
+    height: auto;
+    background-color: #fff;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &.border {
+        border-bottom: 1px solid $textColor;
+    }
+}
+
+#header-mobile {
+    display: none;
+}
+
+.header--logo-container {
+    min-width: 200px;
+}
+
+.header--logo {
+    display: inline-block;
+    height: 40px;
+    width: 175px;
+    margin: 5px 0;
+    @include maskImage('../img/svg/linto-ai.svg');
+    background-color: $blue;
+}
+
+.header--nav {
+    position: relative;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    .header--nav-link__parent-container {
+        margin: 5px 0;
+    }
+    a.header--nav-link {
+        display: inline-block;
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        margin: 0 5px;
+        font-family: $Barlow;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        color: $textColor;
+        text-transform: uppercase;
+        @include transition(all 0.3s ease);
+        white-space: nowrap;
+        &:hover {
+            color: $blueDark;
+        }
+        &.active {
+            color: $blueDark;
+        }
+        &.border {
+            @include borderRadius(3px);
+            border: 1px solid #111;
+            line-height: 20px;
+            height: auto !important;
+            padding: 0;
+            background-color: #fff;
+            &.try {
+                color: $blue;
+                border-color: $blue;
+                &:hover {
+                    background-color: $blue;
+                    color: #fff;
+                }
+            }
+            &.contribute {
+                color: #333;
+                border-color: #333;
+                &:hover {
+                    background-color: #333;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .header--nav-children {
+        position: absolute;
+        top: 50px;
+        background: #fff;
+        padding: 20px;
+        @include borderRadius(3px);
+        @include blockShadowStrong();
+        z-index: 10;
+        a.header--nav-link__child {
+            flex: 1;
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            padding: 15px 10px;
+            position: relative;
+            font-family: $Barlow;
+            font-size: 16px;
+            font-weight: 400;
+            text-decoration: none;
+            color: $textColor;
+            border-bottom: 1px solid #ececec;
+            &:hover {
+                background-color: $blueDark;
+                color: #fff;
+            }
+        }
+    }
+}

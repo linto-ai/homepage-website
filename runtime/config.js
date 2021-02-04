@@ -19,8 +19,8 @@ function configureDefaults() {
         process.env.ALLOWED_ORIGINS = ifHas(process.env.ALLOWED_ORIGINS, envdefault.ALLOWED_ORIGINS)
         process.env.COMPONENTS = ifHas(process.env.COMPONENTS, envdefault.COMPONENTS)
         process.env.WEBSERVER_HTTP_PORT = ifHas(process.env.WEBSERVER_HTTP_PORT, envdefault.WEBSERVER_HTTP_PORT)
-        process.env.PUBLIC_DOWNLOAD_FOLDER = ifHas(process.env.PUBLIC_DOWNLOAD_FOLDER, envdefault.PUBLIC_DOWNLOAD_FOLDER)
-        // Mailer
+        process.env.BASE_PATH = ifHas(process.env.BASE_PATH, envdefault.BASE_PATH)
+            // Mailer
         process.env.SMTP_HOST = ifHas(process.env.SMTP_HOST, envdefault.SMTP_HOST)
         process.env.SMTP_PORT = ifHas(process.env.SMTP_PORT, envdefault.SMTP_PORT)
         process.env.SMTP_SECURE = ifHas(process.env.SMTP_SECURE, envdefault.SMTP_SECURE)

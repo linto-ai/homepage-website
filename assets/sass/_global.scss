@@ -1,0 +1,477 @@
+/*===== FONTS =====*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+@font-face {
+    font-family: 'Open-Dyslexic Roman';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open-Dyslexic Roman'), url('../fonts/open-dyslexic/open-dyslexic.woff') format('woff');
+}
+
+
+/*===== RESET CSS =====*/
+
+
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a,
+a:focus,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*===== END RESET CSS =====*/
+
+
+/*===== GLOBAL =====*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    z-index: 1;
+    position: relative;
+    font-size: 16px;
+    font-family: $Ubuntu;
+    color: $textColor;
+    font-weight: 400;
+    background-color: #fcfcfc;
+    &.dyslexia {
+        * {
+            font-family: $accessibilityFont !important;
+        }
+    }
+}
+
+.wrapper {
+    max-width: 1600px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    &.col {
+        flex-direction: column;
+    }
+    &.row {
+        flex-direction: row;
+    }
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.flex3 {
+    flex: 3;
+}
+
+.flex4 {
+    flex: 4;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: $Barlow;
+    line-height: 50px;
+    color: #fff;
+    padding: 10px 0;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+    padding: 10px 0 10px 0;
+    margin-bottom: 20px;
+    font-family: $Martel;
+    color: $blueDark;
+}
+
+p.page-content {
+    display: inline-block;
+    font-family: $Ubuntu;
+    line-height: 26px;
+    font-size: 18px;
+    strong {
+        font-weight: 600;
+        color: $textColor;
+    }
+    a {
+        color: $blue;
+        text-decoration: underline;
+        &:hover {
+            color: $blueDark;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding: 15px;
+    margin-right: 20px;
+    @include borderRadius(5px);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: $Barlow;
+    border: 1px solid #fff;
+    &.btn--purple {
+        background-color: $purple;
+        color: #fff;
+        border-color: $purple;
+        &:hover {
+            background-color: #fff;
+            color: $purple;
+        }
+    }
+    &.btn--white {
+        background-color: #fff;
+        color: $blueDark;
+        border-color: #fff;
+    }
+    &.btn--bluedark {
+        background-color: $blueDark;
+        color: #fff;
+        border-color: $blueDark;
+        &:hover {
+            background-color: #fff;
+            color: $blueDark;
+        }
+    }
+    &.btn--blue {
+        background-color: $blue;
+        border-color: $blue;
+        color: #fff;
+        &:hover {
+            background-color: #fff;
+            color: $blue;
+        }
+    }
+    &.btn--black {
+        background-color: #fff;
+        color: #434343;
+        border-color: #434343;
+        &:hover {
+            background-color: #434343;
+            color: #fff;
+        }
+    }
+    &.big {
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        font-weight: 600;
+        &.link--arrow {
+            &:hover {
+                &:after {
+                    top: 22px;
+                }
+            }
+        }
+        &.disabled {
+            margin-left: 20px;
+            background-color: #ccc;
+            color: #656565;
+            overflow: hidden;
+            font-style: italic;
+            &:hover {
+                background-color: #ccc;
+                color: #444 !important;
+                padding-right: 15px !important;
+                &:after {
+                    display: inline-block;
+                    content: "Coming soon...";
+                    font-style: italic;
+                    position: absolute;
+                    background-color: #ccc;
+                    top: 0;
+                    left: 20px;
+                    height: 40px;
+                    padding: 10px 15px;
+                    width: 100%;
+                    line-height: 40px;
+                    font-size: 20px;
+                    font-weight: 600;
+                    z-index: 5;
+                    color: $red;
+                    mask-image: none;
+                    -webkit-mask-image: none;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.link--underline {
+    position: relative;
+    @include transition(all 0.3s ease);
+    &:hover {
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background-color: #efefef;
+            position: absolute;
+            top: 18px;
+            left: 0;
+            @include underline();
+        }
+    }
+}
+
+.link--arrow {
+    display: inline-block;
+    padding: 10px 15px !important;
+    position: relative;
+    @include transition(all 0.3s ease);
+    font-weight: 500;
+    font-family: $Barlow;
+    &:hover {
+        padding-right: 40px !important;
+        &:after {
+            content: "";
+            overflow: hidden;
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            position: absolute;
+            top: 11px;
+            left: 100%;
+            margin-left: -35px;
+            @include arrowAppear();
+            background-color: #fff;
+        }
+        &.btn--white {
+            &:after {
+                background-color: $blueDark;
+            }
+        }
+        &.btn--bluedark {
+            &:after {
+                background-color: $blueDark;
+            }
+        }
+        &.btn--purple {
+            &:after {
+                background-color: $purple;
+            }
+        }
+        &.btn--blue {
+            &:after {
+                background-color: $blue;
+            }
+        }
+        &.btn--black {
+            &:after {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+section {
+    padding: 60px 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    &.highlighted {
+        background-color: yellow;
+        color: $blueDark !important;
+        padding-left: 10px !important;
+    }
+}
+
+body.zoom {
+    p,
+    span,
+    a,
+    li {
+        font-size: 22px !important;
+        line-height: 28px !important;
+    }
+    .header--nav a.header--nav-link.border.contribute {
+        font-size: 22px !important;
+        line-height: 40px !important;
+        padding: 5px 10px !important;
+        &:hover {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    .btn.big {
+        font-size: 22px !important;
+        line-height: 40px !important;
+    }
+    .header--nav a.header--nav-link {
+        font-size: 22px !important;
+        line-height: 50px !important;
+    }
+    h2 {
+        font-size: 34px !important;
+        line-height: 40px !important;
+    }
+}

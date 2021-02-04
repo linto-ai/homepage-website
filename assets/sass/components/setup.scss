@@ -1,0 +1,91 @@
+#getstarted {
+    @include blueGradient();
+    .wrapper>div {
+        margin: 20px;
+    }
+    p.page-content {
+        color: #fff;
+        font-weight: 500;
+    }
+    .container--white {
+        padding: 20px;
+        background-color: #fff;
+        @include borderRadius(5px);
+        justify-items: space-evenly;
+        p.page-content {
+            padding-bottom: 20px;
+        }
+    }
+    .quote {
+        font-size: 16px;
+        padding-bottom: 20px;
+        font-weight: 600;
+        font-family: $Martel;
+        font-style: italic;
+        line-height: 24px;
+    }
+    .from-select__label {
+        font-size: 18px;
+        color: $textColor;
+        font-weight: 600;
+        padding: 20px 0 10px 0;
+    }
+    .form-select {
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        font-family: $Barlow;
+        border: 1px solid #fff;
+        min-width: 220px;
+        max-width: 320px;
+        background-color: #fff;
+        font-weight: 600;
+        padding: 0 10px;
+        @include borderRadius(3px);
+        @include blockShadow();
+    }
+}
+
+.setup-steps {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 40px 0;
+    background: #f1f1f1;
+    @include borderRadius(5px);
+    h3 {
+        color: $blue;
+        font-size: 20px;
+        font-weight: 500;
+        font-family: $Martel;
+        padding-bottom: 20px;
+    }
+    .setup__list {
+        li {
+            display: inline-block;
+            padding: 10px 0;
+            width: 100%;
+            .setup__step {
+                font-weight: 500;
+            }
+            .setup__content {
+                strong {
+                    font-weight: 500;
+                    color: $blueDark;
+                }
+            }
+        }
+    }
+}
+
+.setup__illustration {
+    align-items: center;
+}
+
+.setup-illustration {
+    display: block;
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    background: #ccc;
+}

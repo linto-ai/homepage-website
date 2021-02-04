@@ -1,0 +1,109 @@
+#contact {
+    background-color: #333333;
+    h2 {
+        color: #fff;
+    }
+}
+
+.contact-form-container {
+    justify-content: center;
+    &>div {
+        max-width: 500px;
+        justify-content: center;
+    }
+}
+
+.contact-form {
+    justify-content: center;
+    .field-container {
+        padding: 10px 0;
+        .contact-form__label {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: $Barlow;
+            .required {
+                color: $red;
+                padding-left: 3px;
+            }
+        }
+        .contact-form__input {
+            display: inline-block;
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #fff;
+            @include borderRadius(5px);
+            @include blockShadow();
+            font-size: 16px;
+            font-family: $Barlow;
+            background-color: #fff;
+            color: $textColor;
+            max-width: 300px;
+            min-width: 160px;
+            margin: 5px 0;
+            outline: none;
+            &.error {
+                border-color: $red;
+            }
+        }
+        .contact-form__textarea {
+            display: inline-block;
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #fff;
+            @include borderRadius(5px);
+            @include blockShadow();
+            font-size: 16px;
+            font-family: $Barlow;
+            background-color: #fff;
+            color: $textColor;
+            max-width: 400px;
+            min-width: 160px;
+            margin: 5px 0;
+            outline: none;
+            min-height: 80px;
+            &.error {
+                border-color: $red;
+            }
+        }
+        .contact-form__error {
+            display: inline-block;
+            height: 15px;
+            width: 100%;
+            line-height: 15px;
+            font-size: 14px;
+            color: $red;
+            font-style: italic;
+        }
+        #contact-form__submit {
+            outline: none;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.contact__links {
+    padding: 20px 20px 20px 40px;
+    margin-left: 40px;
+    border-left: 1px solid #fff;
+    h3.contact__subtitle {
+        display: inline-block;
+        width: 100%;
+        padding: 5px 0;
+        margin-bottom: 5px;
+        color: #fff;
+        font-weight: 600;
+        font-family: $Martel;
+        font-size: 16px;
+    }
+    a.contact__link {
+        display: inline-block;
+        padding-bottom: 40px;
+        font-size: 16px;
+        font-family: $Barlow;
+        color: #fff;
+        @include linkUnderline(24px);
+    }
+}

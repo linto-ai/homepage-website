@@ -1,0 +1,17 @@
+#market-title {
+    @include blueGradient();
+    padding: 60px 0;
+    .market__title {
+        text-align: center;
+        padding-top: 40px;
+    }
+    .market__desc {
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        padding-top: 20px;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+}

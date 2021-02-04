@@ -1,0 +1,17 @@
+#product-title {
+    @include blueToPurpleGradient();
+    padding: 60px 0;
+    .product__title {
+        padding-top: 40px;
+        text-align: center;
+    }
+    .product__desc {
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        padding-top: 20px;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+}
