@@ -1,7 +1,7 @@
 window.streamingContent = ''
 window.lintoState = 'sleeping'
 window.lintoAnim = null
-window.lintoAnimSegments =   {
+window.lintoAnimSegments = {
     sleeping: {
         start: 0,
         end: 90,
@@ -250,7 +250,7 @@ let customHandler = async function(event) {
 window.start = async function() {
     try {
         //window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "P3y0tRCHQB6orRzL", 10000) // LOCAL 
-        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "0qhJBdKPxvCNwjOo", 10000) // PROD
+        window.linto = new Linto("https://stage.linto.ai/overwatch/local/web/login", "WuPCUSbV8A7Mb4eV", 10000) // PROD
 
         // Some feedbacks for UX implementation
         linto.addEventListener("mqtt_connect", mqttConnectHandler)
