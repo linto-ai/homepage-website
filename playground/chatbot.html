@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LinTO, open source end-to-end platform for voice-operated solutions</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Linagora" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en-GB" />
+    <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
+    
+    <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.13/lottie.min.js" integrity="sha512-srGxQe2w7s50+5/nNgEVKYtBm15zRylJwdjxYnGEZr3mmHFJKFjA/ImA2OKizVzoIDX8XISMHDI1+az9pnumbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
+    <script type="text/javascript" src="/assets/js/linto.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/chatbot.js"></script>
+    <script type="text/javascript" src="/assets/js/linto-playground-chatbot.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/chatbot.css"/>
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css" />
+</head>
+   
+<body>
+    <!-- HEADER -->
+    <nav id="header" class="border">
+        <div class="flex row wrapper">
+            <div class="flex header--logo-container">
+                <a href="/" class="header--logo"></a>
+            </div>
+            <div class="flex row flex1 header--nav">
+                <div class="header--nav-link__parent-container">
+                    <a href="/setup" class="header--nav-link">Setup</a>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#" id="playground" class="header--nav-link header--nav-link__parent">Try LinTO</a>
+                    <div data-parent="playground" class="header--nav-children hidden flex col">
+                        <div class="flex row">
+                            <a href="/playground/webpage" class="header--nav-link__child link--arrow">In a webpage</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/playground/meeting-room" class="header--nav-link__child link--arrow">In a meeting room</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#" id="products" class="header--nav-link header--nav-link__parent">Open source products</a>
+                    <div data-parent="products" class="header--nav-children hidden flex col">
+                        <div class="flex row">
+                            <a href="/products/speech-to-text-engine" class="header--nav-link__child link--arrow">Speech to text engine</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/multiplatform-voice-access-endpoint" class="header--nav-link__child link--arrow">Multiplatform voice access endpoints</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/conversational-ai-and-chatbots" class="header--nav-link__child link--arrow">Conversational AIs, chatbots and callbots</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/customizable-wake-word-detection" class="header--nav-link__child link--arrow">Customizable Wake Word Detection</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/productivity-and-skills-development-toolkit" class="header--nav-link__child link--arrow">Productivity and skills development toolkit</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/linto-voice-assistant" class="header--nav-link__child link--arrow">LinTO voice assistant</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/products/fleet-management" class="header--nav-link__child link--arrow">Fleet management</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#" id="markets" class="header--nav-link header--nav-link__parent">Markets</a>
+                    <div data-parent="markets" class="header--nav-children hidden flex col">
+                        <div class="flex row">
+                            <a href="/markets/healthcare" class="header--nav-link__child link--arrow">Healthcare</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/banking" class="header--nav-link__child link--arrow">Banking</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/voice-enabled-web-applications" class="header--nav-link__child link--arrow">Voice enabled web applications</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/meeting-rooms-and-entreprise" class="header--nav-link__child link--arrow">Meeting rooms and entreprise</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/smart-building-smart-office" class="header--nav-link__child link--arrow">Smart Building / Smart office</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/hands-free-processes" class="header--nav-link__child link--arrow">Hands free processes</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/user-accessibility" class="header--nav-link__child link--arrow">User accessibility</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/aeronautics" class="header--nav-link__child link--arrow">Aeronautics</a>
+                        </div>
+                        <div class="flex row">
+                            <a href="/markets/hobbyist-hackers-and-ai-enthousiast" class="header--nav-link__child link--arrow">Hobbyist, hackers and AI enthousiast</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="https://doc.linto.ai/" class="header--nav-link" target="_blank">Documentation</a>
+                </div>
+                <div class="header--nav-link__parent-container">
+                    <a href="#contact" class="header--nav-link">Contact</a>
+                </div>
+                <div class="header--nav-link__parent-container custom contribute">
+                    <a href="https://github.com/linto-ai" target="_blank" class="header--nav-link border contribute link--arrow">Contribute</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav id="header-mobile" class="closed">
+        <div class="flex row wrapper">
+            <div class="flex header--logo-container">
+                <a href="/" class="header--logo"></a>
+            </div>
+            <div class="flex1 header--burger-btn-container flex row">
+                <button id="header--burger-btn"></button>
+            </div>
+        </div>
+        <div id="mobile-nav" class="flex col hidden">
+            <div class="flex row">
+                <div class="flex1 flex col parents-links">
+                    <a href="/setup" class="header-mobile--nav-link">Setup</a>
+                    <a href="/setup" class="header-mobile--nav-link">Documentation</a>
+                    <a href="/setup" class="header-mobile--nav-link">Contact</a>
+                    <a href="https://github.com/linto-ai" target="_blank" class="header-mobile--nav-link">Contribute</a>
+                </div>
+                <div class="flex1 flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Try LinTO</span>
+                    <a href="/playground/webpage" class="header-mobile--nav-link child">In a webpage</a>
+                    <a href="/playground/meeting-room" class="header-mobile--nav-link child">In a meeting room</a>
+                </div>
+            </div>
+
+            <div class=" flex col">
+
+                <div class="flex1 flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Open source products</span>
+                    <a href="/products/speech-to-text-engine" class="header-mobile--nav-link child">Speech to text engine</a>
+                    <a href="/products/multiplatform-voice-access-endpoint" class="header-mobile--nav-link child">Multiplatform voice access endpoints</a>
+                    <a href="/products/conversational-ai-and-chatbots" class="header-mobile--nav-link child">Conversational AIs, chatbots and callbots</a>
+                    <a href="/products/customizable-wake-word-detection" class="header-mobile--nav-link child">Customizable Wake Word Detection</a>
+                    <a href="/products/productivity-and-skills-development-toolkit" class="header-mobile--nav-link child">Productivity and skills development toolkit</a>
+                    <a href="/products/linto-voice-assistant" class="header-mobile--nav-link child">LinTO voice assistant</a>
+                    <a href="/products/fleet-management" class="header-mobile--nav-link child">Fleet management</a>
+                </div>
+                <div class=" flex col mobile-sub-menu">
+                    <span class="header-mobile--nav-label">Markets</span>
+                    <a href="/markets/healthcare" class="header-mobile--nav-link child">Healthcare</a>
+                    <a href="/markets/banking" class="header-mobile--nav-link child">Banking</a>
+                    <a href="/markets/voice-enabled-web-applications" class="header-mobile--nav-link child">Voice enabled web applications</a>
+                    <a href="/markets/meeting-rooms-and-entreprise" class="header-mobile--nav-link child">Meeting rooms and entreprise</a>
+                    <a href="/markets/smart-building-smart-office" class="header-mobile--nav-link child">Smart Building / Smart office</a>
+                    <a href="/markets/hands-free-processes" class="header-mobile--nav-link child">Hands free processes</a>
+                    <a href="/markets/user-accessibility" class="header-mobile--nav-link child">User accessibility</a>
+                    <a href="/markets/aeronautics" class="header-mobile--nav-link child">Aeronautics</a>
+                    <a href="/markets/hobbyist-hackers-and-ai-enthousiast" class="header-mobile--nav-link child">Hobbyist, hackers and AI enthousiast</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- END HEADER -->
+    <!-- PLAYGROUND -->
+    <section id="playground-webpage" class="flex row">
+        <div class="flex1 flex row">
+            <!-- <div id="loading" class="fr"></div> -->
+            <div class="flex col" id="playground-infos">
+                <div class="flex1 flex col" id="commands">
+                    <h2>Commandes vocales</h2>
+                    <div class="playground-infos-commands flex1 flex col">
+                        <span class="playground-webpage-command">LinTO, va au bloc <strong>suivant</strong></span>
+                        <span class="playground-webpage-command">LinTO, va au bloc <strong>précédent</strong></span>
+                        <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
+                        <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
+
+                        <span class="playground-webpage-command">LinTO, <strong>démarre </strong> le podcast</span>
+                        <span class="playground-webpage-command">LinTO, <strong>stoppe</strong> le podcast</span>
+
+                        <span class="playground-webpage-command">LinTO, diapo <strong>suivante</strong></span>
+                        <span class="playground-webpage-command">LinTO, diapo <strong>précédente</strong></span>
+
+                        <span class="playground-webpage-command">LinTO, <strong>agrandis</strong> l'image</span>
+                        <span class="playground-webpage-command">LinTO, <strong>réduis</strong> l'image</span>
+
+                        <span class="playground-webpage-command">LinTO, <strong>active</strong> le mode accéssibilité</span>
+                        <span class="playground-webpage-command">LinTO, <strong>désactive</strong> le mode accéssibilité</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex2 flex col playground-webpage-area" id="playground-webpage-content">
+                <div class="flex1">
+                    <h2>Navigation et Lecture de contenu</h2>
+                    <div class="playground-webpage-content-block active" data-index="1">
+                        <h3 class="playground-content-block__title">Je suis le titre du premier bloc</h3>
+                        <p class="playground-content-block__content">Ceci est le texte du premier bloc de contenu.</p>
+                    </div>
+                    <div class="playground-webpage-content-block" data-index="2">
+                        <h3 class="playground-content-block__title">Titre du second bloc</h3>
+                        <p class="playground-content-block__content">Ce texte constitue le contenu du second bloc.</p>
+                    </div>
+                    <div class="playground-webpage-content-block" data-index="3">
+                        <h3 class="playground-content-block__title">Titre du troisième bloc</h3>
+                        <p class="playground-content-block__content">Ce texte est le contenu du troisième et avant-dernier bloc.</p>
+                    </div>
+                    <div class="playground-webpage-content-block" data-index="4">
+                        <h3 class="playground-content-block__title">Titre du quatrième bloc</h3>
+                        <p class="playground-content-block__content">Ce texte est le dernier contenu pour la démonstration.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT PART -->
+            <div class="flex2 flex col" id="playground-webpage-media">
+                <div class="flex1 flex col playground-webpage-area" id="playground-webpage-slider">
+                    <h2>Controler un slider</h2>
+                    <div id="playground-slider">
+                       <!-- <img src="/assets/img/slider/cat1.jpg" alt="Cat - credit unsplash.com" />
+                        <img src="/assets/img/slider/cat2.jpg" alt="Cat - credit unsplash.com" />
+                        <img src="/assets/img/slider/cat3.jpg" alt="Cat - credit unsplash.com" />
+                        -->
+                        test1
+                    </div>
+                </div>
+                <div class="flex2 flex col playground-webpage-area" id="playground-webpage-form">
+                    <h2>Remplir un formulaire</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END PLAYGROUND-->
+    <!-- HELPER MODAL -->
+    <div id="modal" class="hidden flex col">
+        <div class="modal-container flex1">
+            <div class="modal-header">
+                <h2>Navigation à la voix</h2>
+                <button id="modal-close" class="modal__close"><span class="icon"></span></button>
+            </div>
+            <div class="modal-body">
+                <div class="flex row">
+
+                    <div class="flex1 flex col">
+                        <div class="modal-content flex col">
+                            <h3>Comment ça marche ?</h3>
+                            <p>Bienvenue sur la page de démonstration de LinTO dans un navigateur web. La navigation et les interactions sur cette page se font à la voix, grâce à l'assistant LinTO. Pour pouvoir utiliser les commandes vocales, veuillez-suivre
+                                les indications suivantes.
+                            </p>
+                        </div>
+                        <div class="modal-content flex col">
+                            <h3>1/ Autoriser l'utilisation du microphone sur la page web</h3>
+                            <p>Lorsqe vous chargez la page web, un message de votre navigateur devrait apparaitre, vous demandant d'<strong>autoriser l'utilisation de votre micropohone</strong> sur cette page web.</p>
+                            <div class="flex row">
+                                <img src="/assets/img/audio-browser.jpg" alt="autoriser l'aquisition audio" />
+                            </div>
+                            <span class="modal-content-step">Veuillez <strong>autoriser</strong> l'utilisation du microphone.</span>
+                        </div>
+                        <div class="modal-content flex col">
+                            <h3>2/ Prononcer le mot-réveil pour passer en mode "écoute"</h3>
+                            <p>Une fois l'uilisation de votre microphone autorisé, vous devriez voir LinTO apparaitre dans le coin suppérieur gauche de la page. lorsqu'il est en état de "repos", cela signifie qu'il attend qu'on <strong>prononce le mot de réveil</strong>                                "LinTO" avant d'écouter les commandes proncées.</p>
+                            <span class="modal-content-step">Dites : <strong>"LinTO"</strong></span>
+                            <p>Lorsque le mot de réveil est capté par "LinTO", vous devriez entendre un <strong>bip sonore</strong> et voir LinTO passer en état d'<strong>écoute</strong></p>
+
+                        </div>
+                        <div class="modal-content flex col">
+                            <h3>3/ Prononcer une commande</h3>
+                            <p>Lorsque le mot de réveil a été capté et que LinTO est en mode écoute, <strong>prononcez une commande</strong> parmis celle renseignées sur la page.</p>
+                            <span class="modal-content-step">Dites : <strong>"bloc suivant"</strong></span>
+
+                        </div>
+                    </div>
+                    <div class="flex col linto-helper-states">
+                        <h3>Status de LinTO</h3>
+                        <div class="linto-helper-state__item flex col">
+                            <div class="flex row">
+                                <img src="/assets/img/svg/linto-sleeping.svg" alt="linto sleeping" class="linto-helper-state__img">
+                            </div>
+                            <span class="linto-helper-state__label">Passif</span>
+                        </div>
+                        <div class="linto-helper-state__item flex col">
+                            <div class="flex row">
+                                <img src="/assets/img/svg/linto-listening.svg" alt="linto listening" class="linto-helper-state__img">
+                            </div>
+                            <span class="linto-helper-state__label">Ecoute</span>
+                        </div>
+                        <div class="linto-helper-state__item flex col">
+                            <div class="flex row">
+                                <img src="/assets/img/svg/linto-thinking.svg" alt="linto thinking" class="linto-helper-state__img">
+                            </div>
+                            <span class="linto-helper-state__label">Recherche</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- END MODAL -->
+    <div id="chatbot-wrapper"></div>
+
+</body>
+
+</html>

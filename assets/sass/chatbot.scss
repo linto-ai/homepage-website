@@ -1,0 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+$roboto: 'Roboto',
+Arial,
+Helvetica,
+Verdana;
+$green: #00d67d;
+$red: #ec5a5a;
+$blue: #24a7ff;
+$blueDark: #003c65;
+@import "./mixin.scss";
+.flex {
+    display: flex;
+    &.col {
+        flex-direction: column;
+    }
+    &.row {
+        flex-direction: row;
+    }
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.flex3 {
+    flex: 3;
+}
+
+button {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#linto-chatbot-corner {
+    position: fixed;
+    top: 100%;
+    left: 100%;
+    margin-top: -140px;
+    margin-left: -140px;
+    width: 100px;
+    height: 100px;
+    z-index: 900;
+    &.hidden {
+        display: none;
+    }
+}
+
+
+/* CHATBOT CORNER + INIT */
+
+#linto-chatbot-init-btn {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    @include borderRadius(50px);
+    border: none;
+    overflow: hidden;
+    &:hover {
+        @include transform(scale(1.1));
+    }
+    .linto-icon {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        background-image: url('../img/chatbot/linto.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+#linto-chatbot-init-frame {
+    display: inline-block;
+    padding: 20px;
+    position: absolute;
+    width: 260px;
+    bottom: 20px;
+    left: -320px;
+    background-color: rgba(0, 0, 0, 0.85);
+    @include borderRadiusMulti(20px,
+    20px,
+    20px,
+    0px);
+    &.hidden {
+        display: none;
+    }
+    span {
+        display: inline-block;
+        font-size: 15px;
+        color: #fff;
+        line-height: 22px;
+    }
+    #linto-chatbot-init-frame-btn {
+        margin-top: 20px;
+        justify-content: space-evenly;
+        button {
+            display: inline-block;
+            padding: 5px 10px;
+            color: #fff;
+            border: none;
+            margin: 0 10px;
+            @include borderRadius(3px);
+            font-size: 15px;
+            font-weight: 600;
+            @include transition(all 0.3s ease);
+            &.enable {
+                background-color: $blue;
+            }
+            &.close {
+                background-color: $red;
+            }
+            &:hover {
+                background-color: #fff;
+                &.enable {
+                    color: $blue;
+                }
+                &.close {
+                    color: $red;
+                }
+            }
+        }
+    }
+}
+
+#chatbot-feedback-btn {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: -30px;
+    @include borderRadius(15px);
+    @include transition(all 0.2s ease);
+    background-color: #fff;
+    @include boxShadow(0,
+    0,
+    4px,
+    0,
+    rgba(0,
+    0,
+    0,
+    0.3));
+    border: none;
+    .icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        @include maskImage('../img/chatbot/feedback.svg');
+        background-color: $blue;
+        @include transition(all 0.2s ease);
+    }
+    &:hover {
+        background-color: $blue;
+        .icon {
+            background-color: #fff;
+        }
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+#chatbot-feedback {
+    position: absolute;
+    bottom: 120px;
+    left: -175px;
+    @include transition(all 0.1s ease);
+    &.hidden {
+        display: none;
+    }
+    &.visible {
+        padding: 20px;
+        border: 1px solid #ccc;
+        background: #fff;
+        width: 280px;
+        height: auto;
+        @include borderRadiusMulti(10px,
+        0,
+        0,
+        10px);
+        @include boxShadow(0,
+        2px,
+        4px,
+        0,
+        rgba(0,
+        0,
+        0,
+        0.3));
+        .chatbot-feedback-header {
+            height: 30px;
+            line-height: 30px;
+            color: #777;
+            #chatbot-feedback-close {
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                @include maskImage('../img/chatbot/close.svg');
+                @include transition(all 0.1s ease);
+                background-color: #45baeb;
+                @include noShadow();
+                outline: none;
+                &:hover {
+                    @include transform(scale(1.3));
+                }
+            }
+        }
+        #chatbot-feedback-items {
+            max-height: 280px;
+            overflow: auto;
+        }
+        .feedback-item {
+            font-size: 16px;
+            color: #111;
+            padding: 5px;
+            margin: 5px 0;
+            &.user {
+                justify-content: flex-end;
+                .content {
+                    background-color: #d7f3ff;
+                    @include borderRadiusMulti(5px,
+                    5px,
+                    0,
+                    5px);
+                }
+            }
+            &.bot {
+                justify-content: flex-start;
+                .content {
+                    background-color: #73D5FF;
+                    @include borderRadiusMulti(5px,
+                    5px,
+                    5px,
+                    0);
+                }
+            }
+            .content {
+                padding: 10px;
+                display: inline-block;
+                max-width: 70%;
+            }
+        }
+    }
+}
+
+#chatbot-minimal {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    bottom: 0%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+    &.visible {
+        height: 80px;
+        padding: 40px 0;
+        @include transition(all 0.3s ease);
+        overflow: visible;
+    }
+    &.hidden {
+        height: 0px;
+        @include transition(all 0.3s ease);
+        overflow: hidden;
+    }
+    .chatbot-container {
+        justify-content: center;
+        max-width: 1400px;
+    }
+    #chatbot-ui-close {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 20px;
+        left: 100%;
+        margin-left: -50px;
+        background-color: transparent;
+        @include borderRadius(50px);
+        z-index: 998;
+        border: none;
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0%;
+            border: none;
+            @include maskImage('../img/chatbot/close.svg');
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: 999;
+        }
+        &:hover {
+            &:after {
+                background-color: #fff;
+            }
+        }
+    }
+    &.minimal-audio {
+        &.visible {
+            @include boxShadow(0,
+            2px,
+            6px,
+            0,
+            rgba(0,
+            0,
+            0,
+            0.3));
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            bottom: 20px;
+            margin-left: -50px;
+            @include borderRadius(50px);
+            padding: 0;
+        }
+        #chatbot-ui-close {
+            top: -10px;
+            left: 100%;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 901;
+        }
+    }
+}
+
+.chatbot-animation {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.chatbot-content {
+    font-family: $roboto;
+    .chatbot-content-current {
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 500;
+        color: #fff;
+        height: 80px;
+        padding: 0 40px;
+    }
+    .chatbot-content-previous {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 400;
+        color: #939393;
+        height: 20px;
+        padding: 0 40px;
+    }
+}
+
+
+/* MULTI MODAL */
+
+#chatbot-multi-modal {
+    width: 280px;
+    height: 420px;
+    position: fixed;
+    bottom: 20px;
+    left: 100%;
+    margin-left: -300px;
+    @include borderRadius(5px);
+    @include boxShadow(0,
+    2px,
+    4px,
+    0,
+    rgba(0,
+    0,
+    0,
+    0.3));
+    z-index: 910;
+    overflow: hidden;
+    .header {
+        height: 24px;
+        background-color: $blue;
+        padding: 10px;
+        .chatbot-mm-title {
+            display: inline-block;
+            height: 24px;
+            line-height: 24px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .chatbot-mm-actions {
+            height: 24px;
+        }
+    }
+    .body {
+        padding: 10px;
+        background-color: #F1F1F1;
+        overflow: auto;
+    }
+    .footer {
+        min-height: 30px;
+        padding: 10px 0;
+        background-color: $blue;
+        padding: 10px;
+        align-items: center;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+#chatbot-mm-content {
+    padding: 10px;
+    .chatbot-mm-content-item {
+        margin-bottom: 10px;
+        &.user {
+            justify-content: flex-end;
+            .content {
+                background-color: #D7F3FF;
+                @include borderRadiusMulti(5px,
+                5px,
+                0,
+                5px);
+            }
+        }
+        &.bot {
+            justify-content: flex-start;
+            .content {
+                background-color: #73D5FF;
+                @include borderRadiusMulti(5px,
+                5px,
+                5px,
+                0);
+            }
+        }
+        .content {
+            display: inline-block;
+            max-width: 70%;
+            padding: 10px;
+        }
+    }
+}
+
+.chatbot-mm-actions-btn {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 0 2px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    .icon {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-color: rgba(255, 255, 255, 0.8);
+        &.close {
+            @include maskImage('../img/chatbot/close.svg');
+        }
+        &.collapse {
+            @include maskImage('../img/chatbot/collapse.svg');
+        }
+        &.mic {
+            &.mute {
+                @include maskImage('../img/chatbot/mic-muted.svg');
+            }
+        }
+    }
+    &:hover {
+        outline: none;
+        .icon {
+            background-color: #fff;
+        }
+    }
+}
+
+#chatbot-mm-mic {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    position: relative;
+    @include borderRadius(15px);
+    background-color: #f1f1f1;
+    border: none;
+    overflow: hidden;
+    .icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: $blue;
+        @include maskImage('../img/chatbot/chatbot-mic.svg');
+    }
+    &:hover {
+        background-color: $red;
+        .icon {
+            background-color: #fff;
+        }
+    }
+    &.streaming {
+        @include blinkWhiteToRed();
+        .icon {
+            @include blinkRedToWhite();
+        }
+    }
+}
+
+#chatbot-mm-input {
+    display: inline-block;
+    height: auto;
+    padding: 3px 4px;
+    line-height: 24px;
+    background-color: #fff;
+    max-height: 70px;
+    overflow: auto;
+    border: none;
+    font-size: 15px;
+    &:focus {
+        background-color: #d7efff;
+        outline: none;
+    }
+}
+
+#chatbot-mm-submit {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    background-color: $blueDark;
+    padding: 0;
+    border: none;
+    .icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        @include maskImage('../img/chatbot/send.svg');
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    &:hover {
+        background-color: #fff;
+        .icon {
+            background-color: $blueDark;
+        }
+    }
+}
