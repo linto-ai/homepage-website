@@ -860,3 +860,90 @@
 .st89 {
     fill: #00AD0C;
 }
+
+
+/* Chatbot VIEW */
+
+.form-field {
+    align-items: flex-end;
+    margin: 10px 0;
+    .form-input-container {
+        .label {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 5px 0;
+        }
+        .form-input {
+            display: inline-block;
+            height: auto;
+            line-height: 30px;
+            padding: 0 5px;
+            background-color: #eee;
+            width: 260px;
+            max-height: 70px;
+            overflow: auto;
+            &#form-input-msg {
+                min-height: 70px;
+            }
+        }
+    }
+}
+
+.linto-chatbot-streaming-btn {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #ececec;
+    @include borderRadius(15px);
+    margin: 0 5px;
+    padding: 0;
+    overflow: hidden;
+    .icon {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        background-color: $blue;
+        @include maskImage('../img/chatbot/chatbot-mic.svg')
+    }
+    &:hover {
+        background-color: #f1f1f1;
+        .icon {
+            background-color: $red;
+        }
+    }
+    &.streaming-on {
+        &,
+        &:hover {
+            background-color: $red;
+            .icon {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.linto-chatbot-replay {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #ececec;
+    @include borderRadius(15px);
+    margin: 0 5px;
+    padding: 0;
+    .icon {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        background-color: $blue;
+        @include maskImage('../img/chatbot/play.svg')
+    }
+    &:hover {
+        .icon {
+            background-color: $blueDark;
+        }
+    }
+    &.hidden {
+        display: none;
+    }
+}

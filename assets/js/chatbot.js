@@ -48,7 +48,7 @@ class ChatBot {
                 this.lintoWebToken = data.lintoWebToken
             }
 
-            if(!!data.lintoCustomEvents) {
+            if (!!data.lintoCustomEvents) {
                 this.lintoCustomEvents = data.lintoCustomEvents
             }
         }
@@ -293,7 +293,7 @@ class ChatBot {
         const chatbotInputSubmit = document.getElementById('chatbot-mm-submit')
         chatbotInputSubmit.onclick = (e) => {
             let content = chatbotInput.innerHTML
-            if(content.length > 0) {
+            if (content.length > 0) {
                 this.updateMultiModalUser(content)
                 this.chatbot.sendChatbotText(content)
                 chatbotInput.innerHTML = ''
@@ -415,7 +415,7 @@ class ChatBot {
         }
     }
     streamingChunk = (event) => {
-        if(this.streamingMode === 'vad') {
+        if (this.streamingMode === 'vad') {
             if (event.detail.behavior.streaming.partial) {
                 if (this.debug) {
                     console.log("Streaming chunk received : ", event.detail.behavior.streaming.partial)
@@ -425,7 +425,7 @@ class ChatBot {
                 } else if (this.chatbotMode === 'multi-modal') {
                     this.updateMultiModalInput(event.detail.behavior.streaming.partial)
                 }
-    
+
             }
             if (event.detail.behavior.streaming.text) {
                 if (this.debug) {
@@ -433,8 +433,7 @@ class ChatBot {
                 }
                 if (this.chatbotMode === 'minimal-streaming') {
                     this.updateCurrentUiContent(event.detail.behavior.streaming.text)
-                } 
-                else if (this.chatbotMode === 'multi-modal') {
+                } else if (this.chatbotMode === 'multi-modal') {
                     this.updateMultiModalUser(event.detail.behavior.streaming.text)
                     this.updateMultiModalInput('')
                     const micBtn = document.getElementById('chatbot-mm-mic')
@@ -446,8 +445,7 @@ class ChatBot {
                     this.chatbot.sendCommandText(event.detail.behavior.streaming.text)
                 }, 1000)
             }
-        }
-        else if(this.streamingMode === 'vad-custom' && this.writingTarget !== null) {
+        } else if (this.streamingMode === 'vad-custom' && this.writingTarget !== null) {
             if (event.detail.behavior.streaming.partial) {
                 if (this.debug) {
                     console.log("Streaming chunk received : ", event.detail.behavior.streaming.partial)
@@ -459,15 +457,16 @@ class ChatBot {
                     console.log("Streaming utterance completed : ", event.detail.behavior.streaming.text)
                 }
                 this.writingTarget.innerHTML = event.detail.behavior.streaming.text
+
                 this.chatbot.stopStreaming()
+                this.chatbot.startStreamingPipeline()
             }
-        }
-        else if(this.streamingMode === 'infinite' && this.writingTarget !== null) {
+        } else if (this.streamingMode === 'infinite' && this.writingTarget !== null) {
             if (event.detail.behavior.streaming.partial) {
                 if (this.debug) {
                     console.log("Streaming chunk received : ", event.detail.behavior.streaming.partial)
                 }
-                if(event.detail.behavior.streaming.partial !== 'stop') {
+                if (event.detail.behavior.streaming.partial !== 'stop') {
                     this.writingTarget.innerHTML = this.streamingContent + (this.streamingContent.length > 0 ? '\n' : '') + event.detail.behavior.streaming.partial
                 }
             }
@@ -475,25 +474,22 @@ class ChatBot {
                 if (this.debug) {
                     console.log("Streaming utterance completed : ", event.detail.behavior.streaming.text)
                 }
-                if(event.detail.behavior.streaming.text === 'stop') {
+                if (event.detail.behavior.streaming.text === 'stop') {
                     this.chatbot.stopStreaming()
                 } else {
                     this.streamingContent += (this.streamingContent.length > 0 ? '\n' : '') + event.detail.behavior.streaming.text
                     this.writingTarget.innerHTML = this.streamingContent
                 }
-                
+
             }
         }
     }
     customStreaming = (streamingMode, target) => {
-        console.log('customStreaming', streamingMode, target)
         this.beep.play()
         this.streamingMode = streamingMode
         this.writingTarget = document.getElementById(target)
-
+        this.chatbot.stopStreamingPipeline()
         this.chatbot.startStreaming()
-        console.log(this.writingTarget)
-
     }
     streamingStart = (event) => {
         this.beep.play()
@@ -507,13 +503,6 @@ class ChatBot {
         }
         this.streamingMode = 'vad'
         this.writingTarget = null
-        const streamingBtns = document.getElementsByClassName('linto-chatbot-streaming-btn')
-
-        for(let btn of streamingBtns) {
-            if(btn.classList.contains('streaming-on')) {
-                btn.classList.remove('streaming-on')
-            }
-        }
     }
     streamingFinal = (event) => {
         if (this.debug) {
@@ -524,9 +513,43 @@ class ChatBot {
         if (this.debug) {
             console.log("Streaming cannot start : ", event.detail)
         }
-        if(event.detail.behavior.streaming.status === 'chunk') {
+        if (event.detail.behavior.streaming.status === 'chunk') {
             this.chatbot.stopStreaming()
+            this.chatbot.stopStreamingPipeline()
         }
+
+        this.lintoCornerAnim.destroy()
+        this.hideChatbotMultiModal()
+
+        const initBtn = document.getElementById('linto-chatbot-init-btn')
+        setTimeout(() => {
+            this.lintoCornerAnim = lottie.loadAnimation({
+                container: initBtn,
+                renderer: 'svg',
+                loop: false,
+                autoplay: true,
+                path: '/assets/json/error.json',
+                rendererSettings: {
+                    className: 'linto-animation'
+                }
+            })
+            this.chatbot.startStreamingPipeline()
+
+            setTimeout(() => {
+                this.lintoCornerAnim.destroy()
+                this.lintoCornerAnim = lottie.loadAnimation({
+                    container: initBtn,
+                    renderer: 'svg',
+                    loop: false,
+                    autoplay: true,
+                    path: '/assets/json/linto-sleep.json',
+                    rendererSettings: {
+                        className: 'linto-animation'
+                    }
+                })
+            }, 500);
+        }, 300);
+
     }
     textPublished = (e) => {
         if (this.debug) {
@@ -578,11 +601,11 @@ class ChatBot {
             if (this.chatbotMode === 'minimal-streaming') {
                 this.updateCurrentUiContent(answer)
                 this.updatePrevioustUiContent(ask)
+                this.setLintoAnimation('talking')
             }
             if (this.chatbotMode === 'multi-modal') {
                 this.updateMultiModalBot(answer)
             }
-            this.setLintoAnimation('talking')
 
             // Response
             let sayResp = await this.say(answer)
@@ -629,8 +652,8 @@ class ChatBot {
         this.chatbot.addEventListener("action_feedback", this.actionFeedback)
         this.chatbot.addEventListener("chatbot_feedback_from_skill", this.chatbotFeedback)
 
-        if(this.lintoCustomEvents.length > 0) {
-            for(let event of this.lintoCustomEvents) {
+        if (this.lintoCustomEvents.length > 0) {
+            for (let event of this.lintoCustomEvents) {
                 this.setHandler(event.flag, event.func)
             }
         }

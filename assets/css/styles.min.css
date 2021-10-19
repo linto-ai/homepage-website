@@ -2622,6 +2622,98 @@ body.zoom h2 {
   fill: #00AD0C;
 }
 
+/* Chatbot VIEW */
+.form-field {
+  align-items: flex-end;
+  margin: 10px 0;
+}
+.form-field .form-input-container .label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 0;
+}
+.form-field .form-input-container .form-input {
+  display: inline-block;
+  height: auto;
+  line-height: 30px;
+  padding: 0 5px;
+  background-color: #eee;
+  width: 260px;
+  max-height: 70px;
+  overflow: auto;
+}
+.form-field .form-input-container .form-input#form-input-msg {
+  min-height: 70px;
+}
+
+.linto-chatbot-streaming-btn {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #ececec;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  margin: 0 5px;
+  padding: 0;
+  overflow: hidden;
+}
+.linto-chatbot-streaming-btn .icon {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-color: #1B92EA;
+  mask-image: url("../img/chatbot/chatbot-mic.svg");
+  -webkit-mask-image: url("../img/chatbot/chatbot-mic.svg");
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+.linto-chatbot-streaming-btn:hover {
+  background-color: #f1f1f1;
+}
+.linto-chatbot-streaming-btn:hover .icon {
+  background-color: #c63d43;
+}
+.linto-chatbot-streaming-btn.streaming-on, .linto-chatbot-streaming-btn.streaming-on:hover {
+  background-color: #c63d43;
+}
+.linto-chatbot-streaming-btn.streaming-on .icon, .linto-chatbot-streaming-btn.streaming-on:hover .icon {
+  background-color: #fff;
+}
+
+.linto-chatbot-replay {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #ececec;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  margin: 0 5px;
+  padding: 0;
+}
+.linto-chatbot-replay .icon {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-color: #1B92EA;
+  mask-image: url("../img/chatbot/play.svg");
+  -webkit-mask-image: url("../img/chatbot/play.svg");
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+.linto-chatbot-replay:hover .icon {
+  background-color: #273799;
+}
+.linto-chatbot-replay.hidden {
+  display: none;
+}
+
 footer {
   padding: 40px 0;
   background-color: #111;

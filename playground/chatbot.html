@@ -9,22 +9,23 @@
     <meta name="language" content="en-GB" />
     <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon/favicon.ico" />
     <link rel="shortcut icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" />
-    
+
     <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.13/lottie.min.js" integrity="sha512-srGxQe2w7s50+5/nNgEVKYtBm15zRylJwdjxYnGEZr3mmHFJKFjA/ImA2OKizVzoIDX8XISMHDI1+az9pnumbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
- 
+
     <script type="text/javascript" src="/assets/js/linto.min.js"></script>
 
     <script type="text/javascript" src="/assets/js/chatbot.js"></script>
     <script type="text/javascript" src="/assets/js/linto-playground-chatbot.js"></script>
+    <script type="text/javascript" src="/assets/js/slick.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/chatbot.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/chatbot.css" />
 
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css" />
 </head>
-   
+
 <body>
     <!-- HEADER -->
     <nav id="header" class="border">
@@ -174,6 +175,7 @@
     <section id="playground-webpage" class="flex row">
         <div class="flex1 flex row">
             <!-- <div id="loading" class="fr"></div> -->
+            <!-- LEFT PART -->
             <div class="flex col" id="playground-infos">
                 <div class="flex1 flex col" id="commands">
                     <h2>Commandes vocales</h2>
@@ -183,38 +185,30 @@
                         <span class="playground-webpage-command">LinTO, lis le <strong>titre</strong></span>
                         <span class="playground-webpage-command">LinTO, lis le <strong>contenu</strong></span>
 
-                        <span class="playground-webpage-command">LinTO, <strong>démarre </strong> le podcast</span>
-                        <span class="playground-webpage-command">LinTO, <strong>stoppe</strong> le podcast</span>
-
                         <span class="playground-webpage-command">LinTO, diapo <strong>suivante</strong></span>
                         <span class="playground-webpage-command">LinTO, diapo <strong>précédente</strong></span>
-
-                        <span class="playground-webpage-command">LinTO, <strong>agrandis</strong> l'image</span>
-                        <span class="playground-webpage-command">LinTO, <strong>réduis</strong> l'image</span>
 
                         <span class="playground-webpage-command">LinTO, <strong>active</strong> le mode accéssibilité</span>
                         <span class="playground-webpage-command">LinTO, <strong>désactive</strong> le mode accéssibilité</span>
                     </div>
                 </div>
             </div>
+            <!-- CENTER PART -->
             <div class="flex2 flex col playground-webpage-area" id="playground-webpage-content">
                 <div class="flex1">
                     <h2>Navigation et Lecture de contenu</h2>
                     <div class="playground-webpage-content-block active" data-index="1">
-                        <h3 class="playground-content-block__title">Je suis le titre du premier bloc</h3>
-                        <p class="playground-content-block__content">Ceci est le texte du premier bloc de contenu.</p>
+                        <h3 class="playground-content-block__title">Client à commande vocale</h3>
+                        <p class="playground-content-block__content">Mots de réveil personnalisés pour réveiller votre client LinTO. Mode réunion avec discours multipartite spontané. Commandes vocales simples ou intégration d'un large vocabulaire.</p>
                     </div>
                     <div class="playground-webpage-content-block" data-index="2">
-                        <h3 class="playground-content-block__title">Titre du second bloc</h3>
-                        <p class="playground-content-block__content">Ce texte constitue le contenu du second bloc.</p>
+                        <h3 class="playground-content-block__title">Compréhension du langage naturel</h3>
+                        <p class="playground-content-block__content">Moteur de compréhension du langage naturel basé sur l'IA. Reconnaissance d'intentions à partir de textes déclenchant les compétences correspondantes. Augmentation automatique des données lexicales pour les dictionnaires et les
+                            scénarios.</p>
                     </div>
                     <div class="playground-webpage-content-block" data-index="3">
-                        <h3 class="playground-content-block__title">Titre du troisième bloc</h3>
-                        <p class="playground-content-block__content">Ce texte est le contenu du troisième et avant-dernier bloc.</p>
-                    </div>
-                    <div class="playground-webpage-content-block" data-index="4">
-                        <h3 class="playground-content-block__title">Titre du quatrième bloc</h3>
-                        <p class="playground-content-block__content">Ce texte est le dernier contenu pour la démonstration.</p>
+                        <h3 class="playground-content-block__title">Exécution de flux de travail</h3>
+                        <p class="playground-content-block__content">Compétences modulaires pour accéder à n'importe quel appareil, plateforme de productivité, API. Intégration sécurisée dans des flux de travail complexes. Décrit et paramétrise graphiquement vos cas d'utilisation.</p>
                     </div>
                 </div>
             </div>
@@ -223,15 +217,43 @@
                 <div class="flex1 flex col playground-webpage-area" id="playground-webpage-slider">
                     <h2>Controler un slider</h2>
                     <div id="playground-slider">
-                       <!-- <img src="/assets/img/slider/cat1.jpg" alt="Cat - credit unsplash.com" />
+                        <img src="/assets/img/slider/cat1.jpg" alt="Cat - credit unsplash.com" />
                         <img src="/assets/img/slider/cat2.jpg" alt="Cat - credit unsplash.com" />
                         <img src="/assets/img/slider/cat3.jpg" alt="Cat - credit unsplash.com" />
-                        -->
-                        test1
                     </div>
                 </div>
                 <div class="flex2 flex col playground-webpage-area" id="playground-webpage-form">
                     <h2>Remplir un formulaire</h2>
+                    <div class="flex row form-field">
+                        <div class="flex col form-input-container">
+                            <span class="label">Nom:</span>
+                            <span id="form-input-name" class="form-input" contenteditable="true"></span>
+                        </div>
+                        <div class="flex row">
+                            <button class="linto-chatbot-streaming-btn" id="record-name" data-target='form-input-name' data-type="vad-custom"><span class="icon"></span></button>
+                            <button class="linto-chatbot-replay hidden"><span class="icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="flex row form-field">
+                        <div class="flex col form-input-container">
+                            <span class="label">Autre :</span>
+                            <span id="form-input-test" class="form-input" contenteditable="true"></span>
+                        </div>
+                        <div class="flex row">
+                            <button class="linto-chatbot-streaming-btn" id="record-test" data-target='form-input-test' data-type="vad-custom"><span class="icon"></span></button>
+                            <button class="linto-chatbot-replay hidden"><span class="icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="flex row form-field">
+                        <div class="flex col form-input-container">
+                            <span class="label">Long :</span>
+                            <span id="form-input-msg" class="form-input" contenteditable="true"></span>
+                        </div>
+                        <div class="flex row">
+                            <button class="linto-chatbot-streaming-btn" id="record-msg" data-target='form-input-msg' data-type="infinite"><span class="icon"></span></button>
+                            <button class="linto-chatbot-replay hidden"><span class="icon"></span></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -300,7 +322,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <!-- END MODAL -->
     <div id="chatbot-wrapper"></div>
