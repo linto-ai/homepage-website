@@ -699,6 +699,11 @@ button:hover {
   padding: 10px;
   overflow: auto;
 }
+#chatbot-mm-content .chatbot-mm-content-item .chatbot-event-img {
+  display: inline-block;
+  width: 70%;
+  height: auto;
+}
 
 .chatbot-mm-actions-btn {
   display: inline-block;

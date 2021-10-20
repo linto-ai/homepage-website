@@ -2,7 +2,7 @@ window.onload = async function() {
     window.chatbot = new ChatBot({
         debug: true,
         containerId: 'chatbot-wrapper',
-        lintoWebToken: 'g1UZQSKNq07VJzMz', 
+        lintoWebToken: 'p0UGj0NM0TePH5am', 
         //prod : g1UZQSKNq07VJzMz
         //local : p0UGj0NM0TePH5am
         lintoWebHost: 'https://stage.linto.ai/overwatch/local/web/login',
@@ -24,8 +24,6 @@ window.onload = async function() {
             let activeTitles = $('.playground-webpage-content-block.active h3')
             if (activeTitles.length > 0) {
                 const title = activeTitles[0].innerHTML
-
-                console.log('window.chatbotMode',window.chatbotMode)
                 if(window.chatbot.chatbotMode === 'multi-modal') {
                     window.chatbot.updateMultiModalBot(title)
                 } else if(window.chatbot.chatbotMode === 'minimal-streaming') {

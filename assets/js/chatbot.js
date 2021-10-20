@@ -371,6 +371,10 @@ class ChatBot {
             console.log(item)
             if(item.eventType === 'choice') {
                 jhtml += `<button class="chatbot-event-btn">${item.text}</button>`
+            } else if(item.eventType === 'attachment') {
+                if(!!item.file && item.file.type === 'image') {
+                    jhtml += `<img src="${item.file.url}" class="chatbot-event-img">`
+                }
             }
         }
         jhtml += '</div>'
@@ -660,14 +664,18 @@ class ChatBot {
             let ask = e.detail.behavior.chatbot.ask
             let answer = e.detail.behavior.chatbot.answer.text
             let data = e.detail.behavior.chatbot.answer.data // chatbot answers (links)
-
+            console.log('>>', this.chatbotMode)
             if (this.chatbotMode === 'minimal-streaming') {
                 this.updateCurrentUiContent(answer)
                 this.updatePrevioustUiContent(ask)
                 this.setLintoAnimation('talking')
             }
             if (this.chatbotMode === 'multi-modal') {
-                this.updateMultiModalBot(answer)
+                console.log('ANSWER', answer)
+                if(answer.length > 0) {
+                    this.updateMultiModalBot(answer)
+                }
+                console.log('2/')
                 this.updateMultiModalData(data)
             }
 
