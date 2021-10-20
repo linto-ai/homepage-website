@@ -112,6 +112,50 @@
     width: 100%;
   }
 }
+@-webkit-keyframes blinkRedWhite {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #ec5a5a;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+@keyframes blinkRedWhite {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #ec5a5a;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+@-webkit-keyframes blinkWhiteRed {
+  0% {
+    background-color: #ec5a5a;
+  }
+  50% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #ec5a5a;
+  }
+}
+@keyframes blinkWhiteRed {
+  0% {
+    background-color: #ec5a5a;
+  }
+  50% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #ec5a5a;
+  }
+}
 /*===== FONTS =====*/
 @font-face {
   font-family: "Open-Dyslexic Roman";
@@ -2636,15 +2680,16 @@ body.zoom h2 {
 .form-field .form-input-container .form-input {
   display: inline-block;
   height: auto;
-  line-height: 30px;
-  padding: 0 5px;
+  line-height: 22px;
+  padding: 5px;
   background-color: #eee;
-  width: 260px;
-  max-height: 70px;
+  width: 360px;
+  max-height: 80px;
   overflow: auto;
 }
 .form-field .form-input-container .form-input#form-input-msg {
-  min-height: 70px;
+  min-height: 80px;
+  max-height: 120px;
 }
 
 .linto-chatbot-streaming-btn {
