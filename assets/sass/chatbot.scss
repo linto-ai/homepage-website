@@ -7,7 +7,7 @@ $green: #00d67d;
 $red: #ec5a5a;
 $blue: #24a7ff;
 $blueDark: #003c65;
-@import "./mixin.scss";
+@import "./_mixin.scss";
 .flex {
     display: flex;
     &.col {
@@ -63,6 +63,7 @@ button {
     @include borderRadius(50px);
     border: none;
     overflow: hidden;
+    background-color: transparent;
     &:hover {
         @include transform(scale(1.1));
     }
@@ -109,9 +110,9 @@ button {
             padding: 5px 10px;
             color: #fff;
             border: none;
-            margin: 0 10px;
+            margin: 5px 0 ;
             @include borderRadius(3px);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             @include transition(all 0.3s ease);
             &.enable {
@@ -377,6 +378,7 @@ button {
     bottom: 20px;
     left: 100%;
     margin-left: -300px;
+    scroll-behavior: smooth;
     @include borderRadius(5px);
     @include boxShadow(0,
     2px,
@@ -407,6 +409,7 @@ button {
     .body {
         padding: 10px;
         background-color: #F1F1F1;
+        scroll-behavior: smooth;
         overflow: auto;
     }
     .footer {
@@ -423,6 +426,7 @@ button {
 
 #chatbot-mm-content {
     padding: 10px;
+    scroll-behavior: smooth;
     .chatbot-mm-content-item {
         margin-bottom: 10px;
         &.user {
@@ -445,10 +449,32 @@ button {
                 0);
             }
         }
+        &.data {
+            .chatbot-event-btn{
+                display: inline-block;
+                font-size: 15px;
+                padding: 5px;
+                margin: 5px 0;
+                background-color: #fff;
+                max-width: 75%;
+                border: 1px solid $blueDark;
+                color: $blueDark;
+                text-align: center;
+                @include borderRadius(3px);
+                @include transition(all 0.3s ease);
+                &:hover{
+                    background-color: $blueDark;
+                    color: #fff;
+                }
+            }
+        }
         .content {
+            font-size: 15px;
+            line-height: 20px;
             display: inline-block;
-            max-width: 70%;
+            max-width: 75%;
             padding: 10px;
+            overflow: auto;
         }
     }
 }

@@ -2,10 +2,10 @@ window.onload = async function() {
     window.chatbot = new ChatBot({
         debug: true,
         containerId: 'chatbot-wrapper',
-        lintoWebToken: 'p0UGj0NM0TePH5am', //qTw7il98QXAFaxRr
+        lintoWebToken: 'g1UZQSKNq07VJzMz', 
+        //prod : g1UZQSKNq07VJzMz
+        //local : p0UGj0NM0TePH5am
         lintoWebHost: 'https://stage.linto.ai/overwatch/local/web/login',
-        //chatbotMode: 'minimal-streaming',
-        chatbotMode: 'multi-modal',
         lintoCustomEvents: [{
             flag: 'custom_action_from_skill',
             func: (event) => { customActionSkill(event) }
@@ -18,22 +18,42 @@ window.onload = async function() {
         //chatbotMode: 'minimal-streaming'
     })
 
-    let customActionSkill = (event) => {
+    let customActionSkill = async (event) => {
         console.log(event, event.detail.behavior.customAction.kind)
         if (!!event.detail && event.detail.behavior.customAction.kind === 'read_title') {
             let activeTitles = $('.playground-webpage-content-block.active h3')
             if (activeTitles.length > 0) {
                 const title = activeTitles[0].innerHTML
-                window.chatbot.updateMultiModalBot(title)
-                window.chatbot.say(title)
+
+                console.log('window.chatbotMode',window.chatbotMode)
+                if(window.chatbot.chatbotMode === 'multi-modal') {
+                    window.chatbot.updateMultiModalBot(title)
+                } else if(window.chatbot.chatbotMode === 'minimal-streaming') {
+                    const current = document.getElementById('chatbot-content-current').innerHTML
+                    window.chatbot.updatePrevioustUiContent(current)
+                    window.chatbot.updateCurrentUiContent(title)
+                }
+                let say = await window.chatbot.say(title)
+                if(!!say) {
+                    this.chatbot.closeAll()
+                }
             }
         }
         if (!!event.detail && event.detail.behavior.customAction.kind === 'read_content') {
             let activeContent = $('.playground-webpage-content-block.active p')
             if (activeContent.length > 0) {
                 const content = activeContent[0].innerHTML
-                window.chatbot.updateMultiModalBot(content)
-                window.chatbot.say(content)
+                if(window.chatbot.chatbotMode === 'multi-modal') {
+                    window.chatbot.updateMultiModalBot(content)
+                } else if(window.chatbot.chatbotMode === 'minimal-streaming') {
+                    const current = document.getElementById('chatbot-content-current').innerHTML
+                    window.chatbot.updatePrevioustUiContent(current)
+                    window.chatbot.updateCurrentUiContent(content)
+                }
+                let say = await window.chatbot.say(content)
+                if(!!say) {
+                    this.chatbot.closeAll()
+                }
             }
         }
         if (!!event.detail && event.detail.behavior.customAction.kind === 'block_next') {
@@ -46,6 +66,8 @@ window.onload = async function() {
                 '"]')
             activeBlock.removeClass('active')
             targetBlock.addClass('active')
+            this.chatbot.closeAll()
+
         }
         if (!!event.detail && event.detail.behavior.customAction.kind === 'block_previous') {
             let nbBlocks = $('.playground-webpage-content-block').length
@@ -57,19 +79,29 @@ window.onload = async function() {
                 '"]')
             activeBlock.removeClass('active')
             targetBlock.addClass('active')
+            this.chatbot.closeAll()
+
         }
         if (!!event.detail && event.detail.behavior.customAction.kind === 'slide_next') {
             $('#playground-slider').slick('slickNext')
+            this.chatbot.closeAll()
+
         }
         // Slide previous
         if (!!event.detail && event.detail.behavior.customAction.kind === 'slide_previous') {
             $('#playground-slider').slick('slickPrev')
+            this.chatbot.closeAll()
+
         }
         if (!!event.detail && event.detail.behavior.customAction.kind === 'accesibility_on') {
             enableAccessibility()
+            this.chatbot.closeAll()
+
         }
         if (!!event.detail && event.detail.behavior.customAction.kind === 'accesibility_off') {
             disableAccessibility()
+            this.chatbot.closeAll()
+
         }
     }
 

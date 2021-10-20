@@ -60,8 +60,10 @@ class ChatBot {
                 <button id="linto-chatbot-init-btn"></button>
                 <div id="linto-chatbot-init-frame" class="flex col hidden">
                 <span>Activez la saisie vocale pour poser vos questions oralement.<br/><br/>Cliquez sur le bouton ou dîtes <strong>"LinTO"</strong> pour activer la saisie vocale</span>
-                <div id="linto-chatbot-init-frame-btn" class="flex row">
-                    <button id="init-frame-btn-enable"class="enable">Activer</button>
+                <div id="linto-chatbot-init-frame-btn" class="flex col">
+                    
+                    <button id="init-frame-btn-enable-mm" class="enable">Mode multi-modal</button>
+                    <button id="init-frame-btn-enable-ms" class="enable">Mode minimal-streaming</button>
                     <button id="init-frame-btn-close" class="close">Fermer</button>
                 </div>
                 </div>
@@ -72,7 +74,8 @@ class ChatBot {
 
             const initBtn = document.getElementById('linto-chatbot-init-btn')
             const closeFrameBtn = document.getElementById('init-frame-btn-close')
-            const enableLintoBtn = document.getElementById('init-frame-btn-enable')
+            const enableMultiModalBtn = document.getElementById('init-frame-btn-enable-mm')
+            const enableMinimalStreamingBtn = document.getElementById('init-frame-btn-enable-ms')
 
             this.lintoCornerAnim = lottie.loadAnimation({
                 container: initBtn,
@@ -96,15 +99,19 @@ class ChatBot {
             }
 
             // Init linto web client
-            enableLintoBtn.onclick = (e) => {
-                if (this.chatbotMode === 'minimal-streaming') {
-                    this.setChatbotMinimal()
-                } else if (this.chatbotMode === 'multi-modal') {
-                    this.setChatbotMultiModal()
-                }
+            enableMinimalStreamingBtn.onclick = (e) => {
+                this.setChatbotMinimal()
                 this.closeInitFrame()
                 this.initLintoWeb()
             }
+
+            // Init linto web client
+            enableMultiModalBtn.onclick = (e) => {
+                this.setChatbotMultiModal()
+                this.closeInitFrame()
+                this.initLintoWeb()
+            }
+
             this.beep = new Audio('/assets/audio/beep.mp3')
             this.beep.volume = 0.1
         }
@@ -139,35 +146,26 @@ class ChatBot {
         initFrame.classList.add('hidden')
         initBtn.innerHTML = ''
 
-        this.lintoCornerAnim = lottie.loadAnimation({
-            container: initBtn,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: '/assets/json/linto-sleep.json',
-            rendererSettings: {
-                className: 'linto-animation'
-            }
-        })
     }
 
     /* LinTO Chatbot MINIMAL MODE */
     setChatbotMinimal() {
         let jhtml = ''
         const chatbotWrapper = document.getElementById('chatbot-wrapper')
-        if (this.chatbotMode === 'minimal-streaming') {
-            jhtml = `
-            <div id="chatbot-minimal" class="${this.chatbotMode} flex row hidden">
-              <button id="chatbot-ui-close"></button>
-              <div class="chatbot-container flex1 flex row">
-                  <div id="linto-chatbot-animation" class="chatbot-animation flex col"></div>
-                  <div class="chatbot-content flex col flex1">
-                      <div id="chatbot-content-previous" class="chatbot-content-previous"></div>
-                      <div id="chatbot-content-current" class="chatbot-content-current flex col"></div>
-                    </div>
+        this.chatbotMode = 'minimal-streaming'
+        
+        jhtml = `
+        <div id="chatbot-minimal" class="${this.chatbotMode} flex row hidden">
+            <button id="chatbot-ui-close"></button>
+            <div class="chatbot-container flex1 flex row">
+                <div id="linto-chatbot-animation" class="chatbot-animation flex col"></div>
+                <div class="chatbot-content flex col flex1">
+                    <div id="chatbot-content-previous" class="chatbot-content-previous"></div>
+                    <div id="chatbot-content-current" class="chatbot-content-current flex col"></div>
                 </div>
-            </div>`
-        }
+            </div>
+        </div>`
+
         chatbotWrapper.innerHTML += jhtml
         this.lintoAnimationContainer = document.getElementById('linto-chatbot-animation')
 
@@ -249,17 +247,19 @@ class ChatBot {
 
     /* LinTO Chatbot MULTI-MODAL MODE */
     setChatbotMultiModal() {
+        this.chatbotMode = 'multi-modal'
+        
         let jhtml = `
         <div id="chatbot-multi-modal" class="flex col hidden">
             <div class="header flex row">
                 <span class="chatbot-mm-title flex1">LinTO Chatbot</span>
                 <div class="chatbot-mm-actions">
-                    <button id="chatbot-mm-mic-mute" class="chatbot-mm-actions-btn"><span class="icon mic mute"></span></button>
+                    <!-- <button id="chatbot-mm-mic-mute" class="chatbot-mm-actions-btn"><span class="icon mic mute"></span></button> -->
                     <button id="chatbot-mm-collapse" class="chatbot-mm-actions-btn"><span class="icon collapse"></span></button>
                     <button id="chatbot-mm-close" class="chatbot-mm-actions-btn"><span class="icon close"></span></button>
                 </div>
             </div>
-            <div class="body flex1 flex col">
+            <div class="body flex1 flex col" id="chatbot-body">
               <div id="chatbot-mm-content" class="flex col">
               </div>
             </div>
@@ -299,6 +299,23 @@ class ChatBot {
                 chatbotInput.innerHTML = ''
             }
         }
+
+        const closeChatbotBtn = document.getElementById('chatbot-mm-close')
+        closeChatbotBtn.onclick = (e) =>{
+            this.hideChatbotMultiModal()
+            chatbotWrapper.innerHTML = ''
+            this.chatbotEnabled = false
+            this.chatbot.stopStreaming()
+            this.chatbot.stopStreamingPipeline()
+            this.chatbot.stopAudioAcquisition()
+            this.lintoCornerAnim.destroy()
+            this.chatbot.logout()
+            setTimeout( () => {
+                console.log('re init')
+                this.init()
+            }, 1000)
+        }
+
     }
     showChatbotMultiModal(value) {
         const multiModal = document.getElementById('chatbot-multi-modal')
@@ -328,6 +345,11 @@ class ChatBot {
           <span class="content">${content}</span>
         </div>`
         multiModalContent.innerHTML += jhtml
+        document.getElementById('chatbot-body').scrollTo({
+            top: multiModalContent.offsetHeight,
+            left: 0,
+            behavior: 'smooth'
+        });    
     }
     updateMultiModalBot(content) {
         const multiModalContent = document.getElementById('chatbot-mm-content')
@@ -336,10 +358,45 @@ class ChatBot {
         <span class="content">${content}</span>
       </div>`
         multiModalContent.innerHTML += jhtml
+        document.getElementById('chatbot-body').scrollTo({
+            top: multiModalContent.offsetHeight,
+            left: 0,
+            behavior: 'smooth'
+        });
     }
+    updateMultiModalData(data) {
+        const multiModalContent = document.getElementById('chatbot-mm-content')
+        let jhtml = '<div class="chatbot-mm-content-item data flex col">'
+        for(let item of data) {
+            console.log(item)
+            if(item.eventType === 'choice') {
+                jhtml += `<button class="chatbot-event-btn">${item.text}</button>`
+            }
+        }
+        jhtml += '</div>'
+        multiModalContent.innerHTML += jhtml
+
+        $('.chatbot-event-btn').click((event) => {
+            let value = event.target.innerHTML
+            this.updateMultiModalUser(value)
+            this.chatbot.sendChatbotText(value)
+        })
+        
+        document.getElementById('chatbot-body').scrollTo({
+            top: multiModalContent.offsetHeight,
+            left: 0,
+            behavior: 'smooth'
+        });    }
     updateMultiModalInput(content) {
         const multiModalInput = document.getElementById('chatbot-mm-input')
         multiModalInput.innerHTML = content
+    }
+    closeAll () {
+        if(this.chatbotMode === 'minimal-streaming') {
+            this.hideChatbotMinimal()
+        } else if(this.chatbotMode === 'multi-modal') {
+            this.hideChatbotMultiModal()
+        }
     }
 
     /* LINTO EVENTS LISTENERS */
@@ -517,38 +574,44 @@ class ChatBot {
             this.chatbot.stopStreaming()
             this.chatbot.stopStreamingPipeline()
         }
-
-        this.lintoCornerAnim.destroy()
-        this.hideChatbotMultiModal()
+        if(this.chatbotMode === 'multi-modal') this.hideChatbotMultiModal()
+        if(this.chatbotMode === 'minimal-streaming') this.hideChatbotMinimal()
+        
+        const streamingBtns = document.getElementsByClassName('linto-chatbot-streaming-btn')
+        for(let btn of streamingBtns) {
+            if(btn.classList.contains('streaming-on')) {
+                btn.classList.remove('streaming-on')
+            }
+        }
 
         const initBtn = document.getElementById('linto-chatbot-init-btn')
-        setTimeout(() => {
-            this.lintoCornerAnim = lottie.loadAnimation({
-                container: initBtn,
-                renderer: 'svg',
-                loop: false,
-                autoplay: true,
-                path: '/assets/json/error.json',
-                rendererSettings: {
-                    className: 'linto-animation'
-                }
-            })
+        this.lintoCornerAnim.destroy()
+        this.lintoCornerAnim = lottie.loadAnimation({
+            container: initBtn,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: '/assets/json/error.json',
+            rendererSettings: {
+                className: 'linto-animation'
+            }
+        })
+        this.lintoCornerAnim.onComplete = () => {
             this.chatbot.startStreamingPipeline()
-
             setTimeout(() => {
                 this.lintoCornerAnim.destroy()
                 this.lintoCornerAnim = lottie.loadAnimation({
                     container: initBtn,
                     renderer: 'svg',
-                    loop: false,
+                    loop: true,
                     autoplay: true,
-                    path: '/assets/json/linto-sleep.json',
+                    path: '/assets/json/linto-think.json',
                     rendererSettings: {
                         className: 'linto-animation'
                     }
                 })
-            }, 500);
-        }, 300);
+            }, 500)
+        }
 
     }
     textPublished = (e) => {
@@ -596,7 +659,7 @@ class ChatBot {
         if (!!e.detail && !!e.detail.behavior) {
             let ask = e.detail.behavior.chatbot.ask
             let answer = e.detail.behavior.chatbot.answer.text
-                //let data = e.detail.behavior.chatbot.answer.data // chatbot answers (links)
+            let data = e.detail.behavior.chatbot.answer.data // chatbot answers (links)
 
             if (this.chatbotMode === 'minimal-streaming') {
                 this.updateCurrentUiContent(answer)
@@ -605,6 +668,7 @@ class ChatBot {
             }
             if (this.chatbotMode === 'multi-modal') {
                 this.updateMultiModalBot(answer)
+                this.updateMultiModalData(data)
             }
 
             // Response
@@ -685,7 +749,7 @@ class ChatBot {
                     renderer: 'svg',
                     loop: true,
                     autoplay: true,
-                    path: '/assets/json/linto-sleep.json',
+                    path: '/assets/json/linto-awake.json',
                     rendererSettings: {
                         className: 'linto-animation'
                     }

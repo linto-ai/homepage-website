@@ -412,3 +412,80 @@ $FontType:"Regular") {
     src: url('#{$FontPath}/#{$FontType}/#{$FontName}-#{$FontType}.woff2?v=#{$FontVersion}') format('woff2'),
     url('#{$FontPath}/#{$FontType}/#{$FontName}-#{$FontType}.woff?v=#{$FontVersion}') format('woff');
 }
+
+
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+}
+@mixin noShadow() {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+@-webkit-keyframes blinkRedWhite {
+    0% {
+        background-color: #fff;
+    }
+    50% {
+        background-color: #ec5a5a;
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+@keyframes blinkRedWhite {
+    0% {
+        background-color: #fff;
+    }
+    50% {
+        background-color: #ec5a5a;
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+@mixin blinkRedToWhite {
+    -webkit-animation: blinkRedWhite 2s infinite;
+    -moz-animation: blinkRedWhite 2s infinite;
+    -ms-animation: blinkRedWhite 2s infinite;
+    -o-animation: blinkRedWhite 2s infinite;
+    animation: blinkRedWhite 2s infinite;
+}
+
+@-webkit-keyframes blinkWhiteRed {
+    0% {
+        background-color: #ec5a5a;
+    }
+    50% {
+        background-color: #fff;
+    }
+    100% {
+        background-color: #ec5a5a;
+    }
+}
+
+@keyframes blinkWhiteRed {
+    0% {
+        background-color: #ec5a5a;
+    }
+    50% {
+        background-color: #fff;
+    }
+    100% {
+        background-color: #ec5a5a;
+    }
+}
+
+@mixin blinkWhiteToRed {
+    -webkit-animation: blinkWhiteRed 2s infinite;
+    -moz-animation: blinkWhiteRed 2s infinite;
+    -ms-animation: blinkWhiteRed 2s infinite;
+    -o-animation: blinkWhiteRed 2s infinite;
+    animation: blinkWhiteRed 2s infinite;
+}
