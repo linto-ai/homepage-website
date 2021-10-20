@@ -2,7 +2,7 @@ window.onload = async function() {
     window.chatbot = new ChatBot({
         debug: true,
         containerId: 'chatbot-wrapper',
-        lintoWebToken: 'p0UGj0NM0TePH5am', 
+        lintoWebToken: 'g1UZQSKNq07VJzMz', 
         //prod : g1UZQSKNq07VJzMz
         //local : p0UGj0NM0TePH5am
         lintoWebHost: 'https://stage.linto.ai/overwatch/local/web/login',
