@@ -2,7 +2,7 @@ window.onload = async function() {
     window.chatbot = new ChatBot({
         debug: true,
         containerId: 'chatbot-wrapper',
-        lintoWebToken: 'g1UZQSKNq07VJzMz', 
+        lintoWebToken: 'g1UZQSKNq07VJzMz',
         //prod : g1UZQSKNq07VJzMz
         //local : p0UGj0NM0TePH5am
         lintoWebHost: 'https://stage.linto.ai/overwatch/local/web/login',
@@ -18,21 +18,21 @@ window.onload = async function() {
         //chatbotMode: 'minimal-streaming'
     })
 
-    let customActionSkill = async (event) => {
+    let customActionSkill = async(event) => {
         console.log(event, event.detail.behavior.customAction.kind)
         if (!!event.detail && event.detail.behavior.customAction.kind === 'read_title') {
             let activeTitles = $('.playground-webpage-content-block.active h3')
             if (activeTitles.length > 0) {
                 const title = activeTitles[0].innerHTML
-                if(window.chatbot.chatbotMode === 'multi-modal') {
+                if (window.chatbot.chatbotMode === 'multi-modal') {
                     window.chatbot.updateMultiModalBot(title)
-                } else if(window.chatbot.chatbotMode === 'minimal-streaming') {
-                    const current = document.getElementById('chatbot-content-current').innerHTML
+                } else if (window.chatbot.chatbotMode === 'minimal-streaming') {
+                    const current = document.getElementById('chatbot-ms-content-current').innerHTML
                     window.chatbot.updatePrevioustUiContent(current)
                     window.chatbot.updateCurrentUiContent(title)
                 }
                 let say = await window.chatbot.say(title)
-                if(!!say) {
+                if (!!say) {
                     this.chatbot.closeAll()
                 }
             }
@@ -41,15 +41,15 @@ window.onload = async function() {
             let activeContent = $('.playground-webpage-content-block.active p')
             if (activeContent.length > 0) {
                 const content = activeContent[0].innerHTML
-                if(window.chatbot.chatbotMode === 'multi-modal') {
+                if (window.chatbot.chatbotMode === 'multi-modal') {
                     window.chatbot.updateMultiModalBot(content)
-                } else if(window.chatbot.chatbotMode === 'minimal-streaming') {
-                    const current = document.getElementById('chatbot-content-current').innerHTML
+                } else if (window.chatbot.chatbotMode === 'minimal-streaming') {
+                    const current = document.getElementById('chatbot-ms-content-current').innerHTML
                     window.chatbot.updatePrevioustUiContent(current)
                     window.chatbot.updateCurrentUiContent(content)
                 }
                 let say = await window.chatbot.say(content)
-                if(!!say) {
+                if (!!say) {
                     this.chatbot.closeAll()
                 }
             }

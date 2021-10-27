@@ -7,7 +7,7 @@ $green: #00d67d;
 $red: #ec5a5a;
 $blue: #24a7ff;
 $blueDark: #003c65;
-@import "./_mixin.scss";
+@import "./mixin.scss";
 .flex {
     display: flex;
     &.col {
@@ -39,6 +39,13 @@ button {
     }
 }
 
+#chatbot-wrapper {
+    font-family: $roboto;
+}
+
+
+/* CHATBOT CORNER + INIT */
+
 #linto-chatbot-corner {
     position: fixed;
     top: 100%;
@@ -52,9 +59,6 @@ button {
         display: none;
     }
 }
-
-
-/* CHATBOT CORNER + INIT */
 
 #linto-chatbot-init-btn {
     display: inline-block;
@@ -81,6 +85,47 @@ button {
     }
 }
 
+#chatbot-close{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    margin-left: -30px;
+    margin-top: -20px;
+    @include borderRadius(15px);
+    @include transition(all 0.2s ease);
+    background-color: #fff;
+    @include boxShadow(0,
+    0,
+    4px,
+    0,
+    rgba(0,
+    0,
+    0,
+    0.3));
+    border: none;
+    .icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        @include maskImage('../img/chatbot/close.svg');
+        background-color: $red;
+        @include transition(all 0.2s ease);
+    }
+    &:hover,
+    &.opened {
+        background-color: $red;
+        .icon {
+            background-color: #fff;
+        }
+    }
+    &.hidden {
+        display: none;
+    }
+}
 #linto-chatbot-init-frame {
     display: inline-block;
     padding: 20px;
@@ -110,7 +155,7 @@ button {
             padding: 5px 10px;
             color: #fff;
             border: none;
-            margin: 5px 0 ;
+            margin: 5px 0;
             @include borderRadius(3px);
             font-size: 14px;
             font-weight: 600;
@@ -163,7 +208,8 @@ button {
         background-color: $blue;
         @include transition(all 0.2s ease);
     }
-    &:hover {
+    &:hover,
+    &.opened {
         background-color: $blue;
         .icon {
             background-color: #fff;
@@ -174,11 +220,12 @@ button {
     }
 }
 
-#chatbot-feedback {
+#chatbot-feedback-frame {
     position: absolute;
     bottom: 120px;
     left: -175px;
     @include transition(all 0.1s ease);
+    overflow: hidden;
     &.hidden {
         display: none;
     }
@@ -252,9 +299,34 @@ button {
                 display: inline-block;
                 max-width: 70%;
             }
+            .chatbot-event-btn {
+                display: inline-block;
+                font-size: 15px;
+                padding: 5px;
+                margin: 5px 0;
+                background-color: #fff;
+                max-width: 75%;
+                border: 1px solid $blueDark;
+                color: $blueDark;
+                text-align: center;
+                @include borderRadius(3px);
+                @include transition(all 0.3s ease);
+                &:hover {
+                    background-color: $blueDark;
+                    color: #fff;
+                }
+            }
+            .chatbot-event-img {
+                display: inline-block;
+                width: 70%;
+                height: auto;
+            }
         }
     }
 }
+
+
+/* MODE: MINIMAL STREAMING */
 
 #chatbot-minimal {
     display: flex;
@@ -277,11 +349,11 @@ button {
         @include transition(all 0.3s ease);
         overflow: hidden;
     }
-    .chatbot-container {
+    .chatbot-ms-container {
         justify-content: center;
         max-width: 1400px;
     }
-    #chatbot-ui-close {
+    #chatbot-ms-close {
         display: inline-block;
         width: 30px;
         height: 30px;
@@ -330,7 +402,7 @@ button {
             @include borderRadius(50px);
             padding: 0;
         }
-        #chatbot-ui-close {
+        #chatbot-ms-close {
             top: -10px;
             left: 100%;
             margin: 0;
@@ -348,9 +420,9 @@ button {
     margin: 0;
 }
 
-.chatbot-content {
+.chatbot-ms-content {
     font-family: $roboto;
-    .chatbot-content-current {
+    .chatbot-ms-content-current {
         justify-content: center;
         font-size: 25px;
         font-weight: 500;
@@ -358,7 +430,7 @@ button {
         height: 80px;
         padding: 0 40px;
     }
-    .chatbot-content-previous {
+    .chatbot-ms-content-previous {
         display: inline-block;
         font-size: 20px;
         font-weight: 400;
@@ -369,7 +441,7 @@ button {
 }
 
 
-/* MULTI MODAL */
+/* MODE: MULTI MODAL */
 
 #chatbot-multi-modal {
     width: 280px;
@@ -450,7 +522,7 @@ button {
             }
         }
         &.data {
-            .chatbot-event-btn{
+            .chatbot-event-btn {
                 display: inline-block;
                 font-size: 15px;
                 padding: 5px;
@@ -462,7 +534,7 @@ button {
                 text-align: center;
                 @include borderRadius(3px);
                 @include transition(all 0.3s ease);
-                &:hover{
+                &:hover {
                     background-color: $blueDark;
                     color: #fff;
                 }
@@ -476,7 +548,7 @@ button {
             padding: 10px;
             overflow: auto;
         }
-        .chatbot-event-img{
+        .chatbot-event-img {
             display: inline-block;
             width: 70%;
             height: auto;
