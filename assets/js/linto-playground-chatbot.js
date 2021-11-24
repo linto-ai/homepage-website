@@ -2,10 +2,10 @@ window.onload = async function() {
     window.chatbot = new ChatBot({
         debug: true,
         containerId: 'chatbot-wrapper',
-        lintoWebToken: 'g1UZQSKNq07VJzMz',
-        //prod : g1UZQSKNq07VJzMz
-        //local : p0UGj0NM0TePH5am
-        lintoWebHost: 'https://stage.linto.ai/overwatch/local/web/login',
+        lintoWebToken: 'jLgXen4zAgm7s6HD',
+        //prod : jLgXen4zAgm7s6HD
+        //local : LiC8SBbvj73HcpxV
+        lintoWebHost: 'https://alpha.linto.ai/overwatch/local/web/login',
         lintoCustomEvents: [{
             flag: 'custom_action_from_skill',
             func: (event) => { customActionSkill(event) }

@@ -250,9 +250,9 @@ let customHandler = async function(event) {
 window.start = async function() {
     try {
         if (!!window.location.host && window.location.host === 'dev.linto.local:9001') { // LOCAL 
-            window.linto = new Linto("https://alpha.linto.ai/overwatch/local/web/login", "QICZZCnqUahVTIPq", 10000)
+            window.linto = new Linto("https://alpha.linto.ai/overwatch/local/web/login", "LiC8SBbvj73HcpxV", 10000)
         } else { // PROD
-            window.linto = new Linto("https://alpha.linto.ai/overwatch/local/web/login", "W2WsFr1riguKIwJF", 10000)
+            window.linto = new Linto("https://alpha.linto.ai/overwatch/local/web/login", "jLgXen4zAgm7s6HD", 10000)
         }
         // Some feedbacks for UX implementation
         linto.addEventListener("mqtt_connect", mqttConnectHandler)
