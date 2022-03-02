@@ -141,7 +141,7 @@ $(document).ready(function(){
       society: $('#contact-society').val(),
       message: $('#contact-msg').val()
     }
-    axios.post('https://gamma.linto.ai/mail/send', {
+    axios.post('https://dl.linto.ai/mail/send', {
       method: 'post',
       data: payload
     })
