@@ -1,52 +1,54 @@
-$(document).ready(function () {
-  let basePath = ''
-  if (window.location.host === 'linto-ai.github.io') {
-    basePath = 'https://linto-ai.github.io/homepage-website'
-  } else if (window.location === 'linto-ai.local') {
-    basePath = 'http://linto-ai.local'
+window.addEventListener('load', () => {
+  /* HEADER NAVIGATION */
+  let navParent = document.getElementsByClassName('nav-item-parent')
+  for(let parent of navParent) {
+    parent.addEventListener('mouseover', (e) =>  {showSubNav(e)})
+  }
+    
+  function showSubNav(e) {
+    closeAllSubNav()
+    let parent = e.target
+    let targetId = parent.getAttribute('data-target')
+    let subNav = document.getElementById(targetId)
+    subNav.classList.remove('hidden')
+    subNav.classList.add('visible')
+
+    parent.addEventListener('mouseleave', (e) => {
+      checkNavMouseOut(e, targetId)
+    })
+    subNav.addEventListener('mouseleave', (e) => {
+      checkNavMouseOut(e, targetId)
+    })
   }
 
-  // Toggle page language menu
-  $('#lang-btn, #lang-btn-burger').on('click', function () {
-    if ($('.lang-list').hasClass('hidden')) {
-      $('.lang-list').removeClass('hidden').addClass('visible')
-      $(this).removeClass('closed').addClass('opened')
-    } else {
-      $('.lang-list').removeClass('visible').addClass('hidden')
-      $(this).removeClass('opened').addClass('closed')
-    }
-  })
-
-  // Page language update
-  $('.lang-update').on('click', function () {
-    const target = $(this).attr('data-href')
-    setTimeout(function () {
-      document.location.href = basePath + target
-    }, 300)
-  })
-
-  // BURGER NAV
-  $('#burger-menu').on('click', function () {
-    if ($(this).hasClass('closed')) {
-      $(this).removeClass('closed').addClass('opened')
-      $('#burger-menu-nav').removeClass('hidden')
-      $('header').css('height', '100%')
-    } else {
-      $(this).removeClass('opened').addClass('closed')
-      $('#burger-menu-nav').addClass('hidden')
-      $('header').css('height', '40px')
-    }
-  })
-
-  // Anchor links
-  $('.nav-link').on('click', function () {
-    if ($(this).attr('href').indexOf('#') >= 0) {
-      const burgerMenuDisplay = $('#burger-nav').css('display')
-      if (burgerMenuDisplay === 'flex') {
-        $('#burger-menu').removeClass('opened').addClass('closed')
-        $('#burger-menu-nav').addClass('hidden')
-        $('header').css('height', '40px')
+  function checkNavMouseOut(e, targetId) {
+    let targetMouse = e.toElement
+      // close nav dropdown if mouseout is not on the nav dropdown or label
+      if(
+        (targetMouse.getAttribute('data-target') !== null && targetMouse.getAttribute('data-target') !== targetId)  || 
+        (targetMouse.getAttribute('id') !== null && targetMouse.getAttribute('id') !== targetId) ||
+        (targetMouse.getAttribute('id') === null && targetMouse.getAttribute('data-target') === null)
+        ) {
+        closeSubNav(targetId)
+      }
+  }
+  function closeSubNav(target){
+    let subNav = document.getElementsByClassName('nav-item-dropdown')
+    for(let nav of subNav) {
+      if(nav.getAttribute('id') == target) {
+        nav.classList.remove('visible')
+        nav.classList.add('hidden')
       }
     }
-  })
+  }
+
+  function closeAllSubNav(){
+    let subNav = document.getElementsByClassName('nav-item-dropdown')
+    for(let nav of subNav) {
+      nav.classList.remove('visible')
+      nav.classList.add('hidden')
+    }
+  }
 })
+
+
