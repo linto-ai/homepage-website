@@ -9,3 +9,530 @@
   width: 80%;
   height: auto;
 }
+/* Transcription API */
+
+#api-transcription-container {
+  background-color: #fff;
+  @include borderRadius(10px);
+  margin: 20px auto;
+  @include boxShadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.3));
+  overflow: hidden;
+  width: 100%;
+}
+
+.api-transcription-field {
+  margin: 10px 0;
+  padding: 0 20px;
+  .field-label{
+    display: inline-block;
+    text-align: left;
+    color: #848484 ;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .input-label {
+    display: inline-block;
+    color: $textDefault;
+    font-size: 15px;
+    padding-right: 15px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  input[type="radio"]{
+    display: inline-block ;
+    -webkit-appearance: radio;
+    padding: 0 ;
+    margin: 0 3px;
+    height: 16px;
+    width: 16px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  select{
+    display: flex;
+    flex:1;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    @include borderRadius(5px);
+    font-size: 15px;
+    color: $textDefault;
+    min-width: 160px;
+    background-color: #f2f2f2;
+    &:hover{
+      border-color: #555;
+      cursor: pointer;
+    }
+    &[disabled]{
+      background: #ccc;
+      color: #555;
+      &:hover{
+        border-color: #ccc;
+        color: #555;
+        cursor: not-allowed;
+      }
+    }
+  }
+  &.inline{
+    .field-label{
+      color: $textDefault;
+      padding-right: 10px;
+      margin: 0;
+    }
+
+  }
+}
+
+.toggle-input {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 46px;
+  height: 24px;
+  background: #ccc;
+  border: none;
+  position: relative;
+  @include borderRadius(14px);
+  @include transition(all 0.2s ease-out);
+
+  .toggle-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+    background-color: #fff;
+    @include borderRadius(12px);
+    @include transition(all 0.2s ease-out);
+  }
+  &:hover{
+    cursor: pointer;
+  }
+  &.selected {
+    background-color: $greenChart;
+    .toggle-icon {
+      left: 24px;
+    }
+  }
+}
+
+
+.api-transcription-btn-container {
+  background-color: #e2e2e2;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.api-transcription-btn {
+  display: inline-block;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+  border: none;
+  margin: 10px 0;
+  @include borderRadius(5px);
+  @include transition(all 0.2s ease-out);
+  @include boxShadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.3));
+ 
+  &.transcribing{
+    &, &:hover{
+      background-color: #ccc !important;
+    }
+  }
+  span {
+    display: inline-block;
+    line-height: 40px;
+    vertical-align: top;
+    @include transition(all 0.2s ease-out);
+  }
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 10px 5px 0 0;
+    background-color: #fff;
+    &.icon-mic {
+      @include maskImage('../assets/img/mic.svg');
+    }
+    &.icon-play {
+      @include maskImage('../assets/img/mic.svg');
+    }
+    &.icon-download {
+      @include maskImage('../assets/img/download.svg');
+    }
+  }
+  .label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+  &.red {
+    background-color: $redChart;
+    &:hover{
+      background-color: #fff;
+      .label{
+        color: $redChart;
+      }
+      .icon{
+        background-color: $redChart;
+      }
+    }
+  }
+  &.blue {
+    background-color: $blueBtn;
+    &:hover {
+      background-color: $blueBtn;
+    }
+  }
+  &.green {
+    background-color: $greenChart;
+    &:hover {
+      background-color: #2b8d6a;
+    }
+  }
+  &.recording {
+    -webkit-animation: blinkRedWhite 2s infinite;
+    -moz-animation: blinkRedWhite 2s infinite;
+    -ms-animation: blinkRedWhite 2s infinite;
+    -o-animation: blinkRedWhite 2s infinite;
+    animation: blinkRedWhite 2s infinite;
+    .icon {
+      -webkit-animation: blinkWhiteRed 2s infinite;
+      -moz-animation: blinkWhiteRed 2s infinite;
+      -ms-animation: blinkWhiteRed 2s infinite;
+      -o-animation: blinkWhiteRed 2s infinite;
+      animation: blinkWhiteRed 2s infinite;
+    }
+  }
+}
+
+#api-transcription-upload-field {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#api-transcription-file {
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5px;
+  width: 1px;
+  height: 1px;
+  cursor: pointer;
+}
+
+#api-transcription-file-btn {
+  display: inline-block;
+  min-width: 120px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  background-color: $blueChart;
+  color: #fff;
+  z-index: 5;
+  @include borderRadius(5px);
+  @include transition(all 0.2s ease-out);
+  @include boxShadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.3));
+  box-sizing: border-box;
+  &.error {
+    background: $redChart;
+    &:hover {
+      background: #f13700;
+    }
+  }
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    vertical-align: top;
+    @include maskImage('../assets/img/upload.svg');
+  }
+  .label {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #fff;
+    overflow: hidden
+  }
+  &:hover{
+    cursor: pointer;
+    background-color: $blueBtn;
+    .label {
+      color: #fff ;
+    }
+    .icon{
+      background-color: #fff;
+    }
+  }
+}
+
+.api-transcription-step {
+  padding-left: 30px;
+  font-size: 16px;
+  margin: 5px 0;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 600;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+  }
+  &.done {
+    color: #59bbeb;
+    &:before {
+      @include maskImage('../assets/img/check.svg');
+      background-color: #59bbeb;
+    }
+  }
+  &.pending,
+  &.started{
+    color: #333;
+    &:before {
+      mask-image: url('../assets/img/loading.svg');
+      -webkit-mask-image: url('../assets/img/loading.svg');
+      background-color: #333;
+      -webkit-animation: rotating 2s linear infinite;
+      -moz-animation: rotating 2s linear infinite;
+      -ms-animation: rotating 2s linear infinite;
+      -o-animation: rotating 2s linear infinite;
+      animation: rotating 2s linear infinite;
+    }
+  }
+}
+
+#api-transcription-result-container {
+  border: 1px solid #ccc;
+  background-color: #fbfbfb;
+  @include boxShadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.3));
+  @include borderRadius(5px);
+  padding: 0;
+  overflow: hidden;
+  &.row>div {
+    padding: 0 !important;
+  }
+}
+
+#api-transcription-result {
+  max-height: 320px;
+  padding: 20px;
+  color: #333;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 20px 0;
+  font-size: 15px;
+  line-height: 1.5em;
+  font-family: 'Roboto Slab, Inter';
+  pre {
+    word-break: break-word;
+    white-space: pre-wrap;
+    max-height: 280px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: 'Roboto Slab, Inter';
+    font-size: 15px;
+  }
+}
+.transcription-result-btn {
+  display: inline-block;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  &.active {
+    background-color: #0080bf;
+    color: #fff;
+  }
+}
+.api-transcription-download {
+  padding: 10px 0;
+  justify-content: center;
+}
+#api-transcription-state {
+  margin-bottom: 20px;
+}
+
+/* Transcription streaming */
+
+.api-streaming-container {
+  background-color: #efefef;
+  padding: 20px;
+  width: 100%;
+  @include boxShadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.3));
+  @include borderRadius(5px);
+}
+
+#record-streaming {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  @include borderRadius(30px);
+  padding: 0;
+  border: none;
+  @include boxShadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.3));
+  cursor: pointer;
+  position: relative;
+  margin: 0 20px;
+  
+  .rec-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    @include maskImage('../assets/img/mic.svg');
+    background-color: #c51843;
+  }
+  &:hover {
+    background-color: #c51843;
+    .rec-icon {
+      background-color: #fff;
+    }
+  }
+}
+#record-streaming-transcript {
+  padding: 10px;
+  background: #fff;
+  min-height: 50px;
+  height: auto;
+  text-align: left;
+  font-size: 18px;
+  line-height: 26px;
+  @include boxShadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.3));
+}
+
+#record-streaming.recording {
+  -webkit-animation: blinkRedWhite 2s infinite;
+  -moz-animation: blinkRedWhite 2s infinite;
+  -ms-animation: blinkRedWhite 2s infinite;
+  -o-animation: blinkRedWhite 2s infinite;
+  animation: blinkRedWhite 2s infinite;
+}
+
+#record-streaming.recording .rec-icon {
+  -webkit-animation: blinkWhiteRed 2s infinite;
+  -moz-animation: blinkWhiteRed 2s infinite;
+  -ms-animation: blinkWhiteRed 2s infinite;
+  -o-animation: blinkWhiteRed 2s infinite;
+  animation: blinkWhiteRed 2s infinite;
+}
+
+@-webkit-keyframes blinkRedWhite {
+  0% {
+      background-color: #fff;
+  }
+  50% {
+      background-color: #ec5a5a;
+  }
+  100% {
+      background-color: #fff;
+  }
+}
+
+@keyframes blinkRedWhite {
+  0% {
+      background-color: #fff;
+  }
+  50% {
+      background-color: #ec5a5a;
+  }
+  100% {
+      background-color: #fff;
+  }
+}
+
+@-webkit-keyframes blinkWhiteRed {
+  0% {
+      background-color: #ec5a5a;
+  }
+  50% {
+      background-color: #fff;
+  }
+  100% {
+      background-color: #ec5a5a;
+  }
+}
+
+@keyframes blinkWhiteRed {
+  0% {
+      background-color: #ec5a5a;
+  }
+  50% {
+      background-color: #fff;
+  }
+  100% {
+      background-color: #ec5a5a;
+  }
+}
+
+@-webkit-keyframes rotating {
+  from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+
+#osx-video-player {
+  max-width: 560px;
+  display: block;
+  margin: 20px auto;
+}
