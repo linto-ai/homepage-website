@@ -1,0 +1,11 @@
+.apis-schema-item{
+  padding: 20px;
+  border: 1px solid $blueChart;
+  @include borderRadius(10px);
+  
+}
+.apis-schema-img{
+  display: inline-block;
+  width: 80%;
+  height: auto;
+}

@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
     let subNav = document.getElementById(targetId)
     subNav.classList.remove('hidden')
     subNav.classList.add('visible')
+    parent.classList.add('active')
 
     parent.addEventListener('mouseleave', (e) => {
       checkNavMouseOut(e, targetId)
@@ -33,6 +34,11 @@ window.addEventListener('load', () => {
       }
   }
   function closeSubNav(target){
+    let navParent = document.getElementsByClassName('nav-item-parent')
+    for(let parent of navParent) {
+      parent.classList.remove('active')
+    }
+
     let subNav = document.getElementsByClassName('nav-item-dropdown')
     for(let nav of subNav) {
       if(nav.getAttribute('id') == target) {

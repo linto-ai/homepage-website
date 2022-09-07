@@ -1,0 +1,200 @@
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: $greyChart;
+  
+  padding: 0 20px;
+}
+.logo{
+  display: inline-block;
+  height: 30px;
+  margin-right: 20px;
+  img{
+    display: inline-block;
+    height: 100%;
+    width: auto;
+  }
+}
+
+.nav-item-container{
+  position: relative;
+  padding: 0 5px;
+  height: 50px;
+  margin: 0 5px;
+}
+.nav-item-parent{
+  display: inline-block;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  font-weight:500;
+  text-decoration: none;
+  position: relative;
+  padding-right: 15px;
+  @include transition(all 0.2s ease-out);
+  &:after{
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    background: #fff;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    @include maskImage('../assets/img/arrow-menu.svg');
+  }
+  
+  &:hover,
+  &.active{
+    color: $greenChart;
+    &:after{
+      background-color: $greenChart;
+    }
+  }
+}
+
+.nav-item-dropdown.visible{
+  position: absolute;
+  top: 45px;
+  left: 0;
+  padding: 10px 15px 10px 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  @include transition(all 0.2s ease-out);
+  @include boxShadow(0, 2px, 4px, 0px, rgba(0,0,0,0.2));
+  @include borderRadius(10px);
+  box-sizing: border-box;
+}
+
+#header-nav-products{
+  width: 610px;
+  flex-wrap: wrap;
+}
+
+.nav-card{
+  width: 260px;
+  height: 80px;
+  margin: 10px;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  @include transition(all 0.2s ease-out);
+  &.apis{
+    &:hover{
+      background-color: $blueLight;
+    }
+  }
+  &.linto{
+    &:hover{
+      background-color: $purpleLight;
+    }
+  }
+  &.meeting{
+    &:hover{
+      background-color: $greenLight;
+      
+    }
+  }
+}
+
+.nav-card-link{
+  display: inline-block;
+  text-decoration: none;
+  @include transition(all 0.2s ease-out);
+  .title{
+    height: 25px;
+    align-items: center;
+    padding-bottom: 5px;
+    .icon{
+      display :inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+    }
+    .label{
+      display :inline-block;
+      font-size: 16px;
+      font-weight: 500;
+      &.apis{
+        color: $blueChart;
+      }
+      &.linto{
+        color: $purpleChart;
+      }
+      &.meeting{
+        color: $greenChart;
+      }
+    }
+  }
+  .description {
+    p{
+      font-size: 12px;
+      color: #777;
+      line-height: 16px;
+      margin: 0;
+    }
+  }
+
+}
+
+.nav-icon-link{
+  text-decoration: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin: 7px 0 ;
+  .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+  }
+  .label{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+    color: $textDefault;
+    font-weight: 400;
+    strong{
+      font-weight: 600;
+    }
+  }
+  &:hover{
+    &.apis{
+      .label{
+        color:$blueChart;
+      }
+    }
+    &.linto{
+      .label{
+        color:$purpleChart;
+      }
+    }
+    &.meeting{
+      .label{
+        color:$greenChart;
+      }
+    }
+  }
+}
+
+
+.icon{
+  &.apis{
+    @include maskImage('../assets/img/apis-icon.svg');
+    background-color: $blueChart;
+  } 
+  &.linto{
+    @include maskImage('/assets/img/linto-agent-icon.svg');
+    background-color: $purpleChart;
+  }
+  &.meeting{
+    @include maskImage('/assets/img/linto-meeting-icon.svg');
+    background-color: $greenChart;
+  }
+}
