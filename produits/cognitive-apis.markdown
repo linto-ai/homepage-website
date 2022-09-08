@@ -39,7 +39,7 @@ title: LinTO cognitive APIs
         </div>
       </div>
       <div class="flex row align-center justify-center " style="margin-top: 40px;">
-        <a href="#" class="btn-cta blue">Essayer dans votre navigateur</a>
+        <a href="/demo/demo/cognitive-apis.html" class="btn-cta blue">Essayer dans votre navigateur</a>
       </div>
     </div>
   </section>
