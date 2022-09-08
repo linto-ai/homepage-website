@@ -25,6 +25,7 @@ header{
   height: 50px;
   margin: 0 5px;
 }
+.nav-item,
 .nav-item-parent{
   display: inline-block;
   color: #fff;
@@ -36,6 +37,15 @@ header{
   position: relative;
   padding-right: 15px;
   @include transition(all 0.2s ease-out);
+  &:hover,
+  &.active{
+    color: $greenChart;
+    &:after{
+      background-color: $greenChart;
+    }
+  }
+}
+.nav-item-parent{
   &:after{
     content: "";
     display: inline-block;
@@ -47,16 +57,12 @@ header{
     right: 0;
     @include maskImage('../assets/img/arrow-menu.svg');
   }
-  
-  &:hover,
-  &.active{
-    color: $greenChart;
+  &:hover{
     &:after{
       background-color: $greenChart;
     }
   }
 }
-
 .nav-item-dropdown.visible{
   position: absolute;
   top: 45px;

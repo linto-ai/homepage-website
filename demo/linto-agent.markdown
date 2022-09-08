@@ -97,7 +97,6 @@ title: Essayer LinTO agent dans votre navigateur
   </section>
   <div id="widget-wrapper"></div>
 </div>
-<script type="text/javascript" src="/assets/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/assets/js/linto.ui.min.js"></script>
 <script type="text/javascript" src="/assets/js/linto-agent-demo.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" type="text/javascript"></script>

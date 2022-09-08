@@ -62,7 +62,7 @@ title: LinTO cognitive APIs
             N’hésitez pas à nous contacter afin que nous puissions échanger et répondre à toutes vos questions</p>
         </div>
         <div class="flex row align-center justify-center padding-20">
-          <a href="#" class="btn-cta dark">Contactez-nous</a>
+          <a href="/contact" class="btn-cta dark">Contactez-nous</a>
         </div>
       </div>
     </div>

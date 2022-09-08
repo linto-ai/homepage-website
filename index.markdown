@@ -50,7 +50,7 @@ title: LinTO, framework open-source de technologies vocales
             <a class="btn-cta blue" href="#">Documentation</a>
           </div>
           <div class="flex row justify-center btn-cta-container">
-            <a class="btn-cta dark" href="#">Contactez-nous</a>
+            <a class="btn-cta dark" href="/contact">Contactez-nous</a>
           </div>
         </div>
       </div>

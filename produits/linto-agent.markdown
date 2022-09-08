@@ -13,7 +13,7 @@ title: LinTO Agent
         Alternative complète aux outils dédiés aux développeurs d’applications d'intelligence conversationnelle, tels que DialogFlow de Google, Azure Bot de Microsoft ou encore Watson.</p>
         <div class="flex row align-center justify-center space-evenly btn-cta-container">
           <a href="http://dev.linto.local:4000/demo/linto-agent.html" class="btn-cta blue">Essayer LinTO agent dans votre navigateur</a>
-          <a href="#" class="btn-cta dark">Contactez-nous</a>
+          <a href="/contact" class="btn-cta dark">Contactez-nous</a>
         </div>
     </div>
   </section>
