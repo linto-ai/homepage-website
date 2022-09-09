@@ -11,15 +11,15 @@ title: LinTO, framework open-source de technologies vocales
       <div class="flex col flex2 padding-20">
         <h1 class="big-title">LinTO, <strong class="green">framework Open Source</strong> de technologies vocales</h1>
         <div class="flex col homepage-links-container">
-          <a href="/produits/cognitive-apis.html" class="homepage-link flex row align-center apis">
+          <a href="/produits/cognitive-apis" class="homepage-link flex row align-center apis">
             <span class="icon apis"></span>
             <span class="label">Cognitive APIs</span>
           </a>
-          <a href="/produits/linto-agent.html" class="homepage-link flex row align-center linto">
+          <a href="/produits/linto-agent" class="homepage-link flex row align-center linto">
             <span class="icon linto"></span>
             <span class="label">LinTO agent</span>
           </a>
-          <a href="/produits/linto-for-meeting.html" class="homepage-link flex row align-center meeting">
+          <a href="/produits/linto-for-meeting" class="homepage-link flex row align-center meeting">
             <span class="icon meeting"></span>
             <span class="label">LinTO agent for meeting</span>
           </a>
