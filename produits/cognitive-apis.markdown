@@ -1,7 +1,4 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
 title: LinTO cognitive APIs
 ---
@@ -9,9 +6,9 @@ title: LinTO cognitive APIs
   <section>
     <div class="container">
       <h1 class="big-title centered blue">Cognitive APIs</h1>
-      <div class="disclaimer flex row justify-center">
+      <!--<div class="disclaimer flex row justify-center">
         Les APIs sont en cours de développement et ne sont pas encore ouvertes au public.
-      </div>
+      </div>-->
       <p>Fonctionne avec des fichiers du streaming audio. Elle peut être exploitée en SaaS ou proposée sur infrastructures propres. Elle peut monter à l’échelle tandis que ses coûts d’exploitation restent compétitifs à n’importe quelle volumétrie. </p>
       <div class="flex row justify-center">
         <div class="flex col flex2 justify-center align-center">
@@ -39,7 +36,7 @@ title: LinTO cognitive APIs
         </div>
       </div>
       <div class="flex row align-center justify-center " style="margin-top: 40px;">
-        <a href="/demo/demo/cognitive-apis.html" class="btn-cta blue">Essayer dans votre navigateur</a>
+        <a href="/demo/cognitive-apis.html" class="btn-cta blue">Essayer dans votre navigateur</a>
       </div>
     </div>
   </section>

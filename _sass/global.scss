@@ -89,6 +89,9 @@ body {
   &.justify-center {
     justify-content: center;
   }
+  &.justify-end{
+    justify-content: flex-end;
+  }
   &.space-evenly{
     justify-content: space-evenly;
   }
@@ -181,6 +184,7 @@ h3{
   display: inline-block;
   font-size: 22px;
   font-weight: 600;
+  padding: 20px 0;
 }
 
 .content-white-80{
@@ -204,13 +208,23 @@ ul{
       content: "";
       display: inline-block;
       width: 15px;
-      height: 10px;
+      height: 15px;
       background: red;
       position: absolute;
       left: 0;
       top: 13px;
       @include maskImage('../assets/img/check.svg');
       background-color: $greenChart;
+    }
+    &.cross{
+      &:before{
+        @include maskImage('../assets/img/close.svg');
+        background-color: $redChart;
+      }
+    }
+    ul li{
+      margin-left: 30px;
+      color :red;
     }
   }
 }
@@ -250,7 +264,10 @@ p {
   @include borderRadius(40px);
   @include boxShadow(0,2px,2px,0px,rgba(0,0,0,0.2));
   @include transition(all 0.2s ease-out);
-  
+  i{
+    text-transform: none;
+
+  }
   &.dark{
     background-color: $textDefault;
     border-color: $textDefault;
@@ -271,6 +288,37 @@ p {
     @include boxShadow(0,2px,2px,0px,rgba(0,0,0,0.4));
     background-color: #fff;
   }
+  &.greenchart,
+  &.purplechart,
+  &.bluechart{
+    background-color: #fff;
+  }
+  &.greenchart{
+    color: $greenChart;
+    &:hover{
+      color: #fff;
+      background-color: #ffffff2b;
+    }
+  }
+  &.bluechart{ 
+    color: $blueChart;
+    &:hover{
+      color: #fff;
+      background-color: #ffffff2b;
+    }
+  }
+  &.purplechart{
+    color: $purpleChart;
+    &:hover{
+      color: #fff;
+      background-color: #ffffff2b;
+    }
+  }
+
+  &.homepage{
+    font-size: 14px;
+  }
+    
 
 }
 .disclaimer{

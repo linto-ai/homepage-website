@@ -5,7 +5,7 @@ header{
   width: 100%;
   z-index: 999;
   background-color: $textDefault;
-  
+  box-sizing: border-box;
   padding: 0 20px;
 }
 .logo{
@@ -75,7 +75,11 @@ header{
   @include borderRadius(10px);
   box-sizing: border-box;
 }
-
+.nav-img{
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
 #header-nav-products{
   width: 610px;
   flex-wrap: wrap;

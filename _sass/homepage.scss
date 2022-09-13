@@ -1,13 +1,18 @@
 .homepage-links-container{
   margin: 20px 0;
+  height: 340px;
+  justify-content: space-evenly;
 }
+
+
 .homepage-link{
+  display: inline-block;
+  background-color: #fff;
   padding: 10px 15px;
-  margin: 20px 0;
-  height: 30px;
   border: 1px solid #ccc; 
   text-decoration: none;
   position: relative;
+  text-align: left;
   @include boxShadow(0,2px,2px,0,rgba(0,0,0,0.2));
   @include transition(all 0.2s ease-out);
   @include borderRadius(10px);
@@ -17,12 +22,13 @@
   &:after{
     content: "";
     display: inline-block;
-    height: 40px;
+    height: 30px;
     width: 30px;
     position: absolute;
-    top:5px;
+    top:10px;
     right: 20px;
     @include maskImage(' ../assets/img/arrow-menu.svg');
+    @include transition(all 0.2s ease-out);
     @include transform(rotate(-90deg));
   }
   
@@ -39,6 +45,7 @@
     line-height: 30px;
     vertical-align: top;
     font-weight: 500;
+    font-size: 16px;
   }
   
   &.apis{
@@ -79,6 +86,7 @@
   }
 
   &:hover{
+    cursor: pointer;
     .label{
       color: #fff
     }
@@ -86,9 +94,58 @@
       background-color: #fff
     }
     &:after{
+      top: 13px;
+      @include transform(rotate(0deg));
       background-color: #fff;
     }
   }
+  .homepage-link-detail{
+    height: 0;
+    overflow: hidden;
+    .detail{
+      display: inline-block;
+      margin: 10px 0;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.3em;
+      font-weight: 500;
+    }
+    .detail-btn{
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    
+  }
+  &.active{
+    height: auto;
+    .homepage-link-detail{
+      height: 120px;
+      display: inline-block;
+      
+    }
+    .label{
+      color: #fff
+    }
+    .icon{
+      background-color: #fff
+    }
+    &.apis{
+      background-color: $blueChart;
+    }
+    &.linto{
+      background-color: $purpleChart;
+    }
+    &.meeting{
+      background-color: $greenChart;
+    }
+    &:after{
+      top: 13px;
+      @include transform(rotate(0deg));
+      background-color: #fff;
+    }
+  }
+
+  
 }
 
 .homepage-illustration{

@@ -17,9 +17,11 @@ title: LinTO Agent for meeting
   <section style="padding-top: 0;">
     <div class="container">
       <h2 class="big-title">Conversation <strong class="green">Manager</strong></h2>
+      <!-- 
       <div class="disclaimer flex row justify-center">
         Les APIs de transcription sont ouvertes en accès illimité le temps de tester notre version actuelle. Des modalités de paiement pourront être mise en place par la suite.
       </div>
+      -->
       <div class="flex row">
         <div class="flex col flex1 justify-center align-center padding-20">
           <img src="../assets/img/conversation-manager-logo.svg" alt="Conversation Manager" />

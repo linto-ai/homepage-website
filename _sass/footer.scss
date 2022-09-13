@@ -3,7 +3,7 @@ footer{
   color: #fff;
 }
 .footer-main{
-  padding: 30px 0 ;
+  padding: 10px 0 30px 0 ;
 
 }
 h4.footer-title{
@@ -12,7 +12,7 @@ h4.footer-title{
   text-transform: uppercase;
   font-weight: 600;
   color: #bbb;
-  padding-bottom: 10px;
+  padding: 20px 0 10px 0;
 }
 
 ul.footer-list{
@@ -34,7 +34,11 @@ ul.footer-list{
     }
   }
 }
-
+.footer-img-link{
+  display: inline-block;
+  width: 200px;
+  height: auto;
+}
 .footer-secondary{
   background-color: #0B0B0B;
   font-size: 13px;
