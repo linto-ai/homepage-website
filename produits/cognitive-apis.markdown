@@ -16,8 +16,8 @@ title: LinTO cognitive APIs
                 Nous développons actuellement le système de facturation de notre offre SaaS. Nous vous invitons à nous contacter pour en savoir plus.
               </p>
               <div class="flex row detail-btn">
-                <a href="/pricing" class="btn-cta homepage greenchart">Roadmap & tarification</a>
-                <a href="/contact" target="_blank" class="btn-cta homepage greenchart">Contactez-nous</a>
+                <a href="/pricing" class="btn-cta homepage bluechart">Roadmap & tarification</a>
+                <a href="/contact" target="_blank" class="btn-cta homepage bluechart">Contactez-nous</a>
               </div>
             </div>
           </button>

@@ -133,6 +133,9 @@ section {
   margin: 0 auto;
   padding: 0 15px;
   z-index: 5;
+  &.big{
+    max-width: 1200px;
+  }
 }
 
 h1, 
@@ -204,6 +207,13 @@ ul{
     font-size: 15px;
     font-weight: 500;
     box-sizing: border-box;
+    a{
+      color: $blueChart;
+      &:hover{
+        color: $blueBtn;
+        text-decoration: underline;
+      }
+    }
     &:before{
       content: "";
       display: inline-block;
@@ -221,10 +231,6 @@ ul{
         @include maskImage('../assets/img/close.svg');
         background-color: $redChart;
       }
-    }
-    ul li{
-      margin-left: 30px;
-      color :red;
     }
   }
 }
