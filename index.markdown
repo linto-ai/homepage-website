@@ -10,6 +10,12 @@ title: LinTO, framework open-source de technologies vocales
     <div class="container flex row">
       <div class="flex col flex2 padding-20">
         <h1 class="big-title">LinTO, <strong class="green">framework Open Source</strong> de technologies vocales</h1>
+        <div class="homepage-title-links flex row">
+            <a href="https://github.com/linto-ai" target="_blank" class="github-logo">
+              <span class="icon github dark"></span>
+            </a>
+            <a href="https://github.com/orgs/linto-ai/projects/6" class="btn-cta dark" target="_blank" >Roadmap</a>
+        </div>  
         <div class="flex col homepage-links-container">
           <button class="homepage-link flex row align-center apis">
             <span class="icon apis"></span>
@@ -70,14 +76,16 @@ title: LinTO, framework open-source de technologies vocales
           </ul>
         </div>
       </div>
+      <!--
       <div class="flex row space-evenly padding-20">
         <div class="flex row btn-cta-container">
-          <a class="btn-cta blue" href="https://convos.linto.ai/login">LinTO as a service <i>Conversation Manager</i></a>
+          <a class="btn-cta blue" href="https://convos.linto.ai/login" target="_blank">LinTO as a service <i>Conversation Manager</i></a>
         </div>
         <div class="flex row btn-cta-container">
-          <a class="btn-cta blue" href="/contact">LinTO as a service <i>Cognitive APIs</i></a>
+          <a class="btn-cta blue" href="https://doc.linto.ai/docs/consumers/apis" target="_blank">LinTO as a service <i>Cognitive APIs</i></a>
         </div>
       </div>
+      -->
     </div>
   </section>
   <section>
@@ -86,7 +94,7 @@ title: LinTO, framework open-source de technologies vocales
       <p class="text-centered">Déployez n’importe quel service LinTO sur vos infrastructures. Bénéficiez de la plus grande base de code de technologies vocales Open Source du monde et de sa documentation associée pour développer votre innovation.</p>
     </div>
     <div class="flex row justify-center btn-cta-container">
-      <a class="btn-cta blue" href="#">Documentation développeurs</a>
+      <a class="btn-cta blue" href="https://doc.linto.ai/" target="_blank">Documentation développeurs</a>
     </div>
   </section>
 </div>

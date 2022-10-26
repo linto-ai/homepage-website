@@ -8,12 +8,11 @@ title: LinTO Agent
 <div id="body" class="flex col">
   <section>
     <div class="container">
-      <h1 class="big-title centered purple">LinTO agent</h1>
+      <h1 class="big-title centered purple">LinTO virtual agent</h1>
       <p>Solution complète de bout-en-bout pour concevoir et opérer des assistants intelligents (assistants vocaux) et des agents d'intelligence conversationnelle (type chatbots, callbots...).
         Alternative complète aux outils dédiés aux développeurs d’applications d'intelligence conversationnelle, tels que DialogFlow de Google, Azure Bot de Microsoft ou encore Watson.</p>
         <div class="flex row align-center justify-center space-evenly btn-cta-container">
-          <a href="http://dev.linto.local:4000/demo/linto-agent" class="btn-cta blue">Essayer LinTO agent dans votre navigateur</a>
-          <a href="/contact" class="btn-cta dark">Contactez-nous</a>
+          <a href="http://dev.linto.local:4000/demo/linto-agent" class="btn-cta blue">Essayer LinTO virtual agent dans votre navigateur</a>
         </div>
     </div>
   </section>
@@ -33,9 +32,6 @@ title: LinTO Agent
         <div class="flex row flex1 align-center justify-center padding-20">
           <img src="../assets/img/nodered.png" alt="interface nodered pour agent conversationnel" class="content-img">
         </div>
-      </div>
-      <div class="flex row align-center justify-center">
-        <a href="#" class="btn-cta blue">Documentation développeurs</a>
       </div>
     </div>
   </section>
@@ -57,7 +53,7 @@ title: LinTO Agent
         </div>
       </div>
       <div class="flex row align-center justify-center btn-cta-container">
-        <a href="#" class="btn-cta blue">Documentation développeurs</a>
+        <a href="https://doc.linto.ai/docs/developpers/agent" target="_blank" class="btn-cta blue">Documentation développeurs</a>
       </div>
     </div>
   </section>

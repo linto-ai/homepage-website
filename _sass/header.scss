@@ -40,8 +40,24 @@ header{
   &:hover,
   &.active{
     color: $greenChart;
+    .icon{
+      @include transition(all 0.2s ease-out);
+
+      background-color: $greenChart;
+    }
     &:after{
       background-color: $greenChart;
+    }
+  }
+  .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px; 
+    background-color :#fff;
+    margin: 15px 5px 15px 0;
+    vertical-align: top;
+    &.cm{
+      @include maskImage('../assets/img/conversation-manager-logo-small.svg');
     }
   }
 }

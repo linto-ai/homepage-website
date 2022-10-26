@@ -9,7 +9,7 @@ title: LinTO Agent for meeting
 <div id="body" class="flex col">
   <section>
     <div class="container">
-      <h1 class="big-title centered green">LinTO agent for meeting</h1>
+      <h1 class="big-title centered green">LinTO Smart Meeting</h1>
       <p>Enregistrez vos réunions et réalisez des transcription directement en streaming ou à partir de fichiers média audio et vidéo.
         Utilisez ensuite l’éditeur du Conversation Manager pour éditer vos transcriptions et les exporter aux formats qui vous conviennent.</p>
     </div>
@@ -41,7 +41,8 @@ title: LinTO Agent for meeting
         </div>
       </div>
       <div class="flex row align-center justify-center btn-cta-container">
-        <a href="https://convos.linto.ai/" target="_blank" class="btn-cta blue">Se connecter au Conversation Manager</a>
+        <a href="https://convos.linto.ai/" target="_blank" class="btn-cta blue">Accéder au Conversation Manager</a>
+        <a href="https://doc.linto.ai/docs/consumers/conversation-manager" target="_blank" class="btn-cta blue">Documentation utilisateurs</a>
       </div>
     </div>
   </section>
@@ -61,5 +62,8 @@ title: LinTO Agent for meeting
         </div>
       </div>
     </div>
+     <div class="flex row align-center justify-center btn-cta-container">
+        <a href="https://doc.linto.ai/docs/developpers/meeting" target="_blank" class="btn-cta blue">En savoir plus</a>
+      </div>
   </section>
 </div>
