@@ -53,7 +53,11 @@ title: LinTO, framework open-source de technologies vocales
         </div>
       </div>
       <div class="flex row flex1 justify-center align-center padding-20">
-        <img src="/assets/img/illustration-homepage-01.svg" class="homepage-illustration" >
+        <!--
+        <img src="/assets/img/screenshot-conversation-manager.png" class="homepage-illustration" >
+        <img src="/assets/img/linto-ui.png" class="homepage-illustration" >
+        -->
+        <img src="/assets/img/linto-ui.png" class="homepage-illustration" >
       </div>
     </div>
   </section>
