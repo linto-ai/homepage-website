@@ -10,14 +10,19 @@ title: LinTO, prix et status des services
     <div class="container">
       <h1 class="big-title centered">My account</h1>
         <div class="disclaimer flex row justify-center">
-        L'offre "LinTO Saas" est accessible en version Beta. Les comptes créés avant la sortie officielle bénéficient d'un accès gratuit à tous nos services. 
-        Veuillez consulter la Roadmap pour avoir les informations sur les dates de sorties.
+        La création de compte pour les services LinTO n'est pas encore ouverte au public. Veuillez consulter notre Roadmap publique pour en savoir plus
+        <br/>
+        <br/>
+        Le service Conversation Manager est accessible dès aujourd'hui en Beta publique. Les comptes créés avant la sortie officielle bénéficient d'un accès gratuit à tous nos services. 
       </div>
+          <div class="flex row align-center justify-center">
+      <a href="https://convos.linto.ai" target="_blank" class="btn-cta blue">Conversation manager Accès anticipé</a>
+    </div>
       <div class="flex row">
         <div class="flex1 flex col padding-20">
-          <h3>Compte en version BETA</h3>
+          <h3>Compte Conversation Manager en version BETA</h3>
           <ul>
-            <li>Comprend une clé d'API illimitée permettant d'accéder à tous les services LinTO publics.</li>
+            <li>Comprend une clé d'API illimitée permettant d'accéder à tous les services cognitifs de LinTO</li>
             <li class="cross">Ne comprend pas de garantie de service</li>
             <li class="cross">Peut être interrompu à n'importe quel moment</li>
           </ul>

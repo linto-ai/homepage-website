@@ -39,10 +39,21 @@ title: LinTO Agent for meeting
             <li>Exports au formats Json, Txt, sous-titre</li>
           </ul>
         </div>
+        <div class="flex col flex2 padding-20" style="background-color:#5FBF9D;">
+          <ul><span style="text-align:center; color:green; font-weight:bold;"><b>OUVERT, GRATUIT et sans limite d'usage</b></span>
+            <li>Transcriptions illimités</li>
+            <li>Création d'organization, visibilité publique ou privée des utilisateurs et des organisations créees</li>
+            <li>Gestion complète des rôles des membres</li>
+            <li>Partage de documents</li>
+            <li>Edition colaborative temps réél des contenus</li>
+            <li>Exports illimités</li>
+            <li>Accès aux options payantes (identification locuteurs, ponctuation...)</li>
+          </ul>
+        </div>
       </div>
       <div class="flex row align-center justify-center btn-cta-container">
-        <a href="https://convos.linto.ai/" target="_blank" class="btn-cta blue">Accéder au Conversation Manager</a>
-        <a href="https://doc.linto.ai/docs/consumers/conversation-manager" target="_blank" class="btn-cta blue">Documentation utilisateurs</a>
+        <a href="https://convos.linto.ai/" target="_blank" class="btn-cta blue" style="margin-right:50px;">Conversation Manager Accès anticipé</a>
+        <a href="https://doc.linto.ai/docs/consumers/conversation-manager" target="_blank" class="btn-cta blue">Documentation conversation manager</a>
       </div>
     </div>
   </section>
@@ -63,7 +74,7 @@ title: LinTO Agent for meeting
       </div>
     </div>
      <div class="flex row align-center justify-center btn-cta-container">
-        <a href="https://doc.linto.ai/docs/developpers/meeting" target="_blank" class="btn-cta blue">En savoir plus</a>
+        <a href="https://doc.linto.ai/docs/developpers/meeting" target="_blank" class="btn-cta blue">Documentation smart meetings</a>
       </div>
   </section>
 </div>

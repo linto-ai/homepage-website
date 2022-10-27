@@ -39,7 +39,7 @@ title: LinTO, framework open-source de technologies vocales
               <p class="detail">Enregistrez vos réunions et réalisez des transcription directement en streaming ou à partir de fichiers média.</p>
               <div class="flex row detail-btn">
                 <a href="/produits/linto-for-meeting" class="btn-cta homepage greenchart">En savoir plus...</a>
-                <a href="https://convos.linto.ai" target="_blank" class="btn-cta homepage greenchart">Conversation Manager</a>
+                <a href="https://convos.linto.ai" target="_blank" class="btn-cta homepage greenchart">Conversation Manager Accès anticipé</a>
               </div>
             </div>
           </button>
@@ -68,15 +68,16 @@ title: LinTO, framework open-source de technologies vocales
       <div class="flex row justify-center">
         <div class="flex col content-white-80 padding-20" style="max-width:640px">
           <ul>
-            <li>Le désenclavement des platformes matérielles grace à une compatibilité complète du vocal dans les applications web</li>
-            <li>Des mots réveils personnalisés 100% logiciels</li>
-            <li>Des performances avantageuses des modèles développés par <a href="https://labs.linagora.com/our-team/">l'équipe LinTO</a></li>
+            <li>Les performances avantageuses des modèles & APIs développés par <a href="https://labs.linagora.com/our-team/">l'équipe LinTO</a></li>
+            <li>L'utilisation <a href="https://doc.linto.ai/docs/developpers/apis/ASR/models">d'autres modèles Open Source </a></li>
             <li>Le respect de la vie privée des usagers </li>
             <li>Le respect du RGPD </li>
             <li>Pas de GAFAM / Pas d'application du droit extra territorial états-unien </li>
             <li>L'hébergement en France ou sur vos infrastructures </li>
             <li>La souveraineté absolue des données </li>
             <li>L’adaptabilité à vos métiers (lexiques spécifiques / conditions acoustiques) </li>
+            <li>Le désenclavement des platformes matérielles grace à une compatibilité complète du vocal dans les applications web</li>
+            <li>Des mots réveils personnalisés 100% logiciels</li>
           </ul>
         </div>
       </div>
