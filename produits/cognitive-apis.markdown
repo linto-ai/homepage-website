@@ -17,6 +17,7 @@ title: LinTO cognitive APIs
               </p>
               <div class="flex row detail-btn">
                 <a href="/contact" class="btn-cta homepage bluechart">Contactez-nous</a>
+                <a href="/demo/cognitive-apis.html" class="btn-cta homepage bluechart">Démo sur navigateur</a>
               </div>
             </div>
           </div>
