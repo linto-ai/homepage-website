@@ -5,19 +5,23 @@
 layout: default
 title: LinTO, framework open-source de technologies vocales
 ---
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 <div id="body" class="flex col">
   <section id="homepage-top">
+    <div class="container flex col">
+      <h1 class="big-title">LinTO, <strong class="green">framework Open Source</strong> de technologies vocales</h1>
+      <div class="homepage-title-links flex row">
+        <a href="https://github.com/linto-ai" target="_blank" class="github-logo">
+          <span class="icon github dark"></span>
+        </a>
+        <a href="https://github.com/orgs/linto-ai/projects/6" class="btn-cta dark" target="_blank" >Roadmap</a>
+      </div>  
+    </div>  
     <div class="container flex row">
       <div class="flex col flex2 padding-20">
-        <h1 class="big-title">LinTO, <strong class="green">framework Open Source</strong> de technologies vocales</h1>
-        <div class="homepage-title-links flex row">
-            <a href="https://github.com/linto-ai" target="_blank" class="github-logo">
-              <span class="icon github dark"></span>
-            </a>
-            <a href="https://github.com/orgs/linto-ai/projects/6" class="btn-cta dark" target="_blank" >Roadmap</a>
-        </div>  
         <div class="flex col homepage-links-container">
-          <button class="homepage-link flex row align-center apis">
+          <button class="homepage-link flex row align-center apis" data-anim="coginitve-apis">
             <span class="icon apis"></span>
             <span class="label">Cognitive APIs</span>
             <div class="homepage-link-detail">
@@ -28,7 +32,7 @@ title: LinTO, framework open-source de technologies vocales
               </div>
             </div>
           </button>
-          <button class="homepage-link flex row align-center meeting">
+          <button class="homepage-link flex row align-center meeting" data-anim="smart-meeting">
             <span class="icon meeting"></span>
             <span class="label">Smart meetings</span>
             <div class="homepage-link-detail">
@@ -39,7 +43,7 @@ title: LinTO, framework open-source de technologies vocales
               </div>
             </div>
           </button>
-          <button class="homepage-link flex row align-center linto">
+          <button class="homepage-link flex row align-center linto" data-anim="linto-agent">
             <span class="icon linto"></span>
             <span class="label">Virtual agents</span>
             <div class="homepage-link-detail">
@@ -53,11 +57,7 @@ title: LinTO, framework open-source de technologies vocales
         </div>
       </div>
       <div class="flex row flex1 justify-center align-center padding-20">
-        <!--
-        <img src="/assets/img/screenshot-conversation-manager.png" class="homepage-illustration" >
-        <img src="/assets/img/linto-ui.png" class="homepage-illustration" >
-        -->
-        <img src="/assets/img/linto-ui.png" class="homepage-illustration" >
+        <div id="homepage-animation-mask" class="default"></div>
       </div>
     </div>
   </section>
@@ -80,16 +80,6 @@ title: LinTO, framework open-source de technologies vocales
           </ul>
         </div>
       </div>
-      <!--
-      <div class="flex row space-evenly padding-20">
-        <div class="flex row btn-cta-container">
-          <a class="btn-cta blue" href="https://convos.linto.ai/login" target="_blank">LinTO as a service <i>Conversation Manager</i></a>
-        </div>
-        <div class="flex row btn-cta-container">
-          <a class="btn-cta blue" href="https://doc.linto.ai/docs/consumers/apis" target="_blank">LinTO as a service <i>Cognitive APIs</i></a>
-        </div>
-      </div>
-      -->
     </div>
   </section>
   <section>

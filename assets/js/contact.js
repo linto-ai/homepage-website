@@ -1,7 +1,6 @@
 $(document).ready(function(){
   // Submit contact form
   $('#contact-form-send').on('click', function () {
-    console.log('click')
     handleForm()
   })
 

@@ -68,3 +68,45 @@
   -moz-border-radius-bottomleft: $botleft;
   border-bottom-left-radius: $botleft;
 }
+
+
+
+@-webkit-keyframes moveImg {
+  0% {
+      background-position: 0 0;
+  }
+  33% {
+    background-position: 0 100%;
+}
+  66% {
+    background-position: 100% 100%;
+  }
+  100%{
+    background-position: 0 0;
+
+  }
+}
+
+@keyframes moveImg {
+  0% {
+    background-position: 0 0;
+  }
+  33% {
+    background-position: 0 100%;
+  }
+  66% {
+    background-position: 100% 100%;
+  }
+  100%{
+    background-position: 0 0;
+
+}
+}
+
+@mixin moveImgBg($time) {
+  -webkit-animation: moveImg $time infinite ease-in-out;
+  -moz-animation: moveImg $time infinite ease-in-out;
+  -ms-animation: moveImg $time infinite ease-in-out;
+  -o-animation: moveImg $time infinite ease-in-out;
+  animation: moveImg $time infinite ease-in-out;
+}

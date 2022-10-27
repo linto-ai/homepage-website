@@ -206,3 +206,35 @@
 
   }
 }
+
+
+#homepage-animation-mask{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  &.bordered{
+    border: 2px solid #ECECEC;
+    @include boxShadow(0,2px, 4px, 0, rgba(0,0,0,0.3));
+  }
+
+  &.default {
+    background-image:url('../assets/img/illustration-homepage-01.svg');
+    background-size: contain;
+    
+  }
+  &.smart-meeting{
+    background-image:url('../assets/img/screenshot-conversation-manager.png');
+    background-size: 300% auto;
+    @include moveImgBg(30s);
+  }
+
+  &.linto-agent{
+    background-image:url('../assets/img/screenshot-linto-ui.png');
+    background-size: contain;
+
+  }
+
+}
