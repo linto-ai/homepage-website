@@ -31,7 +31,7 @@ function setAnimation(target) {
 
   switch(target) {
     case "coginitve-apis":
-      animContainer.innerHTML = `<lottie-player src="/assets/json/linto-animation.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop autoplay></lottie-player>`
+      animContainer.innerHTML = `<lottie-player src="/assets/json/linto-animation.json" background="transparent" speed="1.5"  loop autoplay></lottie-player>`
       break
     case "linto-agent":
       animContainer.classList.add('linto-agent')
@@ -41,8 +41,15 @@ function setAnimation(target) {
       animContainer.classList.add('bordered')
     case "default":
       animContainer.classList.add('default')
-      break      
+      break
   }
+  animContainer.classList.remove('fading-out')
+  animContainer.classList.add('fading-in')
+  setTimeout(()=>{
+    animContainer.classList.remove('fading-in')
+  }, 700)
+  
+
 }
 
 
@@ -52,4 +59,6 @@ function resetAnimClasses() {
   animContainer.classList.remove('bordered')
   animContainer.classList.remove('linto-agent')
   animContainer.classList.remove('smart-meeting')
+  animContainer.classList.remove('fading-in')
+  animContainer.classList.add('fading-out')
 }

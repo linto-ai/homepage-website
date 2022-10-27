@@ -234,7 +234,13 @@
   &.linto-agent{
     background-image:url('../assets/img/screenshot-linto-ui.png');
     background-size: contain;
+    background-position: center center
 
   }
-
+  &.fading-out{
+    @include fade-out()
+  }
+  &.fading-in{
+    @include fade-in()
+  }
 }

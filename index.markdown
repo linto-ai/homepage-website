@@ -19,7 +19,7 @@ title: LinTO, framework open-source de technologies vocales
       </div>  
     </div>  
     <div class="container flex row">
-      <div class="flex col flex2 padding-20">
+      <div class="flex col flex1 padding-20">
         <div class="flex col homepage-links-container">
           <button class="homepage-link flex row align-center apis" data-anim="coginitve-apis">
             <span class="icon apis"></span>

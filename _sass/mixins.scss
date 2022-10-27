@@ -99,14 +99,68 @@
   }
   100%{
     background-position: 0 0;
-
-}
+  }
 }
 
 @mixin moveImgBg($time) {
-  -webkit-animation: moveImg $time infinite ease-in-out;
-  -moz-animation: moveImg $time infinite ease-in-out;
-  -ms-animation: moveImg $time infinite ease-in-out;
-  -o-animation: moveImg $time infinite ease-in-out;
-  animation: moveImg $time infinite ease-in-out;
+  -webkit-animation: moveImg $time infinite ;
+  -moz-animation: moveImg $time infinite ;
+  -ms-animation: moveImg $time infinite ;
+  -o-animation: moveImg $time infinite ;
+  animation: moveImg $time infinite ;
 }
+
+
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@mixin fade-in() {
+  -webkit-animation: fadein 1s ease-in-out;
+  -moz-animation: fadein 1s ease-in-out;
+  -ms-animation: fadein 1s ease-in-out;
+  -o-animation: fadein 1s ease-in-out;
+  animation: fadein 1s ease-in-out;
+}
+
+@mixin fade-out() {
+  -webkit-animation: fadeout 1s ease-in-out;
+  -moz-animation: fadeout 1s ease-in-out;
+  -ms-animation: fadeout 1s ease-in-out;
+  -o-animation: fadeout 1s ease-in-out;
+  animation: fadeout 1s ease-in-out;
+}
+
+
