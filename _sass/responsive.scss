@@ -29,6 +29,15 @@
   .big-title{
     font-size: 30px;
   }
+  .btn-cta{
+    padding: 10px;
+    font-size: 13px;
+    &.homepage{
+      padding: 10px;
+      font-size: 13px;
+        
+    }
+  }
 
   #homepage-animation-mask{
     width: 300px;
@@ -36,7 +45,7 @@
   .homepage-link{
     &.active{
       .homepage-link-detail{
-        height: 190px;
+        height: 210px;
       }
     }
   } 

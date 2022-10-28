@@ -133,6 +133,7 @@ section {
   margin: 0 auto;
   padding: 0 15px;
   z-index: 5;
+  box-sizing: border-box;
   &.big{
     max-width: 1200px;
   }

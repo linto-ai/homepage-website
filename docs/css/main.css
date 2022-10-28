@@ -79,7 +79,7 @@ body { min-height: 100%; height: auto; font-family: 'Inter', Arial, Helvetica, s
 
 section { padding: 60px 0; }
 
-.container { position: relative; max-width: 980px; margin: 0 auto; padding: 0 15px; z-index: 5; }
+.container { position: relative; max-width: 980px; margin: 0 auto; padding: 0 15px; z-index: 5; box-sizing: border-box; }
 
 .container.big { max-width: 1200px; }
 
@@ -896,6 +896,6 @@ ul.footer-list li a:hover { color: #fff; }
 
 @media all and (min-width: 1024px) and (max-width: 1280px) { #homepage-animation-mask { width: 360px; } }
 
-@media all and (max-width: 1024px) { #body { padding: 0; } section { padding: 40px 0; } .container { max-width: 100%; padding: 0 40px; } .container.big { max-width: 100%; padding: 0 40px !important; } .flex { flex-wrap: wrap; } .flex1, .flex2, .flex3, .flex4 { min-width: 340px; } .big-title { font-size: 30px; } #homepage-animation-mask { width: 300px; } .homepage-link.active .homepage-link-detail { height: 190px; } .apis-schema-container { flex-direction: column !important; } .apis-schema-container .apis-schema-item { width: 100%; box-sizing: border-box; margin: 10px 0; } /* HEADER */ #header { display: none; } #burger-menu { display: block; } .api-streaming-container { flex-direction: column !important; } #record-streaming-transcript { width: 100%; box-sizing: border-box; } #record-streaming { margin: 10px auto; } }
+@media all and (max-width: 1024px) { #body { padding: 0; } section { padding: 40px 0; } .container { max-width: 100%; padding: 0 40px; } .container.big { max-width: 100%; padding: 0 40px !important; } .flex { flex-wrap: wrap; } .flex1, .flex2, .flex3, .flex4 { min-width: 340px; } .big-title { font-size: 30px; } .btn-cta { padding: 10px; font-size: 13px; } .btn-cta.homepage { padding: 10px; font-size: 13px; } #homepage-animation-mask { width: 300px; } .homepage-link.active .homepage-link-detail { height: 210px; } .apis-schema-container { flex-direction: column !important; } .apis-schema-container .apis-schema-item { width: 100%; box-sizing: border-box; margin: 10px 0; } /* HEADER */ #header { display: none; } #burger-menu { display: block; } .api-streaming-container { flex-direction: column !important; } #record-streaming-transcript { width: 100%; box-sizing: border-box; } #record-streaming { margin: 10px auto; } }
 
 /*# sourceMappingURL=main.css.map */
