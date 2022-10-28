@@ -40,7 +40,8 @@ title: LinTO Agent for meeting
           </ul>
         </div>
         <div class="flex col flex2 padding-20" style="background-color:#5FBF9D;">
-          <ul><span style="text-align:center; color:green; font-weight:bold;"><b>OUVERT, GRATUIT et sans limite d'usage</b></span>
+        <span style="text-align:center; color:#fff; font-weight:bold;"><b>OUVERT, GRATUIT et sans limite d'usage</b></span>
+          <ul>
             <li>Transcriptions illimités</li>
             <li>Création d'organization, visibilité publique ou privée des utilisateurs et des organisations créees</li>
             <li>Gestion complète des rôles des membres</li>
@@ -51,7 +52,7 @@ title: LinTO Agent for meeting
           </ul>
         </div>
       </div>
-      <div class="flex row align-center justify-center btn-cta-container">
+      <div class="flex row align-center justify-center btn-cta-container" style="margin-top: 20px;">
         <a href="https://convos.linto.ai/" target="_blank" class="btn-cta blue" style="margin-right:50px;">Conversation Manager Accès anticipé</a>
         <a href="https://doc.linto.ai/docs/consumers/conversation-manager" target="_blank" class="btn-cta blue">Documentation conversation manager</a>
       </div>

@@ -5,6 +5,7 @@
 layout: default
 title: Contactez-nous
 ---
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.3/dist/axios.min.js"></script>
 <div id="body" class="flex col">
   <section>
     <div class="container">
@@ -34,17 +35,18 @@ title: Contactez-nous
             <span class="error-field" id="contact-society-error"></span>
           </div>
           <div class="form-field flex col">
-            <span class="label">Sujet <i>*</i></span>
-            <input type="text" id="contact-subject">
-            <span class="error-field" id="contact-subject-error"></span>
-          </div>
-          <div class="form-field flex col">
             <span class="label">Message <i>*</i></span>
             <textarea id="contact-msg"></textarea>
             <span class="error-field" id="contact-msg-error"></span>
           </div>
           <div class="flex row form-field justify-center">
             <button class="btn-cta blue" id="contact-form-send">Envoyer</button>
+          </div>
+          <div class="contact-notif success hidden" id="contact-success">
+            Votre message à bien été envoyé et sera traité dans les meilleurs délais.
+          </div>  
+          <div class="contact-notif error hidden" id="contact-error">
+            Une erreur est survenue, veuillez rééssayer ultérieurement ou nous contacter directement sur <a href="mailto:contact@linto.ai" target="_blank">mailto:contact@linto.ai</a>
           </div>
         </div>
         <div class="flex col flex1 padding-20">

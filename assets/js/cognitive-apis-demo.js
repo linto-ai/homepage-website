@@ -5,6 +5,9 @@ window.onload = async function() {
       if (host.indexOf('dev.linto.local') >= 0) {
           lintoWebToken = 'wdyEXAlwSFY3WjvD';
       }
+      if (host.indexOf('linto.ai') >= 0) {
+        lintoWebToken = 'j5hO82IOO9Ns64KZ';
+      }
       // INIT LINTO AGENT
       window.linto = await new Linto('https://gamma.linto.ai/overwatch/local/web/login', lintoWebToken);
       let login = await window.linto.login()

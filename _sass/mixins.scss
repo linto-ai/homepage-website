@@ -148,19 +148,19 @@
 }
 
 @mixin fade-in() {
-  -webkit-animation: fadein 1s ease-in-out;
-  -moz-animation: fadein 1s ease-in-out;
-  -ms-animation: fadein 1s ease-in-out;
-  -o-animation: fadein 1s ease-in-out;
-  animation: fadein 1s ease-in-out;
+  -webkit-animation: fadein 0.5s ease-in-out;
+  -moz-animation: fadein 0.5s ease-in-out;
+  -ms-animation: fadein 0.5s ease-in-out;
+  -o-animation: fadein 0.5s ease-in-out;
+  animation: fadein 0.5s ease-in-out;
 }
 
 @mixin fade-out() {
-  -webkit-animation: fadeout 1s ease-in-out;
-  -moz-animation: fadeout 1s ease-in-out;
-  -ms-animation: fadeout 1s ease-in-out;
-  -o-animation: fadeout 1s ease-in-out;
-  animation: fadeout 1s ease-in-out;
+  -webkit-animation: fadeout 0.5s ease-in-out;
+  -moz-animation: fadeout 0.5s ease-in-out;
+  -ms-animation: fadeout 0.5s ease-in-out;
+  -o-animation: fadeout 0.5s ease-in-out;
+  animation: fadeout 0.5s ease-in-out;
 }
 
 

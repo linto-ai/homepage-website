@@ -678,6 +678,10 @@ window.onload = function() {
         lintoWebToken = 'zxfXgOkg7AmPIBO7';
         debug = true;
     } 
+    if (host.indexOf('linto.ai') >= 0) {
+      lintoWebToken = 'ULJFcHacbmKwDy7D';
+      debug = false;
+  } 
     // Widget Init
     window.LintoUI = new LintoUI({
         debug,

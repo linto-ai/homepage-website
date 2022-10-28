@@ -42,8 +42,7 @@ header{
     color: $greenChart;
     .icon{
       @include transition(all 0.2s ease-out);
-
-      background-color: $greenChart;
+      background-color: $greenChart !important;
     }
     &:after{
       background-color: $greenChart;
@@ -51,10 +50,10 @@ header{
   }
   .icon{
     display: inline-block;
-    width: 20px;
-    height: 20px; 
+    width: 30px;
+    height: 30px; 
     background-color :#fff;
-    margin: 15px 5px 15px 0;
+    margin: 10px 5px 10px 0;
     vertical-align: top;
     &.cm{
       @include maskImage('../assets/img/conversation-manager-logo-small.svg');
@@ -218,6 +217,10 @@ header{
   &.linto{
     @include maskImage('/assets/img/linto-agent-icon.svg');
     background-color: $purpleChart;
+
+    &.white{
+      background-color: #fff;
+    }
   }
   &.meeting{
     @include maskImage('/assets/img/linto-meeting-icon.svg');

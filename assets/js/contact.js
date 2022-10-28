@@ -5,7 +5,7 @@ $(document).ready(function(){
   })
 
   function testName () {
-    const regex = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ\s\-\']+$/
+    const regex = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ\s\-\'\.]+$/
     const nameField = $('#contact-name')
     const nameError = $('#contact-name-error')
     const name = nameField.val()
@@ -26,7 +26,7 @@ $(document).ready(function(){
   }
 
   function testEmail () {
-    const regex = /^[a-z]{1}[a-z0-9\-\.\_]*[a-z0-9]+[\@]+[a-z]{1}[a-z0-9\-\.]*[a-z0-9]+[\.]+[a-z]{2,4}$/
+    const regex = /^[a-z]{1}[a-z0-9\-\.\_]*[a-z0-9]+[\@]+[a-z]{1}[a-z0-9\-\.]*[a-z0-9]+[\.]+[a-z]{2,5}$/
     const emailField = $('#contact-email')
     const emailError = $('#contact-email-error')
     const email = emailField.val()
@@ -68,52 +68,11 @@ $(document).ready(function(){
     }
   }
 
-  function testSociety () {
-    regex = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ\s\-\']+$/
 
-    const societyField = $('#contact-society')
-    const societyError = $('#contact-society-error')
-    const society = societyField.val()
-    // clear errors
-    societyField.removeClass('error')
-    societyError.html('')
-
-    if (society.length === 0) {
-      return true
-    } else {
-      if (!regex.test(society)) {
-        societyError.html('Veuillez saisir un nom de société valide')
-        societyField.addClass('error')
-        return false
-      } else {
-        return true
-      }
-    }
-  }
 
   function testMessage () {
     const msgField = $('#contact-msg')
     const msgError = $('#contact-msg-error')
-    const msg = msgField.val()
-    // clear errors
-    msgField.removeClass('error')
-    msgError.html('')
-
-    if (msg.length === 0) {
-      msgError.html('Champs requis')
-      msgField.addClass('error')
-      return false
-    } else if (msg.includes('<') || msg.includes('>') || msg.includes('script') ||  msg.includes('|')) {
-      msgError.html('Le message contient des caractères non autorisés')
-      msgField.addClass('error')
-      return false
-    } else {
-      return true
-    }
-  }
-  function testSubject () {
-    const msgField = $('#contact-subject')
-    const msgError = $('#contact-subject-error')
     const msg = msgField.val()
     // clear errors
     msgField.removeClass('error')
@@ -139,11 +98,9 @@ $(document).ready(function(){
     let nameValid = testName()
     let emailValid = testEmail()
     let phoneValid = testPhone()
-    let societyValid = testSociety()
-    let subjectValid = testSubject()
     let msgValid = testMessage()
 
-    if(!nameValid || !emailValid || !phoneValid || !societyValid || !msgValid || !subjectValid) {
+    if(!nameValid || !emailValid || !phoneValid || !msgValid ) {
       isValid = false
       return false
     }
@@ -159,36 +116,32 @@ $(document).ready(function(){
       username: $('#contact-name').val(),
       email: $('#contact-email').val(),
       phone: $('#contact-phone').val(),
-      subject: $('#contact-subject').val(),
       society: $('#contact-society').val(),
       message: $('#contact-msg').val()
     }
-
-    // TODO > Traiter les cas de succès
-
-    console.log(payload)
-    /*axios.post('https://dl.linto.ai/mail/send', {
+    
+    // Request
+    axios.post('https://dl.linto.ai/mail/send', {
       method: 'post',
       data: payload
     })
     .then(function (response) {
       $('.submit-btn').innerHTML = 'Envoyer'
-      $('.send-notif').removeClass('hidden').addClass('visible').addClass(response.data.status)
-      $('.notif-msg').html(response.data.msg)
-      setTimeout(function () {
-        $('.send-notif').removeClass('visible').addClass('hidden')
-      }, 3000)
       if(response.data.status === 'success') {
         // Success
+        $('#contact-success').removeClass('hidden')
+        setTimeout(function () {
+          $('#contact-success').addClass('hidden')
+        }, 5000)
         $('#contact-msg').val('')
       } else {
         throw response.data
       }
-    })*/
+    })
     .catch(function (error) {
       // Error
       console.error(error)
-      // TODO > traiter les cas d'erreur
+      $('#contact-error').removeClass('hidden')
     });
   }
 
@@ -200,9 +153,6 @@ $(document).ready(function(){
   })
   $('#contact-phone').on('blur', function () {
     testPhone()
-  })
-  $('#contact-society').on('blur',function () {
-    testSociety()
   })
   $('#contact-subject').on('blur',function () {
     testSubject()
