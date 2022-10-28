@@ -9,7 +9,7 @@ title: Essayer LinTO cognitive APIs dans votre navigateur
   <section>
     <div class="container flex col">
       <h1 class="big-title centered">Tester <strong class="blue">l'API de transcription</strong> par fichier</h1>
-      <p class="thin text-centered">Réalisez une transcription en utilisant un fichier audio ou vidéo d’une taille maximale de 10Mo, ou en parlant directement dans votre micophone.</p>
+      <p class="thin text-centered">Réalisez une transcription en utilisant un fichier audio ou vidéo d’une taille maximale de 10Mo, ou en parlant directement dans votre microphone.</p>
       <div id="api-transcription-container" class="flex row">
         <div class="flex row flex3 padding-20">
           <div class="flex col flex1">
@@ -129,8 +129,8 @@ title: Essayer LinTO cognitive APIs dans votre navigateur
     <div class="container flex col">
       <h2 class="big-title centered">Tester la <strong class="blue">dictée vocale</strong></h2>
       <p class="thin text-centered">Parlez dans votre <strong>microphone</strong> et obtenez une <strong>transcription en temps réel</strong>.<br/>
-      Cliquez sur le bouton micophone pour <strong>démarrer la dictée</strong>.<br/>
-      Pour arrêter l'enregistrement cliquez sur le bouton micophone pour ou dites <strong>"STOP"</strong>.</p>
+      Cliquez sur le bouton microphone pour <strong>démarrer la dictée</strong>.<br/>
+      Pour arrêter l'enregistrement cliquez sur le bouton microphone pour ou dites <strong>"STOP"</strong>.</p>
         <div class="flex row justify-center">
         <div class="api-streaming-container flex row align-center">
           <button id="record-streaming" ><span class="rec-icon"></span></button>

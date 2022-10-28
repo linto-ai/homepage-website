@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: LinTO, prix et status des services
+title: LinTO, prix et services
 ---
 <div id="body" class="flex col">
   
