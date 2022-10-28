@@ -21,23 +21,23 @@ title: LinTO, framework open-source de technologies vocales
     <div class="container flex row">
       <div class="flex col flex1 padding-20">
         <div class="flex col homepage-links-container">
-          <button class="homepage-link flex row align-center apis" data-anim="coginitve-apis">
+          <button class="homepage-link apis" data-anim="coginitve-apis">
             <span class="icon apis"></span>
             <span class="label">Cognitive APIs</span>
-            <div class="homepage-link-detail">
+            <div class="homepage-link-detail flex col">
               <p class="detail">Intégrez des fonctions de reconnaissance vocale et de compréhension de la parole dans vos applications.</p>
-              <div class="flex row detail-btn">
-                <a href="/produits/cognitive-apis" class="btn-cta homepage bluechart">En savoir plus...</a>
-                <a href="/demo/cognitive-apis" class="btn-cta homepage bluechart">Démo sur navigateur</a>
+                <div class="flex row detail-btn flex1">
+                  <a href="/produits/cognitive-apis" class="btn-cta homepage bluechart">En savoir plus...</a>
+                  <a href="/demo/cognitive-apis" class="btn-cta homepage bluechart">Démo sur navigateur</a>
               </div>
             </div>
           </button>
           <button class="homepage-link flex row align-center meeting" data-anim="smart-meeting">
             <span class="icon meeting"></span>
             <span class="label">Smart meetings</span>
-            <div class="homepage-link-detail">
+            <div class="homepage-link-detail flex col">
               <p class="detail">Enregistrez vos réunions et réalisez des transcription directement en streaming ou à partir de fichiers média.</p>
-              <div class="flex row detail-btn">
+              <div class="flex row detail-btn flex1">
                 <a href="/produits/linto-for-meeting" class="btn-cta homepage greenchart">En savoir plus...</a>
                 <a href="https://convos.linto.ai" target="_blank" class="btn-cta homepage greenchart">Conversation Manager Accès anticipé</a>
               </div>
@@ -46,9 +46,9 @@ title: LinTO, framework open-source de technologies vocales
           <button class="homepage-link flex row align-center linto" data-anim="linto-agent">
             <span class="icon linto"></span>
             <span class="label">Virtual agents</span>
-            <div class="homepage-link-detail">
+            <div class="homepage-link-detail flex col">
               <p class="detail">Platforme Open Source d'agents conversationnels portables (web, voicebot, chatbot, assistants vocaux...). La voix ou le texte comme interface utilisateur naturelle.</p>
-              <div class="flex row detail-btn align-center">
+              <div class="flex row detail-btn flex1 align-center">
                 <a href="/produits/linto-agent" class="btn-cta homepage purplechart">En savoir plus...</a>
                 <a href="/demo/linto-agent" class="btn-cta homepage purplechart">Démo sur navigateur</a>
               </div>
@@ -56,8 +56,8 @@ title: LinTO, framework open-source de technologies vocales
           </button>
         </div>
       </div>
-      <div class="flex row flex1 justify-center align-center padding-20">
-        <div id="homepage-animation-mask" class="default"></div>
+      <div class="flex row justify-center align-center padding-20 homepage-animation-mask-container">
+        <div id="homepage-animation-mask" class="default flex col align-center justify-center"></div>
       </div>
     </div>
   </section>

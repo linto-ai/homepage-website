@@ -32,7 +32,7 @@ title: LinTO cognitive APIs
     <div class="container">
       <h1 class="big-title centered blue">APIs de traitement de la voix</h1>
       <p>Fonctionnent avec des fichiers du streaming audio. Elles peuvent être exploitées avec notre service ou sont instalables sur infrastructures propres. Elles peuvent monter à l’échelle tandis que leurs coûts d’exploitation restent compétitifs à n’importe quelle volumétrie. </p>
-      <div class="flex row justify-center">
+      <div class="flex row justify-center apis-schema-container">
         <div class="flex col flex2 justify-center align-center">
           <div class="apis-schema-item ">
             <ul>
@@ -43,7 +43,7 @@ title: LinTO cognitive APIs
           </div>
         </div>
         <div class="flex col flex1 justify-center align-center">
-          <img src="/assets/img/api-intellience.svg" alt="APIs intelligentes" class="apis-schema-img"/>
+          <img src="/assets/img/api-intellience.svg" alt="APIs intelligentes" class="apis-schema-img brain"/>
         </div>
         <div class="flex col flex2 justify-center align-center">
           <div class="apis-schema-item">
@@ -68,8 +68,8 @@ title: LinTO cognitive APIs
     <section>
     <div class="container">
       <h1 class="big-title centered blue">APIs de traitement de la parole (texte)</h1>
-      <div class="flex row justify-center">
-        <div class="flex col flex2 justify-center align-center">
+      <div class="flex row justify-center apis-schema-container">
+        <div class="flex col flex2 justify-center align-center ">
           <div class="apis-schema-item ">
             <ul>
               <li>Text</li>
@@ -78,7 +78,7 @@ title: LinTO cognitive APIs
           </div>
         </div>
         <div class="flex col flex1 justify-center align-center">
-          <img src="/assets/img/api-intellience.svg" alt="APIs intelligentes" class="apis-schema-img"/>
+          <img src="/assets/img/api-intellience.svg" alt="APIs intelligentes" class="apis-schema-img brain"/>
         </div>
         <div class="flex col flex2 justify-center align-center">
           <div class="apis-schema-item">

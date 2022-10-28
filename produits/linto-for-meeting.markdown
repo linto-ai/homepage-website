@@ -62,7 +62,7 @@ title: LinTO Agent for meeting
     <div class="container">
       <h2 class="big-title"><strong class="green">Smart</strong> visioconférence</h2>
       <div class="flex row">
-          <div class="flex col flex2 padding-20">
+          <div class="flex col flex2 padding-20 justify-center">
             <ul>
               <li>Exploitation API transcriptions</li>
               <li>Sous-titrage en direct</li>

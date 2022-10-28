@@ -55,6 +55,22 @@ window.addEventListener('load', () => {
       nav.classList.add('hidden')
     }
   }
+
+
+  /* BURGER MENU */
+  let burgerMenuBtn = document.getElementById('burger-menu-button')
+  let burgerMenuNav = document.getElementById('burger-menu-navigation')
+  burgerMenuBtn.addEventListener('click', () => {
+    if(burgerMenuBtn.classList.contains('opened')) {
+      burgerMenuBtn.classList.remove('opened')
+      burgerMenuBtn.classList.add('closed')
+      burgerMenuNav.classList.add('hidden')
+    } else {
+      burgerMenuBtn.classList.add('opened')
+      burgerMenuBtn.classList.remove('closed')
+      burgerMenuNav.classList.remove('hidden')
+    }
+  })
 })
 
 

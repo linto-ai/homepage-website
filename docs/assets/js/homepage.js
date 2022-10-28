@@ -31,7 +31,7 @@ function setAnimation(target) {
 
   switch(target) {
     case "coginitve-apis":
-      animContainer.innerHTML = `<lottie-player src="/assets/json/linto-animation.json" background="transparent" speed="1.5"  loop autoplay></lottie-player>`
+      animContainer.innerHTML = `<lottie-player src="/assets/json/linto-animation.json" background="transparent" width="400px" height="400px" speed="1.5"  loop autoplay></lottie-player>`
       break
     case "linto-agent":
       animContainer.classList.add('linto-agent')

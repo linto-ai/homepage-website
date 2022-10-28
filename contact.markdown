@@ -56,7 +56,7 @@ title: Contactez-nous
           </div>
           <div class="flex row contact-item align-center">
             <span class="icon phone"></span>
-            <span class="info">Téléphone: 01 02 03 04 05</span>
+            <span class="info">Téléphone: +33 (0)1 46 96 63 63</span>
           </div>
           <div class="flex row contact-item align-center">
             <span class="icon map"></span>
