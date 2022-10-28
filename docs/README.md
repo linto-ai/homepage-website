@@ -16,4 +16,6 @@
 *The builded folder must be pushed to update the website *
 ```bash
   jekyll build -d ./docs
+  touch ./docs/.nojekyll
 ```
+

@@ -5,7 +5,7 @@
 layout: default
 title: LinTO, framework open-source de technologies vocales
 ---
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/1.4.3/lottie-player.js"></script>
 
 <div id="body" class="flex col">
   <section id="homepage-top">
