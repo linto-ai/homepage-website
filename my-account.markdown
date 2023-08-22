@@ -16,7 +16,7 @@ title: LinTO, mon compte
         Le service Conversation Manager est accessible dès aujourd'hui en Beta publique. Les comptes créés avant la sortie officielle bénéficient d'un accès gratuit à tous nos services. 
       </div>
           <div class="flex row align-center justify-center">
-      <a href="https://convos.linto.ai" target="_blank" class="btn-cta blue">Conversation manager Accès anticipé</a>
+      <a href="https://studio.linto.app" target="_blank" class="btn-cta blue">Linto Studio Accès anticipé</a>
     </div>
       <div class="flex row">
         <div class="flex1 flex col padding-20">

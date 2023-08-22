@@ -53,7 +53,7 @@ title: LinTO Agent for meeting
         </div>
       </div>
       <div class="flex row align-center justify-center btn-cta-container" style="margin-top: 20px;">
-        <a href="https://convos.linto.ai/" target="_blank" class="btn-cta blue" style="margin-right:50px;">Conversation Manager Accès anticipé</a>
+        <a href="https://studio.linto.app/" target="_blank" class="btn-cta blue" style="margin-right:50px;">Linto Studio Accès anticipé</a>
         <a href="https://doc.linto.ai/docs/consumers/conversation-manager" target="_blank" class="btn-cta blue">Documentation conversation manager</a>
       </div>
     </div>

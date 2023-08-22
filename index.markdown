@@ -39,7 +39,7 @@ title: LinTO, framework open-source de technologies vocales
               <p class="detail">Enregistrez vos réunions et réalisez des transcription directement en streaming ou à partir de fichiers média.</p>
               <div class="flex row detail-btn flex1">
                 <a href="/produits/linto-for-meeting" class="btn-cta homepage greenchart">En savoir plus...</a>
-                <a href="https://convos.linto.ai" target="_blank" class="btn-cta homepage greenchart">Conversation Manager Accès anticipé</a>
+                <a href="https://studio.linto.app/" target="_blank" class="btn-cta homepage greenchart">Linto Studio Accès anticipé</a>
               </div>
             </div>
           </button>
