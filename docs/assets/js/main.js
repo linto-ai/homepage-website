@@ -23,8 +23,9 @@ window.addEventListener('load', () => {
   }
 
   function checkNavMouseOut(e, targetId) {
-    let targetMouse = e.toElement
-      // close nav dropdown if mouseout is not on the nav dropdown or label
+    //let targetMouse = e.toElement // not working on firefox
+    let targetMouse = e.relatedTarget // working on firefox and chrome
+    // close nav dropdown if mouseout is not on the nav dropdown or label
       if(
         (targetMouse.getAttribute('data-target') !== null && targetMouse.getAttribute('data-target') !== targetId)  || 
         (targetMouse.getAttribute('id') !== null && targetMouse.getAttribute('id') !== targetId) ||

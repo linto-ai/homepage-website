@@ -10,13 +10,13 @@ title: LinTO Agent for meeting
   <section>
     <div class="container">
       <h1 class="big-title centered green">LinTO Smart Meeting</h1>
-      <p>Enregistrez vos réunions et réalisez des transcription directement en streaming ou à partir de fichiers média audio et vidéo.
-        Utilisez ensuite l’éditeur du Conversation Manager pour éditer vos transcriptions et les exporter aux formats qui vous conviennent.</p>
+      <p style="text-align:justify;">Enregistrez vos réunions et réalisez des transcription directement en streaming grace à l'application mobile, ou à partir de fichiers média audio et vidéo.
+        Utilisez ensuite l’éditeur de LinTO Studio pour éditer vos transcriptions et les exporter aux formats qui vous conviennent.</p>
     </div>
   </section>
   <section style="padding-top: 0;">
     <div class="container">
-      <h2 class="big-title">Conversation <strong class="green">Manager</strong></h2>
+      <h2 class="big-title">LinTO <strong class="green">Studio</strong></h2>
       <!-- 
       <div class="disclaimer flex row justify-center">
         Les APIs de transcription sont ouvertes en accès illimité le temps de tester notre version actuelle. Des modalités de paiement pourront être mise en place par la suite.
@@ -24,17 +24,18 @@ title: LinTO Agent for meeting
       -->
       <div class="flex row">
         <div class="flex col flex1 justify-center align-center padding-20">
-          <img src="../assets/img/conversation-manager-logo.svg" alt="Conversation Manager" />
+          <img src="../assets/img/linto-studio-logo.svg" alt="Conversation Manager" />
         </div>
           <div class="flex col flex2 padding-20">
           <ul>
-            <li>Transcription en streaming ou à partir de fichier media</li>
+            <li>Transcription en streaming avec l'application compagnon, ou en envoyant un fichier</li>
             <li>Visualisation, manipulation, édition, partage de transcriptions, scribe virtuel</li>
             <li>Identification des locuteurs</li>
             <li>Ponctuation</li>
             <li>Normalisation des chiffres/nombres</li>
             <li>Annotation de texte</li>
             <li>Aide au résumé, mots clés</li>
+            <li>Génération de sous-titres videos</li>
             <li>Création d’organisation, partage de transcriptions</li>
             <li>Exports au formats Json, Txt, sous-titre</li>
           </ul>
@@ -53,8 +54,8 @@ title: LinTO Agent for meeting
         </div>
       </div>
       <div class="flex row align-center justify-center btn-cta-container" style="margin-top: 20px;">
-        <a href="https://studio.linto.app/" target="_blank" class="btn-cta blue" style="margin-right:50px;">Linto Studio Accès anticipé</a>
-        <a href="https://doc.linto.ai/docs/consumers/conversation-manager" target="_blank" class="btn-cta blue">Documentation conversation manager</a>
+        <a href="https://studio.linto.app/" target="_blank" class="btn-cta blue" style="margin-right:50px;">LinTO Studio Accès anticipé</a>
+        <a href="https://doc.linto.ai/docs/consumers/conversation-manager" target="_blank" class="btn-cta blue">Documentation LinTO Studio</a>
       </div>
     </div>
   </section>
