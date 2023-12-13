@@ -1,0 +1,49 @@
+#pricing-table{
+  thead{
+    th{
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #959595;
+      vertical-align: middle;
+      border: 1px solid #dedede;
+      padding: 10px;
+    }
+  }
+  tbody{
+    tr{
+      td{
+        border: 1px solid #dedede;
+        padding: 5px 10px;
+        font-size: 13px;
+  
+        ul{
+          li{
+            font-size: 13px;
+            line-height: 1.3em;
+            font-weight: 400;
+            margin: 0;
+           
+          }
+        }
+        p{
+          font-size: 13px;
+          line-height: 1.3em;
+          font-weight: 400;
+          margin: 5px 0;
+        }
+        &.service-name{
+          font-size: 14px;
+          font-weight: 600;
+          white-space: nowrap;
+        }
+        &.price{
+          font-size: 14px;
+          text-align: center;
+          font-weight: 600;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

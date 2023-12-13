@@ -1,13 +1,13 @@
 $(document).ready(function(){
   // Submit contact form
-  $('.submit-btn').on('click', function () {
+  $('#contact-form-send').on('click', function () {
     handleForm()
   })
 
   function testName () {
-    const regex = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ\s\-\']+$/
+    const regex = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ\s\-\'\.]+$/
     const nameField = $('#contact-name')
-    const nameError = $('.error-field.username')
+    const nameError = $('#contact-name-error')
     const name = nameField.val()
     // clear errors
     nameField.removeClass('error')
@@ -26,9 +26,9 @@ $(document).ready(function(){
   }
 
   function testEmail () {
-    const regex = /^[a-z]{1}[a-z0-9\-\.\_]*[a-z0-9]+[\@]+[a-z]{1}[a-z0-9\-\.]*[a-z0-9]+[\.]+[a-z]{2,4}$/
+    const regex = /^[a-z]{1}[a-z0-9\-\.\_]*[a-z0-9]+[\@]+[a-z]{1}[a-z0-9\-\.]*[a-z0-9]+[\.]+[a-z]{2,5}$/
     const emailField = $('#contact-email')
-    const emailError = $('.error-field.email')
+    const emailError = $('#contact-email-error')
     const email = emailField.val()
     // clear errors
     emailField.removeClass('error')
@@ -49,7 +49,7 @@ $(document).ready(function(){
   function testPhone () {
     const regex = /^\d{8,20}$/
     const phoneField = $('#contact-phone')
-    const phoneError = $('.error-field.phone')
+    const phoneError = $('#contact-phone-error')
     const phone = phoneField.val()
     // clear errors
     phoneField.removeClass('error')
@@ -68,32 +68,11 @@ $(document).ready(function(){
     }
   }
 
-  function testSociety () {
-    regex = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ\s\-\']+$/
 
-    const societyField = $('#contact-society')
-    const societyError = $('.error-field.society')
-    const society = societyField.val()
-    // clear errors
-    societyField.removeClass('error')
-    societyError.html('')
-
-    if (society.length === 0) {
-      return true
-    } else {
-      if (!regex.test(society)) {
-        societyError.html('Veuillez saisir un nom de société valide')
-        societyField.addClass('error')
-        return false
-      } else {
-        return true
-      }
-    }
-  }
 
   function testMessage () {
     const msgField = $('#contact-msg')
-    const msgError = $('.error-field.msg')
+    const msgError = $('#contact-msg-error')
     const msg = msgField.val()
     // clear errors
     msgField.removeClass('error')
@@ -119,10 +98,9 @@ $(document).ready(function(){
     let nameValid = testName()
     let emailValid = testEmail()
     let phoneValid = testPhone()
-    let societyValid = testSociety()
     let msgValid = testMessage()
 
-    if(!nameValid || !emailValid || !phoneValid || !societyValid || !msgValid) {
+    if(!nameValid || !emailValid || !phoneValid || !msgValid ) {
       isValid = false
       return false
     }
@@ -132,7 +110,7 @@ $(document).ready(function(){
   }
 
   function sendForm () {
-    $('.submit-btn').innerHTML = 'Envoi...'
+    $('#contact-form-send').innerHTML = 'Envoi en cours...'
     const payload = {
       subject: 'Contact depuis linto.ai',
       username: $('#contact-name').val(),
@@ -141,19 +119,20 @@ $(document).ready(function(){
       society: $('#contact-society').val(),
       message: $('#contact-msg').val()
     }
+    
+    // Request
     axios.post('https://dl.linto.ai/mail/send', {
       method: 'post',
       data: payload
     })
     .then(function (response) {
       $('.submit-btn').innerHTML = 'Envoyer'
-      $('.send-notif').removeClass('hidden').addClass('visible').addClass(response.data.status)
-      $('.notif-msg').html(response.data.msg)
-      setTimeout(function () {
-        $('.send-notif').removeClass('visible').addClass('hidden')
-      }, 3000)
       if(response.data.status === 'success') {
         // Success
+        $('#contact-success').removeClass('hidden')
+        setTimeout(function () {
+          $('#contact-success').addClass('hidden')
+        }, 5000)
         $('#contact-msg').val('')
       } else {
         throw response.data
@@ -161,27 +140,24 @@ $(document).ready(function(){
     })
     .catch(function (error) {
       // Error
-      $('.send-notif').removeClass('hidden').addClass('visible').addClass(error.status)
-      $('.notif-msg').html(error.msg)
-      setTimeout(function () {
-        $('.send-notif').removeClass('visible').addClass('hidden')
-      }, 3000)
+      console.error(error)
+      $('#contact-error').removeClass('hidden')
     });
   }
 
-  document.getElementById('contact-name').onblur = function () {
+  $('#contact-name').on('blur', function () {
     testName()
-  }
-  document.getElementById('contact-email').onblur = function () {
+  })
+  $('#contact-email').on('blur',function () {
     testEmail()
-  }
-  document.getElementById('contact-phone').onblur = function () {
+  })
+  $('#contact-phone').on('blur', function () {
     testPhone()
-  }
-  document.getElementById('contact-society').onblur = function () {
-    testSociety()
-  }
-  document.getElementById('contact-msg').onblur = function () {
+  })
+  $('#contact-subject').on('blur',function () {
+    testSubject()
+  })
+  $('#contact-msg').on('blur',function () {
     testMessage()
-  }
+  })
 })

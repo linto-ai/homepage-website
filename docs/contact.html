@@ -1,0 +1,249 @@
+<!DOCTYPE HTML5>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- scripts -->
+    <script type="text/javascript" src="/assets/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+
+    <title>Contactez-nous</title>
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+    /* START expiration 13 mois */
+    _paq.push([function() {
+    var self = this;
+    function getOriginalVisitorCookieTimeout() {
+    var now = new Date(),
+    nowTs = Math.round(now.getTime() / 1000),
+    visitorInfo = self.getVisitorInfo();
+    var createTs = parseInt(visitorInfo[2]);
+    var cookieTimeout = 33696000; // 13 mois en secondes
+    var originalTimeout = createTs + cookieTimeout - nowTs;
+    return originalTimeout;
+    }
+    this.setVisitorCookieTimeout( getOriginalVisitorCookieTimeout() );
+    }]);
+    /* END expiration 13 mois */
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['HeatmapSessionRecording::disable']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://piwik.linagora.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '22']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+  <body>
+    <div id="app" class="flex col">
+      <!-- HEADER -->
+<header id="header" class="flex row align-center">
+  <a href="/" class="logo">
+    <img src="/assets/img/linto-ai.svg" alt="LinTO.ai" />
+  </a>
+  <nav class="flex row flex1">
+    <div class="flex row flex1">
+      <div class="nav-item-container">
+        <a href="javascript:;" class="nav-item-parent" data-target="header-nav-products">Produits</a>
+        <div class="nav-item-dropdown hidden flex row" id="header-nav-products">
+          <div class="nav-card flex col apis">
+            <a href="/produits/cognitive-apis" class="nav-card-link flex col align-center apis">
+              <div class="title flex row">
+                <span class="icon apis"></span>
+                <span class="label apis">Cognitive APIs</h3>
+              </div>
+              <div class="description">
+                <p>Intégrez des fonctions de reconnaissance vocale et de compréhension de la parole dans vos applications.</p>
+              </div>
+            </a>
+          </div>
+          <div class="nav-card flex col linto">
+            <a href="/produits/linto-agent" class="nav-card-link flex col align-center linto">
+              <div class="title flex row">
+                <span class="icon linto"></span>
+                <span class="label linto">Virtual agents</h3>
+              </div>
+              <div class="description">
+                <p>Créez des assistants vocaux avec mots réveils personnalisés dans vos produits et applications, y compris Web</p>
+              </div>
+            </a>
+          </div>
+          <div class="nav-card flex col meeting">
+            <a href="/produits/linto-for-meeting" class="nav-card-link flex col align-center meeting">
+              <div class="title flex row">
+                <span class="icon meeting"></span>
+                <span class="label meeting">Smart meetings</h3>
+              </div>
+              <div class="description">
+                <p>LinTO est votre scribe virtuel. Enregistrez vos réunions et réalisez des transcription directement en flux (sous-titrage temps réél) ou à partir de fichiers média audio et vidéo.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item-container">
+        <a href="https://doc.linto.ai" class="nav-item" target="_blank">Portail de documentation</a>
+      </div>
+      <div class="nav-item-container">
+        <a href="/pricing" class="nav-item">Tarifs</a>
+      </div>
+      <div class="nav-item-container">
+        <a href="/contact" class="nav-item">Contact</a>
+      </div>
+    </div>
+    <div class="flex row justify-end">
+      <div class="nav-item-container">
+        <a href="https://studio.linto.app" target="_blank" class="nav-item">
+          <span class="icon cm"></span>Linto Studio</a>
+      </div>
+      <div class="nav-item-container">
+        <a href="/my-account" class="nav-item"><span class="icon linto white"></span>My account</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- END HEADER -->
+<div id="burger-menu">
+  <button id="burger-menu-button" class="closed"></button>
+  <div id="burger-menu-navigation" class="flex col align-center justify-center hidden">
+    <div class="flex col align-center justify-center ">
+      <a href="/" class="burger-nav-item">Accueil</a>
+      <a href="/produits/cognitive-apis" class="burger-nav-item">Cognitive APIs</a>
+      <a href="/produits/linto-agent" class="burger-nav-item">Virtual agents</a>
+      <a href="/produits/linto-for-meeting" class="burger-nav-item">Smart meetings</a>
+      <a href="https://doc.linto.ai" class="burger-nav-item" target="_blank">Portail de documentation</a>
+      <a href="/pricing" class="burger-nav-item">Tarifs</a>
+      <a href="/contact" class="burger-nav-item">Contact</a>
+      <a href="https://studio.linto.app" target="_blank" class="burger-nav-item">Linto Studio</a>
+      <a href="/my-account" class="burger-nav-item">My account</a>
+    </div>
+  </div>
+</div>
+      <script src="https://cdn.jsdelivr.net/npm/axios@1.1.3/dist/axios.min.js"></script>
+
+<div id="body" class="flex col">
+  <section>
+    <div class="container">
+      <h1 class="big-title centered green">Nous contacter</h1>
+      <p class="thin text-centered">Appelez-nous ou écrivez-nous quelque soit votre sujet, nous vous répondrons le plus rapidement possible.<br />
+        Nous sommes joignable tous les jours ouvrés de 9h à 18h</p>
+      <div class="flex row">
+        <div class="flex col flex1 padding-20">
+          <div class="form-field flex col">
+            <span class="label">Prénom Nom <i>*</i></span>
+            <input type="text" id="contact-name" />
+            <span class="error-field" id="contact-name-error"></span>
+          </div>
+          <div class="form-field flex col">
+            <span class="label">Email <i>*</i></span>
+            <input type="text" id="contact-email" />
+            <span class="error-field" id="contact-email-error"></span>
+          </div>
+          <div class="form-field flex col">
+            <span class="label">Téléphone</span>
+            <input type="text" id="contact-phone" />
+            <span class="error-field" id="contact-phone-error"></span>
+          </div>
+          <div class="form-field flex col">
+            <span class="label">Société</span>
+            <input type="text" id="contact-society" />
+            <span class="error-field" id="contact-society-error"></span>
+          </div>
+          <div class="form-field flex col">
+            <span class="label">Message <i>*</i></span>
+            <textarea id="contact-msg"></textarea>
+            <span class="error-field" id="contact-msg-error"></span>
+          </div>
+          <div class="flex row form-field justify-center">
+            <button class="btn-cta blue" id="contact-form-send">Envoyer</button>
+          </div>
+          <div class="contact-notif success hidden" id="contact-success">
+            Votre message à bien été envoyé et sera traité dans les meilleurs délais.
+          </div>  
+          <div class="contact-notif error hidden" id="contact-error">
+            Une erreur est survenue, veuillez rééssayer ultérieurement ou nous contacter directement sur <a href="mailto:contact@linto.ai" target="_blank">mailto:contact@linto.ai</a>
+          </div>
+        </div>
+        <div class="flex col flex1 padding-20">
+          <div class="flex row contact-item align-center">
+            <span class="icon mail"></span>
+            <span class="info">Email: <a href="mailto:contact@linto.ai" target="_blank">contact@linto.ai</a></span>
+          </div>
+          <div class="flex row contact-item align-center">
+            <span class="icon phone"></span>
+            <span class="info">Téléphone: +33 (0)1 46 96 63 63</span>
+          </div>
+          <div class="flex row contact-item align-center">
+            <span class="icon map"></span>
+            <span class="info">Addresse : 32 rue Pierre-Paul Riquet, 31300, Toulouse</span>
+          </div>
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=32%20Rue%20Pierre-Paul%20Riquet,%2031000%20Toulouse&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br /><a href="https://www.embedgooglemap.net">embedding google map</a>
+              }&lt;/style&gt;
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script type="text/javascript" src="/assets/js/contact.js"></script>
+
+
+      <footer>
+  <div class="flex row footer-main">
+    <div class="container flex row">
+      <div class="flex1 flex col">
+        <h4 class="footer-title">Produits</h4>
+        <ul class="footer-list">
+          <li><a href="/produits/cognitive-apis">Cognitive APIs</a></li>
+          <li><a href="/produits/linto-agent">Virtual agent</a></li>
+          <li><a href="/produits/linto-for-meeting">Smart meeting</a></li>
+        </ul>
+        <h4 class="footer-title">LinTO LIVE !</h4>
+        <ul class="footer-list">
+          <li><a href="/demo/cognitive-apis">APIs de transcription</a></li>
+          <li><a href="/demo/linto-agent">LinTO virtual agent</a></li>
+        </ul>
+      </div>
+      <div class="flex1 flex col">
+        <h4 class="footer-title">Ressources</h4>
+        <ul class="footer-list">
+          <li><a href="https://doc.linto.ai" target="_blank">Portail de documentation</a></li>
+          <li><a href="/pricing">Tarifs</a></li>
+          <li><a href="https://github.com/orgs/linto-ai/projects/6" target="_blank">Roadmap</a></li>
+        </ul>
+        <h4 class="footer-title">Communauté</h4>
+        <ul class="footer-list">
+          <li><a href="https://github.com/linto-ai" target="_blank">Github</a></li>
+          <li><a href="https://discord.gg/jvNK3FXv3d" target="_blank">Discord</a></li>
+          <li><a href="/contact" >Contact</a></li>
+        </ul>
+      </div>
+      <div class="flex1 flex col">
+        <h4 class="footer-title">Linagora</h4>
+        <a href="https://linagora.com" target="_blank">
+        <img class="footer-img-link" alt="Linagora" src="/assets/img/linagora.png"></a>
+        <a href="https://labs.linagora.com" target="_blank">
+        <img class="footer-img-link" alt="Linagora Labs" src="/assets/img/linagora-labs.png"></a>
+      </div>
+
+    </div>  
+  </div>
+  <div class="footer-secondary flex row align-center justify-center">
+    <span class="footer-content">Copyright Linagora 2022 - <a href="/contact">Nous contacter</a></span>
+  </div> 
+</footer>
+    </div>
+  </body>
+</html> 
