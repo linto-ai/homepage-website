@@ -1,268 +1,202 @@
-<!DOCTYPE HTML5>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- css -->
-    <link rel="stylesheet" href="/css/main.css">
-    <!-- scripts -->
-    <script type="text/javascript" src="/assets/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="/assets/js/main.js"></script>
+<!DOCTYPE html>
+<html lang="">
 
-    <title>LinTO, framework open-source de technologies vocales</title>
-    <!-- Matomo -->
-    <script type="text/javascript">
-      var _paq = window._paq || [];
-    /* START expiration 13 mois */
-    _paq.push([function() {
-    var self = this;
-    function getOriginalVisitorCookieTimeout() {
-    var now = new Date(),
-    nowTs = Math.round(now.getTime() / 1000),
-    visitorInfo = self.getVisitorInfo();
-    var createTs = parseInt(visitorInfo[2]);
-    var cookieTimeout = 33696000; // 13 mois en secondes
-    var originalTimeout = createTs + cookieTimeout - nowTs;
-    return originalTimeout;
-    }
-    this.setVisitorCookieTimeout( getOriginalVisitorCookieTimeout() );
-    }]);
-    /* END expiration 13 mois */
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(['HeatmapSessionRecording::disable']);
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://piwik.linagora.com/piwik/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '22']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    <!-- End Matomo Code -->
-  </head>
-  <body>
-    <div id="app" class="flex col">
-      <!-- HEADER -->
-<header id="header" class="flex row align-center">
-  <a href="/" class="logo">
-    <img src="/assets/img/linto-ai.svg" alt="LinTO.ai" />
-  </a>
-  <nav class="flex row flex1">
-    <div class="flex row flex1">
-      <div class="nav-item-container">
-        <a href="javascript:;" class="nav-item-parent" data-target="header-nav-products">Produits</a>
-        <div class="nav-item-dropdown hidden flex row" id="header-nav-products">
-          <div class="nav-card flex col apis">
-            <a href="/produits/cognitive-apis" class="nav-card-link flex col align-center apis">
-              <div class="title flex row">
-                <span class="icon apis"></span>
-                <span class="label apis">Cognitive APIs</h3>
-              </div>
-              <div class="description">
-                <p>Intégrez des fonctions de reconnaissance vocale et de compréhension de la parole dans vos applications.</p>
-              </div>
-            </a>
-          </div>
-          <div class="nav-card flex col linto">
-            <a href="/produits/linto-agent" class="nav-card-link flex col align-center linto">
-              <div class="title flex row">
-                <span class="icon linto"></span>
-                <span class="label linto">Virtual agents</h3>
-              </div>
-              <div class="description">
-                <p>Créez des assistants vocaux avec mots réveils personnalisés dans vos produits et applications, y compris Web</p>
-              </div>
-            </a>
-          </div>
-          <div class="nav-card flex col meeting">
-            <a href="/produits/linto-for-meeting" class="nav-card-link flex col align-center meeting">
-              <div class="title flex row">
-                <span class="icon meeting"></span>
-                <span class="label meeting">Smart meetings</h3>
-              </div>
-              <div class="description">
-                <p>LinTO est votre scribe virtuel. Enregistrez vos réunions et réalisez des transcription directement en flux (sous-titrage temps réél) ou à partir de fichiers média audio et vidéo.</p>
-              </div>
-            </a>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linto AI - Open Source AI Ecosystem for transcription, Collaborative media management, Live Subtitling,
+    Summarization</title>
+</head>
+
+<body>
+  <!-- <header>
+    <div class="logo">
+      <img src="images/linto.svg" alt="Linto AI Logo" />
+      <span>Linto AI</span>
+    </div>
+
+    <nav>
+      
+    </nav>
+  </header> -->
+
+  <main>
+    <section class="splash">
+      <div class="infos">
+        <h1><span class="open-source">Open Source</span> AI for Transcription, Live Subtitling, and Summarization</h1>
+
+        <!-- <p>
+          <strong>Open Source AI Ecosystem</strong> for Transcription, Collaborative Media
+          Management, Live Subtitling, and Summarization
+        </p> -->
+
+        <div class="buttons">
+          <a href="https://studio.linto.app/" class="btn">Get Started on Cloud</a>
+          <a href="https://github.com/linto-ai/linto-studio/" class="btn btn--outline">Github <span class="icon github" />
+          </a>
         </div>
       </div>
-      <div class="nav-item-container">
-        <a href="https://doc.linto.ai" class="nav-item" target="_blank">Portail de documentation</a>
+      
+      <div class="screenshot">
+        <img src="/screenshot4.png" alt="Linto AI Screenshot" />
       </div>
-      <div class="nav-item-container">
-        <a href="/pricing" class="nav-item">Tarifs</a>
-      </div>
-      <div class="nav-item-container">
-        <a href="/contact" class="nav-item">Contact</a>
-      </div>
-    </div>
-    <div class="flex row justify-end">
-      <div class="nav-item-container">
-        <a href="https://studio.linto.app" target="_blank" class="nav-item">
-          <span class="icon cm"></span>Linto Studio</a>
-      </div>
-      <div class="nav-item-container">
-        <a href="/my-account" class="nav-item"><span class="icon linto white"></span>My account</a>
-      </div>
-    </div>
-  </nav>
-</header>
-<!-- END HEADER -->
-<div id="burger-menu">
-  <button id="burger-menu-button" class="closed"></button>
-  <div id="burger-menu-navigation" class="flex col align-center justify-center hidden">
-    <div class="flex col align-center justify-center ">
-      <a href="/" class="burger-nav-item">Accueil</a>
-      <a href="/produits/cognitive-apis" class="burger-nav-item">Cognitive APIs</a>
-      <a href="/produits/linto-agent" class="burger-nav-item">Virtual agents</a>
-      <a href="/produits/linto-for-meeting" class="burger-nav-item">Smart meetings</a>
-      <a href="https://doc.linto.ai" class="burger-nav-item" target="_blank">Portail de documentation</a>
-      <a href="/pricing" class="burger-nav-item">Tarifs</a>
-      <a href="/contact" class="burger-nav-item">Contact</a>
-      <a href="https://studio.linto.app" target="_blank" class="burger-nav-item">Linto Studio</a>
-      <a href="/my-account" class="burger-nav-item">My account</a>
-    </div>
-  </div>
-</div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/1.4.3/lottie-player.js"></script>
+      
+    </section>
 
-<div id="body" class="flex col">
-  <section id="homepage-top">
-    <div class="container flex col">
-      <h1 class="big-title">LinTO, <strong class="green">framework Open Source</strong> de technologies vocales</h1>
-      <div class="homepage-title-links flex row">
-        <a href="https://github.com/linto-ai" target="_blank" class="github-logo">
-          <span class="icon github dark"></span>
+    <section class="used-by-section">
+      <div class="used-by">
+        <div class="item">
+          <img src="images/logo-elysee.png" alt="Elysée" />
+
+        </div>
+        <div class="item">
+          <img src="images/logo-ep.svg" alt="European Parlement" />
+        </div>
+        <div class="item">
+          <img src="images/logo-UE.svg" alt="European commission" />
+        </div>
+        <div class="item">
+          <img src="images/logo-edf.svg" alt="EDF" />
+        </div>
+        <div class="item">
+          <img src="images/logo-cnes.jpg" alt="CNES" />
+        </div>
+      </div>
+    </section>
+    <section class="container presentation">
+      <h2>Why Choose LinTO Studio?</h2>
+      <p>
+        A media management platform offering advanced tools for transcription and collaborative media editing.
+      </p>
+      <div class="buttons">
+        <a href="#" class="btn">Get Started on Cloud</a>
+        <a href="#" class="btn btn--outline">
+          Github
+          <span class="icon github"></span>
         </a>
-        <a href="https://github.com/orgs/linto-ai/projects/6" class="btn-cta dark" target="_blank">Roadmap</a>
-      </div>  
-    </div>  
-    <div class="container flex row">
-      <div class="flex col flex1 padding-20">
-        <div class="flex col homepage-links-container">
-          <button class="homepage-link apis" data-anim="coginitve-apis">
-            <span class="icon apis"></span>
-            <span class="label">Cognitive APIs</span>
-            <div class="homepage-link-detail flex col">
-              <p class="detail">Intégrez des fonctions de reconnaissance vocale et de compréhension de la parole dans vos applications.</p>
-                <div class="flex row detail-btn flex1">
-                  <a href="/produits/cognitive-apis" class="btn-cta homepage bluechart">En savoir plus...</a>
-                  <a href="/demo/cognitive-apis" class="btn-cta homepage bluechart">Démo sur navigateur</a>
-              </div>
-            </div>
-          </button>
-          <button class="homepage-link flex row align-center meeting" data-anim="smart-meeting">
-            <span class="icon meeting"></span>
-            <span class="label">Smart meetings</span>
-            <div class="homepage-link-detail flex col">
-              <p class="detail">Enregistrez vos réunions et réalisez des transcription directement en streaming ou à partir de fichiers média.</p>
-              <div class="flex row detail-btn flex1">
-                <a href="/produits/linto-for-meeting" class="btn-cta homepage greenchart">En savoir plus...</a>
-                <a href="https://studio.linto.app/" target="_blank" class="btn-cta homepage greenchart">Linto Studio Accès anticipé</a>
-              </div>
-            </div>
-          </button>
-          <button class="homepage-link flex row align-center linto" data-anim="linto-agent">
-            <span class="icon linto"></span>
-            <span class="label">Virtual agents</span>
-            <div class="homepage-link-detail flex col">
-              <p class="detail">Platforme Open Source d'agents conversationnels portables (web, voicebot, chatbot, assistants vocaux...). La voix ou le texte comme interface utilisateur naturelle.</p>
-              <div class="flex row detail-btn flex1 align-center">
-                <a href="/produits/linto-agent" class="btn-cta homepage purplechart">En savoir plus...</a>
-                <a href="/demo/linto-agent" class="btn-cta homepage purplechart">Démo sur navigateur</a>
-              </div>
-            </div>
-          </button>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <span class="icon film-strip"></span>
+          <h3>Media Management</h3>
+          <p>Organize, edit, and transcribe audio & video files seamlessly.</p>
+        </div>
+        <div class="feature">
+          <span class="icon users"></span>
+          <h3>Speaker Diarization</h3>
+          <p>Automatically detect and label different speakers in recordings.</p>
+        </div>
+        <div class="feature">
+          <span class="icon clock"></span>
+          <h3>Timestamp Alignment</h3>
+          <p>Sync transcripts perfectly with your media timeline.</p>
+        </div>
+        <div class="feature">
+          <span class="icon three"></span>
+          <h3>Collaborative Editing</h3>
+          <p>Work with your team in real-time on media annotations.</p>
+        </div>
+        <div class="feature">
+          <span class="icon text"></span>
+          <h3>Summarization</h3>
+          <p>Automatically generate concise summaries from long content.</p>
+        </div>
+        <div class="feature">
+          <span class="icon caption"></span>
+          <h3>Subtitles & Captions</h3>
+          <p>Generate, sync, and edit captions for videos with ease.</p>
+        </div>
+        <div class="feature">
+          <span class="icon microphone"></span>
+          <h3>Live Transcription</h3>
+          <p>Convert speech to text directly from your browser in real-time.</p>
+        </div>
+        <div class="feature">
+          <span class="icon robot"></span>
+          <h3>AI Agent for Calls</h3>
+          <p>Bot system joins video calls to transcribe & provide live subtitles.</p>
         </div>
       </div>
-      <div class="flex row justify-center align-center padding-20 homepage-animation-mask-container">
-        <div id="homepage-animation-mask" class="default flex col align-center justify-center"></div>
-      </div>
-    </div>
-  </section>
-  <section id="homepage-privacy">
-    <div class="container">
-      <h2 class="big-title centered"><strong class="white">Performances, économies et respect</strong> de la vie privée</h2>
-      <p class="text-centered">Une alternative Open Source complète à Dialogflow, Google Assistant, Alexa, IBM Watson, Azure cognitive services... Pour ajouter l’usage de la voix et du langage naturel à vos métiers digitaux. Les solutions LinTO proposent un niveau de performance et un coût d’exploitation inédits sur le marché des technologies vocales tout en garantissant :</p>
-      <div class="flex row justify-center">
-        <div class="flex col content-white-80 padding-20" style="max-width:640px">
-          <ul>
-            <li>Les performances avantageuses des modèles &amp; APIs développés par <a href="https://labs.linagora.com/our-team/">l'équipe LinTO</a></li>
-            <li>L'utilisation <a href="https://doc.linto.ai/docs/developpers/apis/ASR/models">d'autres modèles Open Source </a></li>
-            <li>Le respect de la vie privée des usagers </li>
-            <li>Le respect du RGPD </li>
-            <li>Pas de GAFAM / Pas d'application du droit extra territorial états-unien </li>
-            <li>L'hébergement en France ou sur vos infrastructures </li>
-            <li>La souveraineté absolue des données </li>
-            <li>L’adaptabilité à vos métiers (lexiques spécifiques / conditions acoustiques) </li>
-            <li>Le désenclavement des platformes matérielles grace à une compatibilité complète du vocal dans les applications web</li>
-            <li>Des mots réveils personnalisés 100% logiciels</li>
+    </section>
+
+    <section class="container pricing">
+      <h2>SaaS pricing</h2>
+      <p>Choose the plan that fits your needs.</p>
+      <div class="pricing-cards-container">
+        <div class="pricing-cards">
+          <h3>Free</h3>
+          <p>Then, Pay As You Go</p>
+          <div class="price-legend">
+            <span class="price-legend__price">€0</span>
+            <span class="price-legend__period">/month</span>
+          </div>
+          <strong class="included">Included</strong>
+          <ul class="prices-features">
+            <li>Offline media transcription <br /><span class="small">Up to 2 hours per week</span></li>
+            <li>Live microphone transcription
+              <br />
+              <span class="small">Standard quality</span>
+            </li>
+            <li>Subtitles edition</li>
+            <li>AI insight and summaries</li>
+            <li>Share transcriptions, read only</li>
+            <li class="pay">High quality models: 6€/hour.</li>
+            <li class="pay">Live translation: 3€/hour/langs.</li>
           </ul>
+
+          <!-- <a href="" class="btn btn--outline">Get Started</a> -->
+        </div>
+        <div class="pricing-cards premium">
+          <h3>Premium</h3>
+          <p>For professionals or companies</p>
+          <div class="price-legend">
+            <span class="price-legend__price">€18</span>
+            <span class="price-legend__period">/mo/seat</span>
+          </div>
+          <strong class="included">Included</strong>
+          <ul class="prices-features">
+            <li>Customizable AI models</li>
+            <li>No watermark on exports</li>
+            <li>Live recording HD model (1h/seat/mo)</li>
+            <li>Real time collaboration</li>
+            <li>API access</li>
+            <li>New features anticipated access</li>
+          </ul>
+
+          <!-- <a href="" class="btn">Get Started</a> -->
         </div>
       </div>
-    </div>
-  </section>
-  <section>
+    </section>
+  </main>
+
+  <footer>
     <div class="container">
-      <h2 class="big-title centered"><strong class="green">Open Source</strong> et dédié à la communauté des développeurs</h2>
-      <p class="text-centered">Déployez n’importe quel service LinTO sur vos infrastructures. Bénéficiez de la plus grande base de code de technologies vocales Open Source du monde et de sa documentation associée pour développer votre innovation.</p>
-    </div>
-    <div class="flex row justify-center btn-cta-container">
-      <a class="btn-cta blue" href="https://doc.linto.ai/" target="_blank">Documentation développeurs</a>
-    </div>
-  </section>
-</div>
-
-<script type="text/javascript" src="/assets/js/homepage.js"></script>
-
-
-      <footer>
-  <div class="flex row footer-main">
-    <div class="container flex row">
-      <div class="flex1 flex col">
-        <h4 class="footer-title">Produits</h4>
-        <ul class="footer-list">
-          <li><a href="/produits/cognitive-apis">Cognitive APIs</a></li>
-          <li><a href="/produits/linto-agent">Virtual agent</a></li>
-          <li><a href="/produits/linto-for-meeting">Smart meeting</a></li>
-        </ul>
-        <h4 class="footer-title">LinTO LIVE !</h4>
-        <ul class="footer-list">
-          <li><a href="/demo/cognitive-apis">APIs de transcription</a></li>
-          <li><a href="/demo/linto-agent">LinTO virtual agent</a></li>
-        </ul>
+      <a href="https://linagora.com">
+        <img src="/images/linagora.png" class="logo-linagora" alt="logo LINAGORA"/>
+      </a>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <a href="https://studio.linto.app">Get started</a>
+            </li>
+            <li>
+              <a href="https://github.com/linto-ai/linto-studio" target="_blank">Github <span
+                  class="icon github"></span></a>
+            </li>
+            <li>
+              <a href="https://discord.com/invite/jvNK3FXv3d" target="_blank">Discord <span
+                  class="icon discord"></span></a>
+            </li>
+            <li>
+              <a href="https://linto.ai/contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div class="flex1 flex col">
-        <h4 class="footer-title">Ressources</h4>
-        <ul class="footer-list">
-          <li><a href="https://doc.linto.ai" target="_blank">Portail de documentation</a></li>
-          <li><a href="/pricing">Tarifs</a></li>
-          <li><a href="https://github.com/orgs/linto-ai/projects/6" target="_blank">Roadmap</a></li>
-        </ul>
-        <h4 class="footer-title">Communauté</h4>
-        <ul class="footer-list">
-          <li><a href="https://github.com/linto-ai" target="_blank">Github</a></li>
-          <li><a href="https://discord.gg/jvNK3FXv3d" target="_blank">Discord</a></li>
-          <li><a href="/contact" >Contact</a></li>
-        </ul>
-      </div>
-      <div class="flex1 flex col">
-        <h4 class="footer-title">Linagora</h4>
-        <a href="https://linagora.com" target="_blank">
-        <img class="footer-img-link" alt="Linagora" src="/assets/img/linagora.png"></a>
-        <a href="https://labs.linagora.com" target="_blank">
-        <img class="footer-img-link" alt="Linagora Labs" src="/assets/img/linagora-labs.png"></a>
-      </div>
-
-    </div>  
-  </div>
-  <div class="footer-secondary flex row align-center justify-center">
-    <span class="footer-content">Copyright Linagora 2022 - <a href="/contact">Nous contacter</a></span>
-  </div> 
-</footer>
     </div>
-  </body>
-</html> 
+  </footer>
+</body>
+</html>
