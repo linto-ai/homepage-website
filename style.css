@@ -109,7 +109,6 @@ main {
   flex: 1;
   align-items: center;
   justify-content: center;
-  gap: 2em;
   /* padding-top: 10%; */
 }
 
@@ -128,47 +127,121 @@ main section {
 
 .splash {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
+  gap:1rem;
 }
 
-.splash h1 {
-  font-size: 3em;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+@media screen and (max-width: 1500px) {
+    .splash {
+      flex-direction: column;
+
+      h1 {
+        text-align: center !important;
+        font-size: 3em !important;
+        margin-left: 1em !important;
+        margin-right: 1em !important;
+      }
+    }
+
+    .screenshot img {
+      width: auto;
+      height: 500px;
+    }
+    .used-by {
+      gap: 0.5rem !important;
+      flex-wrap: wrap;
+    }
+  }
+
+.splash {
+
+  .infos {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    gap:1rem;
+    margin:1rem;
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    margin-top: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 1.5em;
+    text-align: left;
+  }
+
+  @media screen and (max-width: 1850px) {
+    h1 {
+      font-size: 2.5em;
+    }
+    
+  }
+
+  @media screen and (max-width: 1630px) {
+    h1 {
+      font-size: 2em;
+    }
+    
+  }
 
   .open-source {
     color: #C71F45;
      font-weight: bold;
   }
+
+  .screenshot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: 2rem;
+    
+  }
+
+  .screenshot img {
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+    max-width: 600px;
+    text-wrap: balance;
+  }
 }
 
-.splash p {
-  max-width: 600px;
-  text-wrap: balance;
+.used-by-section {
+
+  .used-by {
+    width: 100%;
+    display: flex;
+    gap:4rem;
+  }
+
+  .used-by .item {
+    flex: 1;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(1);
+  }
+
+  .used-by .item img {
+    height: 60px;
+  }
 }
 
-.splash .used-by {
-  width: 100%;
-  display: flex;
-}
-
-.splash .used-by .item {
-  flex: 1;
-  padding: 12px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.splash .used-by .item img {
-  height: 52px;
-}
 
 .presentation {
   display: flex;
@@ -182,6 +255,7 @@ main section {
 .presentation h2 {
   font-size: 2em;
   margin-bottom: 0.5em;
+  font-weight: bold;
 }
 
 .presentation p {
@@ -194,6 +268,8 @@ main section {
     font-size: 2em;
     margin-bottom: 0.5em;
     text-align: center;
+    font-weight: bold;
+
   }
 
   &>p {
@@ -295,20 +371,7 @@ main section {
   }
 }
 
-.screenshot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  margin: 2em 0;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-}
 
-.screenshot img {
-  height: 640px;
-  max-width: 100%;
-  object-fit: cover;
-}
 
 .buttons {
   margin-top: 2em;
@@ -461,9 +524,9 @@ footer nav ul li a {
   gap: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .splash h1 {
-    font-size: 2.5em;
+    font-size: 1.5em !important;
   }
   
   .presentation h2, .pricing h2 {
