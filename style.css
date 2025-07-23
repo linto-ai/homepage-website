@@ -110,7 +110,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 2em;
-  padding-top: 10%;
+  /* padding-top: 10%; */
 }
 
 main>div {
@@ -138,6 +138,13 @@ main section {
 .splash h1 {
   font-size: 3em;
   margin-bottom: 0.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+
+  .open-source {
+    color: #C71F45;
+     font-weight: bold;
+  }
 }
 
 .splash p {
@@ -255,6 +262,7 @@ main section {
 
       li {
         font-weight: 300;
+        height: 45px;
       }
 
       li::before {
@@ -271,9 +279,9 @@ main section {
 
       li .small {
         font-weight: 300;
-        font-size: 0.9em;
+        font-size: 0.7em;
         position: relative;
-        top: -5px;
+        top: -12px;
         left: 23px;
       }
     }
@@ -380,34 +388,40 @@ main section {
   mask: url(/images/check.svg) no-repeat center;
 }
 
+
+
 .features {
-  gap: 10px;
-  margin: 2em;
   display: grid;
-  flex: none;
+  grid-template-columns: auto auto auto;
   gap: 20px;
-  grid-auto-rows: min-content;
-  grid-template-columns: repeat(4, minmax(50px, 1fr));
-  grid-template-rows: repeat(3, min-content);
-}
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 
-.features .feature {
-  align-self: center;
-  border-radius: 4px;
-  flex: none;
-  position: relative;
-  padding: 0.75em;
-  background-color: #fff;
-  text-align: left;
-}
+  .feature {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+  }
 
-.features .feature h3 {
-  font-size: 18px;
-  font-weight: bold;
-}
+  .icon {
+    background-color: var(--color-primary);
+  }
+   .feature h3 {
+      font-size: 18px;
+      font-weight: bold;
+    }
 
-.features .feature p {
-  font-size: 15px;
+    .feature p {
+      font-size: 15px;
+    }
 }
 
 footer {
@@ -417,6 +431,10 @@ footer {
   text-align: center;
   font-size: .8em;
   background-color: white;
+
+  .logo-linagora {
+    height: 2.5em;
+  }
 }
 
 footer .container {
