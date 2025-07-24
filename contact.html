@@ -1,0 +1,36 @@
+<!-- Contact Modal -->
+<div id="contact-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2 data-i18n-key="contact_title">Contact Us</h2>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="contact-name" data-i18n-key="contact_name">Name</label>
+        <input type="text" id="contact-name" name="name" required>
+        <div id="contact-name-error" class="error-message"></div>
+      </div>
+      <div class="form-group">
+        <label for="contact-email" data-i18n-key="contact_email">Email</label>
+        <input type="email" id="contact-email" name="email" required>
+        <div id="contact-email-error" class="error-message"></div>
+      </div>
+      <div class="form-group">
+        <label for="contact-phone" data-i18n-key="contact_phone">Phone</label>
+        <input type="tel" id="contact-phone" name="phone">
+        <div id="contact-phone-error" class="error-message"></div>
+      </div>
+      <div class="form-group">
+        <label for="contact-society" data-i18n-key="contact_society">Company</label>
+        <input type="text" id="contact-society" name="society">
+      </div>
+      <div class="form-group">
+        <label for="contact-msg" data-i18n-key="contact_message">Message</label>
+        <textarea id="contact-msg" name="message" rows="5" required></textarea>
+        <div id="contact-msg-error" class="error-message"></div>
+      </div>
+      <button type="submit" id="contact-form-send" class="submit-btn" data-i18n-key="contact_send">Send</button>
+    </form>
+    <div id="contact-success" class="hidden" data-i18n-key="contact_success">Your message has been sent successfully!</div>
+    <div id="contact-error" class="hidden" data-i18n-key="contact_error">An error occurred. Please try again.</div>
+  </div>
+</div>

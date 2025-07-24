@@ -153,7 +153,7 @@
             <h2 data-i18n-key="live_offer_title">Need Live Accessibility for Your Events?</h2>
             <p data-i18n-key="live_offer_desc">Discover LinTO Live, our dedicated solution for real-time, multilingual transcription and subtitling for conferences, webinars, and live events. Contact us for a custom quote.</p>
             <div class="buttons">
-                <a href="https://linto.ai/contact" class="btn" data-i18n-key="contact_us">Contact Us</a>
+                <a href="#" id="contact-button-main" class="btn" data-i18n-key="contact_us">Contact Us</a>
             </div>
         </div>
     </section>
@@ -226,16 +226,26 @@
                   class="icon discord"></span></a>
             </li>
             <li>
-              <a href="https://linto.ai/contact" data-i18n-key="footer_contact">Contact</a>
+              <a href="#" id="contact-button-footer" data-i18n-key="footer_contact">Contact</a>
             </li>
           </ul>
         </nav>
       </div>
     </div>
   </footer>
+  <div id="modal-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/contact.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      fetch('contact.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('modal-container').innerHTML = data;
+          initializeContactForm();
+          translatePage();
+        });
       const lintoLogo = document.getElementById('linto-logo');
       if (lintoLogo) {
         const wink = () => {

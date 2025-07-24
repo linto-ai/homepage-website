@@ -6,7 +6,7 @@
   "h1_2": "AI for Transcription, Live Subtitling, and Summarization",
   "subtitle": "Cutting-edge performance, production-ready and fully self-hostable.",
   "start_free": "Start Free",
-  "github": "Github",
+  "github": "Github <span class=\"icon github\" />",
   "used_by": "Used by",
   "all_in_one": "All-in-One Media Intelligence",
   "all_in_one_desc": "LinTO Studio is a comprehensive media management platform offering advanced tools for transcription and collaborative media editing.",
@@ -60,5 +60,14 @@
   "footer_developed_by": "LinTO AI technology is developed by LINAGORA.",
   "footer_get_started": "Get started",
   "footer_contact": "Contact",
-  "discord": "Discord"
+  "discord": "Discord",
+  "contact_title": "Contact Us",
+  "contact_name": "Name",
+  "contact_email": "Email",
+  "contact_phone": "Phone",
+  "contact_society": "Company",
+  "contact_message": "Message",
+  "contact_send": "Send",
+  "contact_success": "Your message has been sent successfully!",
+  "contact_error": "An error occurred. Please try again."
 }

@@ -6,7 +6,7 @@
   "h1_2": "transcription, sous-titrage, traduction et résumé par IA",
   "subtitle": "Performance de pointe, prêt pour la production à grande échelle, entièrement auto-hébergeable.",
   "start_free": "Commencer gratuitement",
-  "github": "Github",
+  "github": "Github <span class=\"icon github\" />",
   "used_by": "Utilisé par",
   "all_in_one": "Intelligence Média Tout-en-Un",
   "all_in_one_desc": "LinTO Studio est une plateforme complète de gestion des médias offrant des outils avancés pour la transcription et l'édition collaborative des médias.",
@@ -60,5 +60,14 @@
   "footer_developed_by": "La technologie LinTO AI est développée par LINAGORA.",
   "footer_get_started": "Commencer",
   "footer_contact": "Contact",
-  "discord": "Discord"
+  "discord": "Discord",
+  "contact_title": "Contactez-nous",
+  "contact_name": "Nom",
+  "contact_email": "Email",
+  "contact_phone": "Téléphone",
+  "contact_society": "Société",
+  "contact_message": "Message",
+  "contact_send": "Envoyer",
+  "contact_success": "Votre message a été envoyé avec succès !",
+  "contact_error": "Une erreur est survenue. Veuillez réessayer."
 }
