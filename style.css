@@ -254,8 +254,8 @@ section {
     text-align: center;
     line-height: 20px;
     transform: rotate(45deg);
-    top: 42px;
-    right: -42px;
+    top: 44px;
+    right: -50px;
   }
 
   .ribbon span::before {
