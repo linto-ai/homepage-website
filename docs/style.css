@@ -366,6 +366,11 @@ section {
   width: 100%;
   height: auto;
   display: block;
+  transition: filter 0.3s ease-in-out;
+}
+
+.screenshot:not(.playing):hover video {
+  filter: blur(4px);
 }
 
 .play-button {
@@ -384,13 +389,18 @@ section {
   color: var(--color-primary);
   background-color: var(--color-primary);
   border: 2px solid var(--color-text);
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+  opacity: 0;
 
   &:hover {
   background-color: var(--color-primary-dark);
   
   color: #fff;
   }
+}
+
+.screenshot:not(.playing):hover .play-button {
+  opacity: 1;
 }
 
 .buttons {

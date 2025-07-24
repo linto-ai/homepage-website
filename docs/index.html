@@ -65,10 +65,10 @@
         <a href="https://studio.linto.app/" class="btn" data-i18n-key="start_free">Start Free</a>
         <a href="https://github.com/linto-ai" class="btn btn--outline" data-i18n-key="github">Github <span class="icon github" /></a>
       </div>
-      <div class="screenshot" @click="document.getElementById('video').play(); document.getElementById('playButton').style.display='none';">
-        <video id="video" playsinline muted loop src="/demo linto.mp4" poster="/screenshot.png"></video>
+      <div class="screenshot">
+        <video id="video" playsinline muted src="/demo linto.mp4" poster="/screenshot.png"></video>
         
-        <button class="play-button" onclick="document.getElementById('video').play(); this.style.display='none';" id="playButton">
+        <button class="play-button" id="playButton">
           <span class="icon play" />
         </button>
         <!-- <img src="/screenshot.png" alt="LinTO Studio Screenshot" /> -->
@@ -249,6 +249,30 @@
           setInterval(wink, 10000);
         }, 1000);
       }
+
+      const video = document.getElementById('video');
+      const playButton = document.getElementById('playButton');
+      const screenshot = document.querySelector('.screenshot');
+
+      video.playbackRate = 0.75;
+
+      const playVideo = () => {
+        video.play();
+        playButton.style.display = 'none';
+        screenshot.classList.add('playing');
+      };
+
+      playButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playVideo();
+      });
+      screenshot.addEventListener('click', playVideo);
+
+      video.addEventListener('ended', () => {
+        playButton.style.display = 'flex';
+        screenshot.classList.remove('playing');
+        video.load(); // Resets to poster
+      });
     });
   </script>
 </body>
