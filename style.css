@@ -213,6 +213,61 @@ section {
   .pricing-cards.premium {
     border-color: var(--color-primary);
     box-shadow: 0 4px 20px rgba(0, 194, 162, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ribbon {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    text-align: right;
+  }
+
+  .ribbon span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 225px;
+    display: block;
+    background: var(--color-primary);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 35px;
+    right: -25px;
+  }
+
+  .ribbon span::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    z-index: -1;
+    border-left: 3px solid var(--color-primary-dark);
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid var(--color-primary-dark);
+  }
+
+  .ribbon span::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    z-index: -1;
+    border-left: 3px solid transparent;
+    border-right: 3px solid var(--color-primary-dark);
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid var(--color-primary-dark);
   }
 
   .included {
@@ -324,6 +379,13 @@ section {
   background-color: var(--color-primary-dark);
   transform: translateY(-2px);
   color: #fff;
+}
+
+.btn.disabled {
+  background-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .btn .icon.github {
