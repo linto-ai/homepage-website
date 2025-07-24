@@ -1,0 +1,166 @@
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+
+@mixin maskImage($path) {
+  mask-image: url($path);
+  -webkit-mask-image: url($path);
+  mask-size: 100%;
+  -webkit-mask-size: 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+@mixin boxShadow($offsetX, $offsetY, $blurRadius, $spreadRadius, $color) {
+  -moz-box-shadow: $offsetX $offsetY $blurRadius $spreadRadius $color;
+  -webkit-box-shadow: $offsetX $offsetY $blurRadius $spreadRadius $color;
+  box-shadow: $offsetX $offsetY $blurRadius $spreadRadius $color;
+}
+
+@mixin cancelBoxShadow() {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin noTransition() {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+@mixin opacity($value) {
+  -moz-opacity: $value;
+  /* Netscape */
+  -khtml-opacity: $value;
+  /* Safari 1.x */
+  opacity: $value;
+  /* Good browsers */
+}
+
+@mixin borderRadius($value) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin borderRadiusMulti($topleft, $topright, $botright, $botleft) {
+  -webkit-border-top-left-radius: $topleft;
+  -moz-border-radius-topleft: $topleft;
+  border-top-left-radius: $topleft;
+  -webkit-border-top-right-radius: $topright;
+  -moz-border-radius-topright: $topright;
+  border-top-right-radius: $topright;
+  -webkit-border-bottom-right-radius: $botright;
+  -moz-border-radius-bottomright: $botright;
+  border-bottom-right-radius: $botright;
+  -webkit-border-bottom-left-radius: $botleft;
+  -moz-border-radius-bottomleft: $botleft;
+  border-bottom-left-radius: $botleft;
+}
+
+
+
+@-webkit-keyframes moveImg {
+  0% {
+      background-position: 0 0;
+  }
+  33% {
+    background-position: 0 100%;
+}
+  66% {
+    background-position: 100% 100%;
+  }
+  100%{
+    background-position: 0 0;
+
+  }
+}
+
+@keyframes moveImg {
+  0% {
+    background-position: 0 0;
+  }
+  33% {
+    background-position: 0 100%;
+  }
+  66% {
+    background-position: 100% 100%;
+  }
+  100%{
+    background-position: 0 0;
+  }
+}
+
+@mixin moveImgBg($time) {
+  -webkit-animation: moveImg $time infinite ;
+  -moz-animation: moveImg $time infinite ;
+  -ms-animation: moveImg $time infinite ;
+  -o-animation: moveImg $time infinite ;
+  animation: moveImg $time infinite ;
+}
+
+
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@mixin fade-in() {
+  -webkit-animation: fadein 0.5s ease-in-out;
+  -moz-animation: fadein 0.5s ease-in-out;
+  -ms-animation: fadein 0.5s ease-in-out;
+  -o-animation: fadein 0.5s ease-in-out;
+  animation: fadein 0.5s ease-in-out;
+}
+
+@mixin fade-out() {
+  -webkit-animation: fadeout 0.5s ease-in-out;
+  -moz-animation: fadeout 0.5s ease-in-out;
+  -ms-animation: fadeout 0.5s ease-in-out;
+  -o-animation: fadeout 0.5s ease-in-out;
+  animation: fadeout 0.5s ease-in-out;
+}
+
+
