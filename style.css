@@ -1,11 +1,11 @@
 :root {
-  --color-text: #f0f0f0;
-  --color-text-muted: #a5a5a5;
-  --color-background: #1a1a1a;
-  --color-surface: #2a2a2a;
+  --color-text: #212529;
+  --color-text-muted: #6c757d;
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
   --color-primary: #00c2a2;
   --color-primary-dark: #00a086;
-  --color-border: #444;
+  --color-border: #dee2e6;
 
   --font-family: "Noto Sans", "Arial", "Helvetica", "Verdana", sans-serif;
   --font-size: 18px;
@@ -73,7 +73,7 @@ header {
   padding: 0 24px;
   position: sticky;
   top: 0;
-  background: rgba(26, 26, 26, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   z-index: 100;
   border-bottom: 1px solid var(--color-border);
@@ -87,10 +87,13 @@ header .logo {
   font-weight: bold;
 }
 
-header .logo img {
+header .logo svg {
   width: 32px;
   height: 32px;
 }
+
+.st0 { fill: var(--color-primary); }
+.st1 { fill: var(--color-text); }
 
 header nav ul {
   padding: 0;
@@ -124,7 +127,6 @@ section {
   font-size: 3.5em;
   margin-bottom: 0.5em;
   font-weight: 800;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
   max-width: 1100px;
   text-wrap: balance;
 }
@@ -196,7 +198,7 @@ section {
     border-radius: 8px;
     padding: 30px;
     width: 400px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -205,7 +207,7 @@ section {
 
   .pricing-cards:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
   .pricing-cards.premium {
@@ -288,7 +290,7 @@ section {
   margin: 3em 0;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-border);
 }
 
@@ -309,7 +311,7 @@ section {
   padding: 14px 28px;
   border-radius: 8px;
   background-color: var(--color-primary);
-  color: #000;
+  color: #fff;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -325,7 +327,7 @@ section {
 }
 
 .btn .icon.github {
-  background-color: #000;
+  background-color: #fff;
 }
 
 .btn--outline {
@@ -344,7 +346,7 @@ section {
 }
 
 .btn--outline:hover .icon.github {
-  background-color: #000;
+  background-color: #fff;
 }
 
 .icon {
@@ -390,7 +392,7 @@ section {
 
 .feature:hover {
   transform: translateY(-5px);
-  background-color: #333;
+  background-color: #e9ecef;
 }
 
 .feature .icon {
@@ -414,7 +416,7 @@ footer {
   margin-top: 4em;
   border-top: 1px solid var(--color-border);
   padding: 32px 24px;
-  background-color: #111;
+  background-color: var(--color-surface);
 }
 
 footer .container {

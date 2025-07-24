@@ -6,24 +6,43 @@
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LinTO Studio is an open-source AI platform for transcription, live subtitling, and summarization. Built for privacy, ready for production, and self-hostable.">
   <title>LinTO Studio - Open Source AI for Transcription, Live Subtitling, and Summarization</title>
+  <style>
+    #right-eye {
+      transition: transform 0.1s ease-in-out;
+    }
+    #linto-logo.wink #right-eye {
+      transform-origin: center;
+      transform: scaleY(0.1);
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <div class="container">
       <div class="logo">
-        <img src="images/linto-studio-logo-no-text.svg" alt="LinTO Studio Logo" />
+        <svg version="1.1" id="linto-logo" x="0px" y="0px" viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+          <g>
+            <g transform="matrix(1.4358874,0,0,1.4358874,-65.37151,-15.728904)">
+              <g>
+                <g>
+                  <path class="st0" d="m 222.4,190 c 0,-0.1 0,-0.1 0,0 19.6,-18.8 31.5,-45.4 31.5,-74.6 C 253.9,58 207.4,11.5 150,11.5 92.6,11.5 46.1,58 46.1,115.4 c 0,57.4 46.5,103.9 103.9,103.9 1.1,0 2.3,0 3.4,-0.1 l 81.7,0.2 c -8.8,-5.9 -16.8,-16.7 -12.7,-29.4 z" />
+                  <g>
+                    <g>
+                      <path class="st1" d="m 129.9,111 c 0,5.9 -4.8,10.6 -10.6,10.6 -5.9,0 -10.6,-4.8 -10.6,-10.6 0,-5.9 4.8,-10.6 10.6,-10.6 5.8,-0.1 10.6,4.7 10.6,10.6 z" />
+                      <path id="right-eye" class="st1" d="m 191.4,111 c 0,5.9 -4.8,10.6 -10.6,10.6 -5.9,0 -10.6,-4.8 -10.6,-10.6 0,-5.9 4.8,-10.6 10.6,-10.6 5.8,-0.1 10.6,4.7 10.6,10.6 z" />
+                    </g>
+                    <path class="st1" d="m 149.4,161.8 c -6.4,0 -12.6,-0.9 -16.6,-3 -3,-1.6 -4.2,-5.2 -2.7,-8.1 1.6,-3 5.2,-4.2 8.1,-2.7 4.3,2.2 18.5,2.1 23.5,-0.1 3,-1.4 6.6,0 8,3 1.4,3 0,6.6 -3,8 -3.9,1.9 -10.5,2.9 -17.3,2.9 z" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
         <span>LinTO Studio</span>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="https://github.com/linto-ai" target="_blank">Github <span class="icon github"></span></a></li>
-          <li><a href="https://discord.com/invite/jvNK3FXv3d" target="_blank">Discord <span class="icon discord"></span></a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
@@ -203,5 +222,18 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lintoLogo = document.getElementById('linto-logo');
+      if (lintoLogo) {
+        setTimeout(() => {
+          lintoLogo.classList.add('wink');
+          setTimeout(() => {
+            lintoLogo.classList.remove('wink');
+          }, 200);
+        }, 1000);
+      }
+    });
+  </script>
 </body>
 </html>
