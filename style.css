@@ -67,16 +67,21 @@ a:hover {
 
 header {
   height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
   position: sticky;
   top: 0;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   z-index: 100;
   border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 header .logo {
@@ -85,6 +90,15 @@ header .logo {
   gap: 12px;
   font-size: 24px;
   font-weight: bold;
+}
+
+.lang-switcher a {
+  color: var(--color-text-muted);
+  font-weight: bold;
+}
+
+.lang-switcher a.active {
+  color: var(--color-primary);
 }
 
 header .logo svg {
@@ -214,36 +228,34 @@ section {
     border-color: var(--color-primary);
     box-shadow: 0 4px 20px rgba(0, 194, 162, 0.2);
     position: relative;
-    overflow: hidden;
   }
 
   .ribbon {
     position: absolute;
-    right: -5px;
-    top: -5px;
-    z-index: 1;
-    overflow: hidden;
+    top: 0;
+    right: 0;
     width: 150px;
     height: 150px;
-    text-align: right;
+    z-index: 1;
   }
 
   .ribbon span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 8px 0;
+    background-color: var(--color-primary);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    color: #fff;
     font-size: 14px;
     font-weight: bold;
-    color: #FFF;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
     text-transform: uppercase;
     text-align: center;
     line-height: 20px;
     transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    width: 225px;
-    display: block;
-    background: var(--color-primary);
-    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 35px;
-    right: -25px;
+    top: 42px;
+    right: -42px;
   }
 
   .ribbon span::before {

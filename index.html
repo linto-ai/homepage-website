@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LinTO Studio is an open-source AI platform for transcription, live subtitling, and summarization. Built for privacy, ready for production, and self-hostable.">
-  <title>LinTO Studio - Open Source AI for Transcription, Live Subtitling, and Summarization</title>
+  <meta name="description" content="" data-i18n-key="meta_description">
+  <title data-i18n-key="title">LinTO Studio - Open Source AI for Transcription, Live Subtitling, and Summarization</title>
   <style>
-    #right-eye {
-      transition: transform 0.1s ease-in-out;
+    #right-eye, #right-eye-wink {
+      transition: opacity 0.2s ease-in-out;
+    }
+    #right-eye-wink {
+      opacity: 0;
     }
     #linto-logo.wink #right-eye {
-      transform-origin: center;
-      transform: scaleY(0.1);
+      opacity: 0;
+    }
+    #linto-logo.wink #right-eye-wink {
+      opacity: 1;
     }
   </style>
 </head>
@@ -33,6 +38,7 @@
                     <g>
                       <path class="st1" d="m 129.9,111 c 0,5.9 -4.8,10.6 -10.6,10.6 -5.9,0 -10.6,-4.8 -10.6,-10.6 0,-5.9 4.8,-10.6 10.6,-10.6 5.8,-0.1 10.6,4.7 10.6,10.6 z" />
                       <path id="right-eye" class="st1" d="m 191.4,111 c 0,5.9 -4.8,10.6 -10.6,10.6 -5.9,0 -10.6,-4.8 -10.6,-10.6 0,-5.9 4.8,-10.6 10.6,-10.6 5.8,-0.1 10.6,4.7 10.6,10.6 z" />
+                      <path id="right-eye-wink" class="st1" d="M 180.8,114 C 185.8,114 190.8,111 190.8,111" style="fill: none; stroke: var(--color-text); stroke-width: 3; stroke-linecap: round;"/>
                     </g>
                     <path class="st1" d="m 149.4,161.8 c -6.4,0 -12.6,-0.9 -16.6,-3 -3,-1.6 -4.2,-5.2 -2.7,-8.1 1.6,-3 5.2,-4.2 8.1,-2.7 4.3,2.2 18.5,2.1 23.5,-0.1 3,-1.4 6.6,0 8,3 1.4,3 0,6.6 -3,8 -3.9,1.9 -10.5,2.9 -17.3,2.9 z" />
                   </g>
@@ -41,20 +47,23 @@
             </g>
           </g>
         </svg>
-        <span>LinTO Studio</span>
+        <span data-i18n-key="logo_text">LinTO Studio</span>
+      </div>
+      <div class="lang-switcher">
+        <a href="#" id="lang-en">EN</a> | <a href="#" id="lang-fr">FR</a>
       </div>
     </div>
   </header>
 
   <main>
     <section class="container splash">
-      <h1><span class="open-source">Open Source</span> AI for Transcription, Live Subtitling, and Summarization</h1>
-      <p class="subtitle">
+      <h1><span class="open-source" data-i18n-key="h1_1">Open Source</span> <span data-i18n-key="h1_2">AI for Transcription, Live Subtitling, and Summarization</span></h1>
+      <p class="subtitle" data-i18n-key="subtitle">
         Cutting‑edge performance, production‑ready and fully self‑hostable.
       </p>
       <div class="buttons">
-        <a href="https://studio.linto.app/" class="btn">Start Free</a>
-        <a href="https://github.com/linto-ai" class="btn btn--outline">Github <span class="icon github" /></a>
+        <a href="https://studio.linto.app/" class="btn" data-i18n-key="start_free">Start Free</a>
+        <a href="https://github.com/linto-ai" class="btn btn--outline" data-i18n-key="github">Github <span class="icon github" /></a>
       </div>
       <div class="screenshot">
         <img src="/screenshot.png" alt="LinTO Studio Screenshot" />
@@ -80,109 +89,109 @@
 
     <section id="features" class="container presentation">
       <div class="section-header">
-        <h2>All-in-One Media Intelligence</h2>
-        <p>
+        <h2 data-i18n-key="all_in_one">All-in-One Media Intelligence</h2>
+        <p data-i18n-key="all_in_one_desc">
           LinTO Studio is a comprehensive media management platform offering advanced tools for transcription and collaborative media editing.
         </p>
       </div>
       <div class="features">
         <div class="feature">
           <span class="icon microphone"></span>
-          <h3>Live Transcription</h3>
-          <p>Convert speech to text directly from your browser in real-time.</p>
+          <h3 data-i18n-key="features_live_transcription_title">Live Transcription</h3>
+          <p data-i18n-key="features_live_transcription_desc">Convert speech to text directly from your browser in real-time.</p>
         </div>
         <div class="feature">
           <span class="icon caption"></span>
-          <h3>Subtitles & Captions</h3>
-          <p>Generate, sync, and edit captions for videos with ease.</p>
+          <h3 data-i18n-key="features_subtitles_captions_title">Subtitles & Captions</h3>
+          <p data-i18n-key="features_subtitles_captions_desc">Generate, sync, and edit captions for videos with ease.</p>
         </div>
         <div class="feature">
           <span class="icon text"></span>
-          <h3>Summarization</h3>
-          <p>Automatically generate concise summaries from long content.</p>
+          <h3 data-i18n-key="features_summarization_title">Summarization</h3>
+          <p data-i18n-key="features_summarization_desc">Automatically generate concise summaries from long content.</p>
         </div>
         <div class="feature">
           <span class="icon film-strip"></span>
-          <h3>Media Management</h3>
-          <p>Organize, edit, and transcribe audio & video files seamlessly.</p>
+          <h3 data-i18n-key="features_media_management_title">Media Management</h3>
+          <p data-i18n-key="features_media_management_desc">Organize, edit, and transcribe audio & video files seamlessly.</p>
         </div>
         <div class="feature">
           <span class="icon users"></span>
-          <h3>Speaker Diarization</h3>
-          <p>Automatically detect and label different speakers in recordings.</p>
+          <h3 data-i18n-key="features_speaker_diarization_title">Speaker Diarization</h3>
+          <p data-i18n-key="features_speaker_diarization_desc">Automatically detect and label different speakers in recordings.</p>
         </div>
         <div class="feature">
           <span class="icon clock"></span>
-          <h3>Timestamp Alignment</h3>
-          <p>Sync transcripts perfectly with your media timeline.</p>
+          <h3 data-i18n-key="features_timestamp_alignment_title">Timestamp Alignment</h3>
+          <p data-i18n-key="features_timestamp_alignment_desc">Sync transcripts perfectly with your media timeline.</p>
         </div>
         <div class="feature">
           <span class="icon three"></span>
-          <h3>Collaborative Editing</h3>
-          <p>Work with your team in real-time on media annotations.</p>
+          <h3 data-i18n-key="features_collaborative_editing_title">Collaborative Editing</h3>
+          <p data-i18n-key="features_collaborative_editing_desc">Work with your team in real-time on media annotations.</p>
         </div>
         <div class="feature">
           <span class="icon robot"></span>
-          <h3>AI Agent for Calls</h3>
-          <p>Bot system joins video calls to transcribe & provide live subtitles.</p>
+          <h3 data-i18n-key="features_ai_agent_title">AI Agent for Calls</h3>
+          <p data-i18n-key="features_ai_agent_desc">Bot system joins video calls to transcribe & provide live subtitles.</p>
         </div>
         <div class="feature">
           <span class="icon users"></span>
-          <h3>Multilingual</h3>
-          <p>Live translation in any language, with subtitles.</p>
+          <h3 data-i18n-key="features_multilingual_title">Multilingual</h3>
+          <p data-i18n-key="features_multilingual_desc">Live translation in any language, with subtitles.</p>
         </div>
       </div>
     </section>
 
     <section id="live-offer" class="container">
         <div class="section-header">
-            <h2>Need Live Accessibility for Your Events?</h2>
-            <p>Discover LinTO Live, our dedicated solution for real-time, multilingual transcription and subtitling for conferences, webinars, and live events. Contact us for a custom quote.</p>
+            <h2 data-i18n-key="live_offer_title">Need Live Accessibility for Your Events?</h2>
+            <p data-i18n-key="live_offer_desc">Discover LinTO Live, our dedicated solution for real-time, multilingual transcription and subtitling for conferences, webinars, and live events. Contact us for a custom quote.</p>
             <div class="buttons">
-                <a href="https://linto.ai/contact" class="btn">Contact Us</a>
+                <a href="https://linto.ai/contact" class="btn" data-i18n-key="contact_us">Contact Us</a>
             </div>
         </div>
     </section>
 
     <section id="pricing" class="container pricing">
       <div class="section-header">
-        <h2>Pricing</h2>
-        <p>Choose the plan that fits your needs. Get started for free.</p>
+        <h2 data-i18n-key="pricing_title">Pricing</h2>
+        <p data-i18n-key="pricing_desc">Choose the plan that fits your needs. Get started for free.</p>
       </div>
       <div class="pricing-cards-container">
         <div class="pricing-cards">
-          <h3>Free</h3>
-          <p>Then, Pay As You Go</p>
+          <h3 data-i18n-key="pricing_free_title">Free</h3>
+          <p data-i18n-key="pricing_free_desc">Then, Pay As You Go</p>
           <div class="price-legend">
-            <span class="price-legend__price">€0</span>
-            <span class="price-legend__period">/month</span>
+            <span class="price-legend__price" data-i18n-key="pricing_free_price">€0</span>
+            <span class="price-legend__period" data-i18n-key="pricing_free_period">/month</span>
           </div>
-          <strong class="included">Included</strong>
+          <strong class="included" data-i18n-key="pricing_included">Included</strong>
           <ul class="prices-features">
-            <li>Offline media transcription <span class="small">Up to 2 hours per week</span></li>
-            <li>Live microphone transcription <span class="small">Standard quality</span></li>
-            <li>Subtitles edition</li>
-            <li>AI insight and summaries</li>
-            <li>Share transcriptions, read only</li>
-            <li class="pay">High quality models: 6€/hour.</li>
-            <li class="pay">Live translation: 3€/hour/langs.</li>
+            <li><span data-i18n-key="pricing_free_feature1">Offline media transcription</span> <span class="small" data-i18n-key="pricing_free_feature1_small">Up to 2 hours per week</span></li>
+            <li><span data-i18n-key="pricing_free_feature2">Live microphone transcription</span> <span class="small" data-i18n-key="pricing_free_feature2_small">Standard quality</span></li>
+            <li data-i18n-key="pricing_free_feature3">Subtitles edition</li>
+            <li data-i18n-key="pricing_free_feature4">AI insight and summaries</li>
+            <li data-i18n-key="pricing_free_feature5">Share transcriptions, read only</li>
+            <li class="pay" data-i18n-key="pricing_free_pay1">High quality models: 6€/hour.</li>
+            <li class="pay" data-i18n-key="pricing_free_pay2">Live translation: 3€/hour/langs.</li>
           </ul>
-          <a href="https://studio.linto.app/" class="btn btn--outline">Start Free</a>
+          <a href="https://studio.linto.app/" class="btn btn--outline" data-i18n-key="start_free">Start Free</a>
         </div>
         <div class="pricing-cards premium">
-          <div class="ribbon"><span>Coming Soon!</span></div>
-          <h3>Premium</h3>
-          <p>For professionals or companies</p>
-          <strong class="included">Included</strong>
+          <div class="ribbon"><span data-i18n-key="coming_soon">Coming Soon!</span></div>
+          <h3 data-i18n-key="pricing_premium_title">Premium</h3>
+          <p data-i18n-key="pricing_premium_desc">For professionals or companies</p>
+          <strong class="included" data-i18n-key="pricing_included">Included</strong>
           <ul class="prices-features">
-            <li>Customizable AI models</li>
-            <li>No watermark on exports</li>
-            <li>Live recording HD model (1h/seat/mo)</li>
-            <li>Real time collaboration</li>
-            <li>API access</li>
-            <li>New features anticipated access</li>
+            <li data-i18n-key="pricing_premium_feature1">Customizable AI models</li>
+            <li data-i18n-key="pricing_premium_feature2">No watermark on exports</li>
+            <li data-i18n-key="pricing_premium_feature3">Live recording HD model (1h/seat/mo)</li>
+            <li data-i18n-key="pricing_premium_feature4">Real time collaboration</li>
+            <li data-i18n-key="pricing_premium_feature5">API access</li>
+            <li data-i18n-key="pricing_premium_feature6">New features anticipated access</li>
           </ul>
-          <a href="https://studio.linto.app/" class="btn disabled">Get Started</a>
+          <a href="https://studio.linto.app/" class="btn disabled" data-i18n-key="get_started">Get Started</a>
         </div>
       </div>
     </section>
@@ -196,38 +205,43 @@
       <div>
         <p style="font-size: 0.9em; color: var(--color-text-muted);">
           <img src="images/linto.svg" alt="LinTO Head" style="height: 1em; vertical-align: middle; margin-right: 0.5em;">
-          LinTO AI technology is developed by LINAGORA.
+          <span data-i18n-key="footer_developed_by">LinTO AI technology is developed by LINAGORA.</span>
         </p>
         <nav>
           <ul>
             <li>
-              <a href="https://studio.linto.app">Get started</a>
+              <a href="https://studio.linto.app" data-i18n-key="footer_get_started">Get started</a>
             </li>
             <li>
-              <a href="https://github.com/linto-ai" target="_blank">Github <span
+              <a href="https://github.com/linto-ai" target="_blank" data-i18n-key="github">Github <span
                   class="icon github"></span></a>
             </li>
             <li>
-              <a href="https://discord.com/invite/jvNK3FXv3d" target="_blank">Discord <span
+              <a href="https://discord.com/invite/jvNK3FXv3d" target="_blank" data-i18n-key="discord">Discord <span
                   class="icon discord"></span></a>
             </li>
             <li>
-              <a href="https://linto.ai/contact">Contact</a>
+              <a href="https://linto.ai/contact" data-i18n-key="footer_contact">Contact</a>
             </li>
           </ul>
         </nav>
       </div>
     </div>
   </footer>
+  <script src="js/i18n.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const lintoLogo = document.getElementById('linto-logo');
       if (lintoLogo) {
-        setTimeout(() => {
+        const wink = () => {
           lintoLogo.classList.add('wink');
           setTimeout(() => {
             lintoLogo.classList.remove('wink');
-          }, 200);
+          }, 400);
+        };
+        setTimeout(() => {
+          wink();
+          setInterval(wink, 10000);
         }, 1000);
       }
     });
