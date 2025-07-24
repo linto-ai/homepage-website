@@ -359,12 +359,38 @@ section {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-border);
+  position: relative;
 }
 
-.screenshot img {
+.screenshot video {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-primary);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-text);
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+  background-color: var(--color-primary-dark);
+  
+  color: #fff;
+  }
 }
 
 .buttons {
@@ -442,7 +468,7 @@ section {
 .icon.users { mask: url(/images/users.svg) no-repeat center; }
 .icon.discord { mask: url(/images/discord-logo.svg) no-repeat center; }
 .icon.check { mask: url(/images/check.svg) no-repeat center; }
-
+.icon.play { mask: url(/images/play-fill.svg) no-repeat center; }
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
