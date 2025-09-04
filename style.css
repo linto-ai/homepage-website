@@ -664,3 +664,54 @@ footer nav ul li a:hover .icon {
 .submit-btn:hover {
   background-color: var(--color-primary-dark);
 }
+
+#cookie-banner {
+  position: sticky;
+  bottom: 0px;
+  background: var(--color-background);
+  padding: 0.5rem;
+  backdrop-filter: blur(10px);
+  
+  width: 100%;
+
+  width: calc(100% - 1rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  left: 0.5rem;
+  bottom: 0.5rem;
+  border-radius: 8px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  color: var(--color-text-muted);
+  text-wrap: balance;
+  font-size: 0.9em;
+
+  .cookie-banner-content {
+    flex:1;
+  }
+
+  button {
+    border-radius: 8px;
+    background-color: var(--color-primary);
+    color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    border:none;
+    padding: 0.5rem 1rem;
+
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  #cookie-banner {
+    font-size: 0.8em;
+  }
+}
