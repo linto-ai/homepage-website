@@ -69,6 +69,7 @@
   "contact_message": "Message",
   "contact_send": "Envoyer",
   "contact_success": "Votre message a été envoyé avec succès !",
+  "contact_captcha_wrong": "Mauvaise réponse",
   "contact_error": "Une erreur est survenue. Veuillez réessayer.",
   "cookie-banner-content": "Nous utilisons des données anonymisées pour mesurer l’audience. Aucune donnée n’est partagée avec des tiers ni utilisée à des fins publicitaires."
 }

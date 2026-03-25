@@ -28,6 +28,14 @@
         <textarea id="contact-msg" name="message" rows="5" required></textarea>
         <div id="contact-msg-error" class="error-message"></div>
       </div>
+      <!-- Honeypot field - hidden from humans, bots will fill it -->
+      <div class="form-group" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;"><label for="contact-website">Website</label><input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <!-- Simple math CAPTCHA -->
+      <div class="form-group">
+        <label for="contact-captcha" id="captcha-label"></label>
+        <input type="text" id="contact-captcha" name="captcha" required autocomplete="off">
+        <div id="contact-captcha-error" class="error-message"></div>
+      </div>
       <button type="submit" id="contact-form-send" class="submit-btn" data-i18n-key="contact_send">Send</button>
     </form>
     <div id="contact-success" class="hidden" data-i18n-key="contact_success">Your message has been sent successfully!</div>

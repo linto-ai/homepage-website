@@ -69,6 +69,7 @@
   "contact_message": "Message",
   "contact_send": "Send",
   "contact_success": "Your message has been sent successfully!",
+  "contact_captcha_wrong": "Wrong answer",
   "contact_error": "An error occurred. Please try again.",
   "cookie-banner-content": "We collect anonymized data to measure audience. No data is shared with third parties or used for advertising."
 }
