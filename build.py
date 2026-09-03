@@ -21,7 +21,7 @@ PAGES = {
         "description": "LinTO Studio is an open-source AI platform for transcription, live subtitling, and summarization. Built for privacy, ready for production, and self-hostable.",
         "keywords": "LinTO Studio, transcription, subtitles, captions, summarization, media management, speaker diarization, timestamp alignment, collaborative editing, AI agent for calls, multilingual, live translation, live subtitling events, open source transcription",
         "nav": "",
-        "scripts": ["/js/site.js"],
+        "scripts": ["/js/site.js", "/js/explorer.js"],
         "jsonld": "index",
     },
     "pricing/index.html": {
