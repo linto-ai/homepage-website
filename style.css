@@ -675,6 +675,112 @@ section.left {
   line-height: 1.5;
 }
 
+/* Scenarios (benefit tiles) */
+
+.scenarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.scenario {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease-in-out;
+}
+
+.scenario:hover { transform: translateY(-4px); }
+
+.scenario > .icon {
+  background-color: var(--color-primary);
+  width: 36px;
+  height: 36px;
+  margin-bottom: 0.4em;
+}
+
+.scenario-tag {
+  font-size: 0.78em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.scenario h3 {
+  font-size: 1.45em;
+  font-weight: 800;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.scenario p {
+  color: var(--color-text-muted);
+  font-size: 0.95em;
+}
+
+.scenario .card-cta {
+  margin-top: auto;
+  padding-top: 0.8em;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+}
+
+.scenario .card-cta .icon {
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+}
+
+.chips-block {
+  margin-top: 2.5em;
+  width: 100%;
+  text-align: center;
+}
+
+.chips-label {
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+  margin-bottom: 0.9em;
+}
+
+.chips {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6em;
+}
+
+.chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.chips li .icon {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-primary);
+}
+
 /* Case studies */
 
 .cases {
