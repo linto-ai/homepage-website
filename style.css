@@ -1728,7 +1728,9 @@ footer .footer-bottom {
 
 .fx-facts {
   list-style: none;
-  padding: 0;
+  padding: 0.8em 0 0;
+  margin-top: 0.4em;
+  border-top: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
   gap: 0.35em;
