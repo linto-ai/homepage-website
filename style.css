@@ -287,6 +287,7 @@ section.left {
   max-width: 1100px;
   text-wrap: balance;
   line-height: 1.15;
+  hyphens: none;
 }
 
 .splash h1 .open-source {
@@ -457,6 +458,8 @@ section.left {
   border-color: transparent;
   color: var(--color-text);
 }
+
+.btn--ghost .icon.github { background-color: var(--color-text); }
 
 .btn--dark {
   background: var(--color-text);
