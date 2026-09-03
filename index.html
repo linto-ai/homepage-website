@@ -172,41 +172,61 @@
             <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="lvScene" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#3a4a63"/><stop offset="1" stop-color="#1c2333"/>
+                  <stop offset="0" stop-color="#34445e"/><stop offset="1" stop-color="#161d2b"/>
+                </linearGradient>
+                <linearGradient id="lvFloor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/>
                 </linearGradient>
               </defs>
-              <!-- room screen -->
-              <rect x="8" y="12" width="176" height="104" rx="7" fill="#0f172a"/>
-              <rect x="14" y="18" width="164" height="92" rx="4" fill="url(#lvScene)"/>
-              <circle cx="70" cy="52" r="10" fill="#c9d3de" opacity=".9"/>
-              <rect x="52" y="64" width="36" height="22" rx="8" fill="#c9d3de" opacity=".9"/>
-              <rect x="104" y="40" width="54" height="30" rx="3" fill="#ffffff" opacity=".12"/>
-              <rect x="14" y="84" width="164" height="26" fill="#000" opacity=".82"/>
+              <!-- keynote backdrop screen -->
+              <rect x="4" y="6" width="196" height="96" rx="3" fill="#0f172a"/>
+              <rect x="8" y="10" width="188" height="88" fill="url(#lvScene)"/>
+              <rect x="18" y="20" width="70" height="7" rx="2" fill="#fff" opacity=".85"/>
+              <rect x="18" y="32" width="46" height="4" rx="2" fill="#fff" opacity=".4"/>
+              <rect x="18" y="40" width="58" height="4" rx="2" fill="#fff" opacity=".4"/>
+              <rect x="18" y="48" width="38" height="4" rx="2" fill="#fff" opacity=".4"/>
+              <rect x="118" y="20" width="64" height="40" rx="3" fill="#00c2a2" opacity=".35"/>
+              <!-- subtitle banner on the screen -->
+              <rect x="8" y="74" width="188" height="24" fill="#000" opacity=".85"/>
               <g class="lv-sub lv-sub1" font-family="Noto Sans, Arial, sans-serif" font-size="8.5" fill="#fff" text-anchor="middle">
-                <text x="96" y="95">Bonjour à tous, merci d'être là.</text>
-                <text x="96" y="106">On commence par le bilan.</text>
+                <text x="102" y="84">Bonjour à tous, merci d'être là.</text>
+                <text x="102" y="95">On commence par le bilan.</text>
               </g>
               <g class="lv-sub lv-sub2" font-family="Noto Sans, Arial, sans-serif" font-size="8.5" fill="#fff" text-anchor="middle">
-                <text x="96" y="95">Trois chantiers cette année,</text>
-                <text x="96" y="106">et un budget qui tient.</text>
+                <text x="102" y="84">Trois chantiers cette année,</text>
+                <text x="102" y="95">et un budget qui tient.</text>
               </g>
-              <rect x="86" y="118" width="20" height="10" fill="#94a3b8"/>
-              <rect x="66" y="128" width="60" height="4" rx="2" fill="#94a3b8"/>
+              <!-- stage floor -->
+              <polygon points="0,102 204,102 212,124 -8,124" fill="url(#lvFloor)"/>
+              <!-- speaker at the lectern -->
+              <circle cx="168" cy="92" r="5.5" fill="#334155"/>
+              <path d="M160 116 V 104 a8 8 0 0 1 16 0 V 116 Z" fill="#334155"/>
+              <path d="M154 106 h 18 l 2 14 h -22 Z" fill="#64748b"/>
+              <rect x="152" y="104" width="22" height="3" rx="1" fill="#94a3b8"/>
+              <!-- audience, seen from behind -->
+              <g fill="#1f2937">
+                <circle cx="22" cy="140" r="8"/><path d="M8 150 a14 14 0 0 1 28 0 Z"/>
+                <circle cx="62" cy="143" r="8"/><path d="M48 150 a14 14 0 0 1 28 0 Z"/>
+                <circle cx="104" cy="139" r="8"/><path d="M90 150 a14 14 0 0 1 28 0 Z"/>
+                <circle cx="146" cy="143" r="8"/><path d="M132 150 a14 14 0 0 1 28 0 Z"/>
+                <circle cx="186" cy="140" r="8"/><path d="M172 150 a14 14 0 0 1 28 0 Z"/>
+              </g>
               <!-- link screen -> qr -> phone -->
-              <path d="M186 64 H 206" stroke="#00c2a2" stroke-width="2" stroke-dasharray="3 3" fill="none" class="lv-dash"/>
-              <path d="M238 64 H 256" stroke="#00c2a2" stroke-width="2" stroke-dasharray="3 3" fill="none" class="lv-dash"/>
+              <path d="M202 62 H 208" stroke="#00c2a2" stroke-width="2" stroke-dasharray="3 3" fill="none" class="lv-dash"/>
+              <path d="M240 62 H 256" stroke="#00c2a2" stroke-width="2" stroke-dasharray="3 3" fill="none" class="lv-dash"/>
               <!-- qr code -->
-              <rect x="207" y="48" width="30" height="30" rx="3" fill="#fff" stroke="#00a086" stroke-width="1.5"/>
+              <rect x="209" y="47" width="30" height="30" rx="3" fill="#fff" stroke="#00a086" stroke-width="1.5"/>
               <g fill="#101418">
-                <rect x="211" y="52" width="8" height="8"/><rect x="213" y="54" width="4" height="4" fill="#fff"/>
-                <rect x="225" y="52" width="8" height="8"/><rect x="227" y="54" width="4" height="4" fill="#fff"/>
-                <rect x="211" y="66" width="8" height="8"/><rect x="213" y="68" width="4" height="4" fill="#fff"/>
-                <rect x="221" y="53" width="2" height="2"/><rect x="222" y="57" width="2" height="2"/>
-                <rect x="212" y="62" width="2" height="2"/><rect x="216" y="62" width="2" height="2"/><rect x="220" y="62" width="2" height="2"/>
-                <rect x="224" y="63" width="2" height="2"/><rect x="228" y="62" width="2" height="2"/><rect x="232" y="62" width="2" height="2"/>
-                <rect x="222" y="66" width="2" height="2"/><rect x="226" y="68" width="2" height="2"/><rect x="230" y="66" width="3" height="3"/>
-                <rect x="222" y="71" width="3" height="3"/><rect x="228" y="72" width="2" height="2"/><rect x="232" y="70" width="2" height="2"/>
+                <rect x="213" y="51" width="8" height="8"/><rect x="215" y="53" width="4" height="4" fill="#fff"/>
+                <rect x="227" y="51" width="8" height="8"/><rect x="229" y="53" width="4" height="4" fill="#fff"/>
+                <rect x="213" y="65" width="8" height="8"/><rect x="215" y="67" width="4" height="4" fill="#fff"/>
+                <rect x="223" y="52" width="2" height="2"/><rect x="224" y="56" width="2" height="2"/>
+                <rect x="214" y="61" width="2" height="2"/><rect x="218" y="61" width="2" height="2"/><rect x="222" y="61" width="2" height="2"/>
+                <rect x="226" y="62" width="2" height="2"/><rect x="230" y="61" width="2" height="2"/><rect x="234" y="61" width="2" height="2"/>
+                <rect x="224" y="65" width="2" height="2"/><rect x="228" y="67" width="2" height="2"/><rect x="232" y="65" width="3" height="3"/>
+                <rect x="224" y="70" width="3" height="3"/><rect x="230" y="71" width="2" height="2"/><rect x="234" y="69" width="2" height="2"/>
               </g>
+              <text x="224" y="86" font-family="Noto Sans, Arial, sans-serif" font-size="6" font-weight="700" fill="#00a086" text-anchor="middle">QR</text>
               <!-- phone -->
               <rect x="258" y="6" width="72" height="138" rx="12" fill="#101418"/>
               <rect x="263" y="14" width="62" height="122" rx="7" fill="#fff"/>
