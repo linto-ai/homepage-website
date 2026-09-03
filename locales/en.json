@@ -236,7 +236,7 @@
   "live_h1": "Live subtitles and translation for conferences, assemblies and plenary sessions",
   "live_sub": "Speech is transcribed and translated in real time, displayed on the room screen and on every attendee's phone through a QR code. Run by our team for your event, or by yours, all year long.",
   "live_how_cta": "How it works",
-  "live_stat_rooms": "sensitive-data ready: self-hosted AI models, as deployed at the European Commission",
+  "live_stat_rooms": "sensitive-data ready, self-hosted AI (European Commission)",
   "live_stat_wm": "rooms × languages at Wikimania 2026",
   "live_stat_langs": "languages transcribed live",
   "live_used_by": "They subtitle their events with LinTO",
