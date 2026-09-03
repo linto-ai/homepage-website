@@ -2056,3 +2056,24 @@ footer .footer-bottom {
 @media (prefers-reduced-motion: reduce) {
   .fx *, .fx *::before, .fx *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* ---------- Live visual (screen + QR + phone) ---------- */
+
+.live-visual {
+  width: 100%;
+  max-width: 380px;
+  margin: 0.4em 0 0.6em;
+}
+
+.page-hero .live-visual { margin: 2em auto 0; max-width: 440px; }
+
+.live-visual svg { width: 100%; height: auto; display: block; }
+
+.lv-sub1 { animation: lvSub1 6s ease-in-out infinite; }
+.lv-sub2 { animation: lvSub2 6s ease-in-out infinite; }
+.lv-dash { animation: lvDash 1.2s linear infinite; }
+.lv-caret { animation: fxPulse 1s ease-in-out infinite; }
+
+@keyframes lvSub1 { 0%, 42% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes lvSub2 { 0%, 48% { opacity: 0; } 56%, 100% { opacity: 1; } }
+@keyframes lvDash { from { stroke-dashoffset: 12; } to { stroke-dashoffset: 0; } }
