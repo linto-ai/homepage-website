@@ -1,0 +1,45 @@
+  <main>
+    <section class="container">
+      <div class="prose">
+        <span class="eyebrow" data-i18n-key="tpl_eyebrow">Guide</span>
+        <h1 data-i18n-key="tpl_h1">Your own document templates for minutes and summaries</h1>
+        <p data-i18n-key="tpl_intro">LinTO Studio turns a transcript into minutes, a summary or a verbatim, then exports it. Out of the box you get DOCX, PDF, TXT and JSON. With a template, the export comes out in your own Word layout: logo, headings, fonts, footer. It takes about ten minutes to set up, and it works on every plan.</p>
+
+        <h2 data-i18n-key="tpl_s1">1. Start from a Word document you already use</h2>
+        <p data-i18n-key="tpl_s1_p">Take the file your team already fills by hand: the minutes template, the letterhead, the report skeleton. Keep its styles, header and footer. The template has to be a DOCX file under 10 MB.</p>
+
+        <h2 data-i18n-key="tpl_s2">2. Place the content placeholder</h2>
+        <p data-i18n-key="tpl_s2_p">Write <code>{{output}}</code> where the AI text should land. It is the only required field. The generated content keeps its structure (headings, lists, paragraphs) and takes the styles of your document. A minimal template looks like this:</p>
+        <pre><code>MEETING MINUTES
+
+Project: {{title}}
+Date: {{date}}
+
+{{output}}
+
+Minutes generated with LinTO Studio.</code></pre>
+        <p data-i18n-key="tpl_s2_p2">Other placeholders such as <code>{{title}}</code>, <code>{{date}}</code> or <code>{{participants}}</code> are optional. They are shown as a short form at export time so you can fill them in. On managed and on-premise deployments they can also be extracted from the transcript by the AI: ask us to configure an extraction prompt for your service.</p>
+
+        <h2 data-i18n-key="tpl_s3">3. Upload it in LinTO Studio</h2>
+        <p data-i18n-key="tpl_s3_p">Open a transcript, generate a summary or minutes from the AI services menu, then click <strong>Publication</strong> and <strong>Upload a template</strong>. Give it a name and choose who sees it: only you, or your whole organization. On Business, a template uploaded for the organization is available to every member.</p>
+
+        <h2 data-i18n-key="tpl_s4">4. Preview, then export</h2>
+        <p data-i18n-key="tpl_s4_p">Select the template and click <strong>Preview</strong> to check the result on the current document. Then export as DOCX to keep editing in Word, or as PDF for a final version. PDF is rendered server-side with LibreOffice, so stick to common fonts or embed them in the DOCX.</p>
+
+        <h2 data-i18n-key="tpl_tips">Tips</h2>
+        <ul>
+          <li data-i18n-key="tpl_tip1">Make one template per document type: minutes, executive summary, verbatim. Each AI service can be linked to its own templates.</li>
+          <li data-i18n-key="tpl_tip2">Keep tables and columns simple. The web preview does not render page breaks, text boxes or multi-column layouts; the PDF does.</li>
+          <li data-i18n-key="tpl_tip3">A placeholder must stay in one run of text in Word. If Word splits <code>{{output}}</code> across formatting changes, retype it in one go.</li>
+          <li data-i18n-key="tpl_tip4">Templates live with your organization. Rename, replace or delete them from the same Publication panel.</li>
+        </ul>
+
+        <h2 data-i18n-key="tpl_api">For developers</h2>
+        <p data-i18n-key="tpl_api_p">Everything above is available through the API with an API token: list templates, read their placeholders, export a document with a given template in DOCX, PDF or HTML. The document engine is the open-source <a href="https://github.com/linto-ai/llm-gateway" target="_blank" rel="noopener">LinTO LLM Gateway</a>; its <a href="https://github.com/linto-ai/llm-gateway/blob/main/docs/DOCUMENT_TEMPLATES_GUIDE.md" target="_blank" rel="noopener">document templates guide</a> covers extraction prompts and the export endpoints.</p>
+
+        <div class="callout" style="margin-top:2em">
+          <span data-i18n-key="tpl_callout">Need a template designed to your charter, or extraction of specific fields (decisions, action items, deadlines)? </span><a href="#" data-open-contact data-i18n-key="talk_to_us">Talk to us</a>.
+        </div>
+      </div>
+    </section>
+  </main>

@@ -42,6 +42,11 @@ function initializeContactForm() {
   if (contactButtonFooter) {
     contactButtonFooter.addEventListener('click', openModal);
   }
+  // Opened by site.js from any [data-open-contact] element.
+  document.addEventListener('contactmodalopen', () => {
+    formOpenedAt = Date.now();
+    generateCaptcha();
+  });
 
   if (closeButton) {
     closeButton.addEventListener('click', () => {

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /runtime/
+Disallow: /save/
+
+Sitemap: https://linto.ai/sitemap.xml
