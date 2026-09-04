@@ -98,7 +98,7 @@
     selfhost: () => `<div class="mock mock-code"><pre><span class="ln">$ helm install linto-studio linto/linto-studio \\</span>
 <span class="ln">    --set ingress.host=studio.example.org</span>
 <span class="ln out">NAME: linto-studio   STATUS: deployed</span>
-<span class="ln out">GPU: whisper, diarization, llm ✓</span></pre></div>`
+<span class="ln out">GPU: stt, speakers, llm ✓</span></pre></div>`
   };
 
   function tr(key) {
@@ -112,11 +112,14 @@
     const root = document.getElementById('feature-explorer');
     if (!root) return;
     const tabs = root.querySelector('.fx-tabs');
+    const panel = root.querySelector('.fx-panel');
     const visual = root.querySelector('.fx-visual');
+    const body = root.querySelector('.fx-body');
     const title = root.querySelector('.fx-title');
     const desc = root.querySelector('.fx-desc');
     const facts = root.querySelector('.fx-facts');
-    let current = 0, timer = null, auto = true;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = 0, timer = null, auto = !reduced, visible = true, hovering = false, started = false;
 
     FEATURES.forEach((f, i) => {
       const b = document.createElement('button');
@@ -124,36 +127,65 @@
       b.className = 'fx-tab';
       b.setAttribute('role', 'tab');
       b.innerHTML = `<span class="icon ${f.icon}"></span><span class="fx-tab-label" data-i18n-key="fx_${f.k}_title"></span><span class="fx-progress"></span>`;
-      b.addEventListener('click', () => { auto = false; clearInterval(timer); root.classList.remove('auto'); show(i); });
+      b.addEventListener('click', () => { auto = false; sync(); show(i); });
       tabs.appendChild(b);
       f.el = b;
     });
 
-    function show(i) {
-      current = i;
+    function render(i) {
       const f = FEATURES[i];
-      FEATURES.forEach((x, j) => x.el.classList.toggle('active', j === i));
       title.textContent = tr(`fx_${f.k}_title`);
       desc.textContent = tr(`fx_${f.k}_desc`);
       facts.innerHTML = [1, 2, 3].map(n => `<li>${tr(`fx_${f.k}_f${n}`)}</li>`).join('');
       visual.innerHTML = MOCKS[f.mock]();
-      root.querySelector('.fx-body').classList.remove('in');
-      void root.querySelector('.fx-body').offsetWidth;
-      root.querySelector('.fx-body').classList.add('in');
-      if (window.innerWidth < 960) {
-        f.el.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
-      }
     }
 
-    function start() {
-      root.classList.add('auto');
-      timer = setInterval(() => show((current + 1) % FEATURES.length), ROTATE_MS);
+    // Scroll the tab strip only, never the page: scrollIntoView would drag the
+    // viewport back to the explorer on every rotation on mobile.
+    function revealTab(el) {
+      if (window.innerWidth >= 960) return;
+      const r = el.getBoundingClientRect(), t = tabs.getBoundingClientRect();
+      tabs.scrollTo({ left: tabs.scrollLeft + (r.left - t.left) - (t.width - r.width) / 2, behavior: reduced ? 'auto' : 'smooth' });
     }
-    root.addEventListener('mouseenter', () => { if (auto) clearInterval(timer); });
-    root.addEventListener('mouseleave', () => { if (auto) { clearInterval(timer); timer = setInterval(() => show((current + 1) % FEATURES.length), ROTATE_MS); } });
 
-    document.addEventListener('languagechange', () => show(current));
+    function show(i) {
+      current = i;
+      FEATURES.forEach((x, j) => x.el.classList.toggle('active', j === i));
+      render(i);
+      body.classList.remove('in');
+      void body.offsetWidth;
+      body.classList.add('in');
+      if (started) revealTab(FEATURES[i].el);
+    }
+
+    // Reserve the tallest panel height so switching features never moves the page.
+    function stabilize() {
+      panel.style.minHeight = '';
+      let max = 0;
+      FEATURES.forEach((f, i) => { render(i); max = Math.max(max, panel.offsetHeight); });
+      render(current);
+      panel.style.minHeight = max + 'px';
+    }
+
+    const next = () => show((current + 1) % FEATURES.length);
+    function sync() {
+      clearInterval(timer); timer = null;
+      if (auto && visible && !hovering && !document.hidden) timer = setInterval(next, ROTATE_MS);
+      root.classList.toggle('auto', !!timer);
+    }
+    root.addEventListener('mouseenter', () => { hovering = true; sync(); });
+    root.addEventListener('mouseleave', () => { hovering = false; sync(); });
+    document.addEventListener('visibilitychange', sync);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => { visible = entries[0].isIntersecting; sync(); }, { threshold: 0.15 }).observe(root);
+    }
+    let resizeTimer = null;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(stabilize, 200); });
+    document.addEventListener('languagechange', () => { stabilize(); show(current); });
+
     show(0);
-    start();
+    stabilize();
+    started = true;
+    sync();
   });
 })();

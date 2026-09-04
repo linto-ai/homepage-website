@@ -369,7 +369,7 @@
   "fx_live_f1": "Micro du navigateur, bots de réunion, régie",
   "fx_live_f2": "Texte figé phrase par phrase, quelques secondes après la parole",
   "fx_live_f3": "Chaque session gardée comme transcription éditable",
-  "fx_diar_title": "Diarisation des locuteurs",
+  "fx_diar_title": "Séparation de locuteurs",
   "fx_diar_desc": "Les locuteurs sont séparés automatiquement, puis vous les nommez une fois.",
   "fx_diar_f1": "Sur les fichiers et sur le direct",
   "fx_diar_f2": "Renommez un locuteur, tous ses segments suivent",

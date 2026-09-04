@@ -369,7 +369,7 @@
   "fx_live_f1": "Browser microphone, meeting bots, AV feeds",
   "fx_live_f2": "Text finalized sentence by sentence, a few seconds after speech",
   "fx_live_f3": "Every session kept as an editable transcript",
-  "fx_diar_title": "Speaker diarization",
+  "fx_diar_title": "Speaker separation",
   "fx_diar_desc": "Speakers are separated automatically, then you name them once.",
   "fx_diar_f1": "Works on files and on live sessions",
   "fx_diar_f2": "Rename a speaker, every segment follows",

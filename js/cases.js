@@ -80,6 +80,24 @@
 
   let dialog = null;
   let current = null;
+  let lockedScroll = 0;
+
+  // overflow: hidden alone does not stop iOS Safari from scrolling the page behind
+  // the dialog, so the body is pinned and the scroll position restored on close.
+  function lockScroll() {
+    lockedScroll = window.scrollY;
+    document.body.style.top = `-${lockedScroll}px`;
+    document.body.classList.add('cm-open');
+  }
+  function unlockScroll() {
+    document.body.classList.remove('cm-open');
+    document.body.style.top = '';
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+    window.scrollTo(0, lockedScroll);
+    html.style.scrollBehavior = prev;
+  }
 
   function ensureDialog() {
     if (dialog) return dialog;
@@ -88,7 +106,7 @@
     dialog.setAttribute('aria-labelledby', 'cm-title');
     dialog.addEventListener('click', (e) => { if (e.target === dialog) close(); });
     dialog.addEventListener('close', () => {
-      document.body.classList.remove('cm-open');
+      unlockScroll();
       dialog.querySelectorAll('video').forEach(v => v.pause());
     });
     document.body.appendChild(dialog);
@@ -188,7 +206,7 @@
       }
     });
     if (c.media.length) showMedia(0); else if (typeof translatePage === 'function') translatePage();
-    document.body.classList.add('cm-open');
+    lockScroll();
     dialog.showModal();
     dialog.querySelector('.cm-body').scrollTop = 0;
     dialog.querySelector('.cm-close').focus();
