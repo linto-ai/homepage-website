@@ -284,6 +284,44 @@ section.left {
   border: none;
 }
 
+/* Photo band: a darkened, softly blurred photo behind white cards. */
+
+.band--photo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-dark);
+  color: var(--color-dark-text);
+  border: none;
+}
+
+.band--photo::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: url(/images/deck-1.jpg) center / cover no-repeat;
+  filter: blur(5px) saturate(1.15);
+  opacity: 0.6;
+  z-index: -2;
+}
+
+.band--photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 20, 24, 0.55) 0%, rgba(16, 20, 24, 0.7) 60%, rgba(16, 20, 24, 0.88) 100%);
+  z-index: -1;
+}
+
+.band--photo .section-header h2 { color: #fff; }
+.band--photo .section-header p { color: #c9d3dc; }
+.band--photo .pricing-footnote { color: #c9d3dc; }
+.band--photo .pricing-footnote a { color: var(--color-primary); }
+.band--photo .door { color: var(--color-text); border-color: transparent; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); }
+.band--photo .door h3 { color: var(--color-text); }
+.band--photo-2::before { background-image: url(/images/deck-2.jpg); }
+.band--photo .form { color: var(--color-text); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); border-color: transparent; }
+
 /* ---------- Hero ---------- */
 
 .splash h1 {
