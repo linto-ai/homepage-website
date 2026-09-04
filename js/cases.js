@@ -8,7 +8,7 @@
         { type: 'image', src: '/images/cases/eye2025.jpg' },
       ],
       stats: [['9 000', 's1'], ['160', 's2'], ['24', 's3'], ['2 000+', 's4']],
-      paras: 3, survey: 5, did: 4,
+      paras: 2, survey: 5,
       source: 'https://www.linkedin.com/posts/damienlaine_accessibility-ai-opensource-activity-7345360282027753474-MnjZ',
     },
     wikimania: {
@@ -21,7 +21,7 @@
         { type: 'image', src: '/images/cases/wikimania-3.jpg' },
       ],
       stats: [['8', 's1'], ['5', 's2'], ['5', 's3']],
-      paras: 2, did: 4,
+      paras: 2,
       source: 'https://commons.wikimedia.org/wiki/File:Benjamin_(linagora).webm',
     },
     wrd2026: {
@@ -31,7 +31,7 @@
         { type: 'image', src: '/images/cases/wrd26-3.jpg' },
         { type: 'image', src: '/images/cases/wrd26-4.jpg' },
       ],
-      paras: 2, did: 3, quote: true,
+      paras: 2, quote: true,
       source: 'https://www.linkedin.com/posts/linagora_worldradioday-linto-worldradioday-ugcPost-7428106331766685696--q3J',
     },
     gpsm2025: {
@@ -41,7 +41,7 @@
         { type: 'image', src: '/images/cases/gpsm-3.jpg' },
       ],
       stats: [['160+', 's1'], ['6', 's2'], ['2', 's3']],
-      paras: 2, did: 4,
+      paras: 2,
       source: 'https://www.linkedin.com/posts/damienlaine_gpsm-linto-en-pleine-action-activity-7402628783981277184-FW-5',
     },
     eonax2025: {
@@ -49,15 +49,14 @@
         { type: 'video', src: '/images/cases/eona-x-clip.mp4', poster: '/images/cases/eona-x.jpg', loop: true },
         { type: 'image', src: '/images/cases/eona-x.jpg' },
       ],
-      paras: 2, did: 3,
+      paras: 2,
       source: 'https://www.linkedin.com/posts/eona-x_smartmobility-intermodalitaez-datacollaboration-ugcPost-7379530810711818241-f5Ok',
     },
     posais2026: {
       media: [
         { type: 'image', src: '/images/cases/posais26-1.jpg' },
       ],
-      stats: [['800', 's1'], ['2', 's2'], ['1', 's3']],
-      paras: 2, did: 3,
+      paras: 2,
       source: 'https://opensourceaisummit.eu/',
     },
     prs2026: {
@@ -65,14 +64,14 @@
         { type: 'image', src: '/images/cases/prs26-1.jpg' },
       ],
       stats: [['7 000', 's1'], ['100', 's2'], ['2', 's3']],
-      paras: 2, did: 3,
+      paras: 2,
       source: 'https://linagora.com/linagora-au-paris-radio-show-2026',
     },
     sofins2023: {
       label: 'SOFINS', year: '2023',
       media: [],
       stats: [['16 M', 's1'], ['53 000', 's2'], ['< 1 %', 's3']],
-      paras: 2, did: 4, credit: false,
+      paras: 2, credit: false,
       source: { fr: 'https://linagora.com/fr/customer-success/sofins', en: 'https://linagora.com/en/customer-success/sofins' },
     },
   };
@@ -161,8 +160,6 @@
           ${stats}
           <div class="cm-text">${range(c.paras, i => `<p data-i18n-key="${k('p' + i)}"></p>`)}</div>
           ${survey}
-          <h3 class="cm-sub" data-i18n-key="cm_did"></h3>
-          <ul class="cm-list">${range(c.did, i => `<li data-i18n-key="${k('li' + i)}"></li>`)}</ul>
           ${quote}
           ${credit}
           <div class="cm-foot">
