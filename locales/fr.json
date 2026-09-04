@@ -255,7 +255,7 @@
   "lo_managed_li3": "QR codes et habillages d'écran prêts avant l'ouverture des portes",
   "lo_managed_li4": "Opérateur sur place ou à distance pendant l'événement",
   "lo_managed_li5": "Transcriptions, résumés et fichiers de sous-titres livrés ensuite",
-  "lo_managed_price": "Devis par événement, selon le nombre de salles, de jours et de langues.",
+  "lo_managed_price": "Ordre de grandeur : environ 100 € HT de l'heure et par salle avec accompagnement à distance, environ 150 € HT avec un opérateur sur place. Le devis précis dépend des salles, des jours et des langues.",
   "lo_self_tag": "En autonomie, toute l'année",
   "lo_self_title": "Votre équipe pilote, depuis LinTO Studio",
   "lo_self_desc": "Pour les séances récurrentes : assemblées, conseils, formations, événements internes. Nous activons le mode événementiel sur votre organisation LinTO Studio et formons votre équipe. Ensuite, vous créez vos sessions, branchez votre régie et publiez vos QR codes vous-même.",
@@ -590,5 +590,7 @@
   "cm_prs2026_credit": "Photo : LINAGORA",
   "cm_prs2026_alt1": "Le stand LinTO au Paris Radio Show : micro, ordinateur et affiche QR code",
   "cm_eye2025_p3": "LinTO Live est revenu pour l'édition 2026 de l'événement.",
-  "cm_wikimania_alt5": "Ordinateur et interface audio installés dans une salle de Wikimania 2026"
+  "cm_wikimania_alt5": "Ordinateur et interface audio installés dans une salle de Wikimania 2026",
+  "faq_l_q7": "Combien coûte un événement pris en charge ?",
+  "faq_l_a7": "Comptez environ 100 € HT de l'heure et par salle pour la transcription et la traduction avec accompagnement à distance, et environ 150 € HT avec un opérateur sur place. Pour plusieurs jours ou plusieurs salles, on envoie un devis par événement, en général sous deux jours ouvrés."
 }
