@@ -314,6 +314,7 @@ section.left {
 }
 
 .band--photo .section-header h2 { color: #fff; }
+.band--photo .eyebrow { color: var(--color-primary); }
 .band--photo .section-header p { color: #c9d3dc; }
 .band--photo .pricing-footnote { color: #c9d3dc; }
 .band--photo .pricing-footnote a { color: var(--color-primary); }
