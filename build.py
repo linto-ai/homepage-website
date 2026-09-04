@@ -21,7 +21,7 @@ PAGES = {
         "description": "LinTO Studio is an open-source AI platform for transcription, live subtitling, and summarization. Built for privacy, ready for production, and self-hostable.",
         "keywords": "LinTO Studio, transcription, subtitles, captions, summarization, media management, speaker diarization, timestamp alignment, collaborative editing, AI agent for calls, multilingual, live translation, live subtitling events, open source transcription",
         "nav": "",
-        "scripts": ["/js/site.js", "/js/explorer.js"],
+        "scripts": ["/js/site.js", "/js/explorer.js", "/js/cases.js"],
         "jsonld": "index",
     },
     "pricing/index.html": {
@@ -43,7 +43,7 @@ PAGES = {
         "description": "Real-time transcription and translation for conferences, assemblies and plenary sessions. SRT/RTMP feeds, QR code page for attendees, subtitle banner for screens, Teams bots. Managed per event or run by your team. Used at Wikimania 2026 and the European Commission.",
         "keywords": "live subtitles events, live captioning conference, real-time translation event, sous-titrage en direct événement, transcription temps réel, QR code subtitles, SRT RTMP captioning, Teams transcription bot",
         "nav": "live",
-        "scripts": ["/js/site.js", "/js/quote.js"],
+        "scripts": ["/js/site.js", "/js/quote.js", "/js/cases.js"],
         "jsonld": "live",
     },
     "docs/templates/index.html": {
