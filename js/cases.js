@@ -8,12 +8,13 @@
         { type: 'image', src: '/images/cases/eye2025.jpg' },
       ],
       stats: [['9 000', 's1'], ['160', 's2'], ['24', 's3'], ['2 000+', 's4']],
-      paras: 2, survey: 5, did: 4,
+      paras: 3, survey: 5, did: 4,
       source: 'https://www.linkedin.com/posts/damienlaine_accessibility-ai-opensource-activity-7345360282027753474-MnjZ',
     },
     wikimania: {
       logo: '/images/logo-wikimania.svg', logoAlt: 'Wikimania 2026', logoTall: true,
       media: [
+        { type: 'image', src: '/images/cases/wikimania-hero.jpg' },
         { type: 'video', src: '/images/cases/wikimania-benjamin.mp4', poster: '/images/cases/wikimania-benjamin-poster.jpg' },
         { type: 'image', src: '/images/cases/wikimania-1.jpg' },
         { type: 'image', src: '/images/cases/wikimania-2.jpg' },
@@ -50,6 +51,22 @@
       ],
       paras: 2, did: 3,
       source: 'https://www.linkedin.com/posts/eona-x_smartmobility-intermodalitaez-datacollaboration-ugcPost-7379530810711818241-f5Ok',
+    },
+    posais2026: {
+      media: [
+        { type: 'image', src: '/images/cases/posais26-1.jpg' },
+      ],
+      stats: [['800', 's1'], ['2', 's2'], ['1', 's3']],
+      paras: 2, did: 3,
+      source: 'https://opensourceaisummit.eu/',
+    },
+    prs2026: {
+      media: [
+        { type: 'image', src: '/images/cases/prs26-1.jpg' },
+      ],
+      stats: [['7 000', 's1'], ['100', 's2'], ['2', 's3']],
+      paras: 2, did: 3,
+      source: 'https://linagora.com/linagora-au-paris-radio-show-2026',
     },
     sofins2023: {
       label: 'SOFINS', year: '2023',
