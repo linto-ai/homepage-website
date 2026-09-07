@@ -28,8 +28,8 @@ PAGES = {
         "page": "pricing",
         "path": "/pricing/",
         "body": "_pricing_body.html",
-        "title": "Pricing - LinTO Studio: Free, Premium €19/month, Business €15/seat",
-        "description": "LinTO Studio pricing: a free plan, Premium at €19 per month for individuals, Business at €15 per seat per month for teams. Live transcription with prepaid packs from €25. Open-source, hosted in France.",
+        "title": "Pricing - LinTO Studio: Free, Premium €19/month, Business €29.99/seat",
+        "description": "LinTO Studio pricing: a free plan, Premium at €19 per month for individuals, Business at €29.99 per seat per month for teams. Live transcription with prepaid packs from €45. Open-source, hosted in France.",
         "keywords": "LinTO Studio pricing, transcription pricing, AI meeting notes price, live transcription packs, open source transcription SaaS",
         "nav": "pricing",
         "scripts": ["/js/site.js"],
@@ -108,7 +108,7 @@ def jsonld(kind):
                     "offers": [
                         {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "EUR", "url": SITE + "/pricing/"},
                         {"@type": "Offer", "name": "Premium", "price": "19", "priceCurrency": "EUR", "url": SITE + "/pricing/"},
-                        {"@type": "Offer", "name": "Business", "price": "15", "priceCurrency": "EUR", "url": SITE + "/pricing/"},
+                        {"@type": "Offer", "name": "Business", "price": "29.99", "priceCurrency": "EUR", "url": SITE + "/pricing/"},
                     ],
                 },
             ],
@@ -125,8 +125,8 @@ def jsonld(kind):
                 {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
                 {"@type": "Offer", "name": "Premium monthly", "price": "19", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
                 {"@type": "Offer", "name": "Premium yearly", "price": "192", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
-                {"@type": "Offer", "name": "Business monthly, per seat", "price": "15", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
-                {"@type": "Offer", "name": "Business yearly, per seat", "price": "144", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
+                {"@type": "Offer", "name": "Business monthly, per seat", "price": "29.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
+                {"@type": "Offer", "name": "Business yearly, per seat", "price": "288", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
             ],
         }
     elif kind == "live":
