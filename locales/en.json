@@ -97,7 +97,7 @@
   "plan_business_note": "or €288/seat/year, from 2 seats",
   "plan_business_li1": "Unlimited transcription, summaries and chat* per seat",
   "plan_business_li2": "Invite your team, readers are free",
-  "plan_business_li3": "API and several organizations",
+  "plan_business_li3": "Unlimited API*, several organizations",
   "plan_business_li4": "Live events mode on quote",
   "pricing_teaser_footnote": "* Unlimited within fair use, as described in our terms of service. Live transcription and translation are prepaid by the minute, packs from €45.",
   "os_eyebrow": "Open source and sovereign",
@@ -346,7 +346,7 @@
   "tpl_api_p": "Everything above is available through the API with an API token: list templates, read their placeholders, export a document with a given template in DOCX, PDF or HTML. The document engine is the open-source <a href=\"https://github.com/linto-ai/llm-gateway\" target=\"_blank\" rel=\"noopener\">LinTO LLM Gateway</a>; its <a href=\"https://github.com/linto-ai/llm-gateway/blob/main/docs/DOCUMENT_TEMPLATES_GUIDE.md\" target=\"_blank\" rel=\"noopener\">document templates guide</a> covers extraction prompts and the export endpoints.",
   "tpl_callout": "Need a template designed to your charter, or extraction of specific fields (decisions, action items, deadlines)? ",
   "compare_plans_cta": "Compare plans and live packs",
-  "fx_hint": "Files, AI and the editor from the free plan; live, bots and API depend on the plan. Click to see.",
+  "fx_hint": "Files, AI, editor and API from the free plan; live and bots from Premium. Click to see.",
   "fx_live_title": "Live transcription",
   "fx_live_desc": "Speak into your browser, or stream a room, and read the text as it comes.",
   "fx_live_f1": "Browser microphone, meeting bots, AV feeds",
@@ -555,5 +555,9 @@
   "cmp_api_business": "Included, fair use*",
   "cmp_pack5": "5-hour transcription pack, €10 one-time",
   "faq_p_q8": "I only have one big file to transcribe, do I need a subscription?",
-  "faq_p_a8": "No. The Free plan can buy a 5-hour pack for €10, in one payment. The hours add to the 2 monthly hours and stay valid for 12 months."
+  "faq_p_a8": "No. The Free plan can buy a 5-hour pack for €10, in one payment. The hours add to the 2 monthly hours and stay valid for 12 months.",
+  "pf_free_api": "100 API calls per month",
+  "pf_api_5000": "5,000 API calls per month",
+  "cmp_100_month": "100 / month",
+  "cmp_5000_month": "5,000 / month"
 }

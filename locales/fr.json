@@ -97,7 +97,7 @@
   "plan_business_note": "ou 288 €/siège/an, à partir de 2 sièges",
   "plan_business_li1": "Transcription, résumés et chat illimités* par siège",
   "plan_business_li2": "Invitez votre équipe, les lecteurs sont gratuits",
-  "plan_business_li3": "API et plusieurs organisations",
+  "plan_business_li3": "API illimitée*, plusieurs organisations",
   "plan_business_li4": "Mode événementiel sur devis",
   "pricing_teaser_footnote": "* Illimité dans le cadre d'un usage raisonnable, décrit dans nos conditions générales. La transcription et la traduction en direct se paient à la minute, packs dès 45 €.",
   "os_eyebrow": "Open source et souverain",
@@ -346,7 +346,7 @@
   "tpl_api_p": "Tout ce qui précède est disponible par l'API avec un jeton API : lister les modèles, lire leurs champs, exporter un document avec un modèle donné en DOCX, PDF ou HTML. Le moteur documentaire est le <a href=\"https://github.com/linto-ai/llm-gateway\" target=\"_blank\" rel=\"noopener\">LinTO LLM Gateway</a>, open source ; son <a href=\"https://github.com/linto-ai/llm-gateway/blob/main/docs/DOCUMENT_TEMPLATES_GUIDE.md\" target=\"_blank\" rel=\"noopener\">guide des modèles de documents</a> couvre les prompts d'extraction et les points d'entrée d'export.",
   "tpl_callout": "Besoin d'un modèle conçu à votre charte, ou de l'extraction de champs précis (décisions, actions, échéances) ? ",
   "compare_plans_cta": "Comparer les plans et les packs live",
-  "fx_hint": "Fichiers, IA et éditeur dès le plan gratuit ; direct, bots et API selon le plan. Cliquez pour voir.",
+  "fx_hint": "Fichiers, IA, éditeur et API dès le plan gratuit ; direct et bots à partir de Premium. Cliquez pour voir.",
   "fx_live_title": "Transcription en direct",
   "fx_live_desc": "Parlez dans votre navigateur, ou envoyez le flux d'une salle, et lisez le texte au fur et à mesure.",
   "fx_live_f1": "Micro du navigateur, bots de réunion, régie",
@@ -555,5 +555,9 @@
   "cmp_api_business": "Incluse, usage raisonnable*",
   "cmp_pack5": "Pack de transcription 5 h, 10 € en une fois",
   "faq_p_q8": "Je n'ai qu'un gros fichier à transcrire, dois-je m'abonner ?",
-  "faq_p_a8": "Non. Le plan Gratuit peut acheter un pack de 5 heures pour 10 €, en un paiement. Les heures s'ajoutent aux 2 heures mensuelles et restent valables 12 mois."
+  "faq_p_a8": "Non. Le plan Gratuit peut acheter un pack de 5 heures pour 10 €, en un paiement. Les heures s'ajoutent aux 2 heures mensuelles et restent valables 12 mois.",
+  "pf_free_api": "100 appels API par mois",
+  "pf_api_5000": "5 000 appels API par mois",
+  "cmp_100_month": "100 / mois",
+  "cmp_5000_month": "5 000 / mois"
 }
