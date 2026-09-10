@@ -57,6 +57,17 @@ PAGES = {
         "scripts": ["/js/site.js"],
         "jsonld": None,
     },
+    "cgv/index.html": {
+        "page": "cgv",
+        "path": "/cgv/",
+        "body": "_cgv_body.html",
+        "title": "Conditions générales de vente - LinTO Studio",
+        "description": "Conditions générales de vente et d'utilisation du service LinTO Studio (SaaS) édité par LINAGORA : plans, quotas, crédits live, facturation, résiliation, données.",
+        "keywords": "",
+        "nav": "",
+        "scripts": ["/js/site.js"],
+        "jsonld": None,
+    },
     "legal/index.html": {
         "page": "legal",
         "path": "/legal/",

@@ -2523,3 +2523,11 @@ body.cm-open { position: fixed; left: 0; right: 0; overflow: hidden; }
 .cm-nomedia .event-word { position: static; font-size: 3em; align-items: center; text-align: center; }
 .cm-inner--nomedia { grid-template-columns: minmax(0, 3fr) minmax(0, 7fr); }
 @media (max-width: 900px) { .cm-inner--nomedia { grid-template-rows: minmax(0, 22dvh) minmax(0, 1fr); } }
+
+/* CGV page */
+.prose.cgv h3 { font-size: 1.1em; font-weight: 700; margin: 1.2em 0 0.4em; }
+.prose.cgv .cgv-lang-note { color: var(--color-muted, #666); font-size: 0.85em; margin-bottom: 1.5em; }
+.prose.cgv .cgv-lang-note:empty { display: none; }
+table.cgv-table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin: 0.6em 0 1.2em; }
+table.cgv-table th, table.cgv-table td { border: 1px solid var(--color-border, #ddd); padding: 8px 10px; text-align: left; vertical-align: top; }
+table.cgv-table th { background: var(--color-surface-2); }
