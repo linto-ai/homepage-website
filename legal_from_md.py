@@ -45,6 +45,7 @@ def cells(line):
 LANG_NOTES = {
     "cgv": "These terms are published in French, which is the binding version.",
     "privacy": "This privacy policy is published in French.",
+    "dpa": "This data processing agreement is published in French, which is the binding version.",
 }
 
 

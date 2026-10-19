@@ -79,6 +79,17 @@ PAGES = {
         "scripts": ["/js/site.js"],
         "jsonld": None,
     },
+    "dpa/index.html": {
+        "page": "dpa",
+        "path": "/dpa/",
+        "body": "_dpa_body.html",
+        "title": "Accord de sous-traitance de données (DPA) - LinTO Studio",
+        "description": "Accord de sous-traitance de données (DPA, article 28 du RGPD) du service LinTO Studio (SaaS) édité par LINAGORA : obligations, mesures de sécurité, sous-traitants ultérieurs.",
+        "keywords": "",
+        "nav": "",
+        "scripts": ["/js/site.js"],
+        "jsonld": None,
+    },
     "legal/index.html": {
         "page": "legal",
         "path": "/legal/",

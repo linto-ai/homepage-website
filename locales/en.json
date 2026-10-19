@@ -565,8 +565,11 @@
   "footer_privacy": "Privacy policy",
   "title_cgv": "Terms of sale - LinTO Studio",
   "title_privacy": "Privacy policy - LinTO Studio",
+  "title_dpa": "Data processing agreement (DPA) - LinTO Studio",
   "meta_description_cgv": "Terms of sale and use of the LinTO Studio SaaS service published by LINAGORA: plans, quotas, live credits, billing, cancellation, data.",
   "meta_description_privacy": "Privacy policy of the LinTO Studio SaaS service published by LINAGORA: data processed, purposes, processors, retention periods, rights.",
+  "meta_description_dpa": "Data processing agreement (DPA, GDPR article 28) of the LinTO Studio SaaS service published by LINAGORA: obligations, security measures, sub-processors.",
   "cgv_lang_note": "These terms are published in French, which is the binding version.",
-  "privacy_lang_note": "This privacy policy is published in French."
+  "privacy_lang_note": "This privacy policy is published in French.",
+  "dpa_lang_note": "This data processing agreement is published in French, which is the binding version."
 }

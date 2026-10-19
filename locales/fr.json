@@ -565,8 +565,11 @@
   "footer_privacy": "Politique de confidentialité",
   "title_cgv": "Conditions générales de vente - LinTO Studio",
   "title_privacy": "Politique de confidentialité - LinTO Studio",
+  "title_dpa": "Accord de sous-traitance de données (DPA) - LinTO Studio",
   "meta_description_cgv": "Conditions générales de vente et d'utilisation du service LinTO Studio (SaaS) édité par LINAGORA : plans, quotas, crédits live, facturation, résiliation, données.",
   "meta_description_privacy": "Politique de confidentialité du service LinTO Studio (SaaS) édité par LINAGORA : données traitées, finalités, sous-traitants, durées de conservation, droits.",
+  "meta_description_dpa": "Accord de sous-traitance de données (DPA, article 28 du RGPD) du service LinTO Studio (SaaS) édité par LINAGORA : obligations, mesures de sécurité, sous-traitants ultérieurs.",
   "cgv_lang_note": "",
-  "privacy_lang_note": ""
+  "privacy_lang_note": "",
+  "dpa_lang_note": ""
 }
