@@ -300,7 +300,7 @@
   "legal_hosting_site": "Ce site est hébergé par GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.",
   "legal_hosting_service": "Le service LinTO Studio Cloud et ses données sont hébergés en France sur une infrastructure opérée par LINAGORA.",
   "legal_privacy": "Données personnelles",
-  "legal_privacy_text": "Les formulaires de contact et de devis envoient votre message par email à LINAGORA, qui ne l'utilise que pour vous répondre. La mesure d'audience de ce site repose sur Matomo, auto-hébergé par LINAGORA, avec des données anonymisées et sans partage à des tiers. Pour le service LinTO Studio Cloud, voir les <a href=\"/cgv/\">conditions générales de vente</a> et la politique de confidentialité affichée dans l'application. Délégué à la protection des données : Patrick Pereira, <a href=\"mailto:ppereira@linagora.com\">ppereira@linagora.com</a>. Vous pouvez exercer vos droits RGPD en écrivant à <a href=\"mailto:contact@linto.ai\">contact@linto.ai</a>.",
+  "legal_privacy_text": "Les formulaires de contact et de devis envoient votre message par email à LINAGORA, qui ne l'utilise que pour vous répondre. La mesure d'audience de ce site repose sur Matomo, auto-hébergé par LINAGORA, avec des données anonymisées et sans partage à des tiers. Pour le service LinTO Studio Cloud, voir les <a href=\"/cgv/\">conditions générales de vente</a> et la <a href=\"/privacy/\">politique de confidentialité</a>. Délégué à la protection des données : Patrick Pereira, <a href=\"mailto:ppereira@linagora.com\">ppereira@linagora.com</a>. Vous pouvez exercer vos droits RGPD en écrivant à <a href=\"mailto:contact@linto.ai\">contact@linto.ai</a>.",
   "legal_ip": "Propriété intellectuelle",
   "legal_ip_text": "LinTO Studio est un logiciel libre publié sous licence GNU Affero General Public License v3. Les logos des clients et partenaires appartiennent à leurs propriétaires et sont affichés avec leur accord. Le nom et le logo LinTO sont des marques de LINAGORA.",
   "footer_developed_by": "LinTO est une IA vocale open source développée par LINAGORA. Hébergée en France, déployable sur votre propre infrastructure.",
@@ -558,11 +558,15 @@
   "faq_p_q8": "Je n'ai qu'un gros fichier à transcrire, dois-je m'abonner ?",
   "faq_p_a8": "Non. Le plan Gratuit peut acheter un pack de 5 heures pour 10 €, en un paiement, avec 50 crédits IA. Le tout s'ajoute à votre quota mensuel et reste valable 12 mois.",
   "pf_free_api": "100 appels API par mois",
-  "pf_api_5000": "5 000 appels API par mois",
+  "pf_api_5000": "API illimitée*",
   "cmp_100_month": "100 / mois",
-  "cmp_5000_month": "5 000 / mois",
+  "cmp_5000_month": "Illimité*",
   "footer_terms": "Conditions générales de vente",
+  "footer_privacy": "Politique de confidentialité",
   "title_cgv": "Conditions générales de vente - LinTO Studio",
+  "title_privacy": "Politique de confidentialité - LinTO Studio",
   "meta_description_cgv": "Conditions générales de vente et d'utilisation du service LinTO Studio (SaaS) édité par LINAGORA : plans, quotas, crédits live, facturation, résiliation, données.",
-  "cgv_lang_note": ""
+  "meta_description_privacy": "Politique de confidentialité du service LinTO Studio (SaaS) édité par LINAGORA : données traitées, finalités, sous-traitants, durées de conservation, droits.",
+  "cgv_lang_note": "",
+  "privacy_lang_note": ""
 }

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate _cgv_body.html from the CGV source (docs/legal/CGV.md of the private SaaS plugin).
+"""Regenerate a legal page body from its Markdown source in the private SaaS plugin (docs/legal/).
 
-Usage: python3 cgv_from_md.py path/to/CGV.md > _cgv_body.html, then python3 build.py.
-A URL followed by punctuation keeps the punctuation out of the link.
+Usage: python3 legal_from_md.py cgv path/to/CGV.md > _cgv_body.html
+       python3 legal_from_md.py privacy path/to/POLITIQUE-CONFIDENTIALITE.md > _privacy_body.html
+then python3 build.py. A URL followed by punctuation keeps the punctuation out of the link.
 """
 import html
 import re
@@ -40,12 +41,19 @@ def cells(line):
     return [c.strip() for c in line.strip().strip("|").split("|")]
 
 
-def convert(md):
+# English note shown above the French text (the French locale leaves it empty)
+LANG_NOTES = {
+    "cgv": "These terms are published in French, which is the binding version.",
+    "privacy": "This privacy policy is published in French.",
+}
+
+
+def convert(md, page="cgv"):
     out = [
         "  <main>",
         '    <section class="container">',
         '      <div class="prose cgv">',
-        f'{IND}<p class="cgv-lang-note" data-i18n-key="cgv_lang_note">These terms are published in French, which is the binding version.</p>',
+        f'{IND}<p class="cgv-lang-note" data-i18n-key="{page}_lang_note">{LANG_NOTES[page]}</p>',
     ]
     lines = md.splitlines()
     i = 0
@@ -85,4 +93,4 @@ def convert(md):
 
 
 if __name__ == "__main__":
-    sys.stdout.write(convert(open(sys.argv[1], encoding="utf-8").read()))
+    sys.stdout.write(convert(open(sys.argv[2], encoding="utf-8").read(), sys.argv[1]))

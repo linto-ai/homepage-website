@@ -300,7 +300,7 @@
   "legal_hosting_site": "This website is hosted by GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.",
   "legal_hosting_service": "The LinTO Studio Cloud service and its data are hosted in France on infrastructure operated by LINAGORA.",
   "legal_privacy": "Personal data",
-  "legal_privacy_text": "The contact and quote forms send your message by email to LINAGORA, which uses it only to answer you. Audience measurement on this website uses Matomo, self-hosted by LINAGORA, with anonymized data and no third-party sharing. For the LinTO Studio Cloud service, see the <a href=\"/cgv/\">terms of sale</a> and the privacy policy shown in the application. Data protection officer: Patrick Pereira, <a href=\"mailto:ppereira@linagora.com\">ppereira@linagora.com</a>. You may exercise your rights under the GDPR by writing to <a href=\"mailto:contact@linto.ai\">contact@linto.ai</a>.",
+  "legal_privacy_text": "The contact and quote forms send your message by email to LINAGORA, which uses it only to answer you. Audience measurement on this website uses Matomo, self-hosted by LINAGORA, with anonymized data and no third-party sharing. For the LinTO Studio Cloud service, see the <a href=\"/cgv/\">terms of sale</a> and the <a href=\"/privacy/\">privacy policy</a>. Data protection officer: Patrick Pereira, <a href=\"mailto:ppereira@linagora.com\">ppereira@linagora.com</a>. You may exercise your rights under the GDPR by writing to <a href=\"mailto:contact@linto.ai\">contact@linto.ai</a>.",
   "legal_ip": "Intellectual property",
   "legal_ip_text": "LinTO Studio is free software released under the GNU Affero General Public License v3. Logos of customers and partners belong to their owners and are shown with their agreement. The LinTO name and logo are trademarks of LINAGORA.",
   "footer_developed_by": "LinTO is open-source speech AI developed by LINAGORA. Hosted in France, deployable on your own infrastructure.",
@@ -558,11 +558,15 @@
   "faq_p_q8": "I only have one big file to transcribe, do I need a subscription?",
   "faq_p_a8": "No. The Free plan can buy a 5-hour pack for €10, in one payment, with 50 AI credits. It adds to your monthly quota and stays valid for 12 months.",
   "pf_free_api": "100 API calls per month",
-  "pf_api_5000": "5,000 API calls per month",
+  "pf_api_5000": "Unlimited API*",
   "cmp_100_month": "100 / month",
-  "cmp_5000_month": "5,000 / month",
+  "cmp_5000_month": "Unlimited*",
   "footer_terms": "Terms of sale",
+  "footer_privacy": "Privacy policy",
   "title_cgv": "Terms of sale - LinTO Studio",
+  "title_privacy": "Privacy policy - LinTO Studio",
   "meta_description_cgv": "Terms of sale and use of the LinTO Studio SaaS service published by LINAGORA: plans, quotas, live credits, billing, cancellation, data.",
-  "cgv_lang_note": "These terms are published in French, which is the binding version."
+  "meta_description_privacy": "Privacy policy of the LinTO Studio SaaS service published by LINAGORA: data processed, purposes, processors, retention periods, rights.",
+  "cgv_lang_note": "These terms are published in French, which is the binding version.",
+  "privacy_lang_note": "This privacy policy is published in French."
 }

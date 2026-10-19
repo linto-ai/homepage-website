@@ -68,6 +68,17 @@ PAGES = {
         "scripts": ["/js/site.js"],
         "jsonld": None,
     },
+    "privacy/index.html": {
+        "page": "privacy",
+        "path": "/privacy/",
+        "body": "_privacy_body.html",
+        "title": "Politique de confidentialité - LinTO Studio",
+        "description": "Politique de confidentialité du service LinTO Studio (SaaS) édité par LINAGORA : données traitées, finalités, sous-traitants, durées de conservation, droits.",
+        "keywords": "",
+        "nav": "",
+        "scripts": ["/js/site.js"],
+        "jsonld": None,
+    },
     "legal/index.html": {
         "page": "legal",
         "path": "/legal/",
