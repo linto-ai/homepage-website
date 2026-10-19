@@ -3,7 +3,7 @@
 const translations = {};
 let currentLang = 'en';
 // Bump when a locale file changes so browsers do not serve a stale copy.
-const LOCALE_VERSION = '2026-09-10';
+const LOCALE_VERSION = '2026-10-19';
 
 async function loadTranslations() {
   try {
