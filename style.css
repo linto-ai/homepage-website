@@ -1519,6 +1519,13 @@ footer .footer-brand p {
   max-width: 320px;
 }
 
+footer .cia-badge {
+  display: inline-block;
+  margin-top: 1em;
+}
+
+footer .cia-badge img { display: block; }
+
 footer .footer-bottom {
   margin-top: 2.5em;
   padding-top: 1.2em;
