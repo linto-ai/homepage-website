@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n="static">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{var l=localStorage.getItem('linto-lang')||(navigator.language||'').slice(0,2);if(l==='fr')location.replace('/fr/tarifs/'+location.hash)}catch(e){}</script>
   <title>Pricing - LinTO Studio: Free, Premium €19/month, Business €29.99/seat</title>
   <meta name="description" content="LinTO Studio pricing: a free plan, Premium at €19 per month for individuals, Business at €29.99 per seat per month for teams. Live transcription with prepaid packs from €45. Open-source, hosted in France." />
   <meta name="keywords" content="LinTO Studio pricing, transcription pricing, AI meeting notes price, live transcription packs, open source transcription SaaS" />
   <link rel="canonical" href="https://linto.ai/pricing/" />
+  <link rel="alternate" hreflang="en" href="https://linto.ai/pricing/" />
+  <link rel="alternate" hreflang="fr" href="https://linto.ai/fr/tarifs/" />
+  <link rel="alternate" hreflang="x-default" href="https://linto.ai/pricing/" />
   <link rel="icon" href="/images/linto.svg" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=eab1a68c" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LinTO Studio" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Pricing - LinTO Studio: Free, Premium €19/month, Business €29.99/seat" />
   <meta property="og:description" content="LinTO Studio pricing: a free plan, Premium at €19 per month for individuals, Business at €29.99 per seat per month for teams. Live transcription with prepaid packs from €45. Open-source, hosted in France." />
   <meta property="og:url" content="https://linto.ai/pricing/" />
@@ -86,6 +91,7 @@
       <nav class="main-nav" aria-label="Main">
         <a href="/#features" data-i18n-key="nav_product">Product</a>
         <a href="/pricing/" data-i18n-key="nav_pricing" data-nav="pricing" class="active">Pricing</a>
+        <a href="/compare/" data-i18n-key="nav_compare" data-nav="compare">Compare</a>
         <a href="/live/" data-i18n-key="nav_live" data-nav="live">Live events</a>
         <a href="/#customers" data-i18n-key="nav_customers">Customers</a>
         <a href="https://github.com/linto-ai" target="_blank" rel="noopener" data-i18n-key="nav_opensource">Open source</a>
@@ -93,7 +99,7 @@
       </nav>
       <div class="header-right">
         <div class="lang-switcher">
-          <a href="#" id="lang-en">EN</a> | <a href="#" id="lang-fr">FR</a>
+          <a href="/pricing/" id="lang-en" hreflang="en" class="active">EN</a> | <a href="/fr/tarifs/" id="lang-fr" hreflang="fr">FR</a>
         </div>
         <a href="https://studio.linto.ai/" class="btn btn--small" data-i18n-key="start_free">Start Free</a>
         <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -173,13 +179,13 @@
             <li data-i18n-key="pf_orgs">Several organizations, one subscription each</li>
             <li data-i18n-key="pf_api_business">API access, fair use*</li>
             <li><span data-i18n-key="pf_live_packs">Live transcription and meeting bots</span><span class="small" data-i18n-key="pf_live_packs_small">16 minutes offered, then prepaid packs from €45</span></li>
-            <li><span data-i18n-key="pf_sso">Single sign-on per organization</span><span class="small" data-i18n-key="coming_soon">coming soon</span></li>
+            <li><span data-i18n-key="pf_sso">Single sign-on per organization</span><span class="small" data-i18n-key="pf_sso_small">OpenID Connect, with your own identity provider</span></li>
             <li><span data-i18n-key="pf_sessions">Live events mode (multiple rooms, AV feeds, scheduling)</span><span class="small" data-i18n-key="on_quote_managed">on quote</span></li>
           </ul>
           <a href="https://studio.linto.ai/" class="btn btn--outline" data-i18n-key="choose_business">Choose Business</a>
         </div>
       </div>
-      <p class="pricing-footnote" data-i18n-key="pricing_footnote">* Unlimited within a fair-use policy, described in our terms of service. Nothing is billed automatically on files, summaries or chat.</p>
+      <p class="pricing-footnote" data-i18n-key="pricing_footnote">* Unlimited within a fair-use policy, described in our <a href="/cgv/">terms of sale</a>. Nothing is billed automatically on files, summaries or chat.</p>
     </section>
 
     <section id="live" class="band band--soft">
@@ -243,7 +249,7 @@
             <tr><td data-i18n-key="cmp_sharing">Sharing and search</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td></tr>
             <tr><td data-i18n-key="cmp_invite">Invite members</td><td class="no">–</td><td class="no">–</td><td class="yes">✔</td></tr>
             <tr><td data-i18n-key="cmp_orgs">Several organizations (one subscription each)</td><td class="no">–</td><td class="no">–</td><td class="yes">✔</td></tr>
-            <tr><td data-i18n-key="cmp_sso">Single sign-on per organization</td><td class="no">–</td><td class="no">–</td><td><span data-i18n-key="coming_soon">coming soon</span></td></tr>
+            <tr><td data-i18n-key="cmp_sso">Single sign-on per organization</td><td class="no">–</td><td class="no">–</td><td class="yes">✔</td></tr>
             <tr><td data-i18n-key="cmp_sessions">Live events mode (multiple rooms, AV feeds, scheduling)</td><td class="no">–</td><td class="no">–</td><td><a href="/live/" data-i18n-key="cmp_on_quote">on quote</a></td></tr>
             <tr class="group"><td colspan="4" data-i18n-key="cmp_group_billing">Billing</td></tr>
             <tr><td data-i18n-key="cmp_payment">Payment</td><td><span data-i18n-key="cmp_card_packs">Card, for packs</span></td><td><span data-i18n-key="cmp_card">Card (secure Stripe checkout)</span></td><td><span data-i18n-key="cmp_card_invoice">Card, or invoice for the public sector</span></td></tr>
@@ -252,6 +258,7 @@
           </tbody>
         </table>
       </div>
+      <p class="vs-after" data-i18n-key="pricing_compare_link">How does LinTO compare with Copilot, Gemini, Otter, Noota or Leexi? <a href="/compare/">See the comparison</a>.</p>
     </section>
 
     <section class="band">
@@ -326,6 +333,7 @@
             <li><a href="/pricing/" data-i18n-key="nav_pricing">Pricing</a></li>
             <li><a href="/live/" data-i18n-key="nav_live">Live events</a></li>
             <li><a href="/#customers" data-i18n-key="nav_customers">Customers</a></li>
+            <li><a href="/compare/" data-i18n-key="footer_compare">Compare</a></li>
           </ul>
         </div>
         <div>
@@ -359,10 +367,10 @@
   </div>
   <div id="modal-container"></div>
   <script src="https://cdn.jsdelivr.net/npm/axios@1/dist/axios.min.js"></script>
-  <script src="/js/i18n.js"></script>
-  <script src="/js/contact.js"></script>
-  <script src="/js/cookies.js"></script>
-  <script src="/js/site.js"></script>
+  <script src="/js/i18n.js?v=eab1a68c"></script>
+  <script src="/js/contact.js?v=eab1a68c"></script>
+  <script src="/js/cookies.js?v=eab1a68c"></script>
+  <script src="/js/site.js?v=eab1a68c"></script>
   <!-- Matomo -->
   <script type="text/javascript">
     var _paq = window._paq || [];

@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n="static">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{var l=localStorage.getItem('linto-lang')||(navigator.language||'').slice(0,2);if(l==='fr')location.replace('/fr/'+location.hash)}catch(e){}</script>
   <title>LinTO Studio - Open Source AI for Transcription, Live Subtitling, and Summarization</title>
   <meta name="description" content="LinTO Studio is an open-source AI platform for transcription, live subtitling, and summarization. Built for privacy, ready for production, and self-hostable." />
   <meta name="keywords" content="LinTO Studio, transcription, subtitles, captions, summarization, media management, speaker diarization, timestamp alignment, collaborative editing, AI agent for calls, multilingual, live translation, live subtitling events, open source transcription" />
   <link rel="canonical" href="https://linto.ai/" />
+  <link rel="alternate" hreflang="en" href="https://linto.ai/" />
+  <link rel="alternate" hreflang="fr" href="https://linto.ai/fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://linto.ai/" />
   <link rel="icon" href="/images/linto.svg" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=eab1a68c" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LinTO Studio" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="LinTO Studio - Open Source AI for Transcription, Live Subtitling, and Summarization" />
   <meta property="og:description" content="LinTO Studio is an open-source AI platform for transcription, live subtitling, and summarization. Built for privacy, ready for production, and self-hostable." />
   <meta property="og:url" content="https://linto.ai/" />
@@ -49,6 +54,7 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "description": "LinTO Studio is an open-source AI platform for transcription, live subtitling, and summarization. Built for privacy, ready for production, and self-hostable.",
+      "inLanguage": "en",
       "publisher": {
         "@id": "https://linto.ai/#organization"
       },
@@ -100,6 +106,7 @@
       <nav class="main-nav" aria-label="Main">
         <a href="/#features" data-i18n-key="nav_product">Product</a>
         <a href="/pricing/" data-i18n-key="nav_pricing" data-nav="pricing">Pricing</a>
+        <a href="/compare/" data-i18n-key="nav_compare" data-nav="compare">Compare</a>
         <a href="/live/" data-i18n-key="nav_live" data-nav="live">Live events</a>
         <a href="/#customers" data-i18n-key="nav_customers">Customers</a>
         <a href="https://github.com/linto-ai" target="_blank" rel="noopener" data-i18n-key="nav_opensource">Open source</a>
@@ -107,7 +114,7 @@
       </nav>
       <div class="header-right">
         <div class="lang-switcher">
-          <a href="#" id="lang-en">EN</a> | <a href="#" id="lang-fr">FR</a>
+          <a href="/" id="lang-en" hreflang="en" class="active">EN</a> | <a href="/fr/" id="lang-fr" hreflang="fr">FR</a>
         </div>
         <a href="https://studio.linto.ai/" class="btn btn--small" data-i18n-key="start_free">Start Free</a>
         <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -124,11 +131,12 @@
       </div>
       <p class="hero-note" data-i18n-key="hero_note">Free to start, no credit card. Hosted in France, or installed on your servers.</p>
       <div class="screenshot">
-        <video id="video" playsinline muted preload="none" src="/demo linto.mp4" poster="/screenshot.png"></video>
+        <video id="video" playsinline preload="none" src="/videos/linto-studio-en.mp4" poster="/videos/linto-studio-en.jpg" data-i18n-attr="src:video_src;poster:video_poster"></video>
         <button class="play-button" id="playButton" aria-label="Play demo">
           <span class="icon play"></span>
         </button>
       </div>
+      <p class="hero-note" data-i18n-key="video_full"><a href="https://www.youtube.com/watch?v=mGeE3dIf2us" target="_blank" rel="noopener">Watch the full film on YouTube</a> (15 min)</p>
       <div class="used-by">
         <div class="used-by-label" data-i18n-key="used_by">They use LinTO</div>
         <div class="logos">
@@ -270,7 +278,7 @@
         <h2 data-i18n-key="features_h2">What LinTO does</h2>
       </div>
       <div class="fx" id="feature-explorer">
-        <div class="fx-tabs" role="tablist" aria-label="Features">
+        <div class="fx-tabs" role="tablist" aria-label="Features" data-i18n-dynamic>
           <p class="fx-hint" data-i18n-key="fx_hint">Files, AI, editor and API from the free plan; live and bots from Premium. Click to see.</p>
         </div>
         <div class="fx-panel" role="tabpanel">
@@ -513,6 +521,7 @@
             <li><a href="/pricing/" data-i18n-key="nav_pricing">Pricing</a></li>
             <li><a href="/live/" data-i18n-key="nav_live">Live events</a></li>
             <li><a href="/#customers" data-i18n-key="nav_customers">Customers</a></li>
+            <li><a href="/compare/" data-i18n-key="footer_compare">Compare</a></li>
           </ul>
         </div>
         <div>
@@ -546,12 +555,12 @@
   </div>
   <div id="modal-container"></div>
   <script src="https://cdn.jsdelivr.net/npm/axios@1/dist/axios.min.js"></script>
-  <script src="/js/i18n.js"></script>
-  <script src="/js/contact.js"></script>
-  <script src="/js/cookies.js"></script>
-  <script src="/js/site.js"></script>
-  <script src="/js/explorer.js"></script>
-  <script src="/js/cases.js"></script>
+  <script src="/js/i18n.js?v=eab1a68c"></script>
+  <script src="/js/contact.js?v=eab1a68c"></script>
+  <script src="/js/cookies.js?v=eab1a68c"></script>
+  <script src="/js/site.js?v=eab1a68c"></script>
+  <script src="/js/explorer.js?v=eab1a68c"></script>
+  <script src="/js/cases.js?v=eab1a68c"></script>
   <!-- Matomo -->
   <script type="text/javascript">
     var _paq = window._paq || [];

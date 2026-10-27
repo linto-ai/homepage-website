@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n="static">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{var l=localStorage.getItem('linto-lang')||(navigator.language||'').slice(0,2);if(l==='fr')location.replace('/fr/docs/modeles/'+location.hash)}catch(e){}</script>
   <title>Document templates for minutes and summaries - LinTO Studio guide</title>
   <meta name="description" content="How to export LinTO Studio minutes and summaries in your own Word template: placeholders, upload, preview, DOCX and PDF export, API." />
   <meta name="keywords" content="LinTO Studio template, DOCX template meeting minutes, export summary Word template, document template AI minutes" />
   <link rel="canonical" href="https://linto.ai/docs/templates/" />
+  <link rel="alternate" hreflang="en" href="https://linto.ai/docs/templates/" />
+  <link rel="alternate" hreflang="fr" href="https://linto.ai/fr/docs/modeles/" />
+  <link rel="alternate" hreflang="x-default" href="https://linto.ai/docs/templates/" />
   <link rel="icon" href="/images/linto.svg" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=eab1a68c" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LinTO Studio" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Document templates for minutes and summaries - LinTO Studio guide" />
   <meta property="og:description" content="How to export LinTO Studio minutes and summaries in your own Word template: placeholders, upload, preview, DOCX and PDF export, API." />
   <meta property="og:url" content="https://linto.ai/docs/templates/" />
@@ -37,6 +42,7 @@
       <nav class="main-nav" aria-label="Main">
         <a href="/#features" data-i18n-key="nav_product">Product</a>
         <a href="/pricing/" data-i18n-key="nav_pricing" data-nav="pricing">Pricing</a>
+        <a href="/compare/" data-i18n-key="nav_compare" data-nav="compare">Compare</a>
         <a href="/live/" data-i18n-key="nav_live" data-nav="live">Live events</a>
         <a href="/#customers" data-i18n-key="nav_customers">Customers</a>
         <a href="https://github.com/linto-ai" target="_blank" rel="noopener" data-i18n-key="nav_opensource">Open source</a>
@@ -44,7 +50,7 @@
       </nav>
       <div class="header-right">
         <div class="lang-switcher">
-          <a href="#" id="lang-en">EN</a> | <a href="#" id="lang-fr">FR</a>
+          <a href="/docs/templates/" id="lang-en" hreflang="en" class="active">EN</a> | <a href="/fr/docs/modeles/" id="lang-fr" hreflang="fr">FR</a>
         </div>
         <a href="https://studio.linto.ai/" class="btn btn--small" data-i18n-key="start_free">Start Free</a>
         <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -115,6 +121,7 @@ Minutes generated with LinTO Studio.</code></pre>
             <li><a href="/pricing/" data-i18n-key="nav_pricing">Pricing</a></li>
             <li><a href="/live/" data-i18n-key="nav_live">Live events</a></li>
             <li><a href="/#customers" data-i18n-key="nav_customers">Customers</a></li>
+            <li><a href="/compare/" data-i18n-key="footer_compare">Compare</a></li>
           </ul>
         </div>
         <div>
@@ -148,10 +155,10 @@ Minutes generated with LinTO Studio.</code></pre>
   </div>
   <div id="modal-container"></div>
   <script src="https://cdn.jsdelivr.net/npm/axios@1/dist/axios.min.js"></script>
-  <script src="/js/i18n.js"></script>
-  <script src="/js/contact.js"></script>
-  <script src="/js/cookies.js"></script>
-  <script src="/js/site.js"></script>
+  <script src="/js/i18n.js?v=eab1a68c"></script>
+  <script src="/js/contact.js?v=eab1a68c"></script>
+  <script src="/js/cookies.js?v=eab1a68c"></script>
+  <script src="/js/site.js?v=eab1a68c"></script>
   <!-- Matomo -->
   <script type="text/javascript">
     var _paq = window._paq || [];

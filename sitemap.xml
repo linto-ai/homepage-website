@@ -1,11 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://linto.ai/</loc></url>
-  <url><loc>https://linto.ai/pricing/</loc></url>
-  <url><loc>https://linto.ai/live/</loc></url>
-  <url><loc>https://linto.ai/docs/templates/</loc></url>
-  <url><loc>https://linto.ai/cgv/</loc></url>
-  <url><loc>https://linto.ai/privacy/</loc></url>
-  <url><loc>https://linto.ai/dpa/</loc></url>
-  <url><loc>https://linto.ai/legal/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://linto.ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/tarifs/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/tarifs/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/tarifs/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/live/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/live/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/evenementiel/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/evenementiel/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/live/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/evenementiel/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/compare/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/compare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/comparatif/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/comparatif/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/compare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/comparatif/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/docs/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/docs/templates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/docs/modeles/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/docs/modeles/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/docs/templates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/docs/modeles/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/cgv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/cgv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/cgv/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/cgv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/cgv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/cgv/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/confidentialite/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/confidentialite/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/confidentialite/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/dpa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/dpa/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/dpa/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/dpa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/dpa/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/dpa/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/legal/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/legal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/mentions-legales/"/>
+  </url>
+  <url>
+    <loc>https://linto.ai/fr/mentions-legales/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://linto.ai/legal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://linto.ai/fr/mentions-legales/"/>
+  </url>
 </urlset>

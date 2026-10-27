@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr" data-i18n="static">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinTO Studio - IA Open Source pour la Transcription, le Sous-titrage et le résumé</title>
+  <meta name="description" content="LinTO Studio est une plateforme d'IA open-source pour la transcription, le sous-titrage en direct et la synthèse. Conçu pour la confidentialité, prêt pour la production et auto-hébergeable." />
+  <link rel="canonical" href="https://linto.ai/fr/" />
+  <link rel="alternate" hreflang="en" href="https://linto.ai/" />
+  <link rel="alternate" hreflang="fr" href="https://linto.ai/fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://linto.ai/" />
+  <link rel="icon" href="/images/linto.svg" />
+  <link rel="stylesheet" href="/style.css?v=eab1a68c" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LinTO Studio" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="LinTO Studio - IA Open Source pour la Transcription, le Sous-titrage et le résumé" />
+  <meta property="og:description" content="LinTO Studio est une plateforme d'IA open-source pour la transcription, le sous-titrage en direct et la synthèse. Conçu pour la confidentialité, prêt pour la production et auto-hébergeable." />
+  <meta property="og:url" content="https://linto.ai/fr/" />
+  <meta property="og:image" content="https://linto.ai/screenshot.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://linto.ai/#organization",
+      "name": "LINAGORA",
+      "url": "https://linto.ai/",
+      "logo": "https://linto.ai/images/linto.svg",
+      "sameAs": [
+        "https://github.com/linto-ai",
+        "https://linagora.com",
+        "https://discord.com/invite/jvNK3FXv3d"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "contact@linto.ai",
+        "availableLanguage": [
+          "fr",
+          "en"
+        ]
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "LinTO Studio",
+      "url": "https://linto.ai/fr/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "LinTO Studio est une plateforme d'IA open-source pour la transcription, le sous-titrage en direct et la synthèse. Conçu pour la confidentialité, prêt pour la production et auto-hébergeable.",
+      "inLanguage": "fr",
+      "publisher": {
+        "@id": "https://linto.ai/#organization"
+      },
+      "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://linto.ai/fr/tarifs/"
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium",
+          "price": "19",
+          "priceCurrency": "EUR",
+          "url": "https://linto.ai/fr/tarifs/"
+        },
+        {
+          "@type": "Offer",
+          "name": "Business",
+          "price": "29.99",
+          "priceCurrency": "EUR",
+          "url": "https://linto.ai/fr/tarifs/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/fr/">
+        <svg version="1.1" id="linto-logo" x="0px" y="0px" viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve" aria-hidden="true">
+          <g transform="matrix(1.4358874,0,0,1.4358874,-65.37151,-15.728904)">
+            <path class="st0" d="m 222.4,190 c 0,-0.1 0,-0.1 0,0 19.6,-18.8 31.5,-45.4 31.5,-74.6 C 253.9,58 207.4,11.5 150,11.5 92.6,11.5 46.1,58 46.1,115.4 c 0,57.4 46.5,103.9 103.9,103.9 1.1,0 2.3,0 3.4,-0.1 l 81.7,0.2 c -8.8,-5.9 -16.8,-16.7 -12.7,-29.4 z" />
+            <path class="st1" d="m 129.9,111 c 0,5.9 -4.8,10.6 -10.6,10.6 -5.9,0 -10.6,-4.8 -10.6,-10.6 0,-5.9 4.8,-10.6 10.6,-10.6 5.8,-0.1 10.6,4.7 10.6,10.6 z" />
+            <path id="right-eye" class="st1" d="m 191.4,111 c 0,5.9 -4.8,10.6 -10.6,10.6 -5.9,0 -10.6,-4.8 -10.6,-10.6 0,-5.9 4.8,-10.6 10.6,-10.6 5.8,-0.1 10.6,4.7 10.6,10.6 z" />
+            <path id="right-eye-wink" class="st1" d="M 180.8,114 C 185.8,114 190.8,111 190.8,111" style="fill: none; stroke: var(--color-text); stroke-width: 3; stroke-linecap: round;"/>
+            <path class="st1" d="m 149.4,161.8 c -6.4,0 -12.6,-0.9 -16.6,-3 -3,-1.6 -4.2,-5.2 -2.7,-8.1 1.6,-3 5.2,-4.2 8.1,-2.7 4.3,2.2 18.5,2.1 23.5,-0.1 3,-1.4 6.6,0 8,3 1.4,3 0,6.6 -3,8 -3.9,1.9 -10.5,2.9 -17.3,2.9 z" />
+          </g>
+        </svg>
+        <span data-i18n-key="logo_text">LinTO Studio</span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="/fr/#features" data-i18n-key="nav_product">Produit</a>
+        <a href="/fr/tarifs/" data-i18n-key="nav_pricing" data-nav="pricing">Tarifs</a>
+        <a href="/fr/comparatif/" data-i18n-key="nav_compare" data-nav="compare">Comparatif</a>
+        <a href="/fr/evenementiel/" data-i18n-key="nav_live" data-nav="live">Événementiel</a>
+        <a href="/fr/#customers" data-i18n-key="nav_customers">Clients</a>
+        <a href="https://github.com/linto-ai" target="_blank" rel="noopener" data-i18n-key="nav_opensource">Open source</a>
+        <a href="#" data-open-contact data-i18n-key="nav_contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher">
+          <a href="/" id="lang-en" hreflang="en">EN</a> | <a href="/fr/" id="lang-fr" hreflang="fr" class="active">FR</a>
+        </div>
+        <a href="https://studio.linto.ai/" class="btn btn--small" data-i18n-key="start_free">Commencer gratuitement</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="container splash">
+      <h1><span class="open-source" data-i18n-key="h1_1">Open Source</span> <span data-i18n-key="h1_2">transcription, sous‑titrage, traduction et résumé par IA</span></h1>
+      <p class="subtitle" data-i18n-key="subtitle">Performance de pointe, prêt pour la production à grande échelle, entièrement auto‑hébergeable.</p>
+      <div class="buttons">
+        <a href="https://studio.linto.ai/" class="btn" data-i18n-key="start_free">Commencer gratuitement</a>
+        <a href="https://github.com/linto-ai" class="btn btn--outline" target="_blank" rel="noopener" data-i18n-key="github">GitHub <span class="icon github"></span></a>
+      </div>
+      <p class="hero-note" data-i18n-key="hero_note">Gratuit pour commencer, sans carte bancaire. Hébergé en France, ou installé sur vos serveurs.</p>
+      <div class="screenshot">
+        <video id="video" playsinline preload="none" src="/videos/linto-studio-fr.mp4" poster="/videos/linto-studio-fr.jpg" data-i18n-attr="src:video_src;poster:video_poster"></video>
+        <button class="play-button" id="playButton" aria-label="Play demo">
+          <span class="icon play"></span>
+        </button>
+      </div>
+      <p class="hero-note" data-i18n-key="video_full"><a href="https://www.youtube.com/watch?v=xNS5K6lpOTY" target="_blank" rel="noopener">Voir le film complet sur YouTube</a> (15 min)</p>
+      <div class="used-by">
+        <div class="used-by-label" data-i18n-key="used_by">Ils utilisent LinTO</div>
+        <div class="logos">
+          <div class="item"><img src="/images/logo-UE.svg" alt="European Commission" /></div>
+          <div class="item"><img src="/images/logo-ep.svg" alt="European Parliament" /></div>
+          <div class="item item--tall"><img src="/images/logo-wikimania.svg" alt="Wikimania" /></div>
+          <div class="item item--tall"><img src="/images/logo-ille-et-vilaine.svg" alt="Département d'Ille-et-Vilaine" /></div>
+          <div class="item"><img src="/images/logo-edf.svg" alt="EDF" /></div>
+          <div class="item"><img src="/images/logo-elysee.png" alt="Élysée" /></div>
+          <div class="item"><img src="/images/logo-cnes.jpg" alt="CNES" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offers" class="band">
+      <div class="container">
+      <div class="section-header">
+        <span class="eyebrow" data-i18n-key="doors_eyebrow">Deux façons d'utiliser LinTO</span>
+        <h2 data-i18n-key="doors_title">Vos enregistrements, ou vos événements en direct</h2>
+        <p data-i18n-key="doors_desc">Un compte en ligne pour vos fichiers et vos réunions. Une offre sur devis pour vos événements.</p>
+      </div>
+      <div class="doors">
+        <div class="door door--cloud">
+          <span class="door-tag" data-i18n-key="door_cloud_tag">LinTO Studio Cloud</span>
+          <h3 data-i18n-key="door_cloud_title">Transcrire, résumer, sous-titrer</h3>
+          <p data-i18n-key="door_cloud_desc">Déposez un fichier ou invitez le bot. Vous récupérez qui a dit quoi, le compte rendu et les sous-titres.</p>
+          <ul>
+            <li data-i18n-key="door_cloud_li1">Un plan gratuit pour commencer</li>
+            <li data-i18n-key="door_cloud_li2">Premium 19 €/mois, Business 29,99 €/siège</li>
+            <li data-i18n-key="door_cloud_li3">Un bot pour vos réunions Teams, Jitsi, BigBlueButton ou Visio</li>
+          </ul>
+          <div class="buttons">
+            <a href="/fr/tarifs/" class="btn" data-i18n-key="see_pricing">Voir les tarifs</a>
+          </div>
+        </div>
+        <div class="door door--live">
+          <span class="door-tag" data-i18n-key="door_live_tag">LinTO Live pour l'événementiel</span>
+          <h3 data-i18n-key="door_live_title">Sous-titres et traduction en direct</h3>
+          <div class="live-visual" aria-hidden="true">
+            <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="lvScene" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#34445e"/><stop offset="1" stop-color="#161d2b"/>
+                </linearGradient>
+                <linearGradient id="lvFloor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/>
+                </linearGradient>
+              </defs>
+              <!-- keynote backdrop screen -->
+              <rect x="4" y="6" width="196" height="96" rx="3" fill="#0f172a"/>
+              <rect x="8" y="10" width="188" height="88" fill="url(#lvScene)"/>
+              <rect x="18" y="20" width="70" height="7" rx="2" fill="#fff" opacity=".85"/>
+              <rect x="18" y="32" width="46" height="4" rx="2" fill="#fff" opacity=".4"/>
+              <rect x="18" y="40" width="58" height="4" rx="2" fill="#fff" opacity=".4"/>
+              <rect x="18" y="48" width="38" height="4" rx="2" fill="#fff" opacity=".4"/>
+              <rect x="118" y="20" width="64" height="40" rx="3" fill="#00c2a2" opacity=".35"/>
+              <!-- subtitle banner on the screen -->
+              <rect x="8" y="74" width="188" height="24" fill="#000" opacity=".85"/>
+              <g class="lv-sub lv-sub1" font-family="Noto Sans, Arial, sans-serif" font-size="8.5" fill="#fff" text-anchor="middle">
+                <text x="102" y="84">Bonjour à tous, merci d'être là.</text>
+                <text x="102" y="95">On commence par le bilan.</text>
+              </g>
+              <g class="lv-sub lv-sub2" font-family="Noto Sans, Arial, sans-serif" font-size="8.5" fill="#fff" text-anchor="middle">
+                <text x="102" y="84">Trois chantiers cette année,</text>
+                <text x="102" y="95">et un budget qui tient.</text>
+              </g>
+              <!-- stage floor -->
+              <polygon points="0,102 204,102 212,124 -8,124" fill="url(#lvFloor)"/>
+              <!-- speaker at the lectern -->
+              <circle cx="168" cy="92" r="5.5" fill="#334155"/>
+              <path d="M160 116 V 104 a8 8 0 0 1 16 0 V 116 Z" fill="#334155"/>
+              <path d="M154 106 h 18 l 2 14 h -22 Z" fill="#64748b"/>
+              <rect x="152" y="104" width="22" height="3" rx="1" fill="#94a3b8"/>
+              <!-- audience, seen from behind -->
+              <g fill="#1f2937">
+                <circle cx="22" cy="140" r="8"/><path d="M8 150 a14 14 0 0 1 28 0 Z"/>
+                <circle cx="62" cy="143" r="8"/><path d="M48 150 a14 14 0 0 1 28 0 Z"/>
+                <circle cx="104" cy="139" r="8"/><path d="M90 150 a14 14 0 0 1 28 0 Z"/>
+                <circle cx="146" cy="143" r="8"/><path d="M132 150 a14 14 0 0 1 28 0 Z"/>
+                <circle cx="186" cy="140" r="8"/><path d="M172 150 a14 14 0 0 1 28 0 Z"/>
+              </g>
+              <!-- link screen -> qr -> phone -->
+              <path d="M202 62 H 208" stroke="#00c2a2" stroke-width="2" stroke-dasharray="3 3" fill="none" class="lv-dash"/>
+              <path d="M240 62 H 256" stroke="#00c2a2" stroke-width="2" stroke-dasharray="3 3" fill="none" class="lv-dash"/>
+              <!-- qr code -->
+              <rect x="209" y="47" width="30" height="30" rx="3" fill="#fff" stroke="#00a086" stroke-width="1.5"/>
+              <g fill="#101418">
+                <rect x="213" y="51" width="8" height="8"/><rect x="215" y="53" width="4" height="4" fill="#fff"/>
+                <rect x="227" y="51" width="8" height="8"/><rect x="229" y="53" width="4" height="4" fill="#fff"/>
+                <rect x="213" y="65" width="8" height="8"/><rect x="215" y="67" width="4" height="4" fill="#fff"/>
+                <rect x="223" y="52" width="2" height="2"/><rect x="224" y="56" width="2" height="2"/>
+                <rect x="214" y="61" width="2" height="2"/><rect x="218" y="61" width="2" height="2"/><rect x="222" y="61" width="2" height="2"/>
+                <rect x="226" y="62" width="2" height="2"/><rect x="230" y="61" width="2" height="2"/><rect x="234" y="61" width="2" height="2"/>
+                <rect x="224" y="65" width="2" height="2"/><rect x="228" y="67" width="2" height="2"/><rect x="232" y="65" width="3" height="3"/>
+                <rect x="224" y="70" width="3" height="3"/><rect x="230" y="71" width="2" height="2"/><rect x="234" y="69" width="2" height="2"/>
+              </g>
+              <text x="224" y="86" font-family="Noto Sans, Arial, sans-serif" font-size="6" font-weight="700" fill="#00a086" text-anchor="middle">QR</text>
+              <!-- phone -->
+              <rect x="258" y="6" width="72" height="138" rx="12" fill="#101418"/>
+              <rect x="263" y="14" width="62" height="122" rx="7" fill="#fff"/>
+              <rect x="283" y="17" width="22" height="4" rx="2" fill="#101418"/>
+              <rect x="268" y="28" width="16" height="9" rx="4.5" fill="#00c2a2"/>
+              <text x="276" y="35" font-family="Noto Sans, Arial, sans-serif" font-size="6" font-weight="700" fill="#fff" text-anchor="middle">EN</text>
+              <rect x="287" y="28" width="16" height="9" rx="4.5" fill="#e3f8f3"/>
+              <text x="295" y="35" font-family="Noto Sans, Arial, sans-serif" font-size="6" font-weight="700" fill="#00a086" text-anchor="middle">DE</text>
+              <rect x="306" y="28" width="16" height="9" rx="4.5" fill="#e3f8f3"/>
+              <text x="314" y="35" font-family="Noto Sans, Arial, sans-serif" font-size="6" font-weight="700" fill="#00a086" text-anchor="middle">ES</text>
+              <g font-family="Noto Sans, Arial, sans-serif" font-size="6.6" fill="#212529">
+                <text x="268" y="52">Hello everyone,</text>
+                <text x="268" y="61">thank you for</text>
+                <text x="268" y="70">being here.</text>
+                <text x="268" y="84" fill="#6c757d">We start with</text>
+                <text x="268" y="93" fill="#6c757d">the review.</text>
+                <g class="lv-sub lv-sub2">
+                  <text x="268" y="107">Three projects</text>
+                  <text x="268" y="116">this year, and a</text>
+                  <text x="268" y="125">budget that holds.</text>
+                </g>
+              </g>
+              <rect x="268" y="130" width="26" height="2" rx="1" fill="#00c2a2" class="lv-caret"/>
+            </svg>
+          </div>
+          <p data-i18n-key="door_live_desc">Sur l'écran de la salle et sur le téléphone de chaque participant, via un QR code.</p>
+          <ul>
+            <li data-i18n-key="door_live_li1">Votre régie envoie le son comme pour un direct YouTube ou Twitch</li>
+            <li data-i18n-key="door_live_li2">Les 24 langues officielles de l'UE, d'autres sur demande</li>
+            <li data-i18n-key="door_live_li3">Pris en charge par nos équipes, ou piloté par les vôtres</li>
+          </ul>
+          <div class="buttons">
+            <a href="/fr/evenementiel/" class="btn btn--dark" data-i18n-key="door_live_cta">Découvrir l'offre live</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="features" class="container">
+      <div class="section-header">
+        <h2 data-i18n-key="features_h2">Ce que LinTO sait faire</h2>
+      </div>
+      <div class="fx" id="feature-explorer">
+        <div class="fx-tabs" role="tablist" aria-label="Features" data-i18n-dynamic>
+          <p class="fx-hint" data-i18n-key="fx_hint">Fichiers, IA, éditeur et API dès le plan gratuit ; direct et bots à partir de Premium. Cliquez pour voir.</p>
+        </div>
+        <div class="fx-panel" role="tabpanel">
+          <div class="fx-visual"></div>
+          <div class="fx-body">
+            <h3 class="fx-title"></h3>
+            <p class="fx-desc"></p>
+            <ul class="fx-facts"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="customers" class="band">
+      <div class="container">
+      <div class="section-header">
+        <span class="eyebrow" data-i18n-key="cases_eyebrow">Clients</span>
+        <h2 data-i18n-key="cases_title">Utilisé par des institutions publiques et de grandes organisations</h2>
+        <p data-i18n-key="cases_desc">Du conseil départemental à la Commission européenne, LinTO est utilisé là où la précision, les langues et la souveraineté des données comptent.</p>
+      </div>
+      <div class="cases">
+        <article class="case case--link" data-case="eye2025">
+          <div class="case-photo"><img src="/images/cases/eye2025.jpg" alt="" loading="lazy"><span class="case-badge" data-i18n-key="case_badge">Cas client</span></div>
+          <div class="case-body">
+            <div class="case-logo"><img src="/images/logo-ep.svg" alt="European Parliament" /></div>
+            <span class="case-tag" data-i18n-key="case_ep_tag">Accessibilité en direct</span>
+            <h3 data-i18n-key="case_ep_title">Des séances accessibles en temps réel, sur place et à distance</h3>
+            <p data-i18n-key="case_ep_desc">Transcription et traduction en direct pour les participants en salle et à distance, résumés automatiques par un LLM souverain hébergé en France.</p>
+            <button type="button" class="case-more"><span data-i18n-key="case_more">Voir le cas client</span> <span class="icon arrow"></span></button>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-photo case-photo--brand"><img src="/images/logo-UE.svg" alt="" /></div>
+          <div class="case-body">
+            <div class="case-logo"><img src="/images/logo-UE.svg" alt="European Commission" /></div>
+            <span class="case-tag" data-i18n-key="case_ec_tag">Co-développement, données sensibles</span>
+            <h3 data-i18n-key="case_ec_title">Transcription, traduction et résumé pour la Commission européenne</h3>
+            <p data-i18n-key="case_ec_desc">Co-développé avec la Commission, intégration Microsoft Teams comprise, et déployé pour ses réunions. Modèles dédiés, sécurité élevée, IA auto-hébergée : les données sensibles restent en interne.</p>
+          </div>
+        </article>
+        <article class="case case--link" data-case="wikimania">
+          <div class="case-photo"><img src="/images/cases/wikimania-hero.jpg" alt="" loading="lazy"><span class="case-badge" data-i18n-key="case_badge">Cas client</span></div>
+          <div class="case-body">
+            <div class="case-logo case-logo--tall"><img src="/images/logo-wikimania.svg" alt="Wikimania 2026" /></div>
+            <span class="case-tag" data-i18n-key="case_wm_tag">Événement, Paris, juillet 2026</span>
+            <h3 data-i18n-key="case_wm_title">8 salles, 5 langues, toute la semaine</h3>
+            <p data-i18n-key="case_wm_desc">À la Cité des sciences, LinTO a sous-titré et traduit en direct toutes les sessions de Wikimania 2026, sur les écrans et sur les téléphones des participants.</p>
+            <div class="case-stats">
+              <div class="stat"><b>8</b><span data-i18n-key="stat_rooms">salles en parallèle</span></div>
+              <div class="stat"><b>5</b><span data-i18n-key="stat_languages">langues</span></div>
+              <div class="stat"><b>5</b><span data-i18n-key="stat_days">jours</span></div>
+            </div>
+            <button type="button" class="case-more"><span data-i18n-key="case_more">Voir le cas client</span> <span class="icon arrow"></span></button>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-photo case-photo--brand"><img src="/images/logo-ille-et-vilaine.svg" class="brand--tall" alt="" /></div>
+          <div class="case-body">
+            <div class="case-logo case-logo--tall"><img src="/images/logo-ille-et-vilaine.svg" alt="Département d'Ille-et-Vilaine" /></div>
+            <span class="case-tag" data-i18n-key="case_cd35_tag">Collectivité</span>
+            <h3 data-i18n-key="case_cd35_title">Séances et commissions transcrites, comptes rendus générés</h3>
+            <p data-i18n-key="case_cd35_desc">Le Département d'Ille-et-Vilaine transcrit avec LinTO ses réunions, ses commissions et les séances de l'assemblée départementale, et en tire des comptes rendus structurés.</p>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-photo case-photo--brand"><img src="/images/logo-edf.svg" alt="" /></div>
+          <div class="case-body">
+            <div class="case-logo"><img src="/images/logo-edf.svg" alt="EDF" /></div>
+            <span class="case-tag" data-i18n-key="case_edf_tag">Installé chez le client</span>
+            <h3 data-i18n-key="case_edf_title">Déployé dans l'infrastructure d'EDF</h3>
+            <p data-i18n-key="case_edf_desc">LinTO Studio tourne sur la plateforme Kubernetes interne d'EDF : transcription, résumés et édition, sans qu'aucune donnée ne sorte de l'entreprise.</p>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-photo case-photo--brand"><span class="icon server" style="width:64px;height:64px;background-color:var(--color-primary)"></span></div>
+          <div class="case-body">
+            <div class="case-logo"><span class="icon server" style="width:36px;height:36px;background-color:var(--color-primary)"></span></div>
+            <span class="case-tag" data-i18n-key="case_you_tag">Votre organisation</span>
+            <h3 data-i18n-key="case_you_title">Cloud, sur vos serveurs, ou clé en main pour un événement</h3>
+            <p data-i18n-key="case_you_desc">Dites-nous ce que vous transcrivez, dans quelles langues, avec quelles contraintes. On vous oriente vers la bonne formule, gratuite si elle suffit.</p>
+            <a href="#" class="card-cta" data-open-contact><span data-i18n-key="talk_to_us">Parlons-en</span> <span class="icon arrow"></span></a>
+          </div>
+        </article>
+      </div>
+      <div class="events-head">
+        <h3 data-i18n-key="events_title">Vu en direct</h3>
+        <p data-i18n-key="events_desc">Conférences, sommets et salons où LinTO a sous-titré et traduit les interventions en temps réel.</p>
+      </div>
+      <div class="events">
+        <button type="button" class="event" data-case="posais2026">
+          <img src="/images/cases/posais26-1.jpg" alt="" loading="lazy">
+          <span class="event-go"><span class="icon arrow"></span></span>
+          <span class="event-meta"><b data-i18n-key="ev_posais_name">Paris Open Source AI Summit</b><span data-i18n-key="ev_posais_meta">Maison de la Radio, Paris, juillet 2026</span></span>
+        </button>
+        <button type="button" class="event" data-case="wrd2026">
+          <img src="/images/cases/wrd26-1.jpg" alt="" loading="lazy">
+          <span class="event-go"><span class="icon arrow"></span></span>
+          <span class="event-meta"><b data-i18n-key="ev_wrd_name">Journée mondiale de la radio, UNESCO</b><span data-i18n-key="ev_wrd_meta">Février 2026</span></span>
+        </button>
+        <button type="button" class="event" data-case="prs2026">
+          <img src="/images/cases/prs26-1.jpg" alt="" loading="lazy">
+          <span class="event-go"><span class="icon arrow"></span></span>
+          <span class="event-meta"><b data-i18n-key="ev_prs_name">Paris Radio Show</b><span data-i18n-key="ev_prs_meta">La Bellevilloise, Paris, février 2026</span></span>
+        </button>
+        <button type="button" class="event" data-case="gpsm2025">
+          <img src="/images/cases/gpsm-2.jpg" alt="" loading="lazy">
+          <span class="event-go"><span class="icon arrow"></span></span>
+          <span class="event-meta"><b data-i18n-key="ev_gpsm_name">Congrès du GPSM</b><span data-i18n-key="ev_gpsm_meta">Circuit des 24 Heures du Mans, novembre 2025</span></span>
+        </button>
+        <button type="button" class="event" data-case="eonax2025">
+          <img src="/images/cases/eona-x.jpg" alt="" loading="lazy">
+          <span class="event-go"><span class="icon arrow"></span></span>
+          <span class="event-meta"><b data-i18n-key="ev_eona_name">European Data &amp; AI Summit, EONA-X</b><span data-i18n-key="ev_eona_meta">Paris, mai 2025</span></span>
+        </button>
+        <button type="button" class="event event--text" data-case="sofins2023">
+          <span class="event-word">SOFINS<small>2023</small></span>
+          <span class="event-go"><span class="icon arrow"></span></span>
+          <span class="event-meta"><b data-i18n-key="ev_sofins_name">SOFINS, salon des forces spéciales</b><span data-i18n-key="ev_sofins_meta">Camp de Souge, mars 2023</span></span>
+        </button>
+      </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="container pricing">
+      <div class="section-header">
+        <h2 data-i18n-key="pricing_title">Tarifs</h2>
+        <p data-i18n-key="pricing_desc">Gratuit pour commencer, sans engagement. Prix hors taxes.</p>
+      </div>
+      <div class="pricing-cards-container">
+        <div class="pricing-cards">
+          <h3 data-i18n-key="plan_free_title">Gratuit</h3>
+          <p class="plan-for" data-i18n-key="plan_free_for">Pour découvrir, ou pour un usage occasionnel.</p>
+          <div class="price-legend">
+            <span class="price-legend__price">€0</span>
+          </div>
+          <p class="price-note" data-i18n-key="plan_free_note">Sans carte bancaire</p>
+          <ul class="prices-features">
+            <li data-i18n-key="plan_free_li1">2 heures de transcription par mois</li>
+            <li data-i18n-key="plan_free_li2">20 crédits IA par mois pour les comptes rendus et le chat</li>
+            <li data-i18n-key="plan_free_li3">Besoin de plus une fois ? Pack de 5 h à 10 €, sans abonnement</li>
+            <li data-i18n-key="plan_all_li_editor">Locuteurs reconnus, éditeur collaboratif, exports et modèles de documents</li>
+          </ul>
+        </div>
+        <div class="pricing-cards premium">
+          <span class="badge" data-i18n-key="badge_popular">Le plus populaire</span>
+          <h3 data-i18n-key="plan_premium_title">Premium</h3>
+          <p class="plan-for" data-i18n-key="plan_premium_for">Indépendants, professions libérales, journalistes, chercheurs, petites associations.</p>
+          <div class="price-legend">
+            <span class="price-legend__price">€19</span>
+            <span class="price-legend__period" data-i18n-key="per_month">/mois</span>
+          </div>
+          <p class="price-note" data-i18n-key="plan_premium_note">ou 192 €/an (2 mois offerts)</p>
+          <ul class="prices-features">
+            <li data-i18n-key="plan_premium_li1">30 h de transcription par mois, résumés et chat illimités*</li>
+            <li data-i18n-key="plan_premium_li2">Bots de réunion et micro en direct, avec des minutes prépayées</li>
+            <li data-i18n-key="plan_premium_li3">16 minutes de direct offertes pour essayer</li>
+            <li data-i18n-key="plan_all_li_editor">Locuteurs reconnus, éditeur collaboratif, exports et modèles de documents</li>
+          </ul>
+        </div>
+        <div class="pricing-cards">
+          <h3 data-i18n-key="plan_business_title">Business</h3>
+          <p class="plan-for" data-i18n-key="plan_business_for">Équipes et organisations : cabinets, collectivités, entreprises, fédérations.</p>
+          <div class="price-legend">
+            <span class="price-legend__price">€29.99</span>
+            <span class="price-legend__period" data-i18n-key="per_seat_month">/siège/mois</span>
+          </div>
+          <p class="price-note" data-i18n-key="plan_business_note">ou 288 €/siège/an, à partir de 2 sièges</p>
+          <ul class="prices-features">
+            <li data-i18n-key="plan_business_li1">Transcription, résumés et chat illimités* par siège</li>
+            <li data-i18n-key="plan_business_li2">Invitez votre équipe, les lecteurs sont gratuits</li>
+            <li data-i18n-key="plan_business_li3">API illimitée*</li>
+            <li data-i18n-key="plan_business_li4">Mode événementiel sur devis</li>
+          </ul>
+        </div>
+      </div>
+      <div class="buttons">
+        <a href="/fr/tarifs/" class="btn" data-i18n-key="compare_plans_cta">Comparer les plans et les packs live</a>
+      </div>
+      <p class="pricing-footnote" data-i18n-key="pricing_teaser_footnote">* Illimité dans le cadre d'un usage raisonnable, décrit dans nos conditions générales. La transcription et la traduction en direct se paient à la minute, packs dès 45 €.</p>
+    </section>
+
+    <section class="band band--dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n-key="os_eyebrow">Open source et souverain</span>
+          <h2 data-i18n-key="os_title">Vos données restent là où vous le décidez</h2>
+          <p data-i18n-key="os_desc">LinTO Studio est un logiciel libre (AGPL-3.0). Notre cloud est hébergé en France. La même plateforme s'installe sur vos serveurs, avec Kubernetes ou Docker, modèles GPU compris.</p>
+        </div>
+        <div class="buttons">
+          <a href="https://github.com/linto-ai/linto-studio" class="btn" target="_blank" rel="noopener" data-i18n-key="os_cta_github">Lire le code sur GitHub</a>
+        </div>
+        <p class="hero-note" style="color:#b5c0c9"><a href="#" data-open-contact data-i18n-key="os_cta_onprem">Parler d'un déploiement sur site</a></p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="section-header">
+        <h2 data-i18n-key="faq_title">Questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary data-i18n-key="faq_home_q1">LinTO est-il vraiment gratuit ?</summary>
+          <p data-i18n-key="faq_home_a1">Oui. Le plan Gratuit donne deux heures de transcription par mois et vingt crédits IA pour les comptes rendus et le chat, avec l'éditeur complet. Sans carte bancaire. S'il vous faut plus une fois, un pack de 5 heures s'achète en un paiement, sans abonnement. Le code lui-même est un logiciel libre, vous pouvez aussi l'héberger vous-même.</p>
+        </details>
+        <details>
+          <summary data-i18n-key="faq_home_q2">Où sont hébergées mes données ?</summary>
+          <p data-i18n-key="faq_home_a2">LinTO Studio Cloud est hébergé en France par LINAGORA. Vos fichiers et transcriptions ne servent pas à entraîner des modèles et ne sont partagés avec personne. Pour des besoins plus stricts, la même plateforme s'installe sur votre propre infrastructure.</p>
+        </details>
+        <details>
+          <summary data-i18n-key="faq_home_q3">Quelles langues sont prises en charge ?</summary>
+          <p data-i18n-key="faq_home_a3">Les 24 langues officielles de l'Union européenne, sur fichier comme en direct, avec traduction simultanée vers plusieurs d'entre elles à la fois. D'autres langues sont disponibles sur demande.</p>
+        </details>
+        <details>
+          <summary data-i18n-key="faq_home_q4">LinTO peut-il rejoindre mes réunions Teams ?</summary>
+          <p data-i18n-key="faq_home_a4">Oui, sur tous les plans, avec des minutes de direct prépayées. Un bot LinTO rejoint vos réunions Microsoft Teams, Jitsi, BigBlueButton et Visio (La Suite numérique), les transcrit en direct avec le nom des participants, et la transcription arrive dans votre espace. Google Meet et Zoom ne sont pas encore pris en charge.</p>
+        </details>
+        <details>
+          <summary data-i18n-key="faq_home_q5">J'organise une conférence. De quoi ai-je besoin ?</summary>
+          <p data-i18n-key="faq_home_a5">Un flux audio par salle, envoyé par votre régie comme pour un direct YouTube, et un écran ou un QR code pour le public. On s'occupe du reste, ou on forme votre équipe à le faire. Voir la <a href="/fr/evenementiel/">page événementiel</a>.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="https://linagora.com" target="_blank" rel="noopener">
+            <img src="/images/linagora.png" class="logo-linagora" alt="LINAGORA" />
+          </a>
+          <p data-i18n-key="footer_developed_by">LinTO est une IA vocale open source développée par LINAGORA. Hébergée en France, déployable sur votre propre infrastructure.</p>
+          <a href="https://comparateur-ia.com/outils-ia/linto-studio/" class="cia-badge">
+            <img src="https://comparateur-ia.com/wp-content/uploads/2026/08/badge-verifie-comparateur-ia.svg" alt="Vérifié par Comparateur-IA" width="180" height="52">
+          </a>
+        </div>
+        <div>
+          <h4 data-i18n-key="footer_col_product">Produit</h4>
+          <ul>
+            <li><a href="https://studio.linto.ai" data-i18n-key="footer_get_started">Commencer</a></li>
+            <li><a href="/fr/tarifs/" data-i18n-key="nav_pricing">Tarifs</a></li>
+            <li><a href="/fr/evenementiel/" data-i18n-key="nav_live">Événementiel</a></li>
+            <li><a href="/fr/#customers" data-i18n-key="nav_customers">Clients</a></li>
+            <li><a href="/fr/comparatif/" data-i18n-key="footer_compare">Comparatif</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n-key="footer_col_community">Communauté</h4>
+          <ul>
+            <li><a href="https://github.com/linto-ai" target="_blank" rel="noopener">GitHub <span class="icon github"></span></a></li>
+            <li><a href="https://discord.com/invite/jvNK3FXv3d" target="_blank" rel="noopener">Discord <span class="icon discord"></span></a></li>
+            <li><a href="https://linagora.com" target="_blank" rel="noopener">LINAGORA</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n-key="footer_col_help">Aide</h4>
+          <ul>
+            <li><a href="#" data-open-contact data-i18n-key="footer_contact">Contact</a></li>
+            <li><a href="/fr/evenementiel/#quote" data-i18n-key="footer_quote">Demander un devis</a></li>
+            <li><a href="/fr/mentions-legales/" data-i18n-key="footer_legal">Mentions légales</a></li>
+            <li><a href="/fr/cgv/" data-i18n-key="footer_terms">Conditions générales de vente</a></li>
+            <li><a href="/fr/confidentialite/" data-i18n-key="footer_privacy">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n-key="footer_copyright">© LINAGORA. LinTO Studio est un logiciel libre (AGPL-3.0).</span>
+        <span data-i18n-key="footer_prices_note">Prix affichés hors taxes.</span>
+      </div>
+    </div>
+  </footer>
+  <div id="cookie-banner">
+    <span class="cookie-banner-content" data-i18n-key="cookie-banner-content">Nous utilisons des données anonymisées pour mesurer l'audience. Aucune donnée n'est partagée avec des tiers ni utilisée à des fins publicitaires.</span>
+    <button id="cookie-banner-ok-btn">Ok</button>
+  </div>
+  <div id="modal-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1/dist/axios.min.js"></script>
+  <script src="/js/i18n.js?v=eab1a68c"></script>
+  <script src="/js/contact.js?v=eab1a68c"></script>
+  <script src="/js/cookies.js?v=eab1a68c"></script>
+  <script src="/js/site.js?v=eab1a68c"></script>
+  <script src="/js/explorer.js?v=eab1a68c"></script>
+  <script src="/js/cases.js?v=eab1a68c"></script>
+  <!-- Matomo -->
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push([function() {
+      var self = this;
+      function getOriginalVisitorCookieTimeout() {
+        var now = new Date(), nowTs = Math.round(now.getTime() / 1000), visitorInfo = self.getVisitorInfo();
+        var createTs = parseInt(visitorInfo[2]);
+        var cookieTimeout = 33696000; // 13 months
+        return createTs + cookieTimeout - nowTs;
+      }
+      this.setVisitorCookieTimeout(getOriginalVisitorCookieTimeout());
+    }]);
+    _paq.push(['HeatmapSessionRecording::disable']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://piwik.linagora.com/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '22']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+</body>
+</html>

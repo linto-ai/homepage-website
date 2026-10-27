@@ -132,7 +132,7 @@ header .logo svg {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
   flex: 1;
   justify-content: center;
 }
@@ -141,6 +141,7 @@ header .logo svg {
   color: var(--color-text);
   font-weight: 500;
   font-size: 16px;
+  white-space: nowrap;
   padding: 6px 0;
   border-bottom: 2px solid transparent;
 }
@@ -156,6 +157,8 @@ header .logo svg {
   align-items: center;
   gap: 20px;
 }
+
+.header-right .btn { white-space: nowrap; }
 
 .lang-switcher {
   font-size: 15px;
@@ -370,7 +373,9 @@ section.left {
 .screenshot video {
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
   display: block;
+  background: #0d1b24;
 }
 
 .play-button {
@@ -1283,6 +1288,90 @@ table.compare tr.group td {
 table.compare .yes { color: var(--color-primary-dark); font-weight: 700; }
 table.compare .no { color: var(--color-text-muted); }
 
+/* Comparison page (/compare/): differences first, then the table as proof */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.vs-more { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 760px) { .vs-more { grid-template-columns: 1fr; } }
+.vs-panel {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.vs-panel table.compare th:first-child,
+.vs-panel table.compare td:first-child { background: var(--color-background); }
+.vs-panel table.compare tr:last-child > * { border-bottom: none; }
+table.compare.vs { min-width: 880px; }
+table.compare.vs thead th { background: var(--color-background); vertical-align: bottom; padding-top: 18px; }
+table.compare.vs thead th small { display: block; font-weight: 400; font-size: 0.85em; color: var(--color-text-muted); }
+table.compare.vs thead th:not(:first-child),
+table.compare.vs td { width: 10%; text-align: center; vertical-align: middle; }
+table.compare.vs tbody th { font-weight: 400; text-align: left; line-height: 1.4; }
+table.compare.vs tr.group th {
+  background: var(--color-surface-2);
+  font-weight: 700;
+  font-size: 0.75em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 8px 14px;
+}
+table.compare.vs .vs-us,
+table.compare.vs td:last-child { background: var(--color-primary-soft); }
+table.compare.vs thead th.vs-us { color: var(--color-primary-dark); border-top-left-radius: var(--radius); border-top-right-radius: var(--radius); }
+table.compare sup { font-size: 0.7em; color: var(--color-text-muted); margin-left: 2px; }
+.vs-mark { display: inline-block; vertical-align: middle; }
+.vs-mark--yes {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+}
+.vs-mark--yes::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background-color: var(--color-primary-dark);
+  mask: url(/images/check.svg) no-repeat center / contain;
+}
+table.compare.vs td:last-child .vs-mark--yes { background-color: var(--color-primary); }
+table.compare.vs td:last-child .vs-mark--yes::after { background-color: var(--color-background); }
+.vs-mark--no { width: 14px; height: 2px; border-radius: 1px; background: var(--color-border); }
+.vs-pill {
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+}
+table.compare.vs-price th:first-child { white-space: nowrap; font-weight: 600; text-align: left; }
+table.compare.vs-price thead th:not(:first-child),
+table.compare.vs-price td:not(:first-child) { width: auto; }
+table.compare.vs-price td { vertical-align: middle; }
+table.compare.vs-price thead th:last-child { text-align: left; }
+table.compare.vs-price td.vs-note { text-align: left; color: var(--color-text-muted); font-size: 0.9em; }
+table.compare.vs-price tr.vs-us > * { background: var(--color-primary-soft); font-weight: 700; }
+table.compare.vs-price tr.vs-us td.vs-note { font-weight: 400; color: var(--color-text); }
+.vs-notes { width: 100%; text-align: left; margin-top: 1.2em; padding-left: 1.4em; font-size: 0.8em; color: var(--color-text-muted); columns: 2; column-gap: 2.5rem; }
+.vs-notes li { margin-bottom: 0.4em; break-inside: avoid; }
+@media (max-width: 760px) { .vs-notes { columns: 1; } }
+.vs-after { margin-top: 1em; font-size: 0.85em; color: var(--color-text-muted); }
+.vs-method { width: 100%; max-width: 800px; text-align: left; font-size: 0.85em; color: var(--color-text-muted); border-top: 1px solid var(--color-border); padding-top: 1em; }
+.vs-method summary { cursor: pointer; font-weight: 600; color: var(--color-text); }
+.vs-method p { margin: 0.8em 0; }
+.vs-method ul { padding-left: 1.2em; }
+.vs-method li { margin-bottom: 0.3em; }
+
 /* FAQ */
 
 .faq {
@@ -1623,7 +1712,8 @@ footer .footer-bottom {
 
 /* ---------- Responsive ---------- */
 
-@media (max-width: 960px) {
+/* Seven menu entries and the French button no longer fit under 1200px: switch to the menu button. */
+@media (max-width: 1199px) {
   .main-nav {
     display: none;
     position: absolute;
@@ -1642,6 +1732,9 @@ footer .footer-bottom {
   .main-nav a { padding: 12px 0; border-bottom: 1px solid var(--color-border); }
   .nav-toggle { display: flex; }
   .header-right .btn { display: none; }
+}
+
+@media (max-width: 960px) {
   .doors { grid-template-columns: 1fr; }
   .case--featured { grid-template-columns: 1fr; }
   footer .footer-grid { grid-template-columns: 1fr 1fr; }

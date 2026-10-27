@@ -23,13 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const playButton = document.getElementById('playButton');
   const screenshot = document.querySelector('.screenshot');
   if (video && playButton && screenshot) {
+    // The film has a voice-over: it starts with sound on click, controls appear.
     const playVideo = () => {
+      video.controls = true;
       video.play();
       playButton.style.display = 'none';
     };
     playButton.addEventListener('click', (e) => { e.stopPropagation(); playVideo(); });
-    screenshot.addEventListener('click', playVideo);
+    // Once the native controls are shown, clicks belong to them.
+    screenshot.addEventListener('click', () => { if (!video.controls) playVideo(); });
     video.addEventListener('ended', () => {
+      video.controls = false;
       playButton.style.display = 'flex';
       video.load();
     });

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr" data-i18n="static">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modèles de documents pour comptes rendus et résumés - Guide LinTO Studio</title>
+  <meta name="description" content="Comment exporter les comptes rendus et résumés LinTO Studio dans votre propre modèle Word : champs, envoi, aperçu, export DOCX et PDF, API." />
+  <link rel="canonical" href="https://linto.ai/fr/docs/modeles/" />
+  <link rel="alternate" hreflang="en" href="https://linto.ai/docs/templates/" />
+  <link rel="alternate" hreflang="fr" href="https://linto.ai/fr/docs/modeles/" />
+  <link rel="alternate" hreflang="x-default" href="https://linto.ai/docs/templates/" />
+  <link rel="icon" href="/images/linto.svg" />
+  <link rel="stylesheet" href="/style.css?v=eab1a68c" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LinTO Studio" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Modèles de documents pour comptes rendus et résumés - Guide LinTO Studio" />
+  <meta property="og:description" content="Comment exporter les comptes rendus et résumés LinTO Studio dans votre propre modèle Word : champs, envoi, aperçu, export DOCX et PDF, API." />
+  <meta property="og:url" content="https://linto.ai/fr/docs/modeles/" />
+  <meta property="og:image" content="https://linto.ai/screenshot.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+
+<body data-page="templates">
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/fr/">
+        <svg version="1.1" id="linto-logo" x="0px" y="0px" viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve" aria-hidden="true">
+          <g transform="matrix(1.4358874,0,0,1.4358874,-65.37151,-15.728904)">
+            <path class="st0" d="m 222.4,190 c 0,-0.1 0,-0.1 0,0 19.6,-18.8 31.5,-45.4 31.5,-74.6 C 253.9,58 207.4,11.5 150,11.5 92.6,11.5 46.1,58 46.1,115.4 c 0,57.4 46.5,103.9 103.9,103.9 1.1,0 2.3,0 3.4,-0.1 l 81.7,0.2 c -8.8,-5.9 -16.8,-16.7 -12.7,-29.4 z" />
+            <path class="st1" d="m 129.9,111 c 0,5.9 -4.8,10.6 -10.6,10.6 -5.9,0 -10.6,-4.8 -10.6,-10.6 0,-5.9 4.8,-10.6 10.6,-10.6 5.8,-0.1 10.6,4.7 10.6,10.6 z" />
+            <path id="right-eye" class="st1" d="m 191.4,111 c 0,5.9 -4.8,10.6 -10.6,10.6 -5.9,0 -10.6,-4.8 -10.6,-10.6 0,-5.9 4.8,-10.6 10.6,-10.6 5.8,-0.1 10.6,4.7 10.6,10.6 z" />
+            <path id="right-eye-wink" class="st1" d="M 180.8,114 C 185.8,114 190.8,111 190.8,111" style="fill: none; stroke: var(--color-text); stroke-width: 3; stroke-linecap: round;"/>
+            <path class="st1" d="m 149.4,161.8 c -6.4,0 -12.6,-0.9 -16.6,-3 -3,-1.6 -4.2,-5.2 -2.7,-8.1 1.6,-3 5.2,-4.2 8.1,-2.7 4.3,2.2 18.5,2.1 23.5,-0.1 3,-1.4 6.6,0 8,3 1.4,3 0,6.6 -3,8 -3.9,1.9 -10.5,2.9 -17.3,2.9 z" />
+          </g>
+        </svg>
+        <span data-i18n-key="logo_text">LinTO Studio</span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="/fr/#features" data-i18n-key="nav_product">Produit</a>
+        <a href="/fr/tarifs/" data-i18n-key="nav_pricing" data-nav="pricing">Tarifs</a>
+        <a href="/fr/comparatif/" data-i18n-key="nav_compare" data-nav="compare">Comparatif</a>
+        <a href="/fr/evenementiel/" data-i18n-key="nav_live" data-nav="live">Événementiel</a>
+        <a href="/fr/#customers" data-i18n-key="nav_customers">Clients</a>
+        <a href="https://github.com/linto-ai" target="_blank" rel="noopener" data-i18n-key="nav_opensource">Open source</a>
+        <a href="#" data-open-contact data-i18n-key="nav_contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher">
+          <a href="/docs/templates/" id="lang-en" hreflang="en">EN</a> | <a href="/fr/docs/modeles/" id="lang-fr" hreflang="fr" class="active">FR</a>
+        </div>
+        <a href="https://studio.linto.ai/" class="btn btn--small" data-i18n-key="start_free">Commencer gratuitement</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="container">
+      <div class="prose">
+        <span class="eyebrow" data-i18n-key="tpl_eyebrow">Guide</span>
+        <h1 data-i18n-key="tpl_h1">Vos propres modèles de documents pour les comptes rendus et résumés</h1>
+        <p data-i18n-key="tpl_intro">LinTO Studio transforme une transcription en compte rendu, en résumé ou en verbatim, puis l'exporte. De base, vous avez du DOCX, du PDF, du TXT et du JSON. Avec un modèle, l'export sort directement dans votre mise en page Word : logo, titres, polices, pied de page. Ça prend une dizaine de minutes à mettre en place, sur les plans Premium et Business. En Gratuit, comptes rendus et résumés utilisent les modèles LinTO et sortent en PDF.</p>
+
+        <h2 data-i18n-key="tpl_s1">1. Partez d'un document Word que vous utilisez déjà</h2>
+        <p data-i18n-key="tpl_s1_p">Prenez le fichier que votre équipe remplit déjà à la main : le modèle de compte rendu, le papier à en-tête, le squelette de rapport. Gardez ses styles, son en-tête et son pied de page. Le modèle doit être un fichier DOCX de moins de 10 Mo.</p>
+
+        <h2 data-i18n-key="tpl_s2">2. Placez le champ de contenu</h2>
+        <p data-i18n-key="tpl_s2_p">Écrivez <code>{{output}}</code> là où le texte de l'IA doit arriver. C'est le seul champ obligatoire. Le contenu généré garde sa structure (titres, listes, paragraphes) et prend les styles de votre document. Un modèle minimal ressemble à ça :</p>
+        <pre><code>MEETING MINUTES
+
+Project: {{title}}
+Date: {{date}}
+
+{{output}}
+
+Minutes generated with LinTO Studio.</code></pre>
+        <p data-i18n-key="tpl_s2_p2">Les autres champs comme <code>{{title}}</code>, <code>{{date}}</code> ou <code>{{participants}}</code> sont facultatifs. Ils sont proposés dans un petit formulaire au moment de l'export pour que vous les remplissiez. Sur les déploiements gérés et sur site, ils peuvent aussi être extraits de la transcription par l'IA : demandez-nous de configurer un prompt d'extraction pour votre service.</p>
+
+        <h2 data-i18n-key="tpl_s3">3. Envoyez-le dans LinTO Studio</h2>
+        <p data-i18n-key="tpl_s3_p">Ouvrez une transcription, générez un résumé ou un compte rendu depuis le menu des services IA, puis cliquez sur <strong>Publication</strong> et <strong>Envoyer un modèle</strong>. Donnez-lui un nom et choisissez qui le voit : vous seul, ou toute votre organisation. En Business, un modèle envoyé pour l'organisation est disponible pour chaque membre.</p>
+
+        <h2 data-i18n-key="tpl_s4">4. Aperçu, puis export</h2>
+        <p data-i18n-key="tpl_s4_p">Sélectionnez le modèle et cliquez sur <strong>Aperçu</strong> pour vérifier le résultat sur le document en cours. Puis exportez en DOCX pour continuer à éditer dans Word, ou en PDF pour une version finale. Le PDF est rendu côté serveur avec LibreOffice : restez sur des polices courantes ou intégrez-les dans le DOCX.</p>
+
+        <h2 data-i18n-key="tpl_tips">Conseils</h2>
+        <ul>
+          <li data-i18n-key="tpl_tip1">Faites un modèle par type de document : compte rendu, synthèse, verbatim. Chaque service IA peut être lié à ses propres modèles.</li>
+          <li data-i18n-key="tpl_tip2">Gardez des tableaux et des colonnes simples. L'aperçu web ne rend pas les sauts de page, les zones de texte ni les mises en page multi-colonnes ; le PDF, si.</li>
+          <li data-i18n-key="tpl_tip3">Un champ doit rester d'un seul tenant dans Word. Si Word coupe <code>{{output}}</code> entre deux changements de mise en forme, retapez-le d'une traite.</li>
+          <li data-i18n-key="tpl_tip4">Les modèles vivent avec votre organisation. Renommez, remplacez ou supprimez-les depuis le même panneau Publication.</li>
+        </ul>
+
+        <h2 data-i18n-key="tpl_api">Pour les développeurs</h2>
+        <p data-i18n-key="tpl_api_p">Tout ce qui précède est disponible par l'API avec un jeton API : lister les modèles, lire leurs champs, exporter un document avec un modèle donné en DOCX, PDF ou HTML. Le moteur documentaire est le <a href="https://github.com/linto-ai/llm-gateway" target="_blank" rel="noopener">LinTO LLM Gateway</a>, open source ; son <a href="https://github.com/linto-ai/llm-gateway/blob/main/docs/DOCUMENT_TEMPLATES_GUIDE.md" target="_blank" rel="noopener">guide des modèles de documents</a> couvre les prompts d'extraction et les points d'entrée d'export.</p>
+
+        <div class="callout" style="margin-top:2em">
+          <span data-i18n-key="tpl_callout">Besoin d'un modèle conçu à votre charte, ou de l'extraction de champs précis (décisions, actions, échéances) ? </span><a href="#" data-open-contact data-i18n-key="talk_to_us">Parlons-en</a>.
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="https://linagora.com" target="_blank" rel="noopener">
+            <img src="/images/linagora.png" class="logo-linagora" alt="LINAGORA" />
+          </a>
+          <p data-i18n-key="footer_developed_by">LinTO est une IA vocale open source développée par LINAGORA. Hébergée en France, déployable sur votre propre infrastructure.</p>
+          <a href="https://comparateur-ia.com/outils-ia/linto-studio/" class="cia-badge">
+            <img src="https://comparateur-ia.com/wp-content/uploads/2026/08/badge-verifie-comparateur-ia.svg" alt="Vérifié par Comparateur-IA" width="180" height="52">
+          </a>
+        </div>
+        <div>
+          <h4 data-i18n-key="footer_col_product">Produit</h4>
+          <ul>
+            <li><a href="https://studio.linto.ai" data-i18n-key="footer_get_started">Commencer</a></li>
+            <li><a href="/fr/tarifs/" data-i18n-key="nav_pricing">Tarifs</a></li>
+            <li><a href="/fr/evenementiel/" data-i18n-key="nav_live">Événementiel</a></li>
+            <li><a href="/fr/#customers" data-i18n-key="nav_customers">Clients</a></li>
+            <li><a href="/fr/comparatif/" data-i18n-key="footer_compare">Comparatif</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n-key="footer_col_community">Communauté</h4>
+          <ul>
+            <li><a href="https://github.com/linto-ai" target="_blank" rel="noopener">GitHub <span class="icon github"></span></a></li>
+            <li><a href="https://discord.com/invite/jvNK3FXv3d" target="_blank" rel="noopener">Discord <span class="icon discord"></span></a></li>
+            <li><a href="https://linagora.com" target="_blank" rel="noopener">LINAGORA</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n-key="footer_col_help">Aide</h4>
+          <ul>
+            <li><a href="#" data-open-contact data-i18n-key="footer_contact">Contact</a></li>
+            <li><a href="/fr/evenementiel/#quote" data-i18n-key="footer_quote">Demander un devis</a></li>
+            <li><a href="/fr/mentions-legales/" data-i18n-key="footer_legal">Mentions légales</a></li>
+            <li><a href="/fr/cgv/" data-i18n-key="footer_terms">Conditions générales de vente</a></li>
+            <li><a href="/fr/confidentialite/" data-i18n-key="footer_privacy">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n-key="footer_copyright">© LINAGORA. LinTO Studio est un logiciel libre (AGPL-3.0).</span>
+        <span data-i18n-key="footer_prices_note">Prix affichés hors taxes.</span>
+      </div>
+    </div>
+  </footer>
+  <div id="cookie-banner">
+    <span class="cookie-banner-content" data-i18n-key="cookie-banner-content">Nous utilisons des données anonymisées pour mesurer l'audience. Aucune donnée n'est partagée avec des tiers ni utilisée à des fins publicitaires.</span>
+    <button id="cookie-banner-ok-btn">Ok</button>
+  </div>
+  <div id="modal-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1/dist/axios.min.js"></script>
+  <script src="/js/i18n.js?v=eab1a68c"></script>
+  <script src="/js/contact.js?v=eab1a68c"></script>
+  <script src="/js/cookies.js?v=eab1a68c"></script>
+  <script src="/js/site.js?v=eab1a68c"></script>
+  <!-- Matomo -->
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push([function() {
+      var self = this;
+      function getOriginalVisitorCookieTimeout() {
+        var now = new Date(), nowTs = Math.round(now.getTime() / 1000), visitorInfo = self.getVisitorInfo();
+        var createTs = parseInt(visitorInfo[2]);
+        var cookieTimeout = 33696000; // 13 months
+        return createTs + cookieTimeout - nowTs;
+      }
+      this.setVisitorCookieTimeout(getOriginalVisitorCookieTimeout());
+    }]);
+    _paq.push(['HeatmapSessionRecording::disable']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://piwik.linagora.com/piwik/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '22']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+</body>
+</html>
