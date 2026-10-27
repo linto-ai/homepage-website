@@ -15,6 +15,8 @@ import re
 ROOT = pathlib.Path(__file__).parent
 SITE = "https://linto.ai"
 LANGS = ("en", "fr")
+# Google Search Console ownership of the https://linto.ai/ property.
+GOOGLE_SITE_VERIFICATION = "8R9vu3x3UKvUEPlFYFi_WhY9CJ4Oi028k6oGNhqNxsE"
 
 
 def asset_version():
@@ -325,6 +327,7 @@ def head(cfg, lang, dict_):
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="{GOOGLE_SITE_VERIFICATION}" />
 {redirect}  <title>{title}</title>
   <meta name="description" content="{desc}" />
 {keywords}  <link rel="canonical" href="{url}" />
