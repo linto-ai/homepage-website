@@ -3,11 +3,10 @@
 (() => {
   const CASES = {
     eye2025: {
-      logo: '/images/logo-ep.svg', logoAlt: 'European Parliament',
       media: [
         { type: 'image', src: '/images/cases/eye2025.jpg' },
       ],
-      stats: [['9 000', 's1'], ['160', 's2'], ['24', 's3'], ['2 000+', 's4']],
+      stats: [['9 000', 's1'], ['133', 's2'], ['24', 's3'], ['2 000+', 's4']],
       paras: 2, survey: 5,
       source: 'https://www.linkedin.com/posts/damienlaine_accessibility-ai-opensource-activity-7345360282027753474-MnjZ',
     },
