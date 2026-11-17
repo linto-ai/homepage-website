@@ -436,6 +436,17 @@ section.left {
 }
 
 .used-by .item--tall img { height: 64px; }
+.used-by .item--word {
+  width: min-content;
+  font-weight: 800;
+  font-size: 1.1em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: #6f6f6f;
+  transition: color 0.3s;
+}
+.used-by .item--word:hover { color: var(--color-text); }
 
 /* ---------- Buttons ---------- */
 
@@ -1756,6 +1767,7 @@ footer .footer-bottom {
   .section-header h2 { font-size: 1.7em; }
   .btn { padding: 12px 20px; }
   .used-by .item img { height: 34px; max-width: 130px; }
+  .used-by .item--word { font-size: 0.95em; }
   footer .footer-grid { grid-template-columns: 1fr; }
   .price-legend__price { font-size: 38px; }
 }

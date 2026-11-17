@@ -58,6 +58,7 @@
   "case_ec_tag": "Co-developed, sensitive data",
   "case_ec_title": "Transcription, translation and summaries for the European Commission",
   "case_ec_desc": "Co-developed with the Commission, Microsoft Teams integration included, and deployed for its meetings. Dedicated models, high security, self-hosted AI: sensitive data stays in-house.",
+  "case_ec_name": "European Commission",
   "case_ep_name": "European Parliament",
   "case_ep_tag": "Live accessibility",
   "case_ep_title": "Sessions accessible in real time, on site and remotely",
